@@ -1,0 +1,1938 @@
+{
+  "Data": {
+    "staticProxy": [
+      {
+        "name": "США",
+        "icon": "/country_logos/сша.webp"
+      },
+      {
+        "name": "Испания",
+        "icon": "/country_logos/испания.webp"
+      },
+      {
+        "name": "Германия",
+        "icon": "/country_logos/германия.webp"
+      },
+      {
+        "name": "Великобритания",
+        "icon": "/country_logos/великобритания.webp"
+      },
+      {
+        "name": "Литва",
+        "icon": "/country_logos/литва.webp"
+      },
+      {
+        "name": "Казахстан",
+        "icon": "/country_logos/казахстан.webp"
+      },
+      {
+        "name": "Бразилия",
+        "icon": "/country_logos/бразилия.webp"
+      },
+      {
+        "name": "Япония",
+        "icon": "/country_logos/япония.webp"
+      },
+      {
+        "name": "Франция",
+        "icon": "/country_logos/франция.webp"
+      },
+      {
+        "name": "Польша",
+        "icon": "/country_logos/польша.webp"
+      },
+      {
+        "name": "Бельгия",
+        "icon": "/country_logos/бельгия.webp"
+      },
+      {
+        "name": "Болгария",
+        "icon": "/country_logos/болгария.webp"
+      },
+      {
+        "name": "Чехия",
+        "icon": ""
+      },
+      {
+        "name": "Дания",
+        "icon": "/country_logos/дания.webp"
+      },
+      {
+        "name": "Финляндия",
+        "icon": "/country_logos/финляндия.webp"
+      },
+      {
+        "name": "Ирландия",
+        "icon": "/country_logos/ирландия.webp"
+      },
+      {
+        "name": "Италия",
+        "icon": "/country_logos/италия.webp"
+      },
+      {
+        "name": "Латвия",
+        "icon": "/country_logos/латвия.webp"
+      },
+      {
+        "name": "Нидерланды",
+        "icon": "/country_logos/нидерланды.webp"
+      },
+      {
+        "name": "Норвегия",
+        "icon": "/country_logos/норвегия.webp"
+      },
+      {
+        "name": "Португалия",
+        "icon": "/country_logos/португалия.webp"
+      },
+      {
+        "name": "Румыния",
+        "icon": "/country_logos/румыния.webp"
+      },
+      {
+        "name": "Россия",
+        "icon": "/country_logos/россия.webp"
+      },
+      {
+        "name": "Швеция",
+        "icon": "/country_logos/швеция.webp"
+      },
+      {
+        "name": "Швейцария",
+        "icon": "/country_logos/швейцария.webp"
+      },
+      {
+        "name": "Украина",
+        "icon": "/country_logos/украина.webp"
+      },
+      {
+        "name": "Армения",
+        "icon": "/country_logos/армения.webp"
+      },
+      {
+        "name": "Бангладеш",
+        "icon": "/country_logos/бангладеш.webp"
+      },
+      {
+        "name": "Камбоджа",
+        "icon": "/country_logos/камбоджа.webp"
+      },
+      {
+        "name": "Китай",
+        "icon": "нет_иконки"
+      },
+      {
+        "name": "Грузия",
+        "icon": "/country_logos/грузия.webp"
+      },
+      {
+        "name": "Индия",
+        "icon": "/country_logos/индия.webp"
+      },
+      {
+        "name": "Индонезия",
+        "icon": "/country_logos/индонезия.webp"
+      },
+      {
+        "name": "Малайзия",
+        "icon": "нет_иконки"
+      },
+      {
+        "name": "Сингапур",
+        "icon": "/country_logos/сингапур.webp"
+      },
+      {
+        "name": "Южная Корея",
+        "icon": "/country_logos/южная_южная_корея.webp"
+      },
+      {
+        "name": "Тайвань",
+        "icon": "нет_иконки"
+      },
+      {
+        "name": "Таиланд",
+        "icon": "/country_logos/таиланд.webp"
+      },
+      {
+        "name": "Турция",
+        "icon": "/country_logos/турция.webp"
+      },
+      {
+        "name": "ОАЭ",
+        "icon": "/country_logos/оаэ.webp"
+      },
+      {
+        "name": "Южная Африка",
+        "icon": "/country_logos/южная_африка.webp"
+      },
+      {
+        "name": "Канада",
+        "icon": "/country_logos/канада.webp"
+      },
+      {
+        "name": "Мексика",
+        "icon": "/country_logos/мексика.webp"
+      },
+      {
+        "name": "Австралия",
+        "icon": "/country_logos/австралия.webp"
+      },
+      {
+        "name": "Венгрия",
+        "icon": "/country_logos/венгрия.webp"
+      },
+      {
+        "name": "Нигерия",
+        "icon": "/country_logos/нигерия.webp"
+      },
+      {
+        "name": "Филиппины",
+        "icon": "/country_logos/филиппины.webp"
+      },
+      {
+        "name": "Чили",
+        "icon": "/country_logos/чили.webp"
+      },
+      {
+        "name": "Египет",
+        "icon": "/country_logos/египет.webp"
+      },
+      {
+        "name": "Сейшелы",
+        "icon": "нет_иконки"
+      },
+      {
+        "name": "Беларусь",
+        "icon": "/country_logos/беларусь.webp"
+      },
+      {
+        "name": "Эстония",
+        "icon": "/country_logos/эстония.webp"
+      },
+      {
+        "name": "Словения",
+        "icon": "/country_logos/словения.webp"
+      },
+      {
+        "name": "Туркменистан",
+        "icon": "/country_logos/туркменистан.webp"
+      },
+      {
+        "name": "Таджикистан",
+        "icon": "/country_logos/таджикистан.webp"
+      },
+      {
+        "name": "Греция",
+        "icon": "/country_logos/греция.webp"
+      },
+      {
+        "name": "Кыргызстан",
+        "icon": "/country_logos/кыргызстан.webp"
+      },
+      {
+        "name": "Марокко",
+        "icon": "/country_logos/марокко.webp"
+      },
+      {
+        "name": "Израиль",
+        "icon": "/country_logos/израиль.webp"
+      },
+      {
+        "name": "Ливан",
+        "icon": "/country_logos/ливан.webp"
+      },
+      {
+        "name": "Лаос",
+        "icon": "/country_logos/лаос.webp"
+      },
+      {
+        "name": "Молдова",
+        "icon": "/country_logos/молдова.webp"
+      },
+      {
+        "name": "Узбекистан",
+        "icon": "/country_logos/узбекистан.webp"
+      },
+      {
+        "name": "Вьетнам",
+        "icon": "/country_logos/вьетнам.webp"
+      },
+      {
+        "name": "Зимбабве",
+        "icon": "/country_logos/зимбабве.webp"
+      },
+      {
+        "name": "Аргентина",
+        "icon": "/country_logos/аргентина.webp"
+      },
+      {
+        "name": "Ботсвана",
+        "icon": "/country_logos/ботсвана.webp"
+      },
+      {
+        "name": "Колумбия",
+        "icon": "/country_logos/колумбия.webp"
+      },
+      {
+        "name": "Мозамбик",
+        "icon": "/country_logos/мозамбик.webp"
+      },
+      {
+        "name": "Панама",
+        "icon": "/country_logos/панама.webp"
+      },
+      {
+        "name": "Гонконг",
+        "icon": "/country_logos/гонконг.webp"
+      },
+      {
+        "name": "Сербия",
+        "icon": "/country_logos/сербия.webp"
+      },
+      {
+        "name": "Словакия",
+        "icon": "/country_logos/словакия.webp"
+      },
+      {
+        "name": "Мальта",
+        "icon": "/country_logos/мальта.webp"
+      },
+      {
+        "name": "Саудовская Аравия",
+        "icon": "/country_logos/саудовская_аравия.webp"
+      },
+      {
+        "name": "Южная Африка",
+        "icon": "/country_logos/южная_африка.webp"
+      },
+      {
+        "name": "Босния и Герцеговина",
+        "icon": "/country_logos/босния_и_герцеговина.webp"
+      },
+      {
+        "name": "Ватикан",
+        "icon": "/country_logos/ватикан.webp"
+      },
+      {
+        "name": "Венесуэла",
+        "icon": "/country_logos/венесуэла.webp"
+      },
+      {
+        "name": "Доминиканская Республика",
+        "icon": "/country_logos/доминиканская_республика.webp"
+      },
+      {
+        "name": "Иордания",
+        "icon": "/country_logos/иордания.webp"
+      },
+      {
+        "name": "Исландия",
+        "icon": "/country_logos/исландия.webp"
+      },
+      {
+        "name": "Коста-Рика",
+        "icon": "нет_иконки"
+      },
+      {
+        "name": "Люксембург",
+        "icon": "/country_logos/люксембург.webp"
+      },
+      {
+        "name": "Монако",
+        "icon": "/country_logos/монако.webp"
+      },
+      {
+        "name": "Новая Зеландия",
+        "icon": "/country_logos/новая_зеландия.webp"
+      },
+      {
+        "name": "Австрия",
+        "icon": "/country_logos/австрия.webp"
+      },
+      {
+        "name": "Азербайджан",
+        "icon": "нет_иконки"
+      },
+      {
+        "name": "Албания",
+        "icon": "/country_logos/албания.webp"
+      },
+      {
+        "name": "Алжир",
+        "icon": "/country_logos/алжир.webp"
+      },
+      {
+        "name": "Боливия",
+        "icon": "/country_logos/боливия.webp"
+      },
+      {
+        "name": "Ирак",
+        "icon": "/country_logos/ирак.webp"
+      },
+      {
+        "name": "Иран",
+        "icon": "/country_logos/иран.webp"
+      },
+      {
+        "name": "Камерун",
+        "icon": "/country_logos/камерун.webp"
+      },
+      {
+        "name": "Катар",
+        "icon": "/country_logos/катар.webp"
+      },
+      {
+        "name": "Кения",
+        "icon": "/country_logos/кения.webp"
+      },
+      {
+        "name": "Кипр",
+        "icon": "/country_logos/кипр.webp"
+      },
+      {
+        "name": "Мальдивы",
+        "icon": "/country_logos/мальдивы.webp"
+      },
+      {
+        "name": "Монголия",
+        "icon": "/country_logos/монголия.webp"
+      },
+      {
+        "name": "Непал",
+        "icon": "/country_logos/непал.webp"
+      },
+      {
+        "name": "Пакистан",
+        "icon": "/country_logos/пакистан.webp"
+      },
+      {
+        "name": "Перу",
+        "icon": "/country_logos/перу.webp"
+      },
+      {
+        "name": "Танзания",
+        "icon": "/country_logos/танзания.webp"
+      },
+      {
+        "name": "Тунис",
+        "icon": "/country_logos/тунис.webp"
+      },
+      {
+        "name": "Уругвай",
+        "icon": "нет_иконки"
+      },
+      {
+        "name": "Хорватия",
+        "icon": "/country_logos/хорватия.webp"
+      },
+      {
+        "name": "Черногория",
+        "icon": "/country_logos/черногория.webp"
+      },
+      {
+        "name": "Шри-Ланка",
+        "icon": "нет_иконки"
+      },
+      {
+        "name": "Ямайка",
+        "icon": "нет_иконки"
+      },
+      {
+        "name": "Намибия",
+        "icon": "/country_logos/намибия.webp"
+      },
+      {
+        "name": "Андорра",
+        "icon": "/country_logos/андорра.webp"
+      },
+      {
+        "name": "Эквадор",
+        "icon": "/country_logos/эквадор.webp"
+      },
+      {
+        "name": "Куба",
+        "icon": "/country_logos/куба.webp"
+      },
+      {
+        "name": "Парагвай",
+        "icon": "нет_иконки"
+      },
+      {
+        "name": "Замбия",
+        "icon": "/country_logos/замбия.webp"
+      }
+    ],
+    "residentialProxy": [
+      {
+        "name": "Бельгия",
+        "icon": "/country_logos/бельгия.webp"
+      },
+      {
+        "name": "Болгария",
+        "icon": "/country_logos/болгария.webp"
+      },
+      {
+        "name": "Чехия",
+        "icon": "/country_logos/чешская_республика.webp"
+      },
+      {
+        "name": "Дания",
+        "icon": "/country_logos/дания.webp"
+      },
+      {
+        "name": "Великобритания",
+        "icon": "/country_logos/Великобритания.webp"
+      },
+      {
+        "name": "Финляндия",
+        "icon": "/country_logos/финляндия.webp"
+      },
+      {
+        "name": "Франция",
+        "icon": "/country_logos/франция.webp"
+      },
+      {
+        "name": "Германия",
+        "icon": "/country_logos/германия.webp"
+      },
+      {
+        "name": "Венгрия",
+        "icon": "/country_logos/венгрия.webp"
+      },
+      {
+        "name": "Ирландия",
+        "icon": "/country_logos/ирландия.webp"
+      },
+      {
+        "name": "Италия",
+        "icon": "/country_logos/италия.webp"
+      },
+      {
+        "name": "Латвия",
+        "icon": "/country_logos/латвия.webp"
+      },
+      {
+        "name": "Литва",
+        "icon": "/country_logos/литва.webp"
+      },
+      {
+        "name": "Нидерланды",
+        "icon": "/country_logos/нидерланды.webp"
+      },
+      {
+        "name": "Норвегия",
+        "icon": "/country_logos/норвегия.webp"
+      },
+      {
+        "name": "Польша",
+        "icon": "/country_logos/польша.webp"
+      },
+      {
+        "name": "Португалия",
+        "icon": "/country_logos/португалия.webp"
+      },
+      {
+        "name": "Румыния",
+        "icon": "/country_logos/румыния.webp"
+      },
+      {
+        "name": "Россия",
+        "icon": "/country_logos/россия.webp"
+      },
+      {
+        "name": "Испания",
+        "icon": "/country_logos/испания.webp"
+      },
+      {
+        "name": "Швеция",
+        "icon": "/country_logos/швеция.webp"
+      },
+      {
+        "name": "Швейцария",
+        "icon": "/country_logos/швейцария.webp"
+      },
+      {
+        "name": "Украина",
+        "icon": "/country_logos/украина.webp"
+      },
+      {
+        "name": "Армения",
+        "icon": "/country_logos/армения.webp"
+      },
+      {
+        "name": "Южная Африка",
+        "icon": "/country_logos/южная_африка.webp"
+      },
+      {
+        "name": "США",
+        "icon": "/country_logos/сша.webp"
+      },
+      {
+        "name": "Канада",
+        "icon": "/country_logos/канада.webp"
+      },
+      {
+        "name": "Мексика",
+        "icon": "/country_logos/мексика.webp"
+      },
+      {
+        "name": "Бангладеш",
+        "icon": "/country_logos/бангладеш.webp"
+      },
+      {
+        "name": "Камбоджа",
+        "icon": "/country_logos/камбоджа.webp"
+      },
+      {
+        "name": "Китай",
+        "icon": "/country_logos/китай.webp"
+      },
+      {
+        "name": "Грузия",
+        "icon": "/country_logos/грузия.webp"
+      },
+      {
+        "name": "Индия",
+        "icon": "/country_logos/индия.webp"
+      },
+      {
+        "name": "Индонезия",
+        "icon": "/country_logos/индонезия.webp"
+      },
+      {
+        "name": "Япония",
+        "icon": "/country_logos/япония.webp"
+      },
+      {
+        "name": "Казахстан",
+        "icon": "/country_logos/казахстан.webp"
+      },
+      {
+        "name": "Малайзия",
+        "icon": "/country_logos/малайзия.webp"
+      },
+      {
+        "name": "Сингапур",
+        "icon": "/country_logos/сингапур.webp"
+      },
+      {
+        "name": "Южная Корея",
+        "icon": "/country_logos/южная_южная_корея.webp"
+      },
+      {
+        "name": "Тайвань",
+        "icon": "/country_logos/тайвань.webp"
+      },
+      {
+        "name": "Таиланд",
+        "icon": "/country_logos/таиланд.webp"
+      },
+      {
+        "name": "Турция",
+        "icon": "/country_logos/турция.webp"
+      },
+      {
+        "name": "ОАЭ",
+        "icon": "/country_logos/оаэ.webp"
+      },
+      {
+        "name": "Бразилия",
+        "icon": "/country_logos/бразилия.webp"
+      },
+      {
+        "name": "Австралия",
+        "icon": "/country_logos/австралия.webp"
+      },
+      {
+        "name": "Андорра",
+        "icon": "/country_logos/андорра.webp"
+      },
+      {
+        "name": "Афганистан",
+        "icon": "/country_logos/афганистан.webp"
+      },
+      {
+        "name": "Антигуа и Барбуда",
+        "icon": "/country_logos/антигуа_и_барбуда.webp"
+      },
+      {
+        "name": "Ангилья",
+        "icon": "/country_logos/ангилья.webp"
+      },
+      {
+        "name": "Албания",
+        "icon": "/country_logos/албания.webp"
+      },
+      {
+        "name": "Ангола",
+        "icon": "/country_logos/ангола.webp"
+      },
+      {
+        "name": "Аргентина",
+        "icon": "/country_logos/аргентина.webp"
+      },
+      {
+        "name": "Американское Самоа",
+        "icon": "/country_logos/американское_самоа.webp"
+      },
+      {
+        "name": "Австрия",
+        "icon": "/country_logos/австрия.webp"
+      },
+      {
+        "name": "Аруба",
+        "icon": "/country_logos/аруба.webp"
+      },
+      {
+        "name": "Аландские острова",
+        "icon": "/country_logos/аландские_острова.webp"
+      },
+      {
+        "name": "Азербайджан",
+        "icon": "/country_logos/азербайджан.webp"
+      },
+      {
+        "name": "Босния и Герцеговина",
+        "icon": "/country_logos/босния_и_герцеговина.webp"
+      },
+      {
+        "name": "Барбадос",
+        "icon": "/country_logos/барбадос.webp"
+      },
+      {
+        "name": "Буркина-Фасо",
+        "icon": "/country_logos/буркина-фасо.webp"
+      },
+      {
+        "name": "Бахрейн",
+        "icon": "/country_logos/бахрейн.webp"
+      },
+      {
+        "name": "Бурунди",
+        "icon": "/country_logos/бурунди.webp"
+      },
+      {
+        "name": "Бенин",
+        "icon": "/country_logos/бенин.webp"
+      },
+      {
+        "name": "Сен-Бартелеми",
+        "icon": "/country_logos/сен-бартелеми.webp"
+      },
+      {
+        "name": "Бермуды",
+        "icon": "/country_logos/бермуды.webp"
+      },
+      {
+        "name": "Бруней",
+        "icon": "/country_logos/бруней.webp"
+      },
+      {
+        "name": "Боливия",
+        "icon": "/country_logos/боливия.webp"
+      },
+      {
+        "name": "Бонайре, Синт-Эстатиус и Саба",
+        "icon": "/country_logos/бонайре,_синт-эстатиус_и_саба.webp"
+      },
+      {
+        "name": "Багамы",
+        "icon": "/country_logos/багамы.webp"
+      },
+      {
+        "name": "Бутан",
+        "icon": "/country_logos/бутан.webp"
+      },
+      {
+        "name": "Ботсвана",
+        "icon": "/country_logos/ботсвана.webp"
+      },
+      {
+        "name": "Беларусь",
+        "icon": "/country_logos/беларусь.webp"
+      },
+      {
+        "name": "Белиз",
+        "icon": "/country_logos/белиз.webp"
+      },
+      {
+        "name": "Демократическая Республика Конго",
+        "icon": "/country_logos/демократическая_республика_конго.webp"
+      },
+      {
+        "name": "Республика Конго",
+        "icon": "/country_logos/республика_конго.webp"
+      },
+      {
+        "name": "Кот-д'Ивуар",
+        "icon": "/country_logos/кот-д'ивуар.webp"
+      },
+      {
+        "name": "Острова Кука",
+        "icon": "/country_logos/острова_кука.webp"
+      },
+      {
+        "name": "Чили",
+        "icon": "/country_logos/чили.webp"
+      },
+      {
+        "name": "Камерун",
+        "icon": "/country_logos/камерун.webp"
+      },
+      {
+        "name": "Колумбия",
+        "icon": "/country_logos/колумбия.webp"
+      },
+      {
+        "name": "Коста-Рика",
+        "icon": "/country_logos/коста-рика.webp"
+      },
+      {
+        "name": "Куба",
+        "icon": "/country_logos/куба.webp"
+      },
+      {
+        "name": "Кабо-Верде",
+        "icon": "/country_logos/кабо-верде.webp"
+      },
+      {
+        "name": "Кюрасао",
+        "icon": "/country_logos/кюрасао.webp"
+      },
+      {
+        "name": "Кипр",
+        "icon": "/country_logos/кипр.webp"
+      },
+      {
+        "name": "Джибути",
+        "icon": "/country_logos/джибути.webp"
+      },
+      {
+        "name": "Доминика",
+        "icon": "/country_logos/доминика.webp"
+      },
+      {
+        "name": "Доминиканская Республика",
+        "icon": "/country_logos/доминиканская_республика.webp"
+      },
+      {
+        "name": "Алжир",
+        "icon": "/country_logos/алжир.webp"
+      },
+      {
+        "name": "Эквадор",
+        "icon": "/country_logos/эквадор.webp"
+      },
+      {
+        "name": "Эстония",
+        "icon": "/country_logos/эстония.webp"
+      },
+      {
+        "name": "Египет",
+        "icon": "/country_logos/египет.webp"
+      },
+      {
+        "name": "Эритрея",
+        "icon": "/country_logos/эритрея.webp"
+      },
+      {
+        "name": "Эфиопия",
+        "icon": "/country_logos/эфиопия.webp"
+      },
+      {
+        "name": "Фиджи",
+        "icon": "/country_logos/фиджи.webp"
+      },
+      {
+        "name": "Фолклендские острова",
+        "icon": "/country_logos/фолклендские_острова.webp"
+      },
+      {
+        "name": "Федеративные Штаты Микронезии",
+        "icon": "/country_logos/федеративные_штаты_микронезии.webp"
+      },
+      {
+        "name": "Фарерские острова",
+        "icon": "/country_logos/фарерские_острова.webp"
+      },
+      {
+        "name": "Габон",
+        "icon": "/country_logos/габон.webp"
+      },
+      {
+        "name": "Гренада",
+        "icon": "/country_logos/гренада.webp"
+      },
+      {
+        "name": "Французская Гвиана",
+        "icon": "/country_logos/французская_гвиана.webp"
+      },
+      {
+        "name": "Гернси",
+        "icon": "/country_logos/гернси.webp"
+      },
+      {
+        "name": "Гана",
+        "icon": "/country_logos/гана.webp"
+      },
+      {
+        "name": "Гибралтар",
+        "icon": "/country_logos/гибралтар.webp"
+      },
+      {
+        "name": "Гренландия",
+        "icon": "/country_logos/гренландия.webp"
+      },
+      {
+        "name": "Гамбия",
+        "icon": "/country_logos/гамбия.webp"
+      },
+      {
+        "name": "Гвинея",
+        "icon": "/country_logos/гвинея.webp"
+      },
+      {
+        "name": "Гваделупа",
+        "icon": "/country_logos/гваделупа.webp"
+      },
+      {
+        "name": "Экваториальная Гвинея",
+        "icon": "/country_logos/экваториальная_гвинея.webp"
+      },
+      {
+        "name": "Греция",
+        "icon": "/country_logos/греция.webp"
+      },
+      {
+        "name": "Гватемала",
+        "icon": "/country_logos/гватемала.webp"
+      },
+      {
+        "name": "Гуам",
+        "icon": "/country_logos/гуам.webp"
+      },
+      {
+        "name": "Гвинея-Бисау",
+        "icon": "/country_logos/гвинея-бисау.webp"
+      },
+      {
+        "name": "Гайана",
+        "icon": "/country_logos/гайана.webp"
+      },
+      {
+        "name": "Гонконг",
+        "icon": "/country_logos/гонконг.webp"
+      },
+      {
+        "name": "Гондурас",
+        "icon": "/country_logos/гондурас.webp"
+      },
+      {
+        "name": "Хорватия",
+        "icon": "/country_logos/хорватия.webp"
+      },
+      {
+        "name": "Гаити",
+        "icon": "/country_logos/гаити.webp"
+      },
+      {
+        "name": "Израиль",
+        "icon": "/country_logos/израиль.webp"
+      },
+      {
+        "name": "Остров Мэн",
+        "icon": "/country_logos/остров_мэн.webp"
+      },
+      {
+        "name": "Ирак",
+        "icon": "/country_logos/ирак.webp"
+      },
+      {
+        "name": "Иран",
+        "icon": "/country_logos/иран.webp"
+      },
+      {
+        "name": "Исландия",
+        "icon": "/country_logos/исландия.webp"
+      },
+      {
+        "name": "Джерси",
+        "icon": "/country_logos/джерси.webp"
+      },
+      {
+        "name": "Ямайка",
+        "icon": "/country_logos/ямайка.webp"
+      },
+      {
+        "name": "Иордания",
+        "icon": "/country_logos/иордания.webp"
+      },
+      {
+        "name": "Кения",
+        "icon": "/country_logos/кения.webp"
+      },
+      {
+        "name": "Кыргызстан",
+        "icon": "/country_logos/Кыргызстан.webp"
+      },
+      {
+        "name": "Сент-Китс и Невис",
+        "icon": "/country_logos/сент-китс_и_невис.webp"
+      },
+      {
+        "name": "Кувейт",
+        "icon": "/country_logos/кувейт.webp"
+      },
+      {
+        "name": "Острова Кайман",
+        "icon": "/country_logos/острова_кайман.webp"
+      },
+      {
+        "name": "Лаос",
+        "icon": "/country_logos/лаос.webp"
+      },
+      {
+        "name": "Ливан",
+        "icon": "/country_logos/ливан.webp"
+      },
+      {
+        "name": "Сент-Люсия",
+        "icon": "/country_logos/сент-люсия.webp"
+      },
+      {
+        "name": "Лихтенштейн",
+        "icon": "/country_logos/лихтенштейн.webp"
+      },
+      {
+        "name": "Шри-Ланка",
+        "icon": "/country_logos/шри-ланка.webp"
+      },
+      {
+        "name": "Либерия",
+        "icon": "/country_logos/либерия.webp"
+      },
+      {
+        "name": "Лесото",
+        "icon": "/country_logos/лесото.webp"
+      },
+      {
+        "name": "Люксембург",
+        "icon": "/country_logos/люксембург.webp"
+      },
+      {
+        "name": "Ливия",
+        "icon": "/country_logos/ливия.webp"
+      },
+      {
+        "name": "Марокко",
+        "icon": "/country_logos/марокко.webp"
+      },
+      {
+        "name": "Монако",
+        "icon": "/country_logos/монако.webp"
+      },
+      {
+        "name": "Молдова",
+        "icon": "/country_logos/молдова.webp"
+      },
+      {
+        "name": "Черногория",
+        "icon": "/country_logos/черногория.webp"
+      },
+      {
+        "name": "Сен-Мартен",
+        "icon": "/country_logos/сен-мартен.webp"
+      },
+      {
+        "name": "Мадагаскар",
+        "icon": "/country_logos/мадагаскар.webp"
+      },
+      {
+        "name": "Маршалловы Острова",
+        "icon": "/country_logos/маршалловы_острова.webp"
+      },
+      {
+        "name": "Северная Македония",
+        "icon": "/country_logos/северная_македония.webp"
+      },
+      {
+        "name": "Мали",
+        "icon": "/country_logos/мали.webp"
+      },
+      {
+        "name": "Мьянма",
+        "icon": "/country_logos/мьянма.webp"
+      },
+      {
+        "name": "Монголия",
+        "icon": "/country_logos/монголия.webp"
+      },
+      {
+        "name": "Макао",
+        "icon": "/country_logos/макао.webp"
+      },
+      {
+        "name": "Северные Марианские острова",
+        "icon": "/country_logos/северные_марианские_острова.webp"
+      },
+      {
+        "name": "Мартиника",
+        "icon": "/country_logos/мартиника.webp"
+      },
+      {
+        "name": "Мавритания",
+        "icon": "/country_logos/мавритания.webp"
+      },
+      {
+        "name": "Монтсеррат",
+        "icon": "/country_logos/монтсеррат.webp"
+      },
+      {
+        "name": "Мальта",
+        "icon": "/country_logos/мальта.webp"
+      },
+      {
+        "name": "Маврикий",
+        "icon": "/country_logos/маврикий.webp"
+      },
+      {
+        "name": "Мальдивы",
+        "icon": "/country_logos/мальдивы.webp"
+      },
+      {
+        "name": "Малави",
+        "icon": "/country_logos/малави.webp"
+      },
+      {
+        "name": "Мозамбик",
+        "icon": "/country_logos/мозамбик.webp"
+      },
+      {
+        "name": "Намибия",
+        "icon": "/country_logos/намибия.webp"
+      },
+      {
+        "name": "Новая Каледония",
+        "icon": "/country_logos/новая_каледония.webp"
+      },
+      {
+        "name": "Нигер",
+        "icon": "/country_logos/нигер.webp"
+      },
+      {
+        "name": "Нигерия",
+        "icon": "/country_logos/нигерия.webp"
+      },
+      {
+        "name": "Никарагуа",
+        "icon": "/country_logos/никарагуа.webp"
+      },
+      {
+        "name": "Непал",
+        "icon": "/country_logos/непал.webp"
+      },
+      {
+        "name": "Новая Зеландия",
+        "icon": "/country_logos/новая_зеландия.webp"
+      },
+      {
+        "name": "Оман",
+        "icon": "/country_logos/оман.webp"
+      },
+      {
+        "name": "Панама",
+        "icon": "/country_logos/панама.webp"
+      },
+      {
+        "name": "Перу",
+        "icon": "/country_logos/перу.webp"
+      },
+      {
+        "name": "Французская Полинезия",
+        "icon": "/country_logos/французская_полинезия.webp"
+      },
+      {
+        "name": "Папуа – Новая Гвинея",
+        "icon": "/country_logos/папуа_–_новая_гвинея.webp"
+      },
+      {
+        "name": "Филиппины",
+        "icon": "/country_logos/филиппины.webp"
+      },
+      {
+        "name": "Пакистан",
+        "icon": "/country_logos/пакистан.webp"
+      },
+      {
+        "name": "Сен-Пьер и Микелон",
+        "icon": "/country_logos/сен-пьер_и_микелон.webp"
+      },
+      {
+        "name": "Пуэрто-Рико",
+        "icon": "/country_logos/пуэрто-рико.webp"
+      },
+      {
+        "name": "Палестина",
+        "icon": "/country_logos/палестина.webp"
+      },
+      {
+        "name": "Палау",
+        "icon": "/country_logos/палау.webp"
+      },
+      {
+        "name": "Парагвай",
+        "icon": "/country_logos/парагвай.webp"
+      },
+      {
+        "name": "Катар",
+        "icon": "/country_logos/катар.webp"
+      },
+      {
+        "name": "Реюньон",
+        "icon": "/country_logos/реюньон.webp"
+      },
+      {
+        "name": "Сербия",
+        "icon": "/country_logos/сербия.webp"
+      },
+      {
+        "name": "Руанда",
+        "icon": "/country_logos/руанда.webp"
+      },
+      {
+        "name": "Саудовская Аравия",
+        "icon": "/country_logos/саудовская_аравия.webp"
+      },
+      {
+        "name": "Соломоновы Острова",
+        "icon": "/country_logos/соломоновы_острова.webp"
+      },
+      {
+        "name": "Сейшелы",
+        "icon": "/country_logos/сейшелы.webp"
+      },
+      {
+        "name": "Судан",
+        "icon": "/country_logos/судан.webp"
+      },
+      {
+        "name": "Словения",
+        "icon": "/country_logos/словения.webp"
+      },
+      {
+        "name": "Словакия",
+        "icon": "/country_logos/словакия.webp"
+      },
+      {
+        "name": "Сьерра-Леоне",
+        "icon": "/country_logos/сьерра-леоне.webp"
+      },
+      {
+        "name": "Сан-Марино",
+        "icon": "/country_logos/сан-марино.webp"
+      },
+      {
+        "name": "Сенегал",
+        "icon": "/country_logos/сенегал.webp"
+      },
+      {
+        "name": "Сомали",
+        "icon": "/country_logos/сомали.webp"
+      },
+      {
+        "name": "Суринам",
+        "icon": "/country_logos/суринам.webp"
+      },
+      {
+        "name": "Южный Судан",
+        "icon": "/country_logos/южный_судан.webp"
+      },
+      {
+        "name": "Сан-Томе и Принсипи",
+        "icon": "/country_logos/сан-томе_и_принсипи.webp"
+      },
+      {
+        "name": "Сальвадор",
+        "icon": "/country_logos/сальвадор.webp"
+      },
+      {
+        "name": "Синт-Мартен",
+        "icon": "/country_logos/синт-мартен.webp"
+      },
+      {
+        "name": "Сирия",
+        "icon": "/country_logos/сирия.webp"
+      },
+      {
+        "name": "Эсватини",
+        "icon": "/country_logos/эсватини.webp"
+      },
+      {
+        "name": "Острова Теркс и Кайкос",
+        "icon": "/country_logos/острова_теркс_и_кайкос.webp"
+      },
+      {
+        "name": "Чад",
+        "icon": "/country_logos/чад.webp"
+      },
+      {
+        "name": "Того",
+        "icon": "/country_logos/того.webp"
+      },
+      {
+        "name": "Таджикистан",
+        "icon": "/country_logos/таджикистан.webp"
+      },
+      {
+        "name": "Тимор-Лесте",
+        "icon": "/country_logos/тимор-лесте.webp"
+      },
+      {
+        "name": "Туркменистан",
+        "icon": "/country_logos/туркменистан.webp"
+      },
+      {
+        "name": "Тунис",
+        "icon": "/country_logos/тунис.webp"
+      },
+      {
+        "name": "Тонга",
+        "icon": "/country_logos/тонга.webp"
+      },
+      {
+        "name": "Тринидад и Тобаго",
+        "icon": "/country_logos/тринидад_и_тобаго.webp"
+      },
+      {
+        "name": "Танзания",
+        "icon": "/country_logos/танзания.webp"
+      },
+      {
+        "name": "Уганда",
+        "icon": "/country_logos/уганда.webp"
+      },
+      {
+        "name": "США",
+        "icon": "/country_logos/сша.webp"
+      },
+      {
+        "name": "Уругвай",
+        "icon": "/country_logos/уругвай.webp"
+      },
+      {
+        "name": "Узбекистан",
+        "icon": "/country_logos/узбекистан.webp"
+      },
+      {
+        "name": "Сен-Винсент и Гренадины",
+        "icon": "/country_logos/сен-винсент_и_гренадины.webp"
+      },
+      {
+        "name": "Венесуэла",
+        "icon": "/country_logos/венесуэла.webp"
+      },
+      {
+        "name": "Британские Виргинские острова",
+        "icon": "/country_logos/британские_виргинские_острова.webp"
+      },
+      {
+        "name": "Американские Виргинские острова",
+        "icon": "/country_logos/американские_виргинские_острова.webp"
+      },
+      {
+        "name": "Вьетнам",
+        "icon": "/country_logos/вьетнам.webp"
+      },
+      {
+        "name": "Вануату",
+        "icon": "/country_logos/вануату.webp"
+      },
+      {
+        "name": "Самоа",
+        "icon": "/country_logos/самоа.webp"
+      },
+      {
+        "name": "Косово",
+        "icon": "/country_logos/косово.webp"
+      },
+      {
+        "name": "Йемен",
+        "icon": "/country_logos/йемен.webp"
+      },
+      {
+        "name": "Майотта",
+        "icon": "/country_logos/майотта.webp"
+      },
+      {
+        "name": "Южная Африка",
+        "icon": "/country_logos/южная_африка.webp"
+      },
+      {
+        "name": "Замбия",
+        "icon": "/country_logos/замбия.webp"
+      },
+      {
+        "name": "Зимбабве",
+        "icon": "/country_logos/зимбабве.webp"
+      },
+      {
+        "name": "Центральноафриканская Республика",
+        "icon": "/country_logos/центральноафриканская_республика.webp"
+      },
+      {
+        "name": "Микронезия",
+        "icon": "/country_logos/микронезия.webp"
+      },
+      {
+        "name": "Кирибати",
+        "icon": "/country_logos/кирибати.webp"
+      },
+      {
+        "name": "Коморы",
+        "icon": "/country_logos/коморы.webp"
+      },
+      {
+        "name": "Северные Марианские Острова",
+        "icon": "/country_logos/северные_марианские_острова.webp"
+      },
+      {
+        "name": "Острова Святой Елены, Вознесения и Тристан-да-Кунья",
+        "icon": "/country_logos/острова_святой_елены,_вознесения_и_тристан-да-кунья.webp"
+      },
+      {
+        "name": "Восточный Тимор",
+        "icon": "/country_logos/восточный_тимор.webp"
+      },
+      {
+        "name": "Виргинские Острова",
+        "icon": "/country_logos/виргинские_острова.webp"
+      },
+      {
+        "name": "Уоллис и Футуна",
+        "icon": "/country_logos/уоллис_и_футуна.webp"
+      },
+      {
+        "name": "Конго",
+        "icon": "/country_logos/конго.webp"
+      },
+      {
+        "name": "Корея",
+        "icon": "/country_logos/южная_корея.webp"
+      },
+      {
+        "name": "Виргинские острова",
+        "icon": "/country_logos/виргинские_острова.webp"
+      },
+      {
+        "name": "Ватикан",
+        "icon": "/country_logos/ватикан.webp"
+      },
+      {
+        "name": "Антарктида",
+        "icon": "/country_logos/антарктида.webp"
+      },
+      {
+        "name": "Берег Слоновой Кости",
+        "icon": "/country_logos/берег_слоновой_кости.webp"
+      },
+      {
+        "name": "Македония",
+        "icon": "/country_logos/македония.webp"
+      },
+      {
+        "name": "США",
+        "icon": "/country_logos/сша.webp"
+      },
+      {
+        "name": "Коморские острова",
+        "icon": "/country_logos/коморские_острова.webp"
+      },
+      {
+        "name": "Сейшельские острова",
+        "icon": "/country_logos/сейшельские_острова.webp"
+      },
+      {
+        "name": "Свазиленд",
+        "icon": "/country_logos/свазиленд.webp"
+      },
+      {
+        "name": "Бонайре",
+        "icon": "/country_logos/бонайре.webp"
+      },
+      {
+        "name": "Каймановы острова",
+        "icon": "/country_logos/каймановы_острова.webp"
+      },
+      {
+        "name": "Эль-Сальвадор",
+        "icon": "/country_logos/эль-сальвадор.webp"
+      },
+      {
+        "name": "Гватемала",
+        "icon": "/country_logos/гватемала.webp"
+      },
+      {
+        "name": "Папуа — Новая Гвинея",
+        "icon": "/country_logos/папуа_—_новая_гвинея.webp"
+      },
+      {
+        "name": "Соломоновы острова",
+        "icon": "/country_logos/соломоновы_острова.webp"
+      },
+      {
+        "name": "Бонэйр, Синт-Эстатиус и Саба",
+        "icon": "/country_logos/бонэйр,_синт-эстатиус_и_саба.webp"
+      },
+      {
+        "name": "Сейшельские Острова",
+        "icon": "/country_logos/сейшельские_острова.webp"
+      },
+      {
+        "name": "Южная Африка",
+        "icon": "/country_logos/южная_африка.webp"
+      },
+      {
+        "name": "Сомалиленд",
+        "icon": "/country_logos/сомалиленд.webp"
+      },
+      {
+        "name": "Южноафриканская Республика",
+        "icon": "/country_logos/южноафриканская_республика.webp"
+      },
+      {
+        "name": "Кипр",
+        "icon": "/country_logos/кипр.webp"
+      },
+      {
+        "name": "Британская Индийский океанский регион",
+        "icon": "/country_logos/британская_индийский_океанский_регион.webp"
+      },
+      {
+        "name": "Бурнди",
+        "icon": "/country_logos/бурнди.webp"
+      },
+      {
+        "name": "Канарские острова",
+        "icon": "/country_logos/канарские_острова.webp"
+      },
+      {
+        "name": "Капе-Верде",
+        "icon": "/country_logos/капе-верде.webp"
+      },
+      {
+        "name": "Кокосовые острова",
+        "icon": "/country_logos/кокосовые_острова.webp"
+      },
+      {
+        "name": "Куковы острова",
+        "icon": "/country_logos/куковы_острова.webp"
+      },
+      {
+        "name": "Французские Южные и Антарктические Территории",
+        "icon": "/country_logos/французские_южные_и_антарктические_территории.webp"
+      },
+      {
+        "name": "Острова Херд и Макдональд",
+        "icon": "/country_logos/острова_херд_и_макдональд.webp"
+      },
+      {
+        "name": "Остров человека",
+        "icon": "/country_logos/остров_человека.webp"
+      },
+      {
+        "name": "Ливийская Арабская Джамахирия",
+        "icon": "/country_logos/ливийская_арабская_джамахирия.webp"
+      },
+      {
+        "name": "Молдавия",
+        "icon": "/country_logos/молдавия.webp"
+      },
+      {
+        "name": "Сент-Люсия",
+        "icon": "/country_logos/Сент-Люсия.webp"
+      },
+      {
+        "name": "Сен-Винсент и Гренадины",
+        "icon": "/country_logos/сен-винсент_и_гренадины.webp"
+      },
+      {
+        "name": "Тувалу",
+        "icon": "/country_logos/тувалу.webp"
+      },
+      {
+        "name": "Западная Сахара",
+        "icon": "/country_logos/западная_сахара.webp"
+      },
+      {
+        "name": "Антарктика",
+        "icon": "/country_logos/антарктика.webp"
+      },
+      {
+        "name": "Французские Южные территории",
+        "icon": "/country_logos/французские_южные_территории.webp"
+      },
+      {
+        "name": "Бруней-Даруссалам",
+        "icon": "/country_logos/бруней-даруссалам.webp"
+      },
+      {
+        "name": "Остров Буве",
+        "icon": "/country_logos/остров_буве.webp"
+      },
+      {
+        "name": "Кокосовые",
+        "icon": "/country_logos/кокосовые.webp"
+      },
+      {
+        "name": "Остров Рождества",
+        "icon": "/country_logos/остров_рождества.webp"
+      },
+      {
+        "name": "Микронезия, Федеративные Штаты",
+        "icon": "/country_logos/микронезия,_федеративные_штаты.webp"
+      },
+      {
+        "name": "Соединённое Королевство",
+        "icon": "/country_logos/соединенное_королевство.webp"
+      },
+      {
+        "name": "Остров Херд и Макдональдовы острова",
+        "icon": "/country_logos/остров_херд_и_макдональдовы_острова.webp"
+      },
+      {
+        "name": "Британская территория в Индийском океане",
+        "icon": "/country_logos/британская_территория_в_индийском_океане.webp"
+      },
+      {
+        "name": "Иран, Исламская Республика",
+        "icon": "/country_logos/иран,_исламская_республика.webp"
+      },
+      {
+        "name": "Лаос, Народно-Демократическая Республика",
+        "icon": "/country_logos/лаос,_народно-демократическая_республика.webp"
+      },
+      {
+        "name": "Молдова",
+        "icon": "/country_logos/молдова.webp"
+      },
+      {
+        "name": "Маршалловы острова",
+        "icon": "/country_logos/маршалловы_острова.webp"
+      },
+      {
+        "name": "Остров Норфолк",
+        "icon": "/country_logos/остров_норфолк.webp"
+      },
+      {
+        "name": "Ниуэ",
+        "icon": "/country_logos/ниуэ.webp"
+      },
+      {
+        "name": "Науру",
+        "icon": "/country_logos/науру.webp"
+      },
+      {
+        "name": "Острова Питкэрн",
+        "icon": "/country_logos/острова_питкэрн.webp"
+      },
+      {
+        "name": "Папуа-Новая Гвинея",
+        "icon": "/country_logos/папуа-новая_гвинея.webp"
+      },
+      {
+        "name": "Корея, Народно-Демократическая Республика",
+        "icon": "/country_logos/корея,_народно-демократическая_республика.webp"
+      },
+      {
+        "name": "Южная Георгия и Южные Сандвичевы острова",
+        "icon": "/country_logos/южная_георгия_и_южные_сандвичевы_острова.webp"
+      },
+      {
+        "name": "Шпицберген и Ян-Майен",
+        "icon": "/country_logos/шпицберген_и_ян-майен.webp"
+      },
+      {
+        "name": "Токелау",
+        "icon": "/country_logos/токелау.webp"
+      },
+      {
+        "name": "Тайвань, провинция Китая",
+        "icon": "/country_logos/тайвань,_провинция_китая.webp"
+      },
+      {
+        "name": "Внешние малые острова США",
+        "icon": "/country_logos/внешние_малые_острова_сша.webp"
+      },
+      {
+        "name": "Святой Престол",
+        "icon": "/country_logos/святой_престол.webp"
+      },
+      {
+        "name": "Венесуэла, Боливарианская Республика",
+        "icon": "/country_logos/венесуэла,_боливарианская_республика.webp"
+      },
+      {
+        "name": "Теркс и Кайкос",
+        "icon": "/country_logos/теркс_и_кайкос.webp"
+      },
+      {
+        "name": "Северная Корея",
+        "icon": "/country_logos/северная_южная_корея.webp"
+      },
+      {
+        "name": "Босния и герцеговина",
+        "icon": "/country_logos/босния и герцеговина.webp"
+      },
+      {
+        "name": "Кот-д’ивуар",
+        "icon": "/country_logos/кот-д’ивуар.webp"
+      },
+      {
+        "name": "Доминикана",
+        "icon": "/country_logos/доминикана.webp"
+      },
+      {
+        "name": "Киргизия",
+        "icon": "/country_logos/киргизия.webp"
+      },
+      {
+        "name": "Беларусь",
+        "icon": "/country_logos/беларусь.webp"
+      },
+      {
+        "name": "Аланд",
+        "icon": "/country_logos/аланд.webp"
+      },
+      {
+        "name": "Британская территория Индийского океана",
+        "icon": "/country_logos/британская_территория_индийского_океана.webp"
+      },
+      {
+        "name": "Киргизстан",
+        "icon": "/country_logos/киргизстан.webp"
+      },
+      {
+        "name": "Монсеррат",
+        "icon": "/country_logos/монсеррат.webp"
+      },
+      {
+        "name": "Палестинская территория",
+        "icon": "/country_logos/палестинская_территория.webp"
+      },
+      {
+        "name": "Остров Святой Елены",
+        "icon": "/country_logos/остров_святой_елены.webp"
+      },
+      {
+        "name": "Сен-Бартельеми",
+        "icon": "/country_logos/сен-бартельеми.webp"
+      },
+      {
+        "name": "Виргинские острова США",
+        "icon": "/country_logos/виргинские_острова_сша.webp"
+      },
+      {
+        "name": "Отдаленные острова США",
+        "icon": "/country_logos/отдаленные_острова_сша.webp"
+      }
+    ],
+    "mobileProxy": [
+      {
+        "name": "США",
+        "icon": "/country_logos/сша.webp"
+      },
+      {
+        "name": "Бангладеш",
+        "icon": "/country_logos/бангладеш.webp"
+      },
+      {
+        "name": "Болгария",
+        "icon": "/country_logos/болгария.webp"
+      },
+      {
+        "name": "Чехия",
+        "icon": "/country_logos/чешская_республика.webp"
+      },
+      {
+        "name": "Великобритания",
+        "icon": "/country_logos/Великобритания.webp"
+      },
+      {
+        "name": "Франция",
+        "icon": "/country_logos/франция.webp"
+      },
+      {
+        "name": "Германия",
+        "icon": "/country_logos/германия.webp"
+      },
+      {
+        "name": "Индия",
+        "icon": "/country_logos/индия.webp"
+      },
+      {
+        "name": "Италия",
+        "icon": "/country_logos/италия.webp"
+      },
+      {
+        "name": "Литва",
+        "icon": "/country_logos/литва.webp"
+      },
+      {
+        "name": "Малайзия",
+        "icon": "/country_logos/малайзия.webp"
+      },
+      {
+        "name": "Нидерланды",
+        "icon": "/country_logos/нидерланды.webp"
+      },
+      {
+        "name": "Польша",
+        "icon": "/country_logos/польша.webp"
+      },
+      {
+        "name": "Румыния",
+        "icon": "/country_logos/румыния.webp"
+      },
+      {
+        "name": "Испания",
+        "icon": "/country_logos/испания.webp"
+      },
+      {
+        "name": "Швейцария",
+        "icon": "/country_logos/швейцария.webp"
+      },
+      {
+        "name": "Таиланд",
+        "icon": "/country_logos/таиланд.webp"
+      },
+      {
+        "name": "Вьетнам",
+        "icon": "/country_logos/вьетнам.webp"
+      },
+      {
+        "name": "Россия",
+        "icon": "/country_logos/россия.webp"
+      },
+      {
+        "name": "Армения",
+        "icon": "/country_logos/армения.webp"
+      },
+      {
+        "name": "Беларусь",
+        "icon": "/country_logos/беларусь.webp"
+      },
+      {
+        "name": "Индонезия",
+        "icon": "/country_logos/индонезия.webp"
+      },
+      {
+        "name": "Латвия",
+        "icon": "/country_logos/латвия.webp"
+      },
+      {
+        "name": "Казахстан",
+        "icon": "/country_logos/казахстан.webp"
+      },
+      {
+        "name": "Кыргызстан",
+        "icon": "/country_logos/Кыргызстан.webp"
+      },
+      {
+        "name": "Молдова",
+        "icon": "/country_logos/молдова.webp"
+      },
+      {
+        "name": "Украина",
+        "icon": "/country_logos/украина.webp"
+      },
+      {
+        "name": "Эстония",
+        "icon": "/country_logos/эстония.webp"
+      },
+      {
+        "name": "Грузия",
+        "icon": "/country_logos/грузия.webp"
+      },
+      {
+        "name": "Дания",
+        "icon": "/country_logos/дания.webp"
+      },
+      {
+        "name": "Ирландия",
+        "icon": "/country_logos/ирландия.webp"
+      },
+      {
+        "name": "Кипр",
+        "icon": "/country_logos/кипр.webp"
+      },
+      {
+        "name": "Абхазия",
+        "icon": "/country_logos/абхазия.webp"
+      },
+      {
+        "name": "Австралия",
+        "icon": "/country_logos/австралия.webp"
+      },
+      {
+        "name": "Греция",
+        "icon": "/country_logos/греция.webp"
+      },
+      {
+        "name": "Израиль",
+        "icon": "/country_logos/израиль.webp"
+      },
+      {
+        "name": "Канада",
+        "icon": "/country_logos/канада.webp"
+      },
+      {
+        "name": "ОАЭ",
+        "icon": "/country_logos/ОАЭ.webp"
+      },
+      {
+        "name": "Португалия",
+        "icon": "/country_logos/португалия.webp"
+      },
+      {
+        "name": "Словения",
+        "icon": "/country_logos/словения.webp"
+      },
+      {
+        "name": "Турция",
+        "icon": "/country_logos/турция.webp"
+      },
+      {
+        "name": "Узбекистан",
+        "icon": "/country_logos/узбекистан.webp"
+      },
+      {
+        "name": "Финляндия",
+        "icon": "/country_logos/финляндия.webp"
+      },
+      {
+        "name": "Черногория",
+        "icon": "/country_logos/черногория.webp"
+      },
+      {
+        "name": "Чили",
+        "icon": "/country_logos/чили.webp"
+      },
+      {
+        "name": "Австрия",
+        "icon": "/country_logos/австрия.webp"
+      },
+      {
+        "name": "Гана",
+        "icon": "/country_logos/гана.webp"
+      },
+      {
+        "name": "Гонконг",
+        "icon": "/country_logos/гонконг.webp"
+      },
+      {
+        "name": "Нигерия",
+        "icon": "/country_logos/нигерия.webp"
+      }
+    ]
+  }
+}

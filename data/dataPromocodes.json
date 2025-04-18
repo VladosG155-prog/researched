@@ -1,0 +1,356 @@
+{
+    "Data": {
+        "antidetectBrowsers": {
+            "tools": {
+                "AdsPower": {
+                    "popupText": "Скидка -25% на все тарифы",
+                    "buttonName": "Промокод -25%",
+                    "promoCode": "researched"
+                },
+                "Kameleo": {
+                    "popupText": "Скидка -40% на годовые тарифы",
+                    "buttonName": "Промокод -40%",
+                    "promoCode": "researchedxyz"
+                },
+                "Indigo": {
+                    "popupText": "По промокоду 50% возвращается кешбеком на баланс",
+                    "buttonName": "Промокод: кешбек +50%",
+                    "promoCode": "researched"
+                },
+                "BitBrowser": {
+                    "popupText": "Скидка -10% на все тарифы",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "Linken Sphere": {
+                    "popupText": "Скидка -20% на первую оплату",
+                    "buttonName": "Промокод -20%",
+                    "promoCode": "researchedxyz"
+                },
+                "Dolphin Anty": {
+                    "popupText": "Скидка -20% на все тарифы",
+                    "buttonName": "Промокод -20%",
+                    "promoCode": "researched"
+                },
+                "GeeLark": {
+                    "popupText": "Скидка -25% на все тарифы",
+                    "buttonName": "Промокод -25%",
+                    "promoCode": "researched"
+                },
+                "GoLogin": {
+                    "popupText": "Скидка -50% на первую оплату",
+                    "buttonName": "Промокод -50%",
+                    "promoCode": "RDXGL"
+                },
+                "Multilogin": {
+                    "popupText": "Скидка -30% на первые 3 месяца",
+                    "buttonName": "Промокод -30%",
+                    "promoCode": "researchedxyz"
+                },
+                "Octo Browser": {
+                    "popupText": "По промокоду вы получите 10 бесплатных профилей на 4 дня",
+                    "buttonName": "Промокод на 10 профилей",
+                    "promoCode": "RESEARCHED"
+                },
+                "Undetectable": {
+                    "popupText": "Скидка -20% на все тарифы",
+                    "buttonName": "Промокод -20%",
+                    "promoCode": "RESEARCHEDXYZ20"
+                },
+                "MoreLogin": {
+                    "popupText": "По промокоду вы получите скидку -15% и 50 бесплатных профилей на 2 недели",
+                    "buttonName": "Промокод -15% и 50 профилей",
+                    "promoCode": "researchedxyz"
+                },
+                "AntBrowser": {
+                    "popupText": "По промокоду вы получите бесплатный доступ к антидетекту на 7 дней",
+                    "buttonName": "Промокод 7 бесплатных дней",
+                    "promoCode": "ResearchedXYZ"
+                },
+                "swSamara": {
+                    "popupText": "Скидка -5% на все тарифы",
+                    "buttonName": "Промокод -5%",
+                    "promoCode": "researchedxyz203"
+                }
+            }
+        },
+        "mobileproxies": {
+            "tools": {
+                "MobileProxy": {
+                    "popupText": "Скидка -20% на все виды прокси",
+                    "buttonName": "Промокод -20%",
+                    "promoCode": "researchedxyz"
+                },
+                "LTEBoost": {
+                    "popupText": "Скидка -5% на все виды прокси",
+                    "buttonName": "Промокод -5%",
+                    "promoCode": "researchedxyz"
+                },
+                "Proxy-Seller": {
+                    "popupText": "Скидка -15% на IPv4, IPv6 и ISP прокси и -10% на резидентские и мобильные прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researched"
+                },
+                "Proxys.io": {
+                    "popupText": "Скидка -15% на все виды прокси, всего 50 активаций",
+                    "buttonName": "Промокод -15%",
+                    "promoCode": "researchedxyz"
+                },
+                "ProxyWhite": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "YouProxy": {
+                    "popupText": "Скидка -15% на все виды прокси",
+                    "buttonName": "Промокод -15%",
+                    "promoCode": "RESEARCHEDXYZ"
+                },
+                "Proxy-Sale": {
+                    "popupText": "Скидка -15% на IPv4, IPv6 и ISP прокси и -10% на резидентские прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "RESEARCHEDXYZ"
+                },
+                "Proxy-Solutions": {
+                    "popupText": "Скидка -5% на все виды прокси",
+                    "buttonName": "Промокод -5%",
+                    "promoCode": "researchedxyz"
+                },
+                "Proxy.Market": {
+                    "popupText": "Скидка -5% на все виды прокси",
+                    "buttonName": "Промокод -5%",
+                    "promoCode": "researchedxyz"
+                },
+                "Frigate-Proxy": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "AstroProxy": {
+                    "popupText": "Скидка -7% на все виды прокси",
+                    "buttonName": "Промокод -7%",
+                    "promoCode": "researchedxyz"
+                }
+            }
+        },
+        "residentialProxies": {
+            "tools": {
+                "Proxy-Seller": {
+                    "popupText": "Скидка -15% на IPv4, IPv6 и ISP прокси и -10% на резидентские и мобильные прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researched"
+                },
+                "Proxy-Sale": {
+                    "popupText": "Скидка -15% на IPv4, IPv6 и ISP прокси и -10% на резидентские прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "RESEARCHEDXYZ"
+                },
+                "ProxyShard": {
+                    "popupText": "Скидка -15% на все виды прокси",
+                    "buttonName": "Промокод -15%",
+                    "promoCode": "researchedxyz"
+                },
+                "NodeMaven": {
+                    "popupText": "RESEARCHEDXYZ - +2 GB трафика при покупке любого пакета, кроме триала\nRESEARCHEDXYZ50 - cкидка -50% при покупке любого пакета, кроме триала\nRESEARCHEDXYZ80 - +80% дополнительного трафика при покупке любого пакета",
+                    "buttonName": "Промокод -50%",
+                    "promoCode": "RESEARCHEDXYZ"
+                },
+                "SX": {
+                    "popupText": "3 GB бесплатного трафика на тест. Оплата не требуется",
+                    "buttonName": "Промокод +3GB",
+                    "promoCode": "RESEARCHED"
+                },
+                "ProxyStore": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "Proxyma": {
+                    "popupText": "Скидка -15% на все виды прокси",
+                    "buttonName": "Промокод -15%",
+                    "promoCode": "researchedxyz"
+                },
+                "Travchis Proxies": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researched"
+                },
+                "Proxy.Market": {
+                    "popupText": "Скидка -5% на все виды прокси",
+                    "buttonName": "Промокод -5%",
+                    "promoCode": "researchedxyz"
+                },
+                "IPRoyal": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz10"
+                },
+                "ABCProxy": {
+                    "popupText": "Скидка -10% на резидентские прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "AstroProxy": {
+                    "popupText": "Скидка -7% на все виды прокси",
+                    "buttonName": "Промокод -7%",
+                    "promoCode": "researchedxyz"
+                },
+                "Proxywing": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researched"
+                },
+                "BeeProxies": {
+                    "popupText": "Скидка -7% на все виды прокси ",
+                    "buttonName": "Промокод -7%",
+                    "promoCode": "RESEARCHEDXYZ"
+                },
+                "MangoProxy": {
+                    "popupText": "Специальная цена 2$/GB при покупке от 100 до 500GB (скидка -60% от основного тарифа)",
+                    "buttonName": "Промокод на опт. скидки",
+                    "promoCode": "RESEARCHED"
+                },
+                "Asocks": {
+                    "popupText": "3 GB бесплатного трафика на тест. Оплата не требуется",
+                    "buttonName": "Промокод на 3 GB",
+                    "promoCode": "RESEARCH"
+                },
+                "922Proxy": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                }
+            }
+        },
+        "staticProxies": {
+            "tools": {
+                "Proxy-Seller": {
+                    "popupText": "Скидка -15% на IPv4, IPv6 и ISP прокси и -10% на резидентские и мобильные прокси",
+                    "buttonName": "Промокод -15%",
+                    "promoCode": "researched"
+                },
+                "Proxy-Sale": {
+                    "popupText": "Скидка -15% на IPv4, IPv6 и ISP прокси и -10% на резидентские прокси",
+                    "buttonName": "Промокод -15%",
+                    "promoCode": "RESEARCHEDXYZ"
+                },
+                "Proxy6": {
+                    "popupText": "Скидка -5% на все виды прокси",
+                    "buttonName": "Промокод -5%",
+                    "promoCode": "researchedxyz"
+                },
+                "Proxys.io": {
+                    "popupText": "Скидка -15% на все виды прокси, всего 50 активаций",
+                    "buttonName": "Промокод -15%",
+                    "promoCode": "researchedxyz"
+                },
+                "Proxyline": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "Proxy-Solutions": {
+                    "popupText": "Скидка -5% на все виды прокси",
+                    "buttonName": "Промокод -5%",
+                    "promoCode": "researchedxyz"
+                },
+                "Proxyma": {
+                    "popupText": "Скидка -15% на все виды прокси",
+                    "buttonName": "Промокод -15%",
+                    "promoCode": "researchedxyz"
+                },
+                "Frigate-Proxy": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "Travchis Proxies (ISP)": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researched"
+                },
+                "Travchis Proxies (DC)": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researched"
+                },
+                "Proxywing (ISP)": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researched"
+                },
+                "Proxywing (DC)": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researched"
+                },
+                "Proxy.Market": {
+                    "popupText": "Скидка -5% на все виды прокси",
+                    "buttonName": "Промокод -5%",
+                    "promoCode": "researchedxyz"
+                },
+                "ProxyStore (ISP)": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "ProxyStore (DC)": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "ProxySoxy": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "IPRoyal (ISP)": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz10"
+                },
+                "IPRoyal (DC)": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz10"
+                },
+                "Dobriy Proxy": {
+                    "popupText": "Скидка -5% на все виды прокси",
+                    "buttonName": "Промокод -5%",
+                    "promoCode": "researchedxyz"
+                },
+                "SpaceProxy": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "YouProxy": {
+                    "popupText": "Скидка -15% на все виды прокси",
+                    "buttonName": "Промокод -15%",
+                    "promoCode": "RESEARCHEDXYZ"
+                },
+                "ProxyWhite": {
+                    "popupText": "Скидка -10% на все виды прокси",
+                    "buttonName": "Промокод -10%",
+                    "promoCode": "researchedxyz"
+                },
+                "Proxy.House": {
+                    "popupText": "Скидка -15% на все виды прокси",
+                    "buttonName": "Промокод -15%",
+                    "promoCode": "researchedxyz"
+                }
+            }
+        },
+        "accshops": {
+            "tools": {
+
+                "Discord-accounts": {
+                    "popupText": "Скидка -5% на все виды аккаунтов",
+                    "buttonName": "Промокод -5%",
+                    "promoCode": "tbxdnbBuLPY"
+                }
+
+            }
+        }
+    }
+}

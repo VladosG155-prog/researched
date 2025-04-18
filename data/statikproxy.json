@@ -1,0 +1,4178 @@
+{
+  "Data": {
+    "proxy": {
+      "staticProxy": {
+        "info": {
+          "title": "Статические прокси",
+          "description": "Выделенные IP-адреса для постоянного использования. Идеальны для работы с аккаунтами, где требуется стабильный IP-адрес."
+        },
+        "tools": {
+          "Proxy-Seller": {
+            "price": "1.64$",
+            "countries": [
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Литва",
+                "icon": "/country_logos/литва.webp"
+              },
+              {
+                "name": "Казахстан",
+                "icon": "/country_logos/казахстан.webp"
+              },
+              {
+                "name": "Бразилия",
+                "icon": "/country_logos/бразилия.webp"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "/country_logos/польша.webp"
+              },
+              {
+                "name": "Бельгия",
+                "icon": "/country_logos/бельгия.webp"
+              },
+              {
+                "name": "Болгария",
+                "icon": "/country_logos/болгария.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "/country_logos/чешская_республика.webp"
+              },
+              {
+                "name": "Дания",
+                "icon": "/country_logos/дания.webp"
+              },
+              {
+                "name": "Финляндия",
+                "icon": "/country_logos/финляндия.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Латвия",
+                "icon": "/country_logos/латвия.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Норвегия",
+                "icon": "/country_logos/норвегия.webp"
+              },
+              {
+                "name": "Португалия",
+                "icon": "/country_logos/португалия.webp"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              },
+              {
+                "name": "Швейцария",
+                "icon": "/country_logos/швейцария.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "Армения",
+                "icon": "/country_logos/армения.webp"
+              },
+              {
+                "name": "Бангладеш",
+                "icon": "/country_logos/бангладеш.webp"
+              },
+              {
+                "name": "Камбоджа",
+                "icon": "/country_logos/камбоджа.webp"
+              },
+              {
+                "name": "Китай",
+                "icon": "/country_logos/китай.webp"
+              },
+              {
+                "name": "Грузия",
+                "icon": "/country_logos/грузия.webp"
+              },
+              {
+                "name": "Индия",
+                "icon": "/country_logos/индия.webp"
+              },
+              {
+                "name": "Индонезия",
+                "icon": "/country_logos/индонезия.webp"
+              },
+              {
+                "name": "Малайзия",
+                "icon": "/country_logos/малайзия"
+              },
+              {
+                "name": "Сингапур",
+                "icon": "/country_logos/сингапур.webp"
+              },
+              {
+                "name": "Южная Корея",
+                "icon": "/country_logos/южная_южная_корея.webp"
+              },
+              {
+                "name": "Тайвань",
+                "icon": "/country_logos/тайвань.webp"
+              },
+              {
+                "name": "Таиланд",
+                "icon": "/country_logos/таиланд.webp"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "ОАЭ",
+                "icon": "/country_logos/оаэ.webp"
+              },
+              {
+                "name": "Южная Африка",
+                "icon": "/country_logos/южная_африка.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Мексика",
+                "icon": "/country_logos/мексика.webp"
+              },
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "2 ч",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "BTC",
+                "icon": "/payments_logos/Bitcoin.svg.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "TON",
+                "icon": "/payments_logos/ton.webp"
+              },
+              {
+                "name": "TRX",
+                "icon": "/payments_logos/tron-trx-logo.webp"
+              },
+              {
+                "name": "AdvCash",
+                "icon": "/payments_logos/AdvCash.webp"
+              },
+              {
+                "name": "BNB",
+                "icon": "/payments_logos/bnb.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              }
+            ],
+            "link": "https://proxy-seller.io/?partner=3BYUCPMA7PLHF4",
+            "icon": "/Static/proxy-seller.io.webp"
+          },
+          "Proxy-Sale": {
+            "price": "1.43$",
+            "countries": [
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Армения",
+                "icon": "/country_logos/армения.webp"
+              },
+              {
+                "name": "Бельгия",
+                "icon": "/country_logos/бельгия.webp"
+              },
+              {
+                "name": "Болгария",
+                "icon": "/country_logos/болгария.webp"
+              },
+              {
+                "name": "Бразилия",
+                "icon": "/country_logos/бразилия.webp"
+              },
+              {
+                "name": "Венгрия",
+                "icon": "/country_logos/венгрия.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Грузия",
+                "icon": "/country_logos/грузия.webp"
+              },
+              {
+                "name": "Дания",
+                "icon": "/country_logos/дания.webp"
+              },
+              {
+                "name": "Индия",
+                "icon": "/country_logos/индия.webp"
+              },
+              {
+                "name": "Индонезия",
+                "icon": "/country_logos/индонезия.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Казахстан",
+                "icon": "/country_logos/казахстан.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Китай",
+                "icon": "/country_logos/китай.webp"
+              },
+              {
+                "name": "Южная Корея",
+                "icon": "/country_logos/южная_южная_корея.webp"
+              },
+              {
+                "name": "Латвия",
+                "icon": "/country_logos/латвия.webp"
+              },
+              {
+                "name": "Литва",
+                "icon": "/country_logos/литва.webp"
+              },
+              {
+                "name": "Малайзия",
+                "icon": "/country_logos/малайзия"
+              },
+              {
+                "name": "Мексика",
+                "icon": "/country_logos/мексика.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Норвегия",
+                "icon": "/country_logos/норвегия.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "/country_logos/польша.webp"
+              },
+              {
+                "name": "Португалия",
+                "icon": "/country_logos/португалия.webp"
+              },
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "Сингапур",
+                "icon": "/country_logos/сингапур.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Таиланд",
+                "icon": "/country_logos/таиланд.webp"
+              },
+              {
+                "name": "Тайвань",
+                "icon": "/country_logos/тайвань.webp"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "Финляндия",
+                "icon": "/country_logos/финляндия.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "/country_logos/чешская_республика.webp"
+              },
+              {
+                "name": "Швейцария",
+                "icon": "/country_logos/швейцария.webp"
+              },
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              },
+              {
+                "name": "Южная Африка",
+                "icon": "/country_logos/южная_африка.webp"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Публичный список бесплатных прокси",
+            "support": "2 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "BTC",
+                "icon": "/payments_logos/Bitcoin.svg.webp"
+              },
+              {
+                "name": "TON",
+                "icon": "/payments_logos/ton.webp"
+              },
+              {
+                "name": "USDC",
+                "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "Interkassa",
+                "icon": "/payments_logos/Interkassa.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              }
+            ],
+            "link": "https://proxy-sale.com/?partner_link=54x50Ddlr3",
+            "icon": "/Static/proxy-sale.com.webp"
+          },
+          "Proxy6": {
+            "price": "1$",
+            "countries": [
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "Бразилия",
+                "icon": "/country_logos/бразилия.webp"
+              },
+              {
+                "name": "Нигерия",
+                "icon": "/country_logos/нигерия.webp"
+              },
+              {
+                "name": "Филиппины",
+                "icon": "/country_logos/филиппины.webp"
+              },
+              {
+                "name": "Латвия",
+                "icon": "/country_logos/латвия.webp"
+              },
+              {
+                "name": "Норвегия",
+                "icon": "/country_logos/норвегия.webp"
+              },
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "Таиланд",
+                "icon": "/country_logos/таиланд.webp"
+              },
+              {
+                "name": "Чили",
+                "icon": "/country_logos/чили.webp"
+              },
+              {
+                "name": "Египет",
+                "icon": "/country_logos/египет.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Сейшелы",
+                "icon": "/country_logos/сейшельские_острова.webp"
+              },
+              {
+                "name": "Беларусь",
+                "icon": "/country_logos/беларусь.webp"
+              },
+              {
+                "name": "Португалия",
+                "icon": "/country_logos/португалия.webp"
+              },
+              {
+                "name": "Эстония",
+                "icon": "/country_logos/эстония.webp"
+              },
+              {
+                "name": "Словения",
+                "icon": "/country_logos/словения.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "/country_logos/польша.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Туркменистан",
+                "icon": "/country_logos/туркменистан.webp"
+              },
+              {
+                "name": "Таджикистан",
+                "icon": "/country_logos/таджикистан.webp"
+              },
+              {
+                "name": "Финляндия",
+                "icon": "/country_logos/финляндия.webp"
+              },
+              {
+                "name": "Армения",
+                "icon": "/country_logos/армения.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Греция",
+                "icon": "/country_logos/греция.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              },
+              {
+                "name": "Кыргызстан",
+                "icon": "/country_logos/кыргызстан.webp"
+              },
+              {
+                "name": "Южная Африка",
+                "icon": "/country_logos/южная_африка.webp"
+              },
+              {
+                "name": "Марокко",
+                "icon": "/country_logos/марокко.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Израиль",
+                "icon": "/country_logos/израиль.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "/country_logos/чешская_республика.webp"
+              },
+              {
+                "name": "Швейцария",
+                "icon": "/country_logos/швейцария.webp"
+              },
+              {
+                "name": "Болгария",
+                "icon": "/country_logos/болгария.webp"
+              },
+              {
+                "name": "Китай",
+                "icon": "/country_logos/китай.webp"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              },
+              {
+                "name": "Казахстан",
+                "icon": "/country_logos/казахстан.webp"
+              },
+              {
+                "name": "Ливан",
+                "icon": "/country_logos/ливан.webp"
+              },
+              {
+                "name": "Лаос",
+                "icon": "/country_logos/лаос.webp"
+              },
+              {
+                "name": "Молдова",
+                "icon": "/country_logos/молдова.webp"
+              },
+              {
+                "name": "Мексика",
+                "icon": "/country_logos/мексика.webp"
+              },
+              {
+                "name": "Узбекистан",
+                "icon": "/country_logos/узбекистан.webp"
+              },
+              {
+                "name": "ОАЭ",
+                "icon": "/country_logos/оаэ.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Индонезия",
+                "icon": "/country_logos/индонезия.webp"
+              },
+              {
+                "name": "Южная Корея",
+                "icon": "/country_logos/южная_южная_корея.webp"
+              },
+              {
+                "name": "Тайвань",
+                "icon": "/country_logos/тайвань.webp"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Вьетнам",
+                "icon": "/country_logos/вьетнам.webp"
+              },
+              {
+                "name": "Зимбабве",
+                "icon": "/country_logos/зимбабве.webp"
+              },
+              {
+                "name": "Аргентина",
+                "icon": "/country_logos/аргентина.webp"
+              },
+              {
+                "name": "Ботсвана",
+                "icon": "/country_logos/ботсвана.webp"
+              },
+              {
+                "name": "Камбоджа",
+                "icon": "/country_logos/камбоджа.webp"
+              },
+              {
+                "name": "Колумбия",
+                "icon": "/country_logos/колумбия.webp"
+              },
+              {
+                "name": "Мозамбик",
+                "icon": "/country_logos/мозамбик.webp"
+              },
+              {
+                "name": "Панама",
+                "icon": "/country_logos/панама.webp"
+              },
+              {
+                "name": "Гонконг",
+                "icon": "/country_logos/гонконг.webp"
+              },
+              {
+                "name": "Беларусь",
+                "icon": "/country_logos/беларусь.webp"
+              },
+              {
+                "name": "Казахстан",
+                "icon": "/country_logos/казахстан.webp"
+              },
+              {
+                "name": "Сербия",
+                "icon": "/country_logos/сербия.webp"
+              },
+              {
+                "name": "Малайзия",
+                "icon": "/country_logos/малайзия"
+              },
+              {
+                "name": "Латвия",
+                "icon": "/country_logos/латвия.webp"
+              },
+              {
+                "name": "Словакия",
+                "icon": "/country_logos/словакия.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "/country_logos/польша.webp"
+              },
+              {
+                "name": "Мальта",
+                "icon": "/country_logos/мальта.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Южная Корея",
+                "icon": "/country_logos/южная_южная_корея.webp"
+              },
+              {
+                "name": "Саудовская Аравия",
+                "icon": "/country_logos/саудовская_аравия.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "42 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "BTC",
+                "icon": "/payments_logos/Bitcoin.svg.webp"
+              },
+              {
+                "name": "TON",
+                "icon": "/payments_logos/ton.webp"
+              },
+              {
+                "name": "USDC",
+                "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "Interkassa",
+                "icon": "/payments_logos/Interkassa.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              }
+            ],
+            "link": "https://px6.me/ru/?r=716957",
+            "icon": "/Static/px6.me.webp"
+          },
+          "Proxys.io": {
+            "price": "1.6$",
+            "countries": [
+              {
+                "name": "ОАЭ",
+                "icon": "/country_logos/оаэ.webp"
+              },
+              {
+                "name": "Армения",
+                "icon": "/country_logos/армения.webp"
+              },
+              {
+                "name": "Южная Африка",
+                "icon": "/country_logos/южная_африка.webp"
+              },
+              {
+                "name": "Бангладеш",
+                "icon": "/country_logos/бангладеш.webp"
+              },
+              {
+                "name": "Бельгия",
+                "icon": "/country_logos/бельгия.webp"
+              },
+              {
+                "name": "Болгария",
+                "icon": "/country_logos/болгария.webp"
+              },
+              {
+                "name": "Босния и Герцеговина",
+                "icon": "/country_logos/босния_и_герцеговина.webp"
+              },
+              {
+                "name": "Бразилия",
+                "icon": "/country_logos/бразилия.webp"
+              },
+              {
+                "name": "Ватикан",
+                "icon": "/country_logos/ватикан.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Венесуэла",
+                "icon": "/country_logos/венесуэла.webp"
+              },
+              {
+                "name": "Вьетнам",
+                "icon": "/country_logos/вьетнам.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Греция",
+                "icon": "/country_logos/греция.webp"
+              },
+              {
+                "name": "Грузия",
+                "icon": "/country_logos/грузия.webp"
+              },
+              {
+                "name": "Дания",
+                "icon": "/country_logos/дания.webp"
+              },
+              {
+                "name": "Доминиканская Республика",
+                "icon": "/country_logos/доминиканская_республика.webp"
+              },
+              {
+                "name": "Египет",
+                "icon": "/country_logos/египет.webp"
+              },
+              {
+                "name": "Израиль",
+                "icon": "/country_logos/израиль.webp"
+              },
+              {
+                "name": "Индия",
+                "icon": "/country_logos/индия.webp"
+              },
+              {
+                "name": "Индонезия",
+                "icon": "/country_logos/индонезия.webp"
+              },
+              {
+                "name": "Иордания",
+                "icon": "/country_logos/иордания.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Исландия",
+                "icon": "/country_logos/исландия.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Казахстан",
+                "icon": "/country_logos/казахстан.webp"
+              },
+              {
+                "name": "Камбоджа",
+                "icon": "/country_logos/камбоджа.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Китай",
+                "icon": "/country_logos/китай.webp"
+              },
+              {
+                "name": "Колумбия",
+                "icon": "/country_logos/колумбия.webp"
+              },
+              {
+                "name": "Коста-Рика",
+                "icon": "/country_logos/коста-рика"
+              },
+              {
+                "name": "Кыргызстан",
+                "icon": "/country_logos/кыргызстан.webp"
+              },
+              {
+                "name": "Латвия",
+                "icon": "/country_logos/латвия.webp"
+              },
+              {
+                "name": "Литва",
+                "icon": "/country_logos/литва.webp"
+              },
+              {
+                "name": "Люксембург",
+                "icon": "/country_logos/люксембург.webp"
+              },
+              {
+                "name": "Малайзия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Мексика",
+                "icon": "/country_logos/мексика.webp"
+              },
+              {
+                "name": "Молдова",
+                "icon": "/country_logos/молдова.webp"
+              },
+              {
+                "name": "Монако",
+                "icon": "/country_logos/монако.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Новая Зеландия",
+                "icon": "/country_logos/новая_зеландия.webp"
+              },
+              {
+                "name": "Норвегия",
+                "icon": "/country_logos/норвегия.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Португалия",
+                "icon": "/country_logos/португалия.webp"
+              },
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Сербия",
+                "icon": "/country_logos/сербия.webp"
+              },
+              {
+                "name": "Сингапур",
+                "icon": "/country_logos/сингапур.webp"
+              },
+              {
+                "name": "Словакия",
+                "icon": "/country_logos/словакия.webp"
+              },
+              {
+                "name": "Словения",
+                "icon": "/country_logos/словения.webp"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "Филиппины",
+                "icon": "/country_logos/филиппины.webp"
+              },
+              {
+                "name": "Финляндия",
+                "icon": "/country_logos/финляндия.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Швейцария",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              },
+              {
+                "name": "Южная Корея",
+                "icon": "/country_logos/южная_южная_корея.webp"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "1 IPv4 прокси на час",
+            "support": "1 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "Cryptomus",
+                "icon": "/payments_logos/Cryptomus.webp"
+              },
+              {
+                "name": "Alipay",
+                "icon": "/payments_logos/Alipay.webp"
+              },
+              {
+                "name": "Freekassa",
+                "icon": "/payments_logos/Freekassa.webp"
+              },
+              {
+                "name": "Lavapay",
+                "icon": "/payments_logos/lava.webp"
+              }
+            ],
+            "link": "https://proxys.io/?refid=244362",
+            "icon": "/Static/proxys.io.webp"
+          },
+          "Proxyline": {
+            "price": "1.77$",
+            "countries": [
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Австрия",
+                "icon": "/country_logos/австрия.webp"
+              },
+              {
+                "name": "Азербайджан",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Албания",
+                "icon": "/country_logos/албания.webp"
+              },
+              {
+                "name": "Алжир",
+                "icon": "/country_logos/алжир.webp"
+              },
+              {
+                "name": "Аргентина",
+                "icon": "/country_logos/аргентина.webp"
+              },
+              {
+                "name": "Армения",
+                "icon": "/country_logos/армения.webp"
+              },
+              {
+                "name": "Бангладеш",
+                "icon": "/country_logos/бангладеш.webp"
+              },
+              {
+                "name": "Беларусь",
+                "icon": "/country_logos/беларусь.webp"
+              },
+              {
+                "name": "Бельгия",
+                "icon": "/country_logos/бельгия.webp"
+              },
+              {
+                "name": "Болгария",
+                "icon": "/country_logos/болгария.webp"
+              },
+              {
+                "name": "Боливия",
+                "icon": "/country_logos/боливия.webp"
+              },
+              {
+                "name": "Босния и Герцеговина",
+                "icon": "/country_logos/босния_и_герцеговина.webp"
+              },
+              {
+                "name": "Бразилия",
+                "icon": "/country_logos/бразилия.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Венгрия",
+                "icon": "/country_logos/венгрия.webp"
+              },
+              {
+                "name": "Венесуэла",
+                "icon": "/country_logos/венесуэла.webp"
+              },
+              {
+                "name": "Вьетнам",
+                "icon": "/country_logos/вьетнам.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Гонконг",
+                "icon": "/country_logos/гонконг.webp"
+              },
+              {
+                "name": "Греция",
+                "icon": "/country_logos/греция.webp"
+              },
+              {
+                "name": "Грузия",
+                "icon": "/country_logos/грузия.webp"
+              },
+              {
+                "name": "Дания",
+                "icon": "/country_logos/дания.webp"
+              },
+              {
+                "name": "Египет",
+                "icon": "/country_logos/египет.webp"
+              },
+              {
+                "name": "Израиль",
+                "icon": "/country_logos/израиль.webp"
+              },
+              {
+                "name": "Индия",
+                "icon": "/country_logos/индия.webp"
+              },
+              {
+                "name": "Индонезия",
+                "icon": "/country_logos/индонезия.webp"
+              },
+              {
+                "name": "Иордания",
+                "icon": "/country_logos/иордания.webp"
+              },
+              {
+                "name": "Ирак",
+                "icon": "/country_logos/ирак.webp"
+              },
+              {
+                "name": "Иран",
+                "icon": "/country_logos/иран.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Исландия",
+                "icon": "/country_logos/исландия.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Казахстан",
+                "icon": "/country_logos/казахстан.webp"
+              },
+              {
+                "name": "Камбоджа",
+                "icon": "/country_logos/камбоджа.webp"
+              },
+              {
+                "name": "Камерун",
+                "icon": "/country_logos/камерун.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Катар",
+                "icon": "/country_logos/катар.webp"
+              },
+              {
+                "name": "Кения",
+                "icon": "/country_logos/кения.webp"
+              },
+              {
+                "name": "Кипр",
+                "icon": "/country_logos/кипр.webp"
+              },
+              {
+                "name": "Китай",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Колумбия",
+                "icon": "/country_logos/колумбия.webp"
+              },
+              {
+                "name": "Южная Корея",
+                "icon": "/country_logos/южная_южная_корея.webp"
+              },
+              {
+                "name": "Коста-Рика",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Кыргызстан",
+                "icon": "/country_logos/кыргызстан.webp"
+              },
+              {
+                "name": "Латвия",
+                "icon": "/country_logos/латвия.webp"
+              },
+              {
+                "name": "Литва",
+                "icon": "/country_logos/литва.webp"
+              },
+              {
+                "name": "Люксембург",
+                "icon": "/country_logos/люксембург.webp"
+              },
+              {
+                "name": "Малайзия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Мальдивы",
+                "icon": "/country_logos/мальдивы.webp"
+              },
+              {
+                "name": "Мальта",
+                "icon": "/country_logos/мальта.webp"
+              },
+              {
+                "name": "Марокко",
+                "icon": "/country_logos/марокко.webp"
+              },
+              {
+                "name": "Мексика",
+                "icon": "/country_logos/мексика.webp"
+              },
+              {
+                "name": "Молдова",
+                "icon": "/country_logos/молдова.webp"
+              },
+              {
+                "name": "Монако",
+                "icon": "/country_logos/монако.webp"
+              },
+              {
+                "name": "Монголия",
+                "icon": "/country_logos/монголия.webp"
+              },
+              {
+                "name": "Непал",
+                "icon": "/country_logos/непал.webp"
+              },
+              {
+                "name": "Нигерия",
+                "icon": "/country_logos/нигерия.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Новая Зеландия",
+                "icon": "/country_logos/новая_зеландия.webp"
+              },
+              {
+                "name": "Норвегия",
+                "icon": "/country_logos/норвегия.webp"
+              },
+              {
+                "name": "ОАЭ",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Пакистан",
+                "icon": "/country_logos/пакистан.webp"
+              },
+              {
+                "name": "Перу",
+                "icon": "/country_logos/перу.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Португалия",
+                "icon": "/country_logos/португалия.webp"
+              },
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Саудовская Аравия",
+                "icon": "/country_logos/саудовская_аравия.webp"
+              },
+              {
+                "name": "Сейшелы",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Сербия",
+                "icon": "/country_logos/сербия.webp"
+              },
+              {
+                "name": "Сингапур",
+                "icon": "/country_logos/сингапур.webp"
+              },
+              {
+                "name": "Словакия",
+                "icon": "/country_logos/словакия.webp"
+              },
+              {
+                "name": "Словения",
+                "icon": "/country_logos/словения.webp"
+              },
+              {
+                "name": "Таджикистан",
+                "icon": "/country_logos/таджикистан.webp"
+              },
+              {
+                "name": "Тайвань",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Таиланд",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Танзания",
+                "icon": "/country_logos/танзания.webp"
+              },
+              {
+                "name": "Тунис",
+                "icon": "/country_logos/тунис.webp"
+              },
+              {
+                "name": "Туркменистан",
+                "icon": "/country_logos/туркменистан.webp"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "Узбекистан",
+                "icon": "/country_logos/узбекистан.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "Уругвай",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Филиппины",
+                "icon": "/country_logos/филиппины.webp"
+              },
+              {
+                "name": "Финляндия",
+                "icon": "/country_logos/финляндия.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Хорватия",
+                "icon": "/country_logos/хорватия.webp"
+              },
+              {
+                "name": "Черногория",
+                "icon": "/country_logos/черногория.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Чили",
+                "icon": "/country_logos/чили.webp"
+              },
+              {
+                "name": "Швейцария",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              },
+              {
+                "name": "Шри-Ланка",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Эстония",
+                "icon": "/country_logos/эстония.webp"
+              },
+              {
+                "name": "Южная Африка",
+                "icon": "/country_logos/южная_африка.webp"
+              },
+              {
+                "name": "Ямайка",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Публичный список бесплатных прокси",
+            "support": "3 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "Cryptomus",
+                "icon": "/payments_logos/Cryptomus.webp"
+              },
+              {
+                "name": "FKWallet",
+                "icon": "/payments_logos/FKWallet.webp"
+              },
+              {
+                "name": "Freekassa",
+                "icon": "/payments_logos/Freekassa.webp"
+              },
+              {
+                "name": "Morune",
+                "icon": "/payments_logos/MORUNE.webp"
+              },
+              {
+                "name": "Nordcard",
+                "icon": "/payments_logos/Nordcard.webp"
+              },
+              {
+                "name": "Steam Pay",
+                "icon": "/payments_logos/STEAMPAY.webp"
+              },
+              {
+                "name": "Webmoney",
+                "icon": "/payments_logos/WEBMONEY.webp"
+              },
+              {
+                "name": "Yoomoney",
+                "icon": "/payments_logos/Yoomoney.webp"
+              }
+            ],
+            "link": "https://proxyline.net?ref=380564",
+            "icon": "/Static/proxyline.webp"
+          },
+          "Proxy-Solutions": {
+            "price": "1.83$",
+            "countries": [
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Словакия",
+                "icon": "/country_logos/словакия.webp"
+              },
+              {
+                "name": "Португалия",
+                "icon": "/country_logos/португалия.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              },
+              {
+                "name": "Швейцария",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Грузия",
+                "icon": "/country_logos/грузия.webp"
+              },
+              {
+                "name": "Эстония",
+                "icon": "/country_logos/эстония.webp"
+              },
+              {
+                "name": "Израиль",
+                "icon": "/country_logos/израиль.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Армения",
+                "icon": "/country_logos/армения.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Казахстан",
+                "icon": "/country_logos/казахстан.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Беларусь",
+                "icon": "/country_logos/беларусь.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Сербия",
+                "icon": "/country_logos/сербия.webp"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "Азербайджан",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Греция",
+                "icon": "/country_logos/греция.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Молдова",
+                "icon": "/country_logos/молдова.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "2 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "SBP",
+                "icon": "/payments_logos/SBP.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "BTC",
+                "icon": "/payments_logos/Bitcoin.svg.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "AdvCash",
+                "icon": "/payments_logos/AdvCash.webp"
+              },
+              {
+                "name": "Capitalist",
+                "icon": "/payments_logos/Capitalist.webp"
+              },
+              {
+                "name": "EnotPay",
+                "icon": "/payments_logos/ENOTPAY.webp"
+              },
+              {
+                "name": "FreeKassa",
+                "icon": "/payments_logos/FreeKassa.webp"
+              },
+              {
+                "name": "Lava",
+                "icon": "/payments_logos/lava.webp"
+              },
+              {
+                "name": "Payeer",
+                "icon": "/payments_logos/Payeer.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              },
+              {
+                "name": "PerfectMoney",
+                "icon": "/payments_logos/Perfect Money.webp"
+              },
+              {
+                "name": "YooMoney",
+                "icon": "/payments_logos/Yoomoney.webp"
+              }
+            ],
+            "link": "https://proxy-solutions.net/?rc=researchedxyz",
+            "icon": "/Static/proxy-solutions.net.webp"
+          },
+          "Proxyma": {
+            "price": "5$",
+            "countries": [
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "/country_logos/польша.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Бразилия",
+                "icon": "/country_logos/бразилия.webp"
+              },
+              {
+                "name": "Латвия",
+                "icon": "/country_logos/латвия.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Норвегия",
+                "icon": "/country_logos/норвегия.webp"
+              },
+              {
+                "name": "Австрия",
+                "icon": "/country_logos/австрия.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              },
+              {
+                "name": "Израиль",
+                "icon": "/country_logos/израиль.webp"
+              },
+              {
+                "name": "Тайвань",
+                "icon": "/country_logos/тайвань.webp"
+              },
+              {
+                "name": "Южная Корея",
+                "icon": "/country_logos/южная_южная_корея.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Сингапур",
+                "icon": "/country_logos/сингапур.webp"
+              },
+              {
+                "name": "Гонконг",
+                "icon": "/country_logos/гонконг.webp"
+              },
+              {
+                "name": "Таиланд",
+                "icon": "/country_logos/таиланд.webp"
+              },
+              {
+                "name": "Индия",
+                "icon": "/country_logos/индия.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "24 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "SBP",
+                "icon": "/payments_logos/SBP.webp"
+              },
+              {
+                "name": "BTC",
+                "icon": "/payments_logos/Bitcoin.svg.webp"
+              },
+              {
+                "name": "Cryptomus",
+                "icon": "/payments_logos/Cryptomus.webp"
+              },
+              {
+                "name": "ETH",
+                "icon": "/payments_logos/ethereum-eth-logo.webp"
+              },
+              {
+                "name": "TRX",
+                "icon": "/payments_logos/tron-trx-logo.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "Morune",
+                "icon": "/payments_logos/MORUNE.webp"
+              }
+            ],
+            "link": "https://cabinet.proxyma.io/register?ref=McVtScWygTe4vPNH",
+            "icon": "/Static/proxyma.webp"
+          },
+          "Frigate-Proxy": {
+            "price": "1.15$",
+            "countries": [
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "1 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "Payeer",
+                "icon": "/payments_logos/Payeer.webp"
+              },
+              {
+                "name": "PerfectMoney",
+                "icon": "/payments_logos/Perfect Money.webp"
+              },
+              {
+                "name": "Webmoney",
+                "icon": "/payments_logos/WEBMONEY.webp"
+              },
+              {
+                "name": "YooMoney",
+                "icon": "/payments_logos/Yoomoney.webp"
+              }
+            ],
+            "link": "https://frigate-proxy.ru/researchedxyz",
+            "icon": "/Static/frigate-proxy.ru.webp"
+          },
+          "Travchis Proxies (ISP)": {
+            "price": "4$",
+            "countries": [
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Гонконг",
+                "icon": "/country_logos/гонконг.webp"
+              },
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "1 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "Cryptomus",
+                "icon": "/payments_logos/Cryptomus.webp"
+              },
+              {
+                "name": "Freekassa",
+                "icon": "/payments_logos/Freekassa.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              }
+            ],
+            "link": "https://travchisproxies.com/billing/aff.php?aff=1303",
+            "icon": "/Static/travchisproxies.com.webp"
+          },
+          "Travchis Proxies (DC)": {
+            "price": "2.5$",
+            "countries": [
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              }
+            ],
+            "proxyScore": "делается",
+            "demo": "Нет",
+            "support": "1 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "Cryptomus",
+                "icon": "/payments_logos/Cryptomus.webp"
+              },
+              {
+                "name": "Freekassa",
+                "icon": "/payments_logos/Freekassa.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              }
+            ],
+            "link": "https://travchisproxies.com/billing/aff.php?aff=1303",
+            "icon": "/Static/travchisproxies.com.webp"
+          },
+          "Proxywing (ISP)": {
+            "price": "2.5$",
+            "countries": [
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Гонконг",
+                "icon": "/country_logos/гонконг.webp"
+              }
+            ],
+            "proxyScore": "Имеются (поставить тот же скор, что и у Травчис ISP)",
+            "demo": "Нет",
+            "support": "2 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "Cryptomus",
+                "icon": "/payments_logos/Cryptomus.webp"
+              },
+              {
+                "name": "Freekassa",
+                "icon": "/payments_logos/Freekassa.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              }
+            ],
+            "link": "https://dashboard.proxywing.com/billing/aff.php?aff=1002",
+            "icon": "/Static/proxywing.webp"
+          },
+          "Proxywing (DC)": {
+            "price": "1.5$",
+            "countries": [
+              {
+                "name": "Гонконг",
+                "icon": "/country_logos/гонконг.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "Литва",
+                "icon": "/country_logos/литва.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "2 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "Cryptomus",
+                "icon": "/payments_logos/Cryptomus.webp"
+              },
+              {
+                "name": "Freekassa",
+                "icon": "/payments_logos/Freekassa.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              }
+            ],
+            "link": "https://dashboard.proxywing.com/billing/aff.php?aff=1002",
+            "icon": "/Static/proxywing.webp"
+          },
+          "Proxy.Market": {
+            "price": "0.69$",
+            "countries": [
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Выдаются по запросу на почту",
+            "support": "4 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "SBP",
+                "icon": "/payments_logos/SBP.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "YandexPay",
+                "icon": "/payments_logos/YANDEXPAY.webp"
+              }
+            ],
+            "link": "https://ru.dashboard.proxy.market/?ref=researchedxyz",
+            "icon": "/Static/proxy.market.webp"
+          },
+          "ProxyStore (ISP)": {
+            "price": "$4.8",
+            "countries": [
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              }
+            ],
+            "proxyScore": "делается",
+            "demo": "Нет",
+            "support": "1 мин",
+            "payment": [
+              {
+                "name": "BTC",
+                "icon": "/payments_logos/Bitcoin.svg.webp"
+              },
+              {
+                "name": "Dash",
+                "icon": "/payments_logos/Dash.webp"
+              },
+              {
+                "name": "ETH",
+                "icon": "/payments_logos/ethereum-eth-logo.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "USDC",
+                "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+              },
+              {
+                "name": "Elrond",
+                "icon": "/payments_logos/Elrond.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              },
+              {
+                "name": "Stripe",
+                "icon": "/payments_logos/Stripe.webp"
+              }
+            ],
+            "link": "https://www.proxystore.net/?ref=27372",
+            "icon": "/Static/proxy store.webp"
+          },
+          "ProxyStore (DC)": {
+            "price": "$4",
+            "countries": [
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "1 мин",
+            "payment": [
+              {
+                "name": "BTC",
+                "icon": "/payments_logos/Bitcoin.svg.webp"
+              },
+              {
+                "name": "Dash",
+                "icon": "/payments_logos/Dash.webp"
+              },
+              {
+                "name": "ETH",
+                "icon": "/payments_logos/ethereum-eth-logo.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "USDC",
+                "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+              },
+              {
+                "name": "Elrond",
+                "icon": "/payments_logos/Elrond.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              },
+              {
+                "name": "Stripe",
+                "icon": "/payments_logos/Stripe.webp"
+              }
+            ],
+            "link": "https://www.proxystore.net/?ref=27372",
+            "icon": "/Static/proxy store.webp"
+          },
+          "IPRoyal (ISP)": {
+            "price": "4$",
+            "countries": [
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Австрия",
+                "icon": "/country_logos/австрия.webp"
+              },
+              {
+                "name": "Бельгия",
+                "icon": "/country_logos/бельгия.webp"
+              },
+              {
+                "name": "Бразилия",
+                "icon": "/country_logos/бразилия.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Хорватия",
+                "icon": "/country_logos/хорватия.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Дания",
+                "icon": "/country_logos/дания.webp"
+              },
+              {
+                "name": "Финляндия",
+                "icon": "/country_logos/финляндия.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Греция",
+                "icon": "/country_logos/греция.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Люксембург",
+                "icon": "/country_logos/люксембург.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Норвегия",
+                "icon": "/country_logos/норвегия.webp"
+              },
+              {
+                "name": "Португалия",
+                "icon": "/country_logos/португалия.webp"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "Сербия",
+                "icon": "/country_logos/сербия.webp"
+              },
+              {
+                "name": "Сингапур",
+                "icon": "/country_logos/сингапур.webp"
+              },
+              {
+                "name": "Словакия",
+                "icon": "/country_logos/словакия.webp"
+              },
+              {
+                "name": "Словения",
+                "icon": "/country_logos/словения.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              },
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Гонконг",
+                "icon": "/country_logos/гонконг.webp"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              },
+              {
+                "name": "Швейцария",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "12 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "BTC",
+                "icon": "/payments_logos/Bitcoin.svg.webp"
+              },
+              {
+                "name": "ETH",
+                "icon": "/payments_logos/ethereum-eth-logo.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "Google Pay",
+                "icon": "/payments_logos/GOOGLEPAY.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              },
+              {
+                "name": "Stripe",
+                "icon": "/payments_logos/Stripe.webp"
+              }
+            ],
+            "link": "https://iproyal.com/?r=researchedxyz",
+            "icon": "/Static/iproyal.webp"
+          },
+          "IPRoyal (DC)": {
+            "price": "1.57$",
+            "countries": [
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Австрия",
+                "icon": "/country_logos/австрия.webp"
+              },
+              {
+                "name": "Албания",
+                "icon": "/country_logos/албания.webp"
+              },
+              {
+                "name": "Аргентина",
+                "icon": "/country_logos/аргентина.webp"
+              },
+              {
+                "name": "Бельгия",
+                "icon": "/country_logos/бельгия.webp"
+              },
+              {
+                "name": "Ботсвана",
+                "icon": "/country_logos/ботсвана.webp"
+              },
+              {
+                "name": "Бразилия",
+                "icon": "/country_logos/бразилия.webp"
+              },
+              {
+                "name": "Болгария",
+                "icon": "/country_logos/болгария.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Венесуэла",
+                "icon": "/country_logos/венесуэла.webp"
+              },
+              {
+                "name": "Вьетнам",
+                "icon": "/country_logos/вьетнам.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Гонконг",
+                "icon": "/country_logos/гонконг.webp"
+              },
+              {
+                "name": "Греция",
+                "icon": "/country_logos/греция.webp"
+              },
+              {
+                "name": "Дания",
+                "icon": "/country_logos/дания.webp"
+              },
+              {
+                "name": "Израиль",
+                "icon": "/country_logos/израиль.webp"
+              },
+              {
+                "name": "Индия",
+                "icon": "/country_logos/индия.webp"
+              },
+              {
+                "name": "Индонезия",
+                "icon": "/country_logos/индонезия.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Колумбия",
+                "icon": "/country_logos/колумбия.webp"
+              },
+              {
+                "name": "Южная Корея",
+                "icon": "/country_logos/южная_южная_корея.webp"
+              },
+              {
+                "name": "Латвия",
+                "icon": "/country_logos/латвия.webp"
+              },
+              {
+                "name": "Литва",
+                "icon": "/country_logos/литва.webp"
+              },
+              {
+                "name": "Люксембург",
+                "icon": "/country_logos/люксембург.webp"
+              },
+              {
+                "name": "Малайзия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Марокко",
+                "icon": "/country_logos/марокко.webp"
+              },
+              {
+                "name": "Мексика",
+                "icon": "/country_logos/мексика.webp"
+              },
+              {
+                "name": "Мозамбик",
+                "icon": "/country_logos/мозамбик.webp"
+              },
+              {
+                "name": "Намибия",
+                "icon": "/country_logos/намибия.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Новая Зеландия",
+                "icon": "/country_logos/новая_зеландия.webp"
+              },
+              {
+                "name": "Норвегия",
+                "icon": "/country_logos/норвегия.webp"
+              },
+              {
+                "name": "Перу",
+                "icon": "/country_logos/перу.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Португалия",
+                "icon": "/country_logos/португалия.webp"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "Саудовская Аравия",
+                "icon": "/country_logos/саудовская_аравия.webp"
+              },
+              {
+                "name": "Сербия",
+                "icon": "/country_logos/сербия.webp"
+              },
+              {
+                "name": "Сингапур",
+                "icon": "/country_logos/сингапур.webp"
+              },
+              {
+                "name": "Словакия",
+                "icon": "/country_logos/словакия.webp"
+              },
+              {
+                "name": "Словения",
+                "icon": "/country_logos/словения.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Таиланд",
+                "icon": "/country_logos/таиланд.webp"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "Финляндия",
+                "icon": "/country_logos/финляндия.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Хорватия",
+                "icon": "/country_logos/хорватия.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Швейцария",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "12 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "BTC",
+                "icon": "/payments_logos/Bitcoin.svg.webp"
+              },
+              {
+                "name": "ETH",
+                "icon": "/payments_logos/ethereum-eth-logo.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "Google Pay",
+                "icon": "/payments_logos/GOOGLEPAY.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              },
+              {
+                "name": "Stripe",
+                "icon": "/payments_logos/Stripe.webp"
+              }
+            ],
+            "link": "https://iproyal.com/?r=researchedxyz",
+            "icon": "/Static/iproyal.webp"
+          },
+          "Dobriy Proxy": {
+            "price": "1.46$",
+            "countries": [
+              {
+                "name": "Алжир",
+                "icon": "/country_logos/алжир.webp"
+              },
+              {
+                "name": "Андорра",
+                "icon": "/country_logos/андорра.webp"
+              },
+              {
+                "name": "Аргентина",
+                "icon": "/country_logos/аргентина.webp"
+              },
+              {
+                "name": "Армения",
+                "icon": "/country_logos/армения.webp"
+              },
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Австрия",
+                "icon": "/country_logos/австрия.webp"
+              },
+              {
+                "name": "Бангладеш",
+                "icon": "/country_logos/бангладеш.webp"
+              },
+              {
+                "name": "Беларусь",
+                "icon": "/country_logos/беларусь.webp"
+              },
+              {
+                "name": "Бельгия",
+                "icon": "/country_logos/бельгия.webp"
+              },
+              {
+                "name": "Босния и Герцеговина",
+                "icon": "/country_logos/босния_и_герцеговина.webp"
+              },
+              {
+                "name": "Камбоджа",
+                "icon": "/country_logos/камбоджа.webp"
+              },
+              {
+                "name": "Китай",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Колумбия",
+                "icon": "/country_logos/колумбия.webp"
+              },
+              {
+                "name": "Коста-Рика",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Хорватия",
+                "icon": "/country_logos/хорватия.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Дания",
+                "icon": "/country_logos/дания.webp"
+              },
+              {
+                "name": "Доминиканская Республика",
+                "icon": "/country_logos/доминиканская_республика.webp"
+              },
+              {
+                "name": "Эквадор",
+                "icon": "/country_logos/эквадор.webp"
+              },
+              {
+                "name": "Египет",
+                "icon": "/country_logos/египет.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Грузия",
+                "icon": "/country_logos/грузия.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Греция",
+                "icon": "/country_logos/греция.webp"
+              },
+              {
+                "name": "Гонконг",
+                "icon": "/country_logos/гонконг.webp"
+              },
+              {
+                "name": "Венгрия",
+                "icon": "/country_logos/венгрия.webp"
+              },
+              {
+                "name": "Исландия",
+                "icon": "/country_logos/исландия.webp"
+              },
+              {
+                "name": "Индия",
+                "icon": "/country_logos/индия.webp"
+              },
+              {
+                "name": "Индонезия",
+                "icon": "/country_logos/индонезия.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Израиль",
+                "icon": "/country_logos/израиль.webp"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              },
+              {
+                "name": "Иордания",
+                "icon": "/country_logos/иордания.webp"
+              },
+              {
+                "name": "Кыргызстан",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Литва",
+                "icon": "/country_logos/литва.webp"
+              },
+              {
+                "name": "Люксембург",
+                "icon": "/country_logos/люксембург.webp"
+              },
+              {
+                "name": "Малайзия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Мексика",
+                "icon": "/country_logos/мексика.webp"
+              },
+              {
+                "name": "Монако",
+                "icon": "/country_logos/монако.webp"
+              },
+              {
+                "name": "Черногория",
+                "icon": "/country_logos/черногория.webp"
+              },
+              {
+                "name": "Новая Зеландия",
+                "icon": "/country_logos/новая_зеландия.webp"
+              },
+              {
+                "name": "Нигерия",
+                "icon": "/country_logos/нигерия.webp"
+              },
+              {
+                "name": "Норвегия",
+                "icon": "/country_logos/норвегия.webp"
+              },
+              {
+                "name": "Пакистан",
+                "icon": "/country_logos/пакистан.webp"
+              },
+              {
+                "name": "Филиппины",
+                "icon": "/country_logos/филиппины.webp"
+              },
+              {
+                "name": "Португалия",
+                "icon": "/country_logos/португалия.webp"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "Сербия",
+                "icon": "/country_logos/сербия.webp"
+              },
+              {
+                "name": "Таиланд",
+                "icon": "/country_logos/таиланд.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "ОАЭ",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Узбекистан",
+                "icon": "/country_logos/узбекистан.webp"
+              },
+              {
+                "name": "Ватикан",
+                "icon": "/country_logos/ватикан.webp"
+              },
+              {
+                "name": "Венесуэла",
+                "icon": "/country_logos/венесуэла.webp"
+              },
+              {
+                "name": "Вьетнам",
+                "icon": "/country_logos/вьетнам.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "70 IPv4 на час после регистрации",
+            "support": "1 мин",
+            "payment": [
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              }
+            ],
+            "link": "https://t.me/dobriyproxy_bot?start=6919166646",
+            "icon": "/Static/dobriyproxy.webp"
+          },
+          "FineProxy": {
+            "price": "6$",
+            "countries": [
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Китай",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Индия",
+                "icon": "/country_logos/индия.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Пакистан",
+                "icon": "/country_logos/пакистан.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "/country_logos/польша.webp"
+              },
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Публичный список бесплатных прокси",
+            "support": "3 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "SBP",
+                "icon": "/payments_logos/SBP.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "BTC",
+                "icon": "/payments_logos/Bitcoin.svg.webp"
+              },
+              {
+                "name": "ETH",
+                "icon": "/payments_logos/ethereum-eth-logo.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "Freekassa",
+                "icon": "/payments_logos/Freekassa.webp"
+              },
+              {
+                "name": "Interkassa",
+                "icon": "/payments_logos/Interkassa.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              },
+              {
+                "name": "PerfectMoney",
+                "icon": "/payments_logos/Perfect Money.webp"
+              },
+              {
+                "name": "Stripe",
+                "icon": "/payments_logos/Stripe.webp"
+              }
+            ],
+            "link": "https://fineproxy.org/account/aff.php?aff=144",
+            "icon": "/Static/fineproxy.webp"
+          },
+          "SpaceProxy": {
+            "price": "1.77$",
+            "countries": [
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Австрия",
+                "icon": "/country_logos/австрия.webp"
+              },
+              {
+                "name": "Азербайджан",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Албания",
+                "icon": "/country_logos/албания.webp"
+              },
+              {
+                "name": "Алжир",
+                "icon": "/country_logos/алжир.webp"
+              },
+              {
+                "name": "Аргентина",
+                "icon": "/country_logos/аргентина.webp"
+              },
+              {
+                "name": "Армения",
+                "icon": "/country_logos/армения.webp"
+              },
+              {
+                "name": "Бангладеш",
+                "icon": "/country_logos/бангладеш.webp"
+              },
+              {
+                "name": "Беларусь",
+                "icon": "/country_logos/беларусь.webp"
+              },
+              {
+                "name": "Бельгия",
+                "icon": "/country_logos/бельгия.webp"
+              },
+              {
+                "name": "Болгария",
+                "icon": "/country_logos/болгария.webp"
+              },
+              {
+                "name": "Боливия",
+                "icon": "/country_logos/боливия.webp"
+              },
+              {
+                "name": "Босния и Герцеговина",
+                "icon": "/country_logos/босния_и_герцеговина.webp"
+              },
+              {
+                "name": "Бразилия",
+                "icon": "/country_logos/бразилия.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Венгрия",
+                "icon": "/country_logos/венгрия.webp"
+              },
+              {
+                "name": "Венесуэла",
+                "icon": "/country_logos/венесуэла.webp"
+              },
+              {
+                "name": "Вьетнам",
+                "icon": "/country_logos/вьетнам.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Гонконг",
+                "icon": "/country_logos/гонконг.webp"
+              },
+              {
+                "name": "Греция",
+                "icon": "/country_logos/греция.webp"
+              },
+              {
+                "name": "Грузия",
+                "icon": "/country_logos/грузия.webp"
+              },
+              {
+                "name": "Дания",
+                "icon": "/country_logos/дания.webp"
+              },
+              {
+                "name": "Египет",
+                "icon": "/country_logos/египет.webp"
+              },
+              {
+                "name": "Израиль",
+                "icon": "/country_logos/израиль.webp"
+              },
+              {
+                "name": "Индия",
+                "icon": "/country_logos/индия.webp"
+              },
+              {
+                "name": "Индонезия",
+                "icon": "/country_logos/индонезия.webp"
+              },
+              {
+                "name": "Иордания",
+                "icon": "/country_logos/иордания.webp"
+              },
+              {
+                "name": "Ирак",
+                "icon": "/country_logos/ирак.webp"
+              },
+              {
+                "name": "Иран",
+                "icon": "/country_logos/иран.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Исландия",
+                "icon": "/country_logos/исландия.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Казахстан",
+                "icon": "/country_logos/казахстан.webp"
+              },
+              {
+                "name": "Камбоджа",
+                "icon": "/country_logos/камбоджа.webp"
+              },
+              {
+                "name": "Камерун",
+                "icon": "/country_logos/камерун.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Катар",
+                "icon": "/country_logos/катар.webp"
+              },
+              {
+                "name": "Кения",
+                "icon": "/country_logos/кения.webp"
+              },
+              {
+                "name": "Кипр",
+                "icon": "/country_logos/кипр.webp"
+              },
+              {
+                "name": "Китай",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Колумбия",
+                "icon": "/country_logos/колумбия.webp"
+              },
+              {
+                "name": "Южная Корея",
+                "icon": "/country_logos/южная_южная_корея.webp"
+              },
+              {
+                "name": "Коста-Рика",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Кыргызстан",
+                "icon": "/country_logos/кыргызстан.webp"
+              },
+              {
+                "name": "Латвия",
+                "icon": "/country_logos/латвия.webp"
+              },
+              {
+                "name": "Литва",
+                "icon": "/country_logos/литва.webp"
+              },
+              {
+                "name": "Люксембург",
+                "icon": "/country_logos/люксембург.webp"
+              },
+              {
+                "name": "Малайзия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Мальдивы",
+                "icon": "/country_logos/мальдивы.webp"
+              },
+              {
+                "name": "Мальта",
+                "icon": "/country_logos/мальта.webp"
+              },
+              {
+                "name": "Марокко",
+                "icon": "/country_logos/марокко.webp"
+              },
+              {
+                "name": "Мексика",
+                "icon": "/country_logos/мексика.webp"
+              },
+              {
+                "name": "Молдова",
+                "icon": "/country_logos/молдова.webp"
+              },
+              {
+                "name": "Монако",
+                "icon": "/country_logos/монако.webp"
+              },
+              {
+                "name": "Монголия",
+                "icon": "/country_logos/монголия.webp"
+              },
+              {
+                "name": "Непал",
+                "icon": "/country_logos/непал.webp"
+              },
+              {
+                "name": "Нигерия",
+                "icon": "/country_logos/нигерия.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Новая Зеландия",
+                "icon": "/country_logos/новая_зеландия.webp"
+              },
+              {
+                "name": "Норвегия",
+                "icon": "/country_logos/норвегия.webp"
+              },
+              {
+                "name": "ОАЭ",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Пакистан",
+                "icon": "/country_logos/пакистан.webp"
+              },
+              {
+                "name": "Перу",
+                "icon": "/country_logos/перу.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Португалия",
+                "icon": "/country_logos/португалия.webp"
+              },
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Саудовская Аравия",
+                "icon": "/country_logos/саудовская_аравия.webp"
+              },
+              {
+                "name": "Сейшелы",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Сербия",
+                "icon": "/country_logos/сербия.webp"
+              },
+              {
+                "name": "Сингапур",
+                "icon": "/country_logos/сингапур.webp"
+              },
+              {
+                "name": "Словакия",
+                "icon": "/country_logos/словакия.webp"
+              },
+              {
+                "name": "Словения",
+                "icon": "/country_logos/словения.webp"
+              },
+              {
+                "name": "Таджикистан",
+                "icon": "/country_logos/таджикистан.webp"
+              },
+              {
+                "name": "Тайвань",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Таиланд",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Танзания",
+                "icon": "/country_logos/танзания.webp"
+              },
+              {
+                "name": "Тунис",
+                "icon": "/country_logos/тунис.webp"
+              },
+              {
+                "name": "Туркменистан",
+                "icon": "/country_logos/туркменистан.webp"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "Узбекистан",
+                "icon": "/country_logos/узбекистан.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "Уругвай",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Филиппины",
+                "icon": "/country_logos/филиппины.webp"
+              },
+              {
+                "name": "Финляндия",
+                "icon": "/country_logos/финляндия.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Хорватия",
+                "icon": "/country_logos/хорватия.webp"
+              },
+              {
+                "name": "Черногория",
+                "icon": "/country_logos/черногория.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Чили",
+                "icon": "/country_logos/чили.webp"
+              },
+              {
+                "name": "Швейцария",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              },
+              {
+                "name": "Шри-Ланка",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Эстония",
+                "icon": "/country_logos/эстония.webp"
+              },
+              {
+                "name": "Южная Африка",
+                "icon": "/country_logos/южная_африка.webp"
+              },
+              {
+                "name": "Ямайка",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "2 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "Cryptomus",
+                "icon": "/payments_logos/Cryptomus.webp"
+              },
+              {
+                "name": "FK Wallet",
+                "icon": "/payments_logos/FKWALLET.webp"
+              },
+              {
+                "name": "Freekassa",
+                "icon": "/payments_logos/Freekassa.webp"
+              },
+              {
+                "name": "Morune",
+                "icon": "/payments_logos/MORUNE.webp"
+              },
+              {
+                "name": "Nordcard",
+                "icon": "/payments_logos/Nordcard.webp"
+              },
+              {
+                "name": "Steam Pay",
+                "icon": "/payments_logos/Steam Pay.webp"
+              },
+              {
+                "name": "Webmoney",
+                "icon": "/payments_logos/WEBMONEY.webp"
+              },
+              {
+                "name": "Yoomoney",
+                "icon": "/payments_logos/Yoomoney.webp"
+              }
+            ],
+            "link": "https://spaceproxy.net?ref=136827",
+            "icon": "/Static/spaceproxy.net.webp"
+          },
+          "YouProxy": {
+            "price": "1.29$",
+            "countries": [
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Бразилия",
+                "icon": "/country_logos/бразилия.webp"
+              },
+              {
+                "name": "Болгария",
+                "icon": "/country_logos/болгария.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Финляндия",
+                "icon": "/country_logos/финляндия.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Грузия",
+                "icon": "/country_logos/грузия.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Индия",
+                "icon": "/country_logos/индия.webp"
+              },
+              {
+                "name": "Индонезия",
+                "icon": "/country_logos/индонезия.webp"
+              },
+              {
+                "name": "Ирландия",
+                "icon": "/country_logos/ирландия.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              },
+              {
+                "name": "Казахстан",
+                "icon": "/country_logos/казахстан.webp"
+              },
+              {
+                "name": "Латвия",
+                "icon": "/country_logos/латвия.webp"
+              },
+              {
+                "name": "Литва",
+                "icon": "/country_logos/литва.webp"
+              },
+              {
+                "name": "Малайзия",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Мексика",
+                "icon": "/country_logos/мексика.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "Сингапур",
+                "icon": "/country_logos/сингапур.webp"
+              },
+              {
+                "name": "Южная Африка",
+                "icon": "/country_logos/южная_африка.webp"
+              },
+              {
+                "name": "Испания",
+                "icon": "/country_logos/испания.webp"
+              },
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              },
+              {
+                "name": "Швейцария",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Таиланд",
+                "icon": "/country_logos/таиланд.webp"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Нет",
+            "support": "2 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "ETH",
+                "icon": "/payments_logos/ethereum-eth-logo.webp"
+              },
+              {
+                "name": "TON",
+                "icon": "/payments_logos/ton.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "BNB",
+                "icon": "/payments_logos/bnb.webp"
+              },
+              {
+                "name": "Payeer",
+                "icon": "/payments_logos/Payeer.webp"
+              },
+              {
+                "name": "Paypal",
+                "icon": "/payments_logos/Paypal.webp"
+              }
+            ],
+            "link": "по промокоду - RESEARCHEDXYZ - сделать попап что регистрация через рефку обязательн",
+            "icon": "/Static/youproxy.io.webp"
+          },
+          "ProxyWhite": {
+            "price": "1.5$",
+            "countries": [
+              {
+                "name": "Украина",
+                "icon": "/country_logos/украина.webp"
+              },
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              },
+              {
+                "name": "США",
+                "icon": "/country_logos/сша.webp"
+              },
+              {
+                "name": "Германия",
+                "icon": "/country_logos/германия.webp"
+              },
+              {
+                "name": "Казахстан",
+                "icon": "/country_logos/казахстан.webp"
+              },
+              {
+                "name": "Турция",
+                "icon": "/country_logos/турция.webp"
+              },
+              {
+                "name": "ОАЭ",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Албания",
+                "icon": "/country_logos/албания.webp"
+              },
+              {
+                "name": "Армения",
+                "icon": "/country_logos/армения.webp"
+              },
+              {
+                "name": "Аргентина",
+                "icon": "/country_logos/аргентина.webp"
+              },
+              {
+                "name": "Австрия",
+                "icon": "/country_logos/австрия.webp"
+              },
+              {
+                "name": "Австралия",
+                "icon": "/country_logos/австралия.webp"
+              },
+              {
+                "name": "Азербайджан",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Босния и Герцеговина",
+                "icon": "/country_logos/босния_и_герцеговина.webp"
+              },
+              {
+                "name": "Бельгия",
+                "icon": "/country_logos/бельгия.webp"
+              },
+              {
+                "name": "Болгария",
+                "icon": "/country_logos/болгария.webp"
+              },
+              {
+                "name": "Боливия",
+                "icon": "/country_logos/боливия.webp"
+              },
+              {
+                "name": "Бразилия",
+                "icon": "/country_logos/бразилия.webp"
+              },
+              {
+                "name": "Беларусь",
+                "icon": "/country_logos/беларусь.webp"
+              },
+              {
+                "name": "Канада",
+                "icon": "/country_logos/канада.webp"
+              },
+              {
+                "name": "Швейцария",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Чили",
+                "icon": "/country_logos/чили.webp"
+              },
+              {
+                "name": "Китай",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Колумбия",
+                "icon": "/country_logos/колумбия.webp"
+              },
+              {
+                "name": "Коста-Рика",
+                "icon": "нет_иконки"
+              },
+              {
+                "name": "Куба",
+                "icon": "/country_logos/куба.webp"
+              },
+              {
+                "name": "Кипр",
+                "icon": "/country_logos/кипр.webp"
+              },
+              {
+                "name": "Чехия",
+                "icon": "/country_logos/чешская_республика.webp"
+              },
+              {
+                "name": "Алжир",
+                "icon": "/country_logos/алжир.webp"
+              },
+              {
+                "name": "Эстония",
+                "icon": "/country_logos/эстония.webp"
+              },
+              {
+                "name": "Египет",
+                "icon": "/country_logos/египет.webp"
+              },
+              {
+                "name": "Финляндия",
+                "icon": "/country_logos/финляндия.webp"
+              },
+              {
+                "name": "Франция",
+                "icon": "/country_logos/франция.webp"
+              },
+              {
+                "name": "Великобритания",
+                "icon": "/country_logos/великобритания.webp"
+              },
+              {
+                "name": "Грузия",
+                "icon": "/country_logos/грузия.webp"
+              },
+              {
+                "name": "Хорватия",
+                "icon": "/country_logos/хорватия.webp"
+              },
+              {
+                "name": "Венгрия",
+                "icon": "/country_logos/венгрия.webp"
+              },
+              {
+                "name": "Индонезия",
+                "icon": "/country_logos/индонезия.webp"
+              },
+              {
+                "name": "Израиль",
+                "icon": "/country_logos/израиль.webp"
+              },
+              {
+                "name": "Индия",
+                "icon": "/country_logos/индия.webp"
+              },
+              {
+                "name": "Италия",
+                "icon": "/country_logos/италия.webp"
+              },
+              {
+                "name": "Ямайка",
+                "icon": "/country_logos/ямайка.webp"
+              },
+              {
+                "name": "Япония",
+                "icon": "/country_logos/япония.webp"
+              },
+              {
+                "name": "Кения",
+                "icon": "/country_logos/кения.webp"
+              },
+              {
+                "name": "Кыргызстан",
+                "icon": "/country_logos/кыргызстан.webp"
+              },
+              {
+                "name": "Ливан",
+                "icon": "/country_logos/ливан.webp"
+              },
+              {
+                "name": "Шри-Ланка",
+                "icon": "/country_logos/шри-ланка.webp"
+              },
+              {
+                "name": "Литва",
+                "icon": "/country_logos/литва.webp"
+              },
+              {
+                "name": "Люксембург",
+                "icon": "/country_logos/люксембург.webp"
+              },
+              {
+                "name": "Латвия",
+                "icon": "/country_logos/латвия.webp"
+              },
+              {
+                "name": "Марокко",
+                "icon": "/country_logos/марокко.webp"
+              },
+              {
+                "name": "Монако",
+                "icon": "/country_logos/монако.webp"
+              },
+              {
+                "name": "Молдова",
+                "icon": "/country_logos/молдова.webp"
+              },
+              {
+                "name": "Монголия",
+                "icon": "/country_logos/монголия.webp"
+              },
+              {
+                "name": "Мексика",
+                "icon": "/country_logos/мексика.webp"
+              },
+              {
+                "name": "Малайзия",
+                "icon": "/country_logos/малайзия.webp"
+              },
+              {
+                "name": "Нидерланды",
+                "icon": "/country_logos/нидерланды.webp"
+              },
+              {
+                "name": "Непал",
+                "icon": "/country_logos/непал.webp"
+              },
+              {
+                "name": "Новая Зеландия",
+                "icon": "/country_logos/новая_зеландия.webp"
+              },
+              {
+                "name": "Перу",
+                "icon": "/country_logos/перу.webp"
+              },
+              {
+                "name": "Филиппины",
+                "icon": "/country_logos/филиппины.webp"
+              },
+              {
+                "name": "Польша",
+                "icon": "/country_logos/польша.webp"
+              },
+              {
+                "name": "Парагвай",
+                "icon": "/country_logos/парагвай.webp"
+              },
+              {
+                "name": "Катар",
+                "icon": "/country_logos/катар.webp"
+              },
+              {
+                "name": "Румыния",
+                "icon": "/country_logos/румыния.webp"
+              },
+              {
+                "name": "Сербия",
+                "icon": "/country_logos/сербия.webp"
+              },
+              {
+                "name": "Саудовская Аравия",
+                "icon": "/country_logos/саудовская_аравия.webp"
+              },
+              {
+                "name": "Сейшелы",
+                "icon": "/country_logos/сейшельские_острова.webp"
+              },
+              {
+                "name": "Швеция",
+                "icon": "/country_logos/швеция.webp"
+              },
+              {
+                "name": "Сингапур",
+                "icon": "/country_logos/сингапур.webp"
+              },
+              {
+                "name": "Таиланд",
+                "icon": "/country_logos/таиланд.webp"
+              },
+              {
+                "name": "Туркменистан",
+                "icon": "/country_logos/туркменистан.webp"
+              },
+              {
+                "name": "Тунис",
+                "icon": "/country_logos/тунис.webp"
+              },
+              {
+                "name": "Танзания",
+                "icon": "/country_logos/танзания.webp"
+              },
+              {
+                "name": "Уругвай",
+                "icon": "/country_logos/уругвай.webp"
+              },
+              {
+                "name": "Узбекистан",
+                "icon": "/country_logos/узбекистан.webp"
+              },
+              {
+                "name": "Венесуэла",
+                "icon": "/country_logos/венесуэла.webp"
+              },
+              {
+                "name": "Вьетнам",
+                "icon": "/country_logos/вьетнам.webp"
+              },
+              {
+                "name": "Южная Африка",
+                "icon": "/country_logos/южная_африка.webp"
+              },
+              {
+                "name": "Замбия",
+                "icon": "/country_logos/замбия.webp"
+              }
+            ],
+            "proxyScore": "Имеются",
+            "demo": "Через тикет в ЛК на индивидуальных условиях",
+            "support": "2 ч",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "SBP",
+                "icon": "/payments_logos/SBP.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "BTC",
+                "icon": "/payments_logos/Bitcoin.svg.webp"
+              },
+              {
+                "name": "USDT",
+                "icon": "/payments_logos/tether-usdt-logo.webp"
+              },
+              {
+                "name": "Freekassa",
+                "icon": "/payments_logos/Freekassa.webp"
+              }
+            ],
+            "link": "https://proxywhite.com/67b821fb7929a.html",
+            "icon": "/Static/proxywhite.com.webp"
+          },
+          "Proxy.House": {
+            "price": "0.3$",
+            "countries": [
+              {
+                "name": "Россия",
+                "icon": "/country_logos/россия.webp"
+              }
+            ],
+            "proxyScore": "Имеется от proxyfamily, там один и тот же создатель",
+            "demo": "Нет",
+            "support": "26 мин",
+            "payment": [
+              {
+                "name": "Mastercard",
+                "icon": "/payments_logos/MasterCardcard.webp"
+              },
+              {
+                "name": "Mir",
+                "icon": "/payments_logos/MIRcard.webp"
+              },
+              {
+                "name": "Visa",
+                "icon": "/payments_logos/VISAcard.webp"
+              },
+              {
+                "name": "AlphaBank",
+                "icon": "/payments_logos/ALFABANK.webp"
+              },
+              {
+                "name": "t2",
+                "icon": "/payments_logos/t2.webp"
+              },
+              {
+                "name": "Tinkoff",
+                "icon": "/payments_logos/Tinkoff.webp"
+              },
+              {
+                "name": "YooMoney",
+                "icon": "/payments_logos/Yoomoney.webp"
+              }
+            ],
+            "link": "https://www.proxy.house/?r=652677",
+            "icon": "/Static/proxy-house.webp"
+          }
+        }
+      }
+    }
+  }
+}

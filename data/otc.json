@@ -1,0 +1,93 @@
+{
+  "Data": {
+    "otc": {
+      "info": {
+        "title": "OTC площадки",
+        "description": "Сервисы для безопасной и быстрой внебиржевой торговли (покупка и продажа WL, KYC, аккаунтов, токенов и т.д.). Обычно работают через гарантов, Discord или Telegram."
+      },
+      "tools": {
+        "Exsaverse": {
+          "link": "https://discord.gg/exsaverse",
+          "founder": "Популярный зарубежный OTC. Основатель не найден",
+          "commission": "5% (минимум - 0.1 SOL)",
+          "responseTime": "3 мин.",
+          "messagesPerDay": "200+",
+          "mainOffers": "Whitelist",
+          "icon": "/OTC/exsaverse.webp"
+        },
+        "Whales Market": {
+          "link": "https://pro.whales.market/?r=489451",
+          "founder": "Популярный премаркет. Основатель не найден. У проекта имеется свой токен <a href='https://www.coingecko.com/ru/%D0%9A%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2%D0%B0%D0%BB%D1%8E%D1%82%D1%8B/whales-market' class='underline'>WHALES</a> (mcap = 1 mln$). Работает с 2024 года.",
+          "commission": "0.5% за отмену оффера, 2.5% за всё остальное",
+          "responseTime": "Нет системы гарантов. Всё сделано на смарт-контрактах.",
+          "messagesPerDay": "Нет системы сообщений",
+          "mainOffers": "Премаркет токенов, Премаркет поинтов",
+          "icon": "/OTC/pro.whales.market.webp"
+        },
+        "Taverna": {
+          "link": "https://t.me/tvrn_otc",
+          "founder": "Фаундер - <a href='https://t.me/dmithree' class='underline'>Dmitry_Taverna</a>, также владеет каналом <a href='https://t.me/tvrn_crypto' class='underline'>Crypto Taverna</a>. OTC работает с 2021 года.",
+          "commission": "до 1000$ - 3%, но минимум - 5$ от 1000$ - 1% (с залогом - 2%), но минимум - 30$ <a href='https://t.me/TavernaEscrow/31' class='underline'>Читать</a>",
+          "responseTime": "2 мин. Проверить доступность гарантов можно через <a href='https://t.me/tvrn_otc_bot' class='underline'>бота</a>",
+          "messagesPerDay": "5000+",
+          "mainOffers": "NFT, Whitelist, Соцсети, Аккаунты, Токены",
+          "icon": "/OTC/TVNR_OTC.webp"
+        },
+        "Taverna P2P": {
+          "link": "https://t.me/tvrn_p2p",
+          "founder": "Фаундер - <a href='https://t.me/dmithree' class='underline'>Dmitry_Taverna</a>, также владеет каналом <a href='https://t.me/tvrn_crypto' class='underline'>Crypto Taverna</a>. OTC работает с 2021 года.",
+          "commission": "до 1000$ - 3%, но минимум - 5$ от 1000$ - 1% (с залогом - 2%), но минимум - 30$ <a href='https://t.me/TavernaEscrow/31' class='underline'>Читать</a>",
+          "responseTime": "2 мин. Проверить доступность гарантов можно через <a href='https://t.me/tvrn_otc_bot' class='underline'>бота</a>",
+          "messagesPerDay": "4000+",
+          "mainOffers": "Услуги, KYC",
+          "icon": "/OTC/tvrn_p2p.webp"
+        },
+        "Crypton": {
+          "link": "https://t.me/CryptonOTC",
+          "founder": "Фаундер - <a href='https://t.me/tradeparty1337' class='underline'>Павел Сычёв</a>. Ведёт свой канал с 2019 года. OTC работает с 2022 года.",
+          "commission": "до 500$ - 2%, но минимум - 5$ от 500$ - 2% (c залогом минимум - 15$) <a href='https://t.me/CryptonOTC/146038' class='underline'>Читать</a>",
+          "responseTime": "1 мин.",
+          "messagesPerDay": "1000+",
+          "mainOffers": "NFT, Whitelist, Соцсети, Аккаунты, Услуги, Токены, KYC",
+          "icon": "/OTC/Crypton.webp"
+        },
+        "Double Top": {
+          "link": "https://t.me/doubletop_otc",
+          "founder": "От популярного медиа <a href='https://t.me/doubletop' class='underline'>DOUBLETOP</a>, которое было создано в 2019 году. OTC работает с 2021 года.",
+          "commission": "Трейды токенов - 1%, минимум - 30$ Аккаунты - 2%, минимум - 30$ Трейды дольше недели - 2%, минимум - 40$ С security депозитом - 2%, минимум - 40$ Трейды токенов дольше 24 часов - 2%, минимум - 30$ Трейды токенов в вестингах - 4%, минимум - 60$ NFT - 1%, минимум - 30$ Сделка менее 30$, комиссия - 15$ <a href='https://t.me/doubletop_otc/3020392' class='underline'>Читать</a>",
+          "responseTime": "1 мин.",
+          "messagesPerDay": "1500+",
+          "mainOffers": "NFT, Whitelist, Соцсети, Аккаунты, Услуги, Токены, KYC",
+          "icon": "/OTC/DoubleTop.webp"
+        },
+        "ICOBOG": {
+          "link": "https://t.me/MarketICOBOG",
+          "founder": "Основатель непубличный. Очень олдовое OTC, работает с 2018 года.",
+          "commission": "Трейды токенов - 1%, минимум - 30$ Аккаунты - 2%, минимум - 30$ Долгие трейды с security депозитом - 2%, минимум - 50$ Трейды токенов в вестингах - 4%, минимум - 70$ <a href='https://t.me/MarketICOBOG/49592' class='underline'>Читать</a>",
+          "responseTime": "1 мин.",
+          "messagesPerDay": "500+",
+          "mainOffers": "NFT, Аккаунты, Токены",
+          "icon": "/OTC/ICOBOG.webp"
+        },
+        "Media Market 2.0": {
+          "link": "https://t.me/mediasocialmarket1",
+          "founder": "OTC для торговли аккаунтами. От основателей ICO BOG. Работает ориентировочно с 2021 года, но прошлая группа была забанена в 2024 года за нарушение \"авторских прав\"",
+          "commission": "до 1500$ фикс. комиссия - 30$ от 1500$ - 2% <a href='https://t.me/mediasocialmarket1/4' class='underline'>Читать.</a>",
+          "responseTime": "1 мин",
+          "messagesPerDay": "2700+",
+          "mainOffers": "Соцсети, Whitelist, KYC",
+          "icon": "/OTC/Media Market.webp"
+        },
+        "Octasol": {
+          "link": "https://discord.com/invite/4WmKbZT3PU",
+          "founder": "Основатель Sneako_SOL - анонимен. Владелец #6335 BAYC, советник <a href='http://hub.xyz/' class='underline'>Hub.xyz</a>. OTC работает с 2023 года.",
+          "commission": "до 500$ фикс. комиссия - 5$ от 500$ - 5%",
+          "responseTime": "1 мин",
+          "messagesPerDay": "3-5+",
+          "mainOffers": "WL, NFT",
+          "icon": "/OTC/octasol.webp"
+        }
+      }
+    }
+  }
+}

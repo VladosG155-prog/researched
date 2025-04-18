@@ -1,0 +1,359 @@
+{
+  "Data": {
+    "accountStores": {
+      "info": {
+        "title": "Магазины аккаунтов",
+        "description": "Сервисы для покупки готовых аккаунтов социальных сетей и других платформ. Предоставляют различные типы аккаунтов с разной степенью активности."
+      },
+      "tools": {
+        "Dark Store": {
+          "productsByCategory": {
+            "Соцсети": "Blablacar, ChatGPT, Discord, Facebook, Github, ICQ, Instagram, Linkedin, OLX, Quora, Reddit, Skype, Spotify, Steam, Telegram, TikTok, Twitch, Twitter, Youtube, ВКонтакте, Одноклассники",
+            "Почты": "AOL, GMX, Gmail, Mail.ru, Mail.tm, Onet, Outlook, Protonmail, Rambler, Seznam, Yahoo, firstmail, mail.com",
+            "Накрутка": "Bestliker, Boost, Bosslike, Fastliker, GainStorm, Like4u, Likeinsta, Turboliker, VKMIX, VKSTORM, Vtope, YTMonster, ad-scoial, illzium, likest, vkrutilka, vto.pe",
+            "VPN": "AdGuard, Air, Astrill, Atlas, BROWSEC, CLOUDFLARE, Cyberghost, Freya, HOTSPOT SHIELD, HideMy, IPVanish, Ivacy, Lumos, MullVad, NoLag, OkayFreedom, Outline, PUREVPN, Panda, Seed4.me, Sonics, Speedtest, Strong, Surfeasy, TUNNELBEAR, Tigervpn, TikVpnPro, Turbo, Ultra, VPNCity, Vypr, WTFast, Windscribe, Wireguard, ZenMate, malwarebytes",
+            "Другое": "Battle.NET, Crunchyroll Premium, Duolingo, Epic Games, FILMIX, HD rezka, HULU, Kaspersky, League of Legends, LinguaLeo, MORE.TV, Megogo, Microsoft Store, Minecraft, Mybook, Netflix, OLL.TV, Office, Origin, PS4/PS5, Rozetka, Social Club, Start, Supercell, THT, TVZAVR, Ubisoft connect, Valorant, Warface, Windows, World of Tanks, Антивирусы"
+          },
+          "support": "2 мин.",
+          "sell": "Twitter, Discord, Gmail...",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "SBP",
+              "icon": "/payments_logos/SBP.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "Cryptomus",
+              "icon": "/payments_logos/CRYPTOMUS.webp"
+            },
+            {
+              "name": "Freekassa",
+              "icon": "/payments_logos/Freekassa.webp"
+            },
+            {
+              "name": "FKWallet",
+              "icon": "/payments_logos/FKWALLET.webp"
+            }
+          ],
+          "referral": "50% от комиссии сайта",
+          "link": "https://dark.shopping/?p=196077",
+          "icon": "/Shops/dark.shopping.webp"
+        },
+        "Discord-accounts": {
+          "productsByCategory": {
+            "Соцсети": "Discord"
+          },
+          "support": "8 мин.",
+          "sell": "Discord",
+          "payment": [
+            {
+              "name": "SBP",
+              "icon": "/payments_logos/SBP.webp"
+            },
+            {
+              "name": "Bitcoin",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "Litecoin",
+              "icon": "/payments_logos/litecoin-ltc-logo.webp"
+            },
+            {
+              "name": "TRX",
+              "icon": "/payments_logos/tron-trx-logo.webp"
+            },
+            {
+              "name": "DASH",
+              "icon": "/payments_logos/Dash.webp"
+            },
+            {
+              "name": "XMR",
+              "icon": "/payments_logos/monero-xmr-logo.webp"
+            },
+            {
+              "name": "DOGE",
+              "icon": "/payments_logos/dogecoin-doge-logo.webp"
+            },
+            {
+              "name": "Freekassa",
+              "icon": "/payments_logos/Freekassa.webp"
+            },
+            {
+              "name": "FK Wallet",
+              "icon": "/payments_logos/FKWALLET.webp"
+            },
+            {
+              "name": "Payeer",
+              "icon": "/payments_logos/Payeer.webp"
+            }
+          ],
+          "referral": "-",
+          "link": "https://discord-accounts.ru/",
+          "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/discord-accounts-cWIHNqeMPf3KKZXohYGddRifYtcoq6.png"
+        },
+        "Accsmarket": {
+          "productsByCategory": {
+            "Соцсети": "Instagram, Вконтакте, Twitter, TikTok, Linkedin, Telegram, Одноклассники, Reddit, Threads, ChatGPT, Snapchat, Twitch, Yelp, Quora, Etsy, Pinterest, Onlyfans, Fiverr, Last.fm, Bosslike.ru, Mastodon.social, Tumblr, Canva, Stackoverflow, Windscribe, Mamba, Booking, Textnow, Apple.com, iCloud, Github, Irecommend",
+            "Почты": "Gmail, Mail.ru, Yandex, Rambler, Yahoo, Hotmail, GMX, Outlook, Onet, AOL, Proton, Web.de, Gazeta.pl",
+            "Игры": "Playstation, Brawl Stars, Black Desert, Call of Duty Mobile, Clash Royale, Clash of Clans, Discord, Epic Games, Eternium, Genshin Impact, PUBG Mobile, Steam, Raid:Shadow Legends"
+          },
+          "support": "3 мин.",
+          "sell": "Twitter, Discord, Gmail...",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "MasterCard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "SBP",
+              "icon": "/payments_logos/SBP.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "USDC",
+              "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+            },
+            {
+              "name": "Bitcoin",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "Tron",
+              "icon": "/payments_logos/tron-trx-logo.webp"
+            },
+            {
+              "name": "Litecoin",
+              "icon": "/payments_logos/litecoin-ltc-logo.webp"
+            },
+            {
+              "name": "Ethereum",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BNB",
+              "icon": "/payments_logos/bnb.webp"
+            },
+            {
+              "name": "SteamPay",
+              "icon": "/payments_logos/STEAMPAY.webp"
+            },
+            {
+              "name": "Capitalist",
+              "icon": "/payments_logos/Capitalist.webp"
+            },
+            {
+              "name": "AdvCash",
+              "icon": "/payments_logos/AdvCash.webp"
+            },
+            {
+              "name": "YooMoney",
+              "icon": "/payments_logos/Yoomoney.webp"
+            }
+          ],
+          "referral": "5%",
+          "link": "https://accsmarket.com/?ref=738944",
+          "icon": "/Shops/accsmarket.com.webp"
+        },
+        "Hstock": {
+          "productsByCategory": {
+            "Соцсети": "Twitter, Telegram, Discord, Instagram, Reddit, Skype, Snapchat, TikTok, Github, WhatsApp, Linkedin, ChatGPT, Apple, Amazon, AOL, Deepseek, Facebook, Line, Likee, Microsoft, Mega, Netflix, OLX, Wildberries, Ozon, Pinterest, SoundCloud, Spotify, Twitch, Tumblr, Вконтакте, Дзен, Одноклассники, VPS/VDS, Юла, Яндекс, Mamba, Quora, Авито, prom.ua, ask.fm, canva, medium, fiverr, vc.ru, Vtope, BluTV, Capcut PRO",
+            "Почты": "Firstmail, Gazeta.pl, Inbox, Mail.ru, Mail.tm, Onet.pl, Protonmail, Rambler, Yahoo, Яндекс почта, Seznam, web.de",
+            "Знакомства": "Tinder, mamba, Tabor, Beboo, Onlyfans, loveplanet",
+            "Гифты": "Nintento, Ebay, hepsiburada, Walmart, Trendyol, Razar, Payeer, MambaVip",
+            "Игры": "Arena Breakout, ARMA, Battlefield, Borderlands, Braws Stars, Call of Duty, Counter-Strike 2, Dota 2, Clash of Clans, Clash Royale, Destiny 2, Delta Force, Epic Games, GTA V, Genshin Impact, Google Play, Honkai: Star Rail, Identity V, Minecraft, Mortal Kombat 1, Mobile Legends, Marvel Rivals, PlayStation, PUBG Mobile, Roblox, Steam, Standoff 2, Ubisoft Connect, Xbox, League of Legends, GeForce NOW"
+          },
+          "support": "10 мин.",
+          "sell": "Telegram, Twitter, Discord...",
+          "payment": [
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "SBP",
+              "icon": "/payments_logos/SBP.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "USDC",
+              "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+            },
+            {
+              "name": "BCH",
+              "icon": "/payments_logos/bitcoin-cash-bch-logo.webp"
+            },
+            {
+              "name": "TRX",
+              "icon": "/payments_logos/tron-trx-logo.webp"
+            },
+            {
+              "name": "XRP",
+              "icon": "/payments_logos/xrp-xrp-logo.webp"
+            },
+            {
+              "name": "LTC",
+              "icon": "/payments_logos/litecoin-ltc-logo.webp"
+            },
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "DOGE",
+              "icon": "/payments_logos/dogecoin-doge-logo.webp"
+            },
+            {
+              "name": "BNB",
+              "icon": "/payments_logos/bnb.webp"
+            },
+            {
+              "name": "DASH",
+              "icon": "/payments_logos/Dash.webp"
+            },
+            {
+              "name": "MATIC",
+              "icon": "/payments_logos/polygon-matic-logo.webp"
+            },
+            {
+              "name": "DAI",
+              "icon": "/payments_logos/dai-dai-logo.webp"
+            },
+            {
+              "name": "Freekassa",
+              "icon": "/payments_logos/Freekassa.webp"
+            },
+            {
+              "name": "Alipay",
+              "icon": "/payments_logos/Alipay.webp"
+            },
+            {
+              "name": "AdvCash",
+              "icon": "/payments_logos/AdvCash.webp"
+            }
+          ],
+          "referral": "-",
+          "link": "https://hstock.org/",
+          "icon": "/Shops/hstock.webp"
+        },
+        "Lolz.Market": {
+          "productsByCategory": {
+            "Соцсети": "Telegram, Discord, Spotify, Instagram, Tiktok",
+            "Игры": "Steam, Fortnite, Genshin Impact, Riot, Supercell, EA (Origin), World of Tanks (Blitz), Minecraft, Escape from Tarkov, Rockstar Games, Uplay (Ubisoft), War Thunder, Battle.net, Roblox, Warface"
+          },
+          "support": "10 мин.",
+          "sell": "Telegram, Discord, Instagram...",
+          "payment": [
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "SBP",
+              "icon": "/payments_logos/SBP.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "USDC",
+              "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+            },
+            {
+              "name": "Bitcoin",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "Ethereum",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "Litecoin",
+              "icon": "/payments_logos/litecoin-ltc-logo.webp"
+            },
+            {
+              "name": "TRON",
+              "icon": "/payments_logos/tron-trx-logo.webp"
+            },
+            {
+              "name": "DOGE",
+              "icon": "/payments_logos/dogecoin-doge-logo.webp"
+            },
+            {
+              "name": "DASH",
+              "icon": "/payments_logos/Dash.webp"
+            },
+            {
+              "name": "BNB",
+              "icon": "/payments_logos/bnb.webp"
+            },
+            {
+              "name": "TON",
+              "icon": "/payments_logos/ton.webp"
+            },
+            {
+              "name": "XMR",
+              "icon": "/payments_logos/monero-xmr-logo.webp"
+            },
+            {
+              "name": "Solana",
+              "icon": "/payments_logos/solana-sol-logo.webp"
+            },
+            {
+              "name": "CryptoBot",
+              "icon": "/payments_logos/cryptobot.webp"
+            },
+            {
+              "name": "WebMoney",
+              "icon": "/payments_logos/WEBMONEY.webp"
+            },
+            {
+              "name": "SteamPay",
+              "icon": "/payments_logos/STEAMPAY.webp"
+            }
+          ],
+          "referral": "-",
+          "link": "https://lolz.market/",
+          "icon": "/Shops/lolz.market.webp"
+        }
+      }
+    }
+  }
+}

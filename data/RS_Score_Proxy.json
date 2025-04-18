@@ -1,0 +1,827 @@
+{
+  "Static": [
+    {
+      "name": "Proxy.Market",
+      "Fraud Score": { "value": 78, "score": 2 },
+      "Risk Score": { "value": 75, "score": 4 },
+      "Утечки DNS": { "score": 9 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 64, "score": 7 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 372, "score": 10 },
+      "overall": 60
+    },
+    {
+      "name": "Proxy-Solutions",
+      "Fraud Score": { "value": 0, "score": 10 },
+      "Risk Score": { "value": 0, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 64, "score": 7 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 372, "score": 10 },
+      "overall": 82
+    },
+    {
+      "name": "Proxys.io",
+      "Fraud Score": { "value": 65, "score": 4 },
+      "Risk Score": { "value": 74, "score": 4 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 85, "score": 7 },
+      "Потеря пакетов": { "value": 1400, "score": 4 },
+      "Скорость": { "value": 7, "score": 4 },
+      "overall": 49
+    },
+    {
+      "name": "YouProxy",
+      "Fraud Score": { "value": 28, "score": 7 },
+      "Risk Score": { "value": 38, "score": 7 },
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 122, "score": 4 },
+      "Потеря пакетов": { "value": 1340, "score": 4 },
+      "Скорость": { "value": 223, "score": 10 },
+      "overall": 62
+    },
+    {
+      "name": "Proxywing (DC)",
+      "Fraud Score": { "value": 31, "score": 7 },
+      "Risk Score": { "value": 27, "score": 8 },
+      "Утечки DNS": { "score": 9 },
+      "Надежность типа сети": { "score": 6 },
+      "Пинг": { "value": 59, "score": 8 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 363, "score": 10 },
+      "overall": 74
+    },
+    
+    {
+      "name": "proxy.family",
+      "Fraud Score": { "value": 37, "score": 6 },
+      "Risk Score": { "value": 27, "score": 8 },
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 19, "score": 10 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 16, "score": 5 },
+      "overall": 65
+    },
+    {
+      "name": "Proxy-Sale",
+      "Fraud Score": { "value": 50, "score": 5 },
+      "Risk Score": { "value": 59, "score": 5 },
+      "Утечки DNS": { "score": 9 },
+      "Надежность типа сети": { "score": 8 },
+      "Пинг": { "value": 136, "score": 5 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 460, "score": 10 },
+      "overall": 67
+    },
+    {
+      "name": "Proxy-Seller",
+      "Fraud Score": { "value": 60, "score": 4 },
+      "Risk Score": { "value": 34, "score": 7 },
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 8 },
+      "Пинг": { "value": 71, "score": 7 },
+      "Потеря пакетов": { "value": 1420, "score": 7 },
+      "Скорость": { "value": 130, "score": 8 },
+      "overall": 60
+    },
+    {
+      "name": "Frigate-Proxy",
+      "Fraud Score": { "value": 84, "score": 2 },
+      "Risk Score": { "value": 95, "score": 1 },
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 30, "score": 10 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 890, "score": 10 },
+      "overall": 57
+    },
+    {
+      "name": "FineProxy",
+      "Fraud Score": { "value": 84, "score": 2 },
+      "Risk Score": { "value": 70, "score": 4 },
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 178, "score": 4 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "score": 1 },
+      "overall": 41
+    },
+    {
+      "name": "YouProxy",
+      "Fraud Score": { "value": 93, "score": 1 },
+      "Risk Score": { "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 301, "score": 4 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 21, "score": 6 },
+      "overall": 66
+    },
+    {
+      "name": "Travchis Proxies (ISP)",
+      "Fraud Score": { "value": 0, "score": 10 },
+      "Risk Score": { "value": 0, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 48, "score": 10 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 103, "score": 10 },
+      "overall": 90
+    },
+    {
+      "name": "Travchis Proxies (DC)",
+      "Fraud Score": { "value": 0, "score": 10 },
+      "Risk Score": { "value": 0, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 49, "score": 10 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 103, "score": 10 },
+      "overall": 90
+    },
+    {
+      "name": "Proxywing (ISP)",
+      "Fraud Score": { "value": 0, "score": 10 },
+      "Risk Score": { "value": 0, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 48, "score": 10 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 103, "score": 10 },
+      "overall": 90
+    },
+    {
+      "name": "ProxySoxy",
+      "Fraud Score": { "value": 74, "score": 3 },
+      "Risk Score": { "value": 58, "score": 5 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 7 },
+      "Пинг": { "value": 94, "score": 7 },
+      "Потеря пакетов": { "value": 1460, "score": 8 },
+      "Скорость": { "value": 542, "score": 10 },
+      "overall": 64
+    },
+    {
+      "name": "SpaceProxy",
+      "Fraud Score": { "value": 84, "score": 2 },
+      "Risk Score": { "value": 89, "score": 1 },
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 90, "score": 7 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 988, "score": 10 },
+      "overall": 53
+    },
+    {
+      "name": "ProxyWhite",
+      "Fraud Score": { "value": 93, "score": 1 },
+      "Risk Score": { "value": 78, "score": 2 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 7 },
+      "Пинг": { "value": 38, "score": 10 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 74, "score": 10 },
+      "overall": 65
+    },
+    {
+      "name": "ProxyStore (DC)",
+      "Fraud Score": { "value": 100, "score": 1 },
+      "Risk Score": { "value": 100, "score": 1 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 125, "score": 4 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 312, "score": 10 },
+      "overall": 59
+    },
+    {
+      "name": "Dobriy Proxy",
+      "Fraud Score": { "value": 14, "score": 10 },
+      "Risk Score": { "value": 5, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 52, "score": 5 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 7, "score": 4 },
+      "overall": 76
+    },
+    {
+      "name": "IPRoyal (DC)",
+      "Fraud Score": { "value": 89, "score": 1 },
+      "Risk Score": { "value": 60, "score": 4 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 70, "score": 7 },
+      "Потеря пакетов": { "value": 1340, "score": 4 },
+      "Скорость": { "value": 1000, "score": 10 },
+      "overall": 59
+    },
+    {
+      "name": "IPRoyal (ISP)",
+      "Fraud Score": { "value": 89, "score": 1 },
+      "Risk Score": { "value": 60, "score": 4 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 70, "score": 7 },
+      "Потеря пакетов": { "value": 1340, "score": 4 },
+      "Скорость": { "value": 1000, "score": 10 },
+      "overall": 59
+    },
+    {
+      "name": "ProxyStore (ISP)",
+      "Fraud Score": { "value": 0, "score": 10 },
+      "Risk Score": { "value": 100, "score": 1 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 123, "score": 4 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 400, "score": 10 },
+      "overall": 71
+    },
+    {
+      "name": "Proxyma",
+      "Fraud Score": { "value": 88, "score": 2 },
+      "Risk Score": { "value": 87, "score": 2 },
+      "Утечки DNS": { "score": 8 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 158, "score": 4 },
+      "Потеря пакетов": { "value": 1420, "score": 7 },
+      "Скорость": { "value": 186, "score": 10 },
+      "overall": 56
+    },
+    {
+      "name": "Proxyline",
+      "Fraud Score": { "value": 59, "score": 4 },
+      "Risk Score": { "value": 59, "score": 5 },
+      "Утечки DNS": { "score": 9 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 109, "score": 6 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 764, "score": 10 },
+      "overall": 63
+    },
+    {
+      "name": "Proxy.House",
+      "Fraud Score": { "value": 37, "score": 7 },
+      "Risk Score": { "value": 26, "score": 7 },
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 18, "score": 10 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 16, "score": 5 },
+      "overall": 64
+    },
+    {
+      "name": "Proxy6",
+      "Fraud Score": { "value": 32, "score": 7 },
+      "Risk Score": { "value": 36, "score": 7 },
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 60, "score": 8 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 15, "score": 4 },
+      "overall": 62
+    }
+  ],
+  "residential": [
+    {
+      "name": "Proxy.Market",
+      "Fraud Score": { "value": 0, "score": 10 },
+      "Risk Score": { "value": 10, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 184, "score": 4 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 12, "score": 7 },
+      "overall": 78
+    },
+    {
+      "name": "Travchis Proxies",
+      "Fraud Score": { "value": 19, "score": 10 },
+      "Risk Score": { "value": 1, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 150, "score": 4 },
+      "Потеря пакетов": { "value": 1480, "score": 8 },
+      "Скорость": { "value": 25, "score": 8 },
+      "overall": 77
+    },
+    {
+      "name": "Proxywing",
+      "Fraud Score": { "value": 39, "score": 7 },
+      "Risk Score": { "value": 3, "score": 10 },
+      "Утечки DNS": { "score": 9 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 127, "score": 4 },
+      "Потеря пакетов": { "value": 1473, "score": 6 },
+      "Скорость": { "value": 100, "score": 9 },
+      "overall": 70
+    },
+    {
+      "name": "SOAX",
+      "Fraud Score": { "value": 9, "score": 10 },
+      "Risk Score": { "value": 44, "score": 4 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 191, "score": 4 },
+      "Потеря пакетов": { "value": 1484, "score": 8 },
+      "Скорость": { "value": 10, "score": 5 },
+      "overall": 66
+    },
+    {
+      "name": "ProxyStore",
+      "Fraud Score": { "value": 89, "score": 1 },
+      "Risk Score": { "value": 0, "score": 10 },
+      "Утечки DNS": { "score": 8 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 372, "score": 4 },
+      "Потеря пакетов": { "value": 1496, "score": 7 },
+      "Скорость": { "value": 12, "score": 6 },
+      "overall": 58
+    },
+    {
+      "name": "ProxyShard",
+      "Fraud Score": {
+        "value": 69,
+        "score": 4
+      },
+      "Risk Score": {
+        "value": 2,
+        "score": 10
+      },
+      "Утечки DNS": {
+        "score": 10
+      },
+      "Надежность типа сети": {
+        "score": 10
+      },
+      "Пинг": {
+        "value": 157,
+        "score": 5
+      },
+      "Потеря пакетов": {
+        "value": 1497,
+        "score": 10
+      },
+      "Скорость": {
+        "value": 36,
+        "score": 7
+      },
+      "overall": 72
+    },
+    {
+      "name": "MangoProxy",
+      "Fraud Score": {
+        "value": 58,
+        "score": 6
+      },
+      "Risk Score": {
+        "value": 3,
+        "score": 10
+      },
+      "Утечки DNS": {
+        "score": 6
+      },
+      "Надежность типа сети": {
+        "score": 10
+      },
+      "Пинг": {
+        "value": 213,
+        "score": 6
+      },
+      "Потеря пакетов": {
+        "value": 1434,
+        "score": 4
+      },
+      "Скорость": {
+        "value": 64,
+        "score": 10
+      },
+      "overall": 66
+    },
+    {
+      "name": "OkeyProxy",
+      "Fraud Score": {
+        "value": 48,
+        "score": 7
+      },
+      "Risk Score": {
+        "value": 2,
+        "score": 10
+      },
+      "Утечки DNS": {
+        "score": 9
+      },
+      "Надежность типа сети": {
+        "score": 10
+      },
+      "Пинг": {
+        "value": 575,
+        "score": 4
+      },
+      "Потеря пакетов": {
+        "value": 1484,
+        "score": 8
+      },
+      "Скорость": {
+        "value": 4,
+        "score": 4
+      },
+      "overall": 66
+    },
+    {
+      "name": "922Proxy",
+      "Fraud Score": {
+        "value": 60,
+        "score": 6
+      },
+      "Risk Score": {
+        "value": 38,
+        "score": 6
+      },
+      "Утечки DNS": {
+        "score": 10
+      },
+      "Надежность типа сети": {
+        "score": 10
+      },
+      "Пинг": {
+        "value": 404,
+        "score": 4
+      },
+      "Потеря пакетов": {
+        "value": 1496,
+        "score": 10
+      },
+      "Скорость": {
+        "value": 23,
+        "score": 8
+      },
+      "overall": 68
+    },
+    {
+      "name": "NodeMaven",
+      "Fraud Score": {
+        "value": 14,
+        "score": 10
+      },
+      "Risk Score": {
+        "value": 0,
+        "score": 10
+      },
+      "Утечки DNS": {
+        "score": 10
+      },
+      "Надежность типа сети": {
+        "score": 10
+      },
+      "Пинг": {
+        "value": 108,
+        "score": 4
+      },
+      "Потеря пакетов": {
+        "value": 1500,
+        "score": 10
+      },
+      "Скорость": {
+        "value": 36,
+        "score": 10
+      },
+      "overall": 82
+    },
+    {
+      "name": "SX",
+      "Fraud Score": {
+        "value": 65,
+        "score": 4
+      },
+      "Risk Score": {
+        "value": 57,
+        "score": 4
+      },
+      "Утечки DNS": {
+        "score": 7
+      },
+      "Надежность типа сети": {
+        "score": 7
+      },
+      "Пинг": {
+        "value": 167,
+        "score": 5
+      },
+      "Потеря пакетов": {
+        "value": 1408,
+        "score": 6
+      },
+      "Скорость": {
+        "value": 18,
+        "score": 8
+      },
+      "overall": 53
+    },
+    {
+      "name": "IPRoyal",
+      "Fraud Score": {
+        "value": 0,
+        "score": 10
+      },
+      "Risk Score": {
+        "value": 0,
+        "score": 10
+      },
+      "Утечки DNS": {
+        "score": 10
+      },
+      "Надежность типа сети": {
+        "score": 10
+      },
+      "Пинг": {
+        "value": 110,
+        "score": 4
+      },
+      "Потеря пакетов": {
+        "value": 1492,
+        "score": 10
+      },
+      "Скорость": {
+        "value": 10,
+        "score": 7
+      },
+      "overall": 78
+    },
+    {
+      "name": "TheSocialProxy",
+      "Fraud Score": {
+        "value": 28,
+        "score": 10
+      },
+      "Risk Score": {
+        "value": 0,
+        "score": 10
+      },
+      "Утечки DNS": {
+        "score": 6
+      },
+      "Надежность типа сети": {
+        "score": 10
+      },
+      "Пинг": {
+        "value": 514,
+        "score": 4
+      },
+      "Потеря пакетов": {
+        "value": 1486,
+        "score": 7
+      },
+      "Скорость": {
+        "value": 10,
+        "score": 6
+      },
+      "overall": 68
+    },
+    {
+      "name": "BeeProxies",
+      "Fraud Score": {
+        "value": 60,
+        "score": 6
+      },
+      "Risk Score": {
+        "value": 4,
+        "score": 10
+      },
+      "Утечки DNS": {
+        "score": 8
+      },
+      "Надежность типа сети": {
+        "score": 6
+      },
+      "Пинг": {
+        "value": 250,
+        "score": 4
+      },
+      "Потеря пакетов": {
+        "value": 1412,
+        "score": 7
+      },
+      "Скорость": {
+        "value": 6,
+        "score": 4
+      },
+      "overall": 57
+    },
+    {
+      "name": "Proxyma",
+      "Fraud Score": { "value": 48, "score": 7 },
+      "Risk Score": { "value": 7, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 144, "score": 5 },
+      "Потеря пакетов": { "value": 1484, "score": 8 },
+      "Скорость": { "value": 25, "score": 9 },
+      "overall": 76
+    },
+    {
+      "name": "Proxy-Seller",
+      "Fraud Score": { "value": 14, "score": 10 },
+      "Risk Score": { "value": 4, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 140, "score": 6 },
+      "Потеря пакетов": { "value": 1488, "score": 7 },
+      "Скорость": { "value": 42, "score": 7 },
+      "overall": 76
+    },
+    {
+      "name": "Proxy-Sale",
+      "Fraud Score": { "value": 58, "score": 6 },
+      "Risk Score": { "value": 5, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 216, "score": 6 },
+      "Потеря пакетов": { "value": 1395, "score": 7 },
+      "Скорость": { "value": 44, "score": 10 },
+      "overall": 74
+    },
+    {
+      "name": "Froxy",
+      "Fraud Score": { "value": 0, "score": 10 },
+      "Risk Score": { "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 226, "score": 4 },
+      "Потеря пакетов": { "value": 1496, "score": 10 },
+      "Скорость": { "value": 18, "score": 7 },
+      "overall": 78
+    },
+    {
+      "name": "Asocks",
+      "Fraud Score": { "value": 27, "score": 10 },
+      "Risk Score": { "value": 9, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 209, "score": 4 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "score": 1 },
+      "overall": 71
+    },
+    {
+      "name": "ABCProxy",
+      "Fraud Score": { "value": 28, "score": 10 },
+      "Risk Score": { "value": 41, "score": 6 },
+      "Утечки DNS": { "score": 8 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 234, "score": 6 },
+      "Потеря пакетов": { "value": 1476, "score": 7 },
+      "Скорость": { "value": 80, "score": 10 },
+      "overall": 72
+    },
+    {
+      "name": "AstroProxy",
+      "Fraud Score": { "value": 0, "score": 10 },
+      "Risk Score": { "value": 2, "score": 10 },
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 101, "score": 4 },
+      "Потеря пакетов": { "value": 1452, "score": 4 },
+      "Скорость": { "value": 10, "score": 7 },
+      "overall": 71
+    }
+  ],
+  "mobileProxy": [
+    {
+      "name": "Proxy-Solutions",
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 61, "score": 7 },
+      "Потеря пакетов": { "value": 1440, "score": 10 },
+      "Скорость": { "value": 10, "score": 10 },
+      "Price": { "value": 7, "score": 5 },
+      "overall": 87
+    },
+    {
+      "name": "Proxy.Market",
+
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 96, "score": 7 },
+      "Потеря пакетов": { "value": 1452, "score": 10 },
+      "Скорость": { "value": 25, "score": 6 },
+      "overall": 76
+    },
+    {
+      "name": "MobileProxy",
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 5 },
+      "Пинг": { "value": 60, "score": 8 },
+      "Потеря пакетов": { "value": 1500, "score": 10 },
+      "Скорость": { "value": 15, "score": 4 },
+      "Fraud Score": { "value": 32, "score": 7 },
+      "Risk Score": { "value": 36, "score": 7 },
+      "overall": 62
+    },
+    {
+      "name": "LTEBoost",
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 131, "score": 4 },
+      "Потеря пакетов": { "value": 1340, "score": 4 },
+      "Скорость": { "value": 12, "score": 10 },
+      "overall": 61
+    },
+    {
+      "name": "Frigate-Proxy",
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 125, "score": 4 },
+      "Потеря пакетов": { "value": 1440, "score": 10 },
+      "Скорость": { "value": 16, "score": 10 },
+      "overall": 79
+    },
+    {
+      "name": "Proxy-Sale",
+      "Утечки DNS": { "score": 7 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 129, "score": 4 },
+      "Потеря пакетов": { "value": 1383, "score": 6 },
+      "Скорость": { "value": 12, "score": 9 },
+      "overall": 65
+    },
+    {
+      "name": "TheSocialProxy",
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 148, "score": 4 },
+      "Потеря пакетов": { "value": 1440, "score": 10 },
+      "Скорость": { "value": 8, "score": 7 },
+      "overall": 56
+    },
+    {
+      "name": "YouProxy",
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 148, "score": 4 },
+      "Потеря пакетов": { "value": 1384, "score": 4 },
+      "Скорость": { "value": 9, "score": 7 },
+      "overall": 56
+    },
+    {
+      "name": "Proxys.io",
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 92, "score": 7 },
+      "Потеря пакетов": { "value": 1400, "score": 10 },
+      "Скорость": { "value": 10, "score": 10 },
+      "overall": 85
+    },
+    {
+      "name": "Proxy-Seller",
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 312, "score": 4 },
+      "Потеря пакетов": { "value": 1384, "score": 4 },
+      "Скорость": { "value": 19, "score": 10 },
+      "overall": 61
+    },
+    {
+      "name": "Proxy.Market",
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 269, "score": 4 },
+      "Потеря пакетов": { "value": 1400, "score": 10 },
+      "Скорость": { "value": 1, "score": 2 },
+      "overall": 65
+    },
+    {
+      "name": "AstroProxy",
+      "Утечки DNS": { "score": 6 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 189, "score": 4 },
+      "Потеря пакетов": { "value": 1440, "score": 10 },
+      "Скорость": { "score": 2 },
+      "overall": 58
+    },
+    {
+      "name": "ProxyWhite",
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 61, "score": 7 },
+      "Потеря пакетов": { "value": 1379, "score": 4 },
+      "Скорость": { "score": 7 },
+      "overall": 68
+    },
+    {
+      "name": "One Dash",
+      "Утечки DNS": { "score": 10 },
+      "Надежность типа сети": { "score": 10 },
+      "Пинг": { "value": 35, "score": 10 },
+      "Потеря пакетов": { "value": 1379, "score": 4 },
+      "Скорость": { "score": 10 },
+      "overall": 79
+    }
+  ]
+}

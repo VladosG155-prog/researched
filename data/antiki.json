@@ -1,0 +1,754 @@
+{
+  "Data": {
+    "antiki": {
+      "info": {
+        "title": "Антидетект-браузеры",
+        "description": "Специализированное ПО для создания и управления виртуальными профилями браузера. Позволяет обходить блокировки и работать с множеством аккаунтов одновременно."
+      },
+      "tools": {
+        "AdsPower": {
+          "price": "9$ = 10 шт",
+          "pricePerProfile": "0.9$",
+          "freeProfiles": "5",
+          "automation": "Да",
+          "browserFeatures": "Библиотека готовых RPA. Удобный синхронизатор. Быстрое ядро браузера. Очень популярен среди криптанов",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "SBP",
+              "icon": "/payments_logos/SBP.webp"
+            },
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "USDC",
+              "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+            },
+            {
+              "name": "Capitalist",
+              "icon": "/payments_logos/Capitalist.webp"
+            },
+            {
+              "name": "Alipay",
+              "icon": "/payments_logos/Alipay.webp"
+            },
+            {
+              "name": "YooMoney",
+              "icon": "/payments_logos/Yoomoney.webp"
+            },
+            {
+              "name": "Paypal",
+              "icon": "/payments_logos/Paypal.webp"
+            }
+          ],
+          "support": "2 мин.",
+          "referral": "researched",
+          "opinion": "-",
+          "breachHistory": [
+            {
+              "date": "",
+              "description": "25 января 2025 года заявили о замене расширений криптокошельков некоторых пользователей на вредоносные. Новость",
+              "consequences": ""
+            }
+          ],
+          "link": "https://share.adspower.net/researched",
+          "icon": "/Anty/adspower.webp"
+        },
+        "Dolphin Anty": {
+          "price": "10$ = 10 шт",
+          "pricePerProfile": "1$",
+          "freeProfiles": "10",
+          "automation": "Да",
+          "browserFeatures": "Много удобств в работе с рекламными платформами и имеет большую популярность среди криптанов",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "USDC",
+              "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+            },
+            {
+              "name": "Alipay",
+              "icon": "/payments_logos/Alipay.webp"
+            },
+            {
+              "name": "Picpay",
+              "icon": "/payments_logos/Picpay.webp"
+            },
+            {
+              "name": "DOGE",
+              "icon": "/payments_logos/dogecoin-doge-logo.webp"
+            },
+            {
+              "name": "LTC",
+              "icon": "/payments_logos/litecoin-ltc-logo.webp"
+            }
+          ],
+          "support": "3 мин.",
+          "referral": "researched",
+          "opinion": "-",
+          "breachHistory": [
+            {
+              "date": "",
+              "description": "Был подтвержденный случай утечки 15% профилей. Новость",
+              "consequences": ""
+            }
+          ],
+          "link": "https://dolphin-anty.com/a/4054900/lwKQJ51",
+          "icon": "/Anty/Dolphin.webp"
+        },
+        "Kameleo": {
+          "price": "59$ = 20 облачных, ∞ локальных",
+          "pricePerProfile": "2.95$ за 1 облачный профиль,но учитывайте, что в тарифе ∞ локальных.",
+          "freeProfiles": "0",
+          "automation": "Да",
+          "browserFeatures": "Безлимитные локальные профили. Уникальные браузеры Chroma и Junglefox способны обходить Cloudflare капчу, а анти-бот Brotector помогает криптану настроить автоматизацию максимально эффективно\nТакже есть мобильная версия для быстрого доступа",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "Alipay",
+              "icon": "/payments_logos/Alipay.webp"
+            },
+            {
+              "name": "Stripe",
+              "icon": "/payments_logos/Stripe.webp"
+            }
+          ],
+          "support": "39 мин",
+          "referral": "researchedxyz",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://kameleo.io/?ref=29912",
+          "icon": "/Anty/kameleo.io.webp"
+        },
+        "GeeLark": {
+          "price": "10 шт = 9$, 0.007$/мин, максимум $1/день (143 мин). Оплата сверх отдельно.",
+          "pricePerProfile": "?",
+          "freeProfiles": "60 минут на месяц",
+          "automation": "Да",
+          "browserFeatures": "Антидетект-телефоны от AdsPower с синхронизатором и прокси",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "SBP",
+              "icon": "/payments_logos/SBP.webp"
+            },
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "USDC",
+              "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+            },
+            {
+              "name": "YooMoney",
+              "icon": "/payments_logos/Yoomoney.webp"
+            },
+            {
+              "name": "Paypal",
+              "icon": "/payments_logos/Paypal.webp"
+            }
+          ],
+          "support": "29 ч.",
+          "referral": "researched",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://app.geelark.com/#/register?invite_code=researched",
+          "icon": "/Anty/app.geelark.com.webp"
+        },
+        "Indigo": {
+          "price": "99€ = 100 шт",
+          "pricePerProfile": "0.99€",
+          "freeProfiles": "100 на неделю",
+          "automation": "Да",
+          "browserFeatures": "Два движка — Mimic (Chromium) и Stealthfox (Firefox) для гибкой работы. Удобная работа с куками через CookieRobot.",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "USDC",
+              "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+            },
+            {
+              "name": "Capitalist",
+              "icon": "/payments_logos/Capitalist.webp"
+            },
+            {
+              "name": "DAI",
+              "icon": "/payments_logos/dai-dai-logo.webp"
+            }
+          ],
+          "support": "1 мин.",
+          "referral": "researched",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://indigobrowser.com/?ref=mymovuwa35",
+          "icon": "/Anty/indigobrowser.com.webp"
+        },
+        "BitBrowser": {
+          "price": "10$ = 50 шт",
+          "pricePerProfile": "0.2$",
+          "freeProfiles": "10",
+          "automation": "Да",
+          "browserFeatures": "Удобная настройка скриптов, функция эмулирования телефона, дешевый для небольшой команды",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Alipay",
+              "icon": "/payments_logos/Alipay.webp"
+            },
+            {
+              "name": "Paypal",
+              "icon": "/payments_logos/Paypal.webp"
+            }
+          ],
+          "support": "3 мин.",
+          "referral": "researchedxyz",
+          "opinion": "-",
+          "breachHistory": [
+            {
+              "date": "",
+              "description": "Август 2023 года, используя уязвимость в шифрования данных, хакер смог получить доступ к приватным ключам расширения Metamask через восстановление логов и в последствии вывел средства пользователей.\n\nПоследствия. В результате атаки злоумышленник смог украсть $386.000 в ETH, 70% от этой суммы он уже отмыл через  миксер. BitBrowser пообещала вернуть средства всем поcтрадавшим юзерам. Новость. Новость.",
+              "consequences": ""
+            }
+          ],
+          "link": "https://www.bitbrowser.ru/?code=872449",
+          "icon": "/Anty/www.bitbrowser.cn.webp"
+        },
+        "Linken Sphere": {
+          "price": "30$ = 30 шт",
+          "pricePerProfile": "1$",
+          "freeProfiles": "5",
+          "automation": "Нет",
+          "browserFeatures": "Продвинутая защита отпечатков. Хорошее шифрование локальных данных. Продвинутый куки робот с возможностью имитации перехода через поиск. Мобильная веб-эмуляция. Три режима работы антидетекта\n\nОдин из первых антидетектов на рынке. Работают уже 8 лет.",
+          "payment": [
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "LTC",
+              "icon": "/payments_logos/litecoin-ltc-logo.webp"
+            },
+            {
+              "name": "TON",
+              "icon": "/payments_logos/ton.webp"
+            }
+          ],
+          "support": "3 ч.",
+          "referral": "researchedxyz",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://ls.app/?utm_source=researchedxyz",
+          "icon": "/Anty/ls2.app.webp"
+        },
+        "Incogniton": {
+          "price": "20$ = 10 шт",
+          "pricePerProfile": "2$",
+          "freeProfiles": "10, но через 2 мес. - 3",
+          "automation": "Да",
+          "browserFeatures": "Возможность хранить данные локально только на своем устройстве. Возможность покупать прокси прямо в приложение браузера.",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDC",
+              "icon": "/payments_logos/usd-coin-usdc-logo.webp"
+            },
+            {
+              "name": "Paypal",
+              "icon": "/payments_logos/Paypal.webp"
+            },
+            {
+              "name": "Cryptomus",
+              "icon": "/payments_logos/CRYPTOMUS.webp"
+            }
+          ],
+          "support": "5 мин.",
+          "referral": "-",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://incogniton.com/ru/aff/1568749/?campaign=researched",
+          "icon": "/Anty/incogniton.com.webp"
+        },
+        "GoLogin": {
+          "price": "49$ = 100 шт",
+          "pricePerProfile": "0.49$",
+          "freeProfiles": "3",
+          "automation": "Да",
+          "browserFeatures": "Создание профиля и прокси в 1 клик, встроенные прокси, которые стабильно работают, 2GB прокси включено в тариф",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "Paypal",
+              "icon": "/payments_logos/Paypal.webp"
+            },
+            {
+              "name": "Cryptomus",
+              "icon": "/payments_logos/CRYPTOMUS.webp"
+            }
+          ],
+          "support": "1 мин.",
+          "referral": "RDXGL",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://go.gologin.com/researched-IJHHNEA",
+          "icon": "/Anty/gologin.webp"
+        },
+        "Multilogin": {
+          "price": "29€  = 10 шт",
+          "pricePerProfile": "2.9€",
+          "freeProfiles": "0",
+          "automation": "Да",
+          "browserFeatures": "Уникальные браузеры Mimic и Stealthfox. AI для идеальной симуляции отпечатков и автоматизации. Безлимит по кол-ву участников команды",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "LTC",
+              "icon": "/payments_logos/litecoin-ltc-logo.webp"
+            }
+          ],
+          "support": "5 мин.",
+          "referral": "researchedxyz",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://multilogin.com/#a_aid=researched",
+          "icon": "/Anty/multilogin.com.webp"
+        },
+        "Octo Browser": {
+          "price": "30$ = 10 шт",
+          "pricePerProfile": "3$",
+          "freeProfiles": "Промокод",
+          "automation": "Да",
+          "browserFeatures": "Быстрые апдейты до последней версии ядра. Особое отношение к безопасности - взломоустойчивая архитектура своих сервисов. Пароли на профиль позволяют закрыть ваши данные сквозным шифрованием. Двухфакторная аутентификация защищает ваши аккаунты даже при потере пароля.",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "TON",
+              "icon": "/payments_logos/ton.webp"
+            },
+            {
+              "name": "TRX",
+              "icon": "/payments_logos/tron-trx-logo.webp"
+            },
+            {
+              "name": "Stripe",
+              "icon": "/payments_logos/Stripe.webp"
+            }
+          ],
+          "support": "5 мин.",
+          "referral": "RESEARCHED",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://octobrowser.net/signup/?p=10132833",
+          "icon": "/Anty/octobrowser.net.webp"
+        },
+        "Undetectable": {
+          "price": "49$ = 50 облачных, ∞ локальных",
+          "pricePerProfile": "0.98$ за 1 облачный профиль, но учитывайте, что в тарифе ∞ локальных.",
+          "freeProfiles": "5",
+          "automation": "Да",
+          "browserFeatures": "Автоматический фарм файлов cookie для прогрева профилей, функция «Paste Like Human», которая имитирует поведение человека при вставке текста,",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "Capitalist",
+              "icon": "/payments_logos/Capitalist.webp"
+            },
+            {
+              "name": "BNB",
+              "icon": "/payments_logos/bnb.webp"
+            }
+          ],
+          "support": "2 мин.",
+          "referral": "RESEARCHEDXYZ20",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://undetectable.io/?r=mg8-1",
+          "icon": "/Anty/undetectable.webp"
+        },
+        "MoreLogin": {
+          "price": "9$ = 10 шт",
+          "pricePerProfile": "0.9$",
+          "freeProfiles": "2 + промокод",
+          "automation": "Да",
+          "browserFeatures": "Прошли аудит безопасности от SlowMist, киллерфича - не эмулятор, а полноценный облачный мобильный телефон на базе ARM чипа, ОС Android, умеет обнаруживать смену IP на странице в реальном времени.",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "Paypal",
+              "icon": "/payments_logos/Paypal.webp"
+            }
+          ],
+          "support": "1 мин.",
+          "referral": "researchedxyz",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://www.morelogin.com/register/?from=researchedxyz",
+          "icon": "/Anty/www.morelogin.com.webp"
+        },
+        "MoreLogin (обычный антик)": {
+          "price": "9$ = 10 шт",
+          "pricePerProfile": "0.9$",
+          "freeProfiles": "2 + промокод",
+          "automation": "Да",
+          "browserFeatures": "Прошли аудит безопасности от SlowMist, киллерфича - не эмулятор, а полноценный облачный мобильный телефон на базе ARM чипа, ОС Android, умеет обнаруживать смену IP на странице в реальном времени.",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "Paypal",
+              "icon": "/payments_logos/Paypal.webp"
+            }
+          ],
+          "support": "1 мин.",
+          "referral": "researchedxyz",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://www.morelogin.com/register/?from=researchedxyz",
+          "icon": "/Anty/www.morelogin.com.webp"
+        },
+        "AntBrowser": {
+          "price": "12$ = 10 шт",
+          "pricePerProfile": "1.2$",
+          "freeProfiles": "2 + промокод",
+          "automation": "Да",
+          "browserFeatures": "Особое отношение к командной работе - журнал действий команды. По их словам: \"единственный в мире антидетект-браузер с функцией восстановления данных по контрольным точкам\"",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "YooMoney",
+              "icon": "/payments_logos/Yoomoney.webp"
+            },
+            {
+              "name": "TON",
+              "icon": "/payments_logos/ton.webp"
+            },
+            {
+              "name": "TRX",
+              "icon": "/payments_logos/tron-trx-logo.webp"
+            },
+            {
+              "name": "PerfectMoney",
+              "icon": "/payments_logos/Perfect Money.webp"
+            }
+          ],
+          "support": "1 мин.",
+          "referral": "ResearchedXYZ",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://antbrowser.pro/reg/51788",
+          "icon": "/Anty/antbrowser.pro.webp"
+        },
+        "swSamara": {
+          "price": "40$ на год = ∞ шт, 0 облачных",
+          "pricePerProfile": "0.33$. Цена из-за бесконечности стремится к нулю, но для примера мы взяли 10 профилей.",
+          "freeProfiles": "0",
+          "automation": "Нет",
+          "browserFeatures": "Максимально дешевый",
+          "payment": [
+            {
+              "name": "Visa",
+              "icon": "/payments_logos/VISAcard.webp"
+            },
+            {
+              "name": "Mastercard",
+              "icon": "/payments_logos/MasterCardcard.webp"
+            },
+            {
+              "name": "Mir",
+              "icon": "/payments_logos/MIRcard.webp"
+            },
+            {
+              "name": "ETH",
+              "icon": "/payments_logos/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BTC",
+              "icon": "/payments_logos/Bitcoin.svg.webp"
+            },
+            {
+              "name": "USDT",
+              "icon": "/payments_logos/tether-usdt-logo.webp"
+            },
+            {
+              "name": "Alipay",
+              "icon": "/payments_logos/Alipay.webp"
+            },
+            {
+              "name": "Webmoney",
+              "icon": "/payments_logos/WEBMONEY.webp"
+            }
+          ],
+          "support": "3 мин.",
+          "referral": "researchedxyz203",
+          "opinion": "-",
+          "breachHistory": [],
+          "link": "https://www.digiseller.market/asp2/pay_wm.asp?id_d=2084517&lang=ru-RU&promocode=researchedxyz203",
+          "icon": "/Anty/samara-weblab.ru.webp"
+        }
+      }
+    }
+  }
+}
