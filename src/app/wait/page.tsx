@@ -313,7 +313,7 @@ export function Page() {
     useEffect(() => {
         // Load images...
         const heartImage = new Image();
-        heartImage.src = '/images/green-heart.png';
+        heartImage.src = '/green-heart.png';
         heartImage.crossOrigin = 'anonymous';
         heartImage.onload = () => {
             heartImageRef.current = heartImage;
@@ -1917,6 +1917,7 @@ export function Page() {
             {/* Use ref, keep loop and autoplay as per user's working version */}
             <audio ref={audioRef} id="autoplay-music" loop style={{ display: 'none' }} controls={false} autoPlay>
                 <source src="/videoplayback-bg.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
             </audio>
             <canvas
                 ref={canvasRef}
