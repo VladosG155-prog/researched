@@ -11,7 +11,7 @@ const LETTER_SPACING = 1;
 const WORD_SPACING = 3;
 
 // Target date: April 17, 2025, 13:00 Moscow time (UTC+3)
-const TARGET_DATE = new Date('2025-04-22T19:00:00+03:00');
+const TARGET_DATE = new Date('2025-04-22T20:00:00+03:00');
 
 // Power-up types
 enum PowerUpType {
@@ -1212,7 +1212,7 @@ export function Page() {
                             : Math.min(28 * scaleRef.current, canvasElement.width * 0.04);
                         const lineSpacing = fontSize * 1.5;
 
-                        ctx.font = `bold ${fontSize}px Arial`;
+                        ctx.font = `400 ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
                         ctx.textAlign = 'center';
                         ctx.fillStyle = COLOR;
                         ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
@@ -1224,7 +1224,7 @@ export function Page() {
                         ctx.globalAlpha = messageOpacity;
 
                         const messageLines = [
-                            'Молодец! А теперь, заходи в наш телеграм канал.',
+                            'Молодец! А теперь заходи в наш телеграм канал.',
                             '', // Empty line for spacing
                             'По истечению таймера ты сможешь получить 500 USDT.'
                         ];
@@ -1236,10 +1236,11 @@ export function Page() {
                         });
 
                         // Draw Telegram Button
-                        const buttonText = 'TG канал';
+                        // Draw Telegram Button
+                        const buttonText = 'Telegram канал';
                         const buttonPadding = 20 * scaleRef.current;
                         const buttonHeight = buttonFontSize + buttonPadding;
-                        ctx.font = `bold ${buttonFontSize}px Arial`; // Use pixel font if available later
+                        ctx.font = `bold ${buttonFontSize}px 'Press Start 2P', sans-serif`; // Changed font and added fallback
                         const textMetrics = ctx.measureText(buttonText);
                         const buttonWidth = textMetrics.width + buttonPadding * 2;
                         const buttonX = canvasElement.width / 2 - buttonWidth / 2;
@@ -1418,7 +1419,7 @@ export function Page() {
                     const fontSize = isMobile
                         ? Math.min(36 * scaleRef.current, canvasElement.width * 0.05)
                         : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
-                    ctx.font = `bold ${fontSize}px Arial`;
+                    ctx.font = `400 ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
                     ctx.textAlign = 'center';
 
                     // Add stronger shadow
