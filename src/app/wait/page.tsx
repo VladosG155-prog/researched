@@ -504,7 +504,7 @@ export function Page() {
     const checkVictory = () => {
         if (gameState !== GameState.PLAYING) return false;
 
-        const allHit = pixelsRef.current.every((pixel) => pixel.hit);
+        const allHit = pixelsRef.current.some((pixel) => pixel.hit);
 
         if (allHit) {
             // Player has won!
