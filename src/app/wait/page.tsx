@@ -1231,7 +1231,7 @@ export function Page() {
                             '',
                             'А теперь заходи в наш телеграм канал.',
                             '', // Empty line for spacing
-                            'Там ты сможешь получить 500 USDT.'
+                            'После таймера сможешь получить 500$'
                         ];
 
                         let currentY = messageBaseY;
