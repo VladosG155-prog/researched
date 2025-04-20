@@ -1205,10 +1205,10 @@ export function Page() {
                         const timerHeight = 5 * timerPositionRef.current.pixelSize; // Approximate height
                         const messageBaseY = animatedTimerYRef.current + timerHeight + (isMobile ? 40 : 60) * scaleRef.current;
                         const fontSize = isMobile
-                            ? Math.min(28 * scaleRef.current, canvasElement.width * 0.05)
+                            ? Math.min(32 * scaleRef.current, canvasElement.width * 0.05)
                             : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
                         const buttonFontSize = isMobile
-                            ? Math.min(32 * scaleRef.current, canvasElement.width * 0.06)
+                            ? Math.min(30 * scaleRef.current, canvasElement.width * 0.06)
                             : Math.min(28 * scaleRef.current, canvasElement.width * 0.04);
                         const lineSpacing = fontSize * 1.5;
 
@@ -1236,10 +1236,11 @@ export function Page() {
                         });
 
                         // Draw Telegram Button
-                        const buttonText = 'TG канал';
+                        // Draw Telegram Button
+                        const buttonText = 'Telegram канал';
                         const buttonPadding = 20 * scaleRef.current;
                         const buttonHeight = buttonFontSize + buttonPadding;
-                        ctx.font = `bold ${buttonFontSize}px Press Start 2P`; // Use pixel font if available later
+                        ctx.font = `bold ${buttonFontSize}px 'Press Start 2P', sans-serif`; // Changed font and added fallback
                         const textMetrics = ctx.measureText(buttonText);
                         const buttonWidth = textMetrics.width + buttonPadding * 2;
                         const buttonX = canvasElement.width / 2 - buttonWidth / 2;
@@ -1249,7 +1250,7 @@ export function Page() {
                         victoryButtonRectRef.current = { x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight };
 
                         // Draw button background (Orange)
-                        ctx.fillStyle = '#FF9800'; // Orange color
+                        ctx.fillStyle = '#42aaff'; // Orange color
                         // Simple rect for now, pixel style can be added later if needed
                         ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
 
@@ -1416,8 +1417,8 @@ export function Page() {
 
                     // Draw game state message
                     const fontSize = isMobile
-                        ? Math.min(36 * scaleRef.current, canvasElement.width * 0.05)
-                        : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
+                        ? Math.min(24 * scaleRef.current, canvasElement.width * 0.05)
+                        : Math.min(22 * scaleRef.current, canvasElement.width * 0.03);
                     ctx.font = `400 ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
                     ctx.textAlign = 'center';
 
