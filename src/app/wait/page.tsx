@@ -508,7 +508,7 @@ export function Page() {
         // const allHit = hitCount >= 2; // Победа засчитывается, если есть хотя бы 2 попадания
         const allHit = pixelsRef.current.every((pixel) => pixel.hit);
 
-        if (1) {
+        if (allHit) {
             // Player has won!
             setGameState(GameState.VICTORY);
             ballRef.current.active = false;
