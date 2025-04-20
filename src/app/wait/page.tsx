@@ -1611,6 +1611,8 @@ export function Page() {
                         return;
                     }
                 }
+                return;
+
                 // Otherwise, reset the game on click
                 if (gameState === GameState.GAME_OVER) {
                     resetGame();
@@ -1669,17 +1671,6 @@ export function Page() {
         canvasElement.addEventListener('touchstart', handleTouchStart);
         canvasElement.addEventListener('touchmove', handleTouchMove);
         canvasElement.addEventListener('click', handleClick);
-        canvasElement.addEventListener('touchend', (e) => {
-            // Convert touch end to click for button handling
-            if (e.changedTouches.length > 0) {
-                const touch = e.changedTouches[0];
-                const clickEvent = new MouseEvent('click', {
-                    clientX: touch.clientX,
-                    clientY: touch.clientY
-                });
-                handleClick(clickEvent);
-            }
-        });
 
         requestRef.current = requestAnimationFrame(gameLoop);
 
