@@ -504,13 +504,13 @@ export function Page() {
     const checkVictory = () => {
         if (gameState !== GameState.PLAYING) return false;
         let pixelTest = 0;
-        const allHit = pixelsRef.current.some((pixel) => {
+        const allHit = pixelsRef.current.forEach((pixel) => {
             if (pixel.hit) {
                 pixelTest += 1;
             }
         });
 
-        if (pixelTest === 2) {
+        if (pixelTest > 2) {
             // Player has won!
             setGameState(GameState.VICTORY);
             ballRef.current.active = false;
