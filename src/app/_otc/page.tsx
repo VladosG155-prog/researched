@@ -1,7 +1,7 @@
 'use client';
 import { createColumnHelper, ExpandedState, flexRender, getCoreRowModel, getExpandedRowModel, useReactTable } from '@tanstack/react-table';
 import otcData from '../../../data/otc.json';
-import CategoriesLayout from '../categories/layout';
+import CategoriesLayout from '../_categories/layout';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import Image from 'next/image';

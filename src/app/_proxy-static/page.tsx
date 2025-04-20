@@ -8,9 +8,9 @@ import {
     getSortedRowModel,
     useReactTable
 } from '@tanstack/react-table';
-import proxyData from '../../../data/mobileproxy.json';
+import proxyData from '../../../data/statikproxy.json';
 import proxyScoreData from '../../../data/RS_Score_Proxy.json';
-import CategoriesLayout from '../categories/layout';
+import CategoriesLayout from '../_categories/layout';
 import { ChevronDown, ChevronUp, Eye, FilterIcon, Gift, SortAsc, SortDesc } from 'lucide-react';
 import { Fragment, useMemo, useState } from 'react';
 import Image from 'next/image';
@@ -21,50 +21,52 @@ import { Filter } from '@/components/filter';
 import { ClearFilters } from '@/components/clear-filters';
 import { usePathname, useRouter } from 'next/navigation';
 import Score from '@/components/score';
-import { getResidentialProxy } from '@/utils/get-promocodes';
+import { getStaticProxyPromocodes } from '@/utils/get-promocodes';
 import { TopPlace } from '@/components/top-place';
-import { CountryPopup } from '@/components/contry-popup/country-popup';
+import { CountryPopup } from '@/components/modal-countries/country-popup';
 import { getUniquePayments } from '@/utils/get-payments';
+
 import useIsMobile from '@/hooks/useIsMobile';
 import { MobileProxyFilters } from '@/components/mobile-proxy-filter';
 
+const dataStatic = Object?.entries(proxyData.Data.proxy.staticProxy.tools) || {};
+export const dynamic = 'force-dynamic';
 const PROXY_FILTERS = [
     { name: 'Статические', link: 'proxy-static' },
     { name: 'Резидентские', link: 'proxy-residential' },
     { name: 'Мобильные', link: 'proxy-mobile' },
     { name: 'Для DePIN', link: 'proxy-depin' }
 ];
+const staticProxies = getStaticProxyPromocodes();
 
 function Page() {
-    const [expanded, setExpanded] = useState<ExpandedState>({});
-    const [isOpenModal, setIsOpenModal] = useState(false);
+    const [expanded, setExpanded] = useState({});
     const [openedPromocode, setOpenedPromocode] = useState({});
+    const [isOpenModal, setIsOpenModal] = useState(false);
     const [countryFilter, setCountryFilter] = useState('');
-    const [sorting, setSorting] = useState([]);
     const [selectedCountries, setSelectedCountries] = useState([]);
     const [isOpenCountriesModal, setIsOpenCoutriesModal] = useState(false);
     const [payment, setPayment] = useState('');
-    const mobileProxies = getResidentialProxy();
-    const dataStatic = Object?.entries(proxyData.Data.proxy.mobileProxy.tools) || [];
+    const [sorting, setSorting] = useState([]);
     const [sortColumn, setSortColumn] = useState('');
-    const isMobile = useIsMobile();
     const router = useRouter();
     const pathname = usePathname();
+    const isMobile = useIsMobile();
     const mappedData = useMemo(() => {
         let data = dataStatic?.map(([name, newData]) => {
             return {
                 id: name,
                 price: newData.price,
                 support: newData.support || '',
-                promocodeInfo: mobileProxies?.find((item) => item[0] === name),
-                fraudscore: proxyScoreData.mobileProxy.find((item) => item.name === name)?.overall || '-',
-                fraudData: proxyScoreData.mobileProxy.find((item) => item.name === name) || {},
+                fraudscore: proxyScoreData.Static.find((item) => item.name === name)?.overall || '-',
+                fraudData: proxyScoreData.Static.find((item) => item.name === name) || {},
                 children: [...newData.payment] || [],
                 payments: newData.payment,
+                demo: newData?.demo,
                 countries: newData?.countries,
+                promocodeInfo: staticProxies?.find((item) => item[0] === name),
                 icon: newData.icon,
-                link: newData.link,
-                demo: newData?.demo
+                link: newData.link
             };
         });
 
@@ -81,6 +83,10 @@ function Page() {
 
     const columnHelper = createColumnHelper();
 
+    const toggleCountriesModal = () => {
+        setIsOpenCoutriesModal((prev) => !prev);
+    };
+
     const toggleModal = () => {
         setIsOpenModal((prev) => !prev);
     };
@@ -89,7 +95,7 @@ function Page() {
         () => [
             columnHelper.accessor('id', {
                 header: 'Сервис',
-                size: 270,
+                size: 310,
                 enableSorting: false,
                 cell: ({ row }) => {
                     return (
@@ -106,16 +112,15 @@ function Page() {
                                         unoptimized={true}
                                     />
                                 )}
-                                <span className="text-white">{row.original.id}</span>
+                                <span className="text-white flex-grow">{row.original.id}</span>
                             </div>
                             {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
-                                <button className="ml-10 flex items-center  bg-[#DEDEDE] mt-3 cursor-pointer p-[3px]">
+                                <button className="ml-10 flex items-center bg-[#DEDEDE] mt-3 cursor-pointer p-[3px]">
                                     <span
-                                        className="font-normal text-[12px] text-black "
+                                        className="font-normal text-[12px] text-black"
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             toggleModal();
-
                                             setOpenedPromocode(row.original.promocodeInfo[1]);
                                         }}
                                     >
@@ -129,25 +134,24 @@ function Page() {
             }),
             columnHelper.accessor('price', {
                 header: 'Цена',
-                size: 400,
+                size: 300,
                 cell: (info) => <span className="text-white">{info.getValue()}</span>,
                 enableSorting: true,
                 sortDescFirst: true
             }),
-
             columnHelper.accessor('countries', {
                 header: 'Кол-во стран',
                 size: 200,
                 cell: ({ row }) => (
                     <div className="flex items-center justify-center gap-3">
-                        <span className="text-center">{row.original.countries.length}</span>{' '}
+                        <span className="text-center">{row.original.countries.length}</span>
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setSelectedCountries(row.original.countries);
                                 toggleCountriesModal();
                             }}
-                            className="text-[14px] cursor-pointer flex items-center gap-3  bg-[#303030] p-2"
+                            className="text-[14px] cursor-pointer flex items-center gap-3 bg-[#303030] p-2"
                         >
                             <Eye />
                         </button>
@@ -174,9 +178,8 @@ function Page() {
             }),
             columnHelper.accessor('support', {
                 header: 'Тех.поддержка',
-                cell: (info) => <span className="text-white">{info.getValue()}</span>,
                 enableSorting: false,
-                sortDescFirst: true
+                cell: (info) => <span className="text-white">{info.getValue()}</span>
             }),
             columnHelper.display({
                 id: 'expand',
@@ -203,26 +206,6 @@ function Page() {
         [sorting, countryFilter]
     );
 
-    const table = useReactTable({
-        data: mappedData,
-        columns,
-        state: {
-            expanded,
-            sorting
-        },
-        onExpandedChange: setExpanded,
-        onSortingChange: setSorting,
-        getRowCanExpand: (row) => !!row.original.children,
-        getCoreRowModel: getCoreRowModel(),
-        getExpandedRowModel: getExpandedRowModel(),
-        getSortedRowModel: getSortedRowModel(),
-        enableColumnResizing: false
-    });
-
-    const handleClickFilter = (link: string) => {
-        router.push(link);
-    };
-
     const sortColumns = [
         { name: 'Цена', value: 'price' },
         { name: 'Researched score', value: 'fraudscore' }
@@ -238,28 +221,51 @@ function Page() {
             setSorting([]);
         }
     };
+
+    const table = useReactTable({
+        data: mappedData,
+        columns,
+        state: {
+            expanded,
+            sorting
+        },
+        onExpandedChange: setExpanded,
+        onSortingChange: setSorting,
+        getRowCanExpand: (row) => !!row.original.children,
+        getCoreRowModel: getCoreRowModel(),
+        getExpandedRowModel: getExpandedRowModel(),
+        getSortedRowModel: getSortedRowModel()
+    });
+
+    const handleClickFilter = (link) => {
+        router.push(link);
+    };
+
     const countries = useMemo(() => getProxyCountries(), []);
 
     const clearFilters = () => {
         setCountryFilter('');
         setPayment('');
-        setSorting([]);
         setSortColumn('');
+        setSorting([]);
     };
 
-    const toggleCountriesModal = () => {
-        setIsOpenCoutriesModal((prev) => !prev);
-    };
-
-    const payments = getUniquePayments(proxyData.Data.proxy.mobileProxy.tools);
+    const payments = getUniquePayments(proxyData.Data.proxy.staticProxy.tools);
 
     return (
         <CategoriesLayout
-            title={proxyData.Data.proxy.mobileProxy.info.title || ''}
-            description={proxyData.Data.proxy.mobileProxy.info.description || ''}
+            title={proxyData.Data.proxy.staticProxy.info.title || ''}
+            description={proxyData.Data.proxy.staticProxy.info.description || ''}
         >
             <CountryPopup isOpen={isOpenCountriesModal} onClose={toggleCountriesModal} countries={selectedCountries} />
-            <PromoPopup isOpen={isOpenModal} onClose={toggleModal} info={openedPromocode} />
+            <PromoPopup
+                isOpen={isOpenModal}
+                onClose={() => {
+                    toggleModal();
+                    setOpenedPromocode({});
+                }}
+                info={openedPromocode}
+            />
             {isMobile && <MobileProxyFilters filters={PROXY_FILTERS} pathname={pathname} handleClickFilter={handleClickFilter} />}
             <div className="flex gap-3 mb-4 items-center flex-wrap w-full">
                 {isMobile ? (
@@ -334,17 +340,17 @@ function Page() {
             <div className="py-4">
                 {/* Desktop View */}
                 <div className="hidden md:block">
-                    <table className="w-full border-separate border-spacing-y-2 ">
+                    <table className="w-full border-separate border-spacing-y-2">
                         <thead>
                             {table.getHeaderGroups().map((headerGroup) => (
-                                <tr key={headerGroup.id} className="bg-[#121212] ">
+                                <tr key={headerGroup.id} className="bg-[#121212]">
                                     {headerGroup.headers.map((header) => (
                                         <th
+                                            style={{ width: header.getSize() }}
                                             key={header.id}
                                             className={`p-3 text-left text-[#7E7E7E] first: last:-r-md ${
                                                 header.column.getCanSort() ? 'cursor-pointer' : ''
                                             }`}
-                                            style={{ width: header.getSize() }}
                                             onClick={header.column.getToggleSortingHandler()}
                                         >
                                             <div className="flex items-center gap-2">
@@ -376,13 +382,13 @@ function Page() {
                                         className="hover:bg-[#333333] bg-[#282828] -md"
                                     >
                                         {row.getVisibleCells().map((cell) => (
-                                            <td key={cell.id} className="p-3 first: cursor-pointer last:-r-md">
+                                            <td key={cell.id} className="p-3 cursor-pointer first: last:-r-md">
                                                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                             </td>
                                         ))}
                                     </tr>
                                     {row.getIsExpanded() && row.original.children && (
-                                        <tr className="bg-[#303030] relative -top-[11px] ">
+                                        <tr className="bg-[#303030] relative -top-[11px]">
                                             <td colSpan={columns.length} className="p-3 -b-md">
                                                 <h4 className="font-medium mb-2 text-white text-sm">Оплата</h4>
                                                 <div className="flex flex-wrap gap-2">
@@ -435,6 +441,19 @@ function Page() {
                                                 />
                                             )}
                                             <span className="text-white text-base">{row.original.id}</span>
+                                            {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
+                                                <button
+                                                    className="bg-[#DEDEDE] cursor-pointer p-2 w-[30px] h-[30px] flex justify-center items-center"
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        toggleModal();
+                                                        setOpenedPromocode(row.original.promocodeInfo[1]);
+                                                    }}
+                                                    aria-label="Открыть промокод"
+                                                >
+                                                    <Gift className="text-black" />
+                                                </button>
+                                            )}
                                         </div>
                                         {row.original.children && (
                                             <button
@@ -454,7 +473,7 @@ function Page() {
                                             </button>
                                         )}
                                     </div>
-                                    <div className="grid grid-cols-[30%_20%_24%_24%] justify-between w-full">
+                                    <div className="grid grid-cols-[30%_30%_30%] justify-between w-full">
                                         <div className="flex flex-col gap-2">
                                             <span className="text-[#7E7E7E] text-[12px]">RS score:</span>
                                             <Score totalScore={row.original.fraudscore} data={row.original.fraudData} />
@@ -469,28 +488,12 @@ function Page() {
                                             <span className="text-[#7E7E7E] text-[12px]">Демо:</span> <br />
                                             <span className="text-[12px]">{row.original.demo || '—'}</span>
                                         </p>
-
-                                        <div className="flex justify-end">
-                                            {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
-                                                <button
-                                                    className="bg-[#DEDEDE] cursor-pointer p-2 h-[50px] max-w-[50px]"
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        toggleModal();
-                                                        setOpenedPromocode(row.original.promocodeInfo[1]);
-                                                    }}
-                                                    aria-label="Открыть промокод"
-                                                >
-                                                    <Gift className="text-black" />
-                                                </button>
-                                            )}
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                             {row.getIsExpanded() && row.original.children && (
                                 <div
-                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[15%_30%_20%] justify-between w-full"
+                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[30%_30%_30%] gap-3 justify-between w-full"
                                     style={{
                                         animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
                                     }}

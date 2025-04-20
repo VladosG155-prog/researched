@@ -10,7 +10,7 @@ import {
 } from '@tanstack/react-table';
 import antikiData from '../../../data/antiki.json';
 import rsScoreData from '../../../data/RS_Score_Antidetect.json';
-import CategoriesLayout from '../categories/layout';
+import CategoriesLayout from '../_categories/layout';
 import { ChevronDown, ChevronUp, FilterIcon, Gift, Info, Smartphone, SortAsc, SortDesc } from 'lucide-react';
 import { Fragment, useMemo, useState } from 'react';
 import Image from 'next/image';

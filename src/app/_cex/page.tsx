@@ -9,7 +9,7 @@ import {
     useReactTable
 } from '@tanstack/react-table';
 import cexData from '../../../data/cex.json';
-import CategoriesLayout from '../categories/layout';
+import CategoriesLayout from '../_categories/layout';
 import { ChevronDown, ChevronUp, ExternalLink, Eye, FilterIcon, Phone, SortAsc, SortDesc } from 'lucide-react';
 import { Fragment, useMemo, useState, useEffect } from 'react';
 import Image from 'next/image';

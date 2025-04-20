@@ -1908,12 +1908,6 @@ export function Page() {
     return (
         <>
             {/* Restore user's iframe/audio setup */}
-            <iframe
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/videoplayback-iU4Hefz4ewhObYQhKnrtZ3e0eqYoSB.ogg"
-                style={{ display: 'none' }}
-                allow="autoplay"
-                aria-hidden="true"
-            ></iframe>
             {/* Use ref, keep loop and autoplay as per user's working version */}
             <audio ref={audioRef} id="autoplay-music" loop style={{ display: 'none' }} controls={false} autoPlay>
                 <source src="/videoplayback-bg.mp3" type="audio/mpeg" />

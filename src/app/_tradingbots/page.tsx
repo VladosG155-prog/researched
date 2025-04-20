@@ -9,7 +9,7 @@ import {
     useReactTable
 } from '@tanstack/react-table';
 import botsData from '../../../data/tradebots.json';
-import CategoriesLayout from '../categories/layout';
+import CategoriesLayout from '../_categories/layout';
 import { ChevronDown, ChevronUp, FilterIcon, SortAsc, SortDesc } from 'lucide-react';
 import { Fragment, useMemo, useState } from 'react';
 import Image from 'next/image';
