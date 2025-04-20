@@ -1207,7 +1207,7 @@ export function Page() {
                         const timerHeight = 5 * timerPositionRef.current.pixelSize; // Approximate height
                         const messageBaseY = animatedTimerYRef.current + timerHeight + (isMobile ? 40 : 60) * scaleRef.current;
                         const fontSize = isMobile
-                            ? Math.min(17 * scaleRef.current, canvasElement.width * 0.05)
+                            ? Math.min(24 * scaleRef.current, canvasElement.width * 0.05)
                             : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
                         const buttonFontSize = isMobile
                             ? Math.min(26 * scaleRef.current, canvasElement.width * 0.06)
@@ -1226,9 +1226,12 @@ export function Page() {
                         ctx.globalAlpha = messageOpacity;
 
                         const messageLines = [
-                            'Молодец! А теперь, заходи в наш телеграм канал.',
+                            '',
+                            'Молодец!',
+                            '',
+                            'А теперь заходи в наш телеграм канал.',
                             '', // Empty line for spacing
-                            'По истечению таймера ты сможешь получить 500 USDT.'
+                            'Там ты сможешь получить 500 USDT.'
                         ];
 
                         let currentY = messageBaseY;
