@@ -1612,11 +1612,6 @@ export function Page() {
                     }
                 }
                 return;
-
-                // Otherwise, reset the game on click
-                if (gameState === GameState.GAME_OVER) {
-                    resetGame();
-                }
             } else if (gameState === GameState.NOT_STARTED && gameInitializedRef.current) {
                 startGame(); // This sets gameState to PLAYING
 
