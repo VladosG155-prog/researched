@@ -1205,10 +1205,10 @@ export function Page() {
                         const timerHeight = 5 * timerPositionRef.current.pixelSize; // Approximate height
                         const messageBaseY = animatedTimerYRef.current + timerHeight + (isMobile ? 40 : 60) * scaleRef.current;
                         const fontSize = isMobile
-                            ? Math.min(28 * scaleRef.current, canvasElement.width * 0.05)
+                            ? Math.min(26 * scaleRef.current, canvasElement.width * 0.05)
                             : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
                         const buttonFontSize = isMobile
-                            ? Math.min(32 * scaleRef.current, canvasElement.width * 0.06)
+                            ? Math.min(30 * scaleRef.current, canvasElement.width * 0.06)
                             : Math.min(28 * scaleRef.current, canvasElement.width * 0.04);
                         const lineSpacing = fontSize * 1.5;
 
@@ -1417,8 +1417,8 @@ export function Page() {
 
                     // Draw game state message
                     const fontSize = isMobile
-                        ? Math.min(36 * scaleRef.current, canvasElement.width * 0.05)
-                        : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
+                        ? Math.min(32 * scaleRef.current, canvasElement.width * 0.05)
+                        : Math.min(22 * scaleRef.current, canvasElement.width * 0.03);
                     ctx.font = `400 ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
                     ctx.textAlign = 'center';
 
