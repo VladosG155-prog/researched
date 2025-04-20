@@ -1478,22 +1478,6 @@ export function Page() {
                     ctx.fill();
 
                     ctx.fillStyle = '#FFFFFF';
-                    if (isMusicPlaying) {
-                        // Draw pause icon
-                        const barWidth = buttonSize * 0.15;
-                        const barHeight = buttonSize * 0.5;
-                        const barSpacing = buttonSize * 0.2;
-                        ctx.fillRect(buttonX - barWidth - barSpacing / 2, buttonY - barHeight / 2, barWidth, barHeight);
-                        ctx.fillRect(buttonX + barSpacing / 2, buttonY - barHeight / 2, barWidth, barHeight);
-                    } else {
-                        // Draw play icon (triangle)
-                        ctx.beginPath();
-                        ctx.moveTo(buttonX - buttonSize * 0.2, buttonY - buttonSize * 0.3);
-                        ctx.lineTo(buttonX - buttonSize * 0.2, buttonY + buttonSize * 0.3);
-                        ctx.lineTo(buttonX + buttonSize * 0.3, buttonY);
-                        ctx.closePath();
-                        ctx.fill();
-                    }
 
                     // Draw music status text if there's an error
                     if (musicError) {
@@ -1628,7 +1612,9 @@ export function Page() {
                     }
                 }
                 // Otherwise, reset the game on click
-                resetGame();
+                if (gameState === GameState.GAME_OVER) {
+                    resetGame();
+                }
             } else if (gameState === GameState.NOT_STARTED && gameInitializedRef.current) {
                 startGame(); // This sets gameState to PLAYING
 
