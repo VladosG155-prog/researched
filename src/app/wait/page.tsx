@@ -313,7 +313,7 @@ export function Page() {
     useEffect(() => {
         // Load images...
         const heartImage = new Image();
-        heartImage.src = '/images/green-heart.png';
+        heartImage.src = '/green-heart.png';
         heartImage.crossOrigin = 'anonymous';
         heartImage.onload = () => {
             heartImageRef.current = heartImage;
@@ -321,7 +321,7 @@ export function Page() {
 
         // Load the orange ball power-up image
         const orangeBallImage = new Image();
-        orangeBallImage.src = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/handpie-krMyEJUWwsr5fjT1AB8oPllk03Kil9.webp';
+        orangeBallImage.src = '/pirazhok.webp';
         orangeBallImage.crossOrigin = 'anonymous';
         orangeBallImage.onload = () => {
             orangeBallImageRef.current = orangeBallImage;
@@ -508,7 +508,7 @@ export function Page() {
         // const allHit = hitCount >= 2; // Победа засчитывается, если есть хотя бы 2 попадания
         const allHit = pixelsRef.current.every((pixel) => pixel.hit);
 
-        if (allHit) {
+        if (1) {
             // Player has won!
             setGameState(GameState.VICTORY);
             ballRef.current.active = false;
@@ -1207,14 +1207,14 @@ export function Page() {
                         const timerHeight = 5 * timerPositionRef.current.pixelSize; // Approximate height
                         const messageBaseY = animatedTimerYRef.current + timerHeight + (isMobile ? 40 : 60) * scaleRef.current;
                         const fontSize = isMobile
-                            ? Math.min(28 * scaleRef.current, canvasElement.width * 0.05)
+                            ? Math.min(17 * scaleRef.current, canvasElement.width * 0.05)
                             : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
                         const buttonFontSize = isMobile
-                            ? Math.min(32 * scaleRef.current, canvasElement.width * 0.06)
+                            ? Math.min(26 * scaleRef.current, canvasElement.width * 0.06)
                             : Math.min(28 * scaleRef.current, canvasElement.width * 0.04);
                         const lineSpacing = fontSize * 1.5;
 
-                        ctx.font = `bold ${fontSize}px Arial`;
+                        ctx.font = `bold ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
                         ctx.textAlign = 'center';
                         ctx.fillStyle = COLOR;
                         ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
@@ -1241,7 +1241,7 @@ export function Page() {
                         const buttonText = 'TG канал';
                         const buttonPadding = 20 * scaleRef.current;
                         const buttonHeight = buttonFontSize + buttonPadding;
-                        ctx.font = `bold ${buttonFontSize}px Arial`; // Use pixel font if available later
+                        ctx.font = `bold ${buttonFontSize}px 'Press Start 2P', Arial, sans-serif`; // Use pixel font if available later
                         const textMetrics = ctx.measureText(buttonText);
                         const buttonWidth = textMetrics.width + buttonPadding * 2;
                         const buttonX = canvasElement.width / 2 - buttonWidth / 2;
@@ -1251,7 +1251,7 @@ export function Page() {
                         victoryButtonRectRef.current = { x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight };
 
                         // Draw button background (Orange)
-                        ctx.fillStyle = '#FF9800'; // Orange color
+                        ctx.fillStyle = '#42aaff'; // Orange color
                         // Simple rect for now, pixel style can be added later if needed
                         ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
 
@@ -1418,9 +1418,9 @@ export function Page() {
 
                     // Draw game state message
                     const fontSize = isMobile
-                        ? Math.min(36 * scaleRef.current, canvasElement.width * 0.05)
+                        ? Math.min(26 * scaleRef.current, canvasElement.width * 0.05)
                         : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
-                    ctx.font = `bold ${fontSize}px Arial`;
+                    ctx.font = `bold ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
                     ctx.textAlign = 'center';
 
                     // Add stronger shadow
@@ -1479,26 +1479,10 @@ export function Page() {
                     ctx.fill();
 
                     ctx.fillStyle = '#FFFFFF';
-                    if (isMusicPlaying) {
-                        // Draw pause icon
-                        const barWidth = buttonSize * 0.15;
-                        const barHeight = buttonSize * 0.5;
-                        const barSpacing = buttonSize * 0.2;
-                        ctx.fillRect(buttonX - barWidth - barSpacing / 2, buttonY - barHeight / 2, barWidth, barHeight);
-                        ctx.fillRect(buttonX + barSpacing / 2, buttonY - barHeight / 2, barWidth, barHeight);
-                    } else {
-                        // Draw play icon (triangle)
-                        ctx.beginPath();
-                        ctx.moveTo(buttonX - buttonSize * 0.2, buttonY - buttonSize * 0.3);
-                        ctx.lineTo(buttonX - buttonSize * 0.2, buttonY + buttonSize * 0.3);
-                        ctx.lineTo(buttonX + buttonSize * 0.3, buttonY);
-                        ctx.closePath();
-                        ctx.fill();
-                    }
 
                     // Draw music status text if there's an error
                     if (musicError) {
-                        ctx.font = `${Math.min(12 * scaleRef.current, canvasElement.width * 0.015)}px Arial`;
+                        ctx.font = `${Math.min(12 * scaleRef.current, canvasElement.width * 0.015)}px 'Press Start 2P', Arial, sans-serif`;
                         ctx.fillStyle = '#FF5555';
                         ctx.textAlign = 'right';
                         ctx.fillText('Music error', buttonX - buttonSize - 10, buttonY + 5);
@@ -1915,13 +1899,6 @@ export function Page() {
 
     return (
         <>
-            {/* Restore user's iframe/audio setup */}
-            <iframe
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/videoplayback-iU4Hefz4ewhObYQhKnrtZ3e0eqYoSB.ogg"
-                style={{ display: 'none' }}
-                allow="autoplay"
-                aria-hidden="true"
-            ></iframe>
             {/* Use ref, keep loop and autoplay as per user's working version */}
             <audio ref={audioRef} id="autoplay-music" loop style={{ display: 'none' }} controls={false} autoPlay>
                 <source src="/videoplayback-bg.mp3" type="audio/mpeg" />
