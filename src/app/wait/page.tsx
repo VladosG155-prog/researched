@@ -1448,7 +1448,7 @@ export function Page() {
                         ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
                         const textMetrics = ctx.measureText(message);
                         const textWidth = textMetrics.width;
-                        const textHeight = fontSize;
+                        const textHeight = 22;
                         ctx.fillRect(
                             canvasElement.width / 2 - textWidth / 2 - 20,
                             textY - textHeight - 10,
@@ -1458,7 +1458,12 @@ export function Page() {
                     }
 
                     ctx.fillStyle = COLOR;
-                    ctx.fillText(message, canvasElement.width / 2, textY);
+                    if (message === 'Игра окончена! Нажмите чтобы начать заново') {
+                        ctx.fillText('Игра окончена!', canvasElement.width / 2, textY);
+                        ctx.fillText('Нажмите чтобы начать заново', canvasElement.width / 2, textY + 20);
+                    } else {
+                        ctx.fillText(message, canvasElement.width / 2, textY);
+                    }
 
                     // Reset shadow
                     ctx.shadowColor = 'transparent';
