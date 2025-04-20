@@ -11,7 +11,7 @@ const LETTER_SPACING = 1;
 const WORD_SPACING = 3;
 
 // Target date: April 17, 2025, 13:00 Moscow time (UTC+3)
-const TARGET_DATE = new Date('2025-04-22T20:00:00+03:00');
+const TARGET_DATE = new Date('2025-04-22T21:00:00+03:00');
 
 // Power-up types
 enum PowerUpType {
@@ -313,7 +313,7 @@ export function Page() {
     useEffect(() => {
         // Load images...
         const heartImage = new Image();
-        heartImage.src = '/green-heart.png';
+        heartImage.src = '/images/green-heart.png';
         heartImage.crossOrigin = 'anonymous';
         heartImage.onload = () => {
             heartImageRef.current = heartImage;
@@ -321,7 +321,7 @@ export function Page() {
 
         // Load the orange ball power-up image
         const orangeBallImage = new Image();
-        orangeBallImage.src = '/pirazhok.webp';
+        orangeBallImage.src = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/handpie-krMyEJUWwsr5fjT1AB8oPllk03Kil9.webp';
         orangeBallImage.crossOrigin = 'anonymous';
         orangeBallImage.onload = () => {
             orangeBallImageRef.current = orangeBallImage;
@@ -504,6 +504,8 @@ export function Page() {
     const checkVictory = () => {
         if (gameState !== GameState.PLAYING) return false;
 
+        // const hitCount = pixelsRef.current.filter(pixel => pixel.hit).length;
+        // const allHit = hitCount >= 2; // Победа засчитывается, если есть хотя бы 2 попадания
         const allHit = pixelsRef.current.every((pixel) => pixel.hit);
 
         if (allHit) {
@@ -1205,14 +1207,14 @@ export function Page() {
                         const timerHeight = 5 * timerPositionRef.current.pixelSize; // Approximate height
                         const messageBaseY = animatedTimerYRef.current + timerHeight + (isMobile ? 40 : 60) * scaleRef.current;
                         const fontSize = isMobile
-                            ? Math.min(32 * scaleRef.current, canvasElement.width * 0.05)
+                            ? Math.min(28 * scaleRef.current, canvasElement.width * 0.05)
                             : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
                         const buttonFontSize = isMobile
-                            ? Math.min(30 * scaleRef.current, canvasElement.width * 0.06)
+                            ? Math.min(32 * scaleRef.current, canvasElement.width * 0.06)
                             : Math.min(28 * scaleRef.current, canvasElement.width * 0.04);
                         const lineSpacing = fontSize * 1.5;
 
-                        ctx.font = `400 ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
+                        ctx.font = `bold ${fontSize}px Arial`;
                         ctx.textAlign = 'center';
                         ctx.fillStyle = COLOR;
                         ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
@@ -1224,7 +1226,7 @@ export function Page() {
                         ctx.globalAlpha = messageOpacity;
 
                         const messageLines = [
-                            'Молодец! А теперь заходи в наш телеграм канал.',
+                            'Молодец! А теперь, заходи в наш телеграм канал.',
                             '', // Empty line for spacing
                             'По истечению таймера ты сможешь получить 500 USDT.'
                         ];
@@ -1236,11 +1238,10 @@ export function Page() {
                         });
 
                         // Draw Telegram Button
-                        // Draw Telegram Button
-                        const buttonText = 'Telegram канал';
+                        const buttonText = 'TG канал';
                         const buttonPadding = 20 * scaleRef.current;
                         const buttonHeight = buttonFontSize + buttonPadding;
-                        ctx.font = `bold ${buttonFontSize}px 'Press Start 2P', sans-serif`; // Changed font and added fallback
+                        ctx.font = `bold ${buttonFontSize}px Arial`; // Use pixel font if available later
                         const textMetrics = ctx.measureText(buttonText);
                         const buttonWidth = textMetrics.width + buttonPadding * 2;
                         const buttonX = canvasElement.width / 2 - buttonWidth / 2;
@@ -1250,7 +1251,7 @@ export function Page() {
                         victoryButtonRectRef.current = { x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight };
 
                         // Draw button background (Orange)
-                        ctx.fillStyle = '#42aaff'; // Orange color
+                        ctx.fillStyle = '#FF9800'; // Orange color
                         // Simple rect for now, pixel style can be added later if needed
                         ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
 
@@ -1417,9 +1418,9 @@ export function Page() {
 
                     // Draw game state message
                     const fontSize = isMobile
-                        ? Math.min(24 * scaleRef.current, canvasElement.width * 0.05)
-                        : Math.min(22 * scaleRef.current, canvasElement.width * 0.03);
-                    ctx.font = `400 ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
+                        ? Math.min(36 * scaleRef.current, canvasElement.width * 0.05)
+                        : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
+                    ctx.font = `bold ${fontSize}px Arial`;
                     ctx.textAlign = 'center';
 
                     // Add stronger shadow
@@ -1478,6 +1479,22 @@ export function Page() {
                     ctx.fill();
 
                     ctx.fillStyle = '#FFFFFF';
+                    if (isMusicPlaying) {
+                        // Draw pause icon
+                        const barWidth = buttonSize * 0.15;
+                        const barHeight = buttonSize * 0.5;
+                        const barSpacing = buttonSize * 0.2;
+                        ctx.fillRect(buttonX - barWidth - barSpacing / 2, buttonY - barHeight / 2, barWidth, barHeight);
+                        ctx.fillRect(buttonX + barSpacing / 2, buttonY - barHeight / 2, barWidth, barHeight);
+                    } else {
+                        // Draw play icon (triangle)
+                        ctx.beginPath();
+                        ctx.moveTo(buttonX - buttonSize * 0.2, buttonY - buttonSize * 0.3);
+                        ctx.lineTo(buttonX - buttonSize * 0.2, buttonY + buttonSize * 0.3);
+                        ctx.lineTo(buttonX + buttonSize * 0.3, buttonY);
+                        ctx.closePath();
+                        ctx.fill();
+                    }
 
                     // Draw music status text if there's an error
                     if (musicError) {
@@ -1516,7 +1533,10 @@ export function Page() {
 
         // Mouse move handler
         const handleMouseMove = (e: MouseEvent) => {
-            if (!gameInitializedRef.current) return;
+            // Игнорировать движение мыши в состоянии победы или если игра не инициализирована или не в процессе
+            if (gameStateRef.current !== GameState.PLAYING || !gameInitializedRef.current) {
+                return;
+            }
 
             const paddle = paddleRef.current;
             const mouseX = e.clientX;
@@ -1530,7 +1550,10 @@ export function Page() {
 
         // Touch handlers for mobile
         const handleTouchStart = (e: TouchEvent) => {
-            if (!gameInitializedRef.current) return;
+            // Игнорировать начало касания в состоянии победы или если игра не инициализирована или не в процессе
+            if (gameStateRef.current !== GameState.PLAYING || !gameInitializedRef.current) {
+                return;
+            }
 
             e.preventDefault();
             if (e.touches.length > 0) {
@@ -1539,7 +1562,10 @@ export function Page() {
         };
 
         const handleTouchMove = (e: TouchEvent) => {
-            if (!gameInitializedRef.current) return;
+            // Игнорировать движение касания в состоянии победы или если игра не инициализирована или не в процессе
+            if (gameStateRef.current !== GameState.PLAYING || !gameInitializedRef.current) {
+                return;
+            }
 
             e.preventDefault();
             if (e.touches.length > 0) {
@@ -1559,11 +1585,24 @@ export function Page() {
         const handleClick = async (e: MouseEvent) => {
             // Try to resume AudioContext on first interaction (to handle autoplay restrictions)
             if (audioContextRef.current && audioContextRef.current.state === 'suspended') {
-                // We might resume again below just before play, but doing it here early is also good practice
                 console.log('handleClick: Resuming suspended AudioContext on initial interaction...');
                 await audioContextRef.current.resume();
             }
 
+            // --- Handle Victory State Clicks ---
+            if (gameStateRef.current === GameState.VICTORY) {
+                const { x, y, width, height } = victoryButtonRectRef.current;
+                // Check if click is INSIDE the Telegram button
+                if (e.clientX >= x && e.clientX <= x + width && e.clientY >= y && e.clientY <= y + height) {
+                    // Clicked the button - proceed with opening link
+                    window.open('https://t.me/researchedxyz', '_blank');
+                    // Don't reset the game
+                }
+                // If NOT inside the button, do nothing in Victory state
+                return; // Exit function if in Victory state (unless button was clicked)
+            }
+
+            // --- Handle Clicks in Other States (NOT_STARTED, PLAYING, GAME_OVER) ---
             // Check if music button was clicked
             if (showMusicButton && audioRef.current) {
                 const buttonSize = Math.min(40 * scaleRef.current, canvasElement.width * 0.05);
@@ -1599,28 +1638,19 @@ export function Page() {
                 }
             }
 
-            // Handle game start/restart OR Victory button click
-            if (gameState === GameState.GAME_OVER || gameState === GameState.VICTORY) {
-                // Check if clicking the Telegram button during Victory
-                if (gameState === GameState.VICTORY) {
-                    const { x, y, width, height } = victoryButtonRectRef.current;
-                    if (e.clientX >= x && e.clientX <= x + width && e.clientY >= y && e.clientY <= y + height) {
-                        // Clicked the button
-                        window.open('https://t.me/researchedxyz', '_blank');
-                        // Don't reset the game yet, let the user admire the victory screen
-                        return;
-                    }
-                }
-                // Otherwise, reset the game on click
+            // Handle game start/restart
+            // This block handles GAME_OVER reset and NOT_STARTED start.
+            // Since we already handled VICTORY above and returned, this logic
+            // only runs in NOT_STARTED or GAME_OVER.
+            if (gameStateRef.current === GameState.GAME_OVER) {
                 resetGame();
-            } else if (gameState === GameState.NOT_STARTED && gameInitializedRef.current) {
+            } else if (gameStateRef.current === GameState.NOT_STARTED && gameInitializedRef.current) {
                 startGame(); // This sets gameState to PLAYING
 
                 // Try to play music when game starts if it's not already playing AND loaded
                 if (audioRef.current && isMusicLoaded && !isMusicPlaying && audioRef.current.paused) {
                     console.log('handleClick: Attempting to start music on game start (audio loaded).');
                     try {
-                        // Ensure AudioContext is active before playing
                         if (audioContextRef.current && audioContextRef.current.state === 'suspended') {
                             console.log('handleClick: Resuming suspended AudioContext before game start play...');
                             await audioContextRef.current.resume();
@@ -1631,9 +1661,7 @@ export function Page() {
                             playPromise
                                 .then(() => {
                                     console.log("handleClick: Play request successful (waiting for 'playing' event).");
-                                    // setIsMusicPlaying(true) // Let the 'play' event listener handle state
                                     setMusicError(null);
-                                    // Log element properties immediately after successful play promise
                                     if (audioRef.current) {
                                         console.log(
                                             `handleClick: Post-play check: paused=${audioRef.current.paused}, volume=${audioRef.current.volume}, muted=${audioRef.current.muted}, currentTime=${audioRef.current.currentTime}`
@@ -1642,21 +1670,16 @@ export function Page() {
                                 })
                                 .catch((err) => {
                                     console.warn('handleClick: Could not play music on game start:', err);
-                                    // setIsMusicPlaying(false) // Let the 'error' or 'pause' event listener handle state
                                 });
-                        } else {
-                            // If playPromise is undefined, check paused status - Rely on events now
-                            // setIsMusicPlaying(!audioRef.current.paused)
                         }
                     } catch (err) {
                         console.warn('handleClick: Error trying to play music with game start:', err);
-                        // setIsMusicPlaying(false) // Let the 'error' or 'pause' event listener handle state
                     }
                 } else if (!isMusicLoaded) {
                     console.warn('handleClick: Cannot start music, audio not loaded yet.');
                 } else if (!audioRef.current?.paused) {
                     console.log('handleClick: Music already playing, correcting state.');
-                    setIsMusicPlaying(true); // Correct state if needed
+                    setIsMusicPlaying(true);
                 }
             }
         };
@@ -1893,10 +1916,15 @@ export function Page() {
     return (
         <>
             {/* Restore user's iframe/audio setup */}
+            <iframe
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/videoplayback-iU4Hefz4ewhObYQhKnrtZ3e0eqYoSB.ogg"
+                style={{ display: 'none' }}
+                allow="autoplay"
+                aria-hidden="true"
+            ></iframe>
             {/* Use ref, keep loop and autoplay as per user's working version */}
             <audio ref={audioRef} id="autoplay-music" loop style={{ display: 'none' }} controls={false} autoPlay>
                 <source src="/videoplayback-bg.mp3" type="audio/mpeg" />
-                Your browser does not support the audio element.
             </audio>
             <canvas
                 ref={canvasRef}
