@@ -504,13 +504,9 @@ export function Page() {
     const checkVictory = () => {
         if (gameState !== GameState.PLAYING) return false;
         let pixelTest = 0;
-        const allHit = pixelsRef.current.forEach((pixel) => {
-            if (pixel.hit) {
-                pixelTest += 1;
-            }
-        });
+        const allHit = pixelsRef.current.every((pixel) => pixel.hit);
 
-        if (pixelTest > 2) {
+        if (allHit) {
             // Player has won!
             setGameState(GameState.VICTORY);
             ballRef.current.active = false;
@@ -1209,10 +1205,10 @@ export function Page() {
                         const timerHeight = 5 * timerPositionRef.current.pixelSize; // Approximate height
                         const messageBaseY = animatedTimerYRef.current + timerHeight + (isMobile ? 40 : 60) * scaleRef.current;
                         const fontSize = isMobile
-                            ? Math.min(32 * scaleRef.current, canvasElement.width * 0.05)
+                            ? Math.min(26 * scaleRef.current, canvasElement.width * 0.05)
                             : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
                         const buttonFontSize = isMobile
-                            ? Math.min(30 * scaleRef.current, canvasElement.width * 0.06)
+                            ? Math.min(26 * scaleRef.current, canvasElement.width * 0.06)
                             : Math.min(28 * scaleRef.current, canvasElement.width * 0.04);
                         const lineSpacing = fontSize * 1.5;
 
