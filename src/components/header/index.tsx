@@ -186,7 +186,7 @@ export function Header({}: HeaderProps = {}) {
                         </a> */}
                         <button
                             onClick={handleInstructionsClick}
-                            className="py-2 px-4 w-[200px] text-left bg-[#D9D7D5] text-black hover:bg-[#C9C7C5] transition-colors text-[18px] cursor-pointer"
+                            className="py-2 px-4 w-[95%] text-left bg-[#D9D7D5] text-black hover:bg-[#C9C7C5] transition-colors text-[18px] cursor-pointer"
                         >
                             Зачем мы тебе?
                         </button>
@@ -194,7 +194,7 @@ export function Header({}: HeaderProps = {}) {
                             href="https://t.me/researchedxyz"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="h-[50px] w-[200px] px-4 flex items-center justify-center gap-3 bg-[#2C2C2C] hover:bg-[#3C3C3C] transition-colors text-white text-sm "
+                            className="h-[50px] w-[95%] mr-5 px-4 flex items-center justify-center gap-3 bg-[#2C2C2C] hover:bg-[#3C3C3C] transition-colors text-white text-sm "
                         >
                             <svg className="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path

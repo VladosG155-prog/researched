@@ -617,9 +617,23 @@ function Page() {
                                             : data;
                                         return (
                                             <div key={index} className="flex flex-col justify-between">
-                                                <h4 className="font-medium mb-2 text-white">{child.name}</h4>
+                                                <h4 className="font-medium mb-2 text-[#7E7E7E]">{child.name}</h4>
                                                 <div className="gap-3 text-white text-sm">
-                                                    {Array.isArray(child.content) ? finalData : data}
+                                                    {child.name === 'Как заработать' ? (
+                                                        <button
+                                                            className="bg-[#121212] flex items-center gap-1 transition max-w-max h-[30px] p-2 mt-4 cursor-pointer text-[14px]"
+                                                            onClick={() => {
+                                                                setIsOpenEarningModal(true);
+                                                                setOpenedEarnings(row.original.earnings);
+                                                            }}
+                                                        >
+                                                            Cпособы заработка
+                                                        </button>
+                                                    ) : Array.isArray(child.content) ? (
+                                                        finalData
+                                                    ) : (
+                                                        data
+                                                    )}
                                                 </div>
                                             </div>
                                         );

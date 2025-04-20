@@ -11,7 +11,7 @@ import {
 import antikiData from '../../../data/antiki.json';
 import rsScoreData from '../../../data/RS_Score_Antidetect.json';
 import CategoriesLayout from '../categories/layout';
-import { ChevronDown, ChevronUp, FilterIcon, Info, Smartphone, SortAsc, SortDesc } from 'lucide-react';
+import { ChevronDown, ChevronUp, FilterIcon, Gift, Info, Smartphone, SortAsc, SortDesc } from 'lucide-react';
 import { Fragment, useMemo, useState } from 'react';
 import Image from 'next/image';
 import PromoPopup from '@/components/promo-popup';
@@ -381,77 +381,86 @@ function Page() {
                             }}
                         >
                             <div className="flex justify-between items-start">
-                                <div className="space-y-3">
-                                    <div className="relative flex items-center gap-3 rounded-md">
-                                        {!sorting?.length && row.index <= 2 && <TopPlace place={row.index + 1} />}
-                                        {row.original.icon && (
-                                            <Image
-                                                width={20}
-                                                height={20}
-                                                src={row.original.icon}
-                                                alt={row.original.id}
-                                                className="object-contain rounded-[3px]"
-                                            />
-                                        )}
-                                        <span className="text-white font-medium text-base">{row.original.id}</span>
-                                        {row.original.id === 'GeeLark' && (
-                                            <Tooltip content="облачные телефоны">
-                                                <Smartphone className="w-5 h-5 text-white" />
-                                            </Tooltip>
-                                        )}
-                                    </div>
-                                    <div className="text-white text-sm space-y-3">
-                                        <p>
-                                            <span className="text-[#7E7E7E] font-medium">Цена за профиль:</span> <br />
-                                            {row.original.pricePerProfile}
-                                        </p>
-                                        <p>
-                                            <span className="text-[#7E7E7E] font-medium">Цена:</span> <br />
-                                            {row.original.price}
-                                        </p>
-                                        <div className="flex flex-col items-start gap-2">
-                                            <span className="text-[#7E7E7E] font-medium">Researched score:</span>
-                                            {row.original.id === 'GeeLark' || row.original.id === 'MoreLogin' ? (
-                                                <Tooltip content="На облачные телефоны researched score не распространяется">
+                                <div className="w-full">
+                                    <div className="relative flex items-center gap-3 justify-between">
+                                        <div className="flex gap-2 items-center">
+                                            {!sorting?.length && row.index <= 2 && <TopPlace place={row.index + 1} />}
+                                            {row.original.icon && (
+                                                <Image
+                                                    width={20}
+                                                    height={20}
+                                                    src={row.original.icon}
+                                                    alt={row.original.id}
+                                                    className="object-contain rounded-[3px]"
+                                                />
+                                            )}
+                                            <span className="text-white text-base">{row.original.id}</span>
+                                            {row.original.id === 'GeeLark' && (
+                                                <Tooltip content="облачные телефоны">
                                                     <Smartphone className="w-5 h-5 text-white" />
                                                 </Tooltip>
-                                            ) : (
-                                                <Score totalScore={row.original.fraudscore} data={row.original.fraudData} />
                                             )}
                                         </div>
-                                        {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
+                                        {row.original.children && (
                                             <button
-                                                className="flex items-center bg-[#DEDEDE] cursor-pointer p-[5px]"
                                                 onClick={(e) => {
                                                     e.stopPropagation();
-                                                    toggleModal();
-                                                    setInfoPromocode(row.original.promocodeInfo[1]);
+                                                    row.toggleExpanded();
                                                 }}
+                                                className="p-2 text-white hover:text-gray-300 transition-colors"
+                                                aria-label={row.getIsExpanded() ? 'Свернуть' : 'Развернуть'}
+                                                aria-expanded={row.getIsExpanded()}
                                             >
-                                                <span className="font-normal text-[14px] text-black">
-                                                    {row.original.promocodeInfo[1].buttonName}
-                                                </span>
+                                                {row.getIsExpanded() ? (
+                                                    <ChevronUp className="w-6 h-6" />
+                                                ) : (
+                                                    <ChevronDown className="w-6 h-6" />
+                                                )}
                                             </button>
                                         )}
                                     </div>
+                                    <div className="grid grid-cols-[30%_20%_24%_24%] justify-between w-full mt-3 items-baseline">
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px]">Researched score:</span>
+                                            <div className="mt-2">
+                                                {row.original.id === 'GeeLark' || row.original.id === 'MoreLogin' ? (
+                                                    <Tooltip content="На облачные телефоны researched score не распространяется">
+                                                        <Smartphone className="w-5 h-5 text-white" />
+                                                    </Tooltip>
+                                                ) : (
+                                                    <Score totalScore={row.original.fraudscore} data={row.original.fraudData} />
+                                                )}
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px]">Цена за профиль:</span>
+                                            <span className="text-[12px] mt-2">{row.original.pricePerProfile}</span>
+                                        </div>
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px]">Цена:</span>
+                                            <span className="text-[12px] mt-2">{row.original.price}</span>
+                                        </div>
+                                        <div className="flex justify-end min-h-[60px] items-start">
+                                            {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
+                                                <button
+                                                    className="bg-[#DEDEDE] cursor-pointer p-2 h-[50px] max-w-[50px]"
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        toggleModal();
+                                                        setInfoPromocode(row.original.promocodeInfo[1]);
+                                                    }}
+                                                    aria-label="Открыть промокод"
+                                                >
+                                                    <Gift className="text-black" />
+                                                </button>
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
-                                {row.original.children && (
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            row.toggleExpanded();
-                                        }}
-                                        className="p-2 text-white hover:text-gray-300 transition-colors"
-                                        aria-label={row.getIsExpanded() ? 'Свернуть' : 'Развернуть'}
-                                        aria-expanded={row.getIsExpanded()}
-                                    >
-                                        {row.getIsExpanded() ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
-                                    </button>
-                                )}
                             </div>
                             {row.getIsExpanded() && row.original.children && (
                                 <div
-                                    className="mt-4 space-y-4 animate-slideDown"
+                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[30%_30%_30%] justify-between w-full"
                                     style={{
                                         animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
                                     }}
@@ -472,11 +481,11 @@ function Page() {
                                                 </Tooltip>
                                             ))
                                         ) : (
-                                            <span className="text-white text-sm">{content}</span>
+                                            <span className="text-white text-[12px]">{content}</span>
                                         );
                                         return (
                                             <div key={index} className="flex flex-col justify-between">
-                                                <h4 className="font-medium mb-2 text-[#7E7E7E] text-sm">{child.name}</h4>
+                                                <h4 className="text-[#7E7E7E] text-[12px] mb-2">{child.name}</h4>
                                                 <div className="flex gap-3 flex-wrap">{finalData}</div>
                                             </div>
                                         );

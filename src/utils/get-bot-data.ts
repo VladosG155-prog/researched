@@ -8,9 +8,14 @@ export const getTradingBotsInterface = () => {
 
     array.forEach(([_,data])=>{
         data.interface.forEach(item=>{
-            if(!networks.has( item)){
-                networks.set( item, {name:  item})
-            }
+            const newEl = item.split(',')
+            newEl.forEach(newElement => {
+                if(!networks.has(newElement)){
+
+                    networks.set(newElement, {name:  newElement})
+                }
+            })
+
         })
 
 

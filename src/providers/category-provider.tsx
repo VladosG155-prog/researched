@@ -60,18 +60,6 @@ export function CategoryProvider({ children }: CategoryProviderProps) {
 
     // Обработка изменения пути
     useEffect(() => {
-        if (pathname === '/wallets') {
-            setSelectedCategory('Кошельки');
-            setIsInitialized(true);
-            return;
-        }
-
-        if (pathname === '/') {
-            setSelectedCategory(null);
-            setIsInitialized(true);
-            return;
-        }
-
         const path = pathname.slice(1); // Remove the leading slash
 
         // Map path to category
@@ -98,42 +86,6 @@ export function CategoryProvider({ children }: CategoryProviderProps) {
         // Mark initialization as complete
         setIsInitialized(true);
     }, [pathname]);
-
-    // Обновление URL при изменении выбранной категории
-    useEffect(() => {
-        if (selectedCategory === null) {
-            router.push('/');
-            return;
-        } else if (selectedCategory === 'Кошельки') {
-            // Use replace instead of push for wallets to avoid adding to history stack
-            router.push('/wallets', { scroll: true });
-            setHasVisitedCategory(true);
-            return;
-        }
-
-        // Map category to path
-        const pathMap: Record<string, string> = {
-            Антики: 'antiki',
-            'Аккаунт шопы': 'shops',
-            CEX: 'cex',
-            Кошельки: 'wallets',
-            'Трейдинг боты': 'tradingbots',
-            OTC: 'otc',
-            article: 'article',
-            'Прокси Статические': 'proxy-static',
-            'Прокси Резидентские': 'proxy-residential',
-            'Прокси Мобильные': 'proxy-mobile',
-            'Прокси для DePin': 'proxy-depin',
-            multiaccounting: 'multiaccounting',
-             wait: 'wait'
-        };
-
-        if (pathMap[selectedCategory]) {
-            router.push(`/${pathMap[selectedCategory]}`, { scroll: true });
-            setIsExpanded(false);
-            setHasVisitedCategory(true);
-        }
-    }, [selectedCategory, router, pathname, isInitialized]);
 
     // Мемоизация значения контекста
     const contextValue = useMemo(

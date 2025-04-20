@@ -213,6 +213,7 @@ function Page() {
     return (
         <CategoriesLayout title={depinData.Data.proxy.info.title || ''} description={depinData.Data.proxy.info.description || ''}>
             <PromoPopup isOpen={isOpenModal} onClose={toggleModal} info={openedPromocode} />
+            {isMobile && <MobileProxyFilters filters={PROXY_FILTERS} pathname={pathname} handleClickFilter={handleClickFilter} />}
             <div className="flex gap-3 mb-4 items-center flex-wrap w-full">
                 {isMobile ? (
                     <>

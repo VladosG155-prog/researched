@@ -321,7 +321,7 @@ export function Page() {
 
         // Load the orange ball power-up image
         const orangeBallImage = new Image();
-        orangeBallImage.src = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/handpie-krMyEJUWwsr5fjT1AB8oPllk03Kil9.webp';
+        orangeBallImage.src = '/pirazhok.webp';
         orangeBallImage.crossOrigin = 'anonymous';
         orangeBallImage.onload = () => {
             orangeBallImageRef.current = orangeBallImage;
@@ -791,7 +791,7 @@ export function Page() {
                 ballRef.current.dx = BALL_SPEED * (Math.random() > 0.5 ? 1 : -1);
                 ballRef.current.dy = -BALL_SPEED; // Always start moving upward
                 ballRef.current.active = true;
-                ballRef.current.currentSpeed = 0.2; // Reduced from 1.0 to 0.7
+                ballRef.current.currentSpeed = 1; // Reduced from 1.0 to 0.7
 
                 setGameState(GameState.PLAYING);
 

@@ -25,13 +25,6 @@ const PROXY_FILTERS = [
 ];
 
 function CategoriesLayout({ children, title, description }: CategoryLayoutProps) {
-    const isMobile = useIsMobile();
-    const router = useRouter();
-    const pathname = usePathname();
-    const handleClickFilter = (link: string) => {
-        router.push(link);
-    };
-
     return (
         <motion.div
             initial="hidden"
@@ -42,9 +35,6 @@ function CategoriesLayout({ children, title, description }: CategoryLayoutProps)
             className="flex  min-w-full flex-col bg-[#121212] bg-opacity-40 text-white relative z-10 pt-[30px] pb-[250px] "
         >
             <motion.div animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className="w-full">
-                {isMobile && pathname.includes('proxy') && (
-                    <MobileProxyFilters filters={PROXY_FILTERS} pathname={pathname} handleClickFilter={handleClickFilter} />
-                )}
                 <div className="w-full max-w-[1260px] mx-auto pb-16">
                     <div className="mb-8 flex flex-col md:flex-row md:justify-between md:items-start">
                         <h1 className="font-['Martian_Mono'] font-normal text-[32px] sm:text-[44px] mb-2">{title}</h1>

@@ -11,7 +11,7 @@ import {
 import proxyData from '../../../data/statikproxy.json';
 import proxyScoreData from '../../../data/RS_Score_Proxy.json';
 import CategoriesLayout from '../categories/layout';
-import { ChevronDown, ChevronUp, Eye, FilterIcon, SortAsc, SortDesc } from 'lucide-react';
+import { ChevronDown, ChevronUp, Eye, FilterIcon, Gift, SortAsc, SortDesc } from 'lucide-react';
 import { Fragment, useMemo, useState } from 'react';
 import Image from 'next/image';
 import PromoPopup from '@/components/promo-popup';
@@ -266,6 +266,7 @@ function Page() {
                 }}
                 info={openedPromocode}
             />
+            {isMobile && <MobileProxyFilters filters={PROXY_FILTERS} pathname={pathname} handleClickFilter={handleClickFilter} />}
             <div className="flex gap-3 mb-4 items-center flex-wrap w-full">
                 {isMobile ? (
                     <>
@@ -419,107 +420,116 @@ function Page() {
                     {table.getRowModel().rows.map((row) => (
                         <div
                             key={row.id}
-                            className="bg-[#282828] p-4 cursor-pointer hover:bg-[#333333] transition-colors"
+                            className="bg-[#282828] p-2 cursor-pointer hover:bg-[#333333] transition-colors"
                             onClick={() => window.open(row.original.link)}
                         >
                             <div className="flex justify-between items-start">
-                                <div className="space-y-3">
-                                    <div className="relative flex items-center gap-3">
-                                        {!sorting?.length && !countryFilter && !payment && row.index <= 2 && (
-                                            <TopPlace place={row.index + 1} />
+                                <div className="w-full">
+                                    <div className="relative flex items-center gap-3 justify-between">
+                                        <div className="flex gap-2">
+                                            {' '}
+                                            {!sorting?.length && !countryFilter && !payment && row.index <= 2 && (
+                                                <TopPlace place={row.index + 1} />
+                                            )}
+                                            {row.original.icon && (
+                                                <Image
+                                                    width={20}
+                                                    height={20}
+                                                    src={row.original.icon}
+                                                    alt={row.original.id}
+                                                    className="object-contain rounded-[3px]"
+                                                />
+                                            )}
+                                            <span className="text-white text-base">{row.original.id}</span>
+                                            {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
+                                                <button
+                                                    className="bg-[#DEDEDE] cursor-pointer p-2 w-[30px] h-[30px] flex justify-center items-center"
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        toggleModal();
+                                                        setOpenedPromocode(row.original.promocodeInfo[1]);
+                                                    }}
+                                                    aria-label="Открыть промокод"
+                                                >
+                                                    <Gift className="text-black" />
+                                                </button>
+                                            )}
+                                        </div>
+                                        {row.original.children && (
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    row.toggleExpanded();
+                                                }}
+                                                className="p-2 text-white hover:text-gray-300 transition-colors"
+                                                aria-label={row.getIsExpanded() ? 'Свернуть' : 'Развернуть'}
+                                                aria-expanded={row.getIsExpanded()}
+                                            >
+                                                {row.getIsExpanded() ? (
+                                                    <ChevronUp className="w-6 h-6" />
+                                                ) : (
+                                                    <ChevronDown className="w-6 h-6" />
+                                                )}
+                                            </button>
                                         )}
-                                        {row.original.icon && (
-                                            <Image
-                                                width={20}
-                                                height={20}
-                                                src={row.original.icon}
-                                                alt={row.original.id}
-                                                className="object-contain rounded-[3px]"
-                                            />
-                                        )}
-                                        <span className="text-white font-medium text-base">{row.original.id}</span>
                                     </div>
-                                    <div className="text-white text-sm space-y-3">
-                                        <p>
-                                            <span className="text-[#7E7E7E] font-medium">Цена:</span> <br />
-                                            {row.original.price}
+                                    <div className="grid grid-cols-[30%_30%_30%] justify-between w-full">
+                                        <div className="flex flex-col gap-2">
+                                            <span className="text-[#7E7E7E] text-[12px]">RS score:</span>
+                                            <Score totalScore={row.original.fraudscore} data={row.original.fraudData} />
+                                        </div>
+
+                                        <p className="text-[14px]">
+                                            <span className="text-[#7E7E7E] text-[12px]">Цена:</span> <br />
+                                            <span className="text-[12px]">{row.original.price}</span>
                                         </p>
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-[#7E7E7E] font-medium">Кол-во стран:</span>
+
+                                        <p className="text-[14px]">
+                                            <span className="text-[#7E7E7E] text-[12px]">Демо:</span> <br />
+                                            <span className="text-[12px]">{row.original.demo || '—'}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {row.getIsExpanded() && row.original.children && (
+                                <div
+                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[30%_30%_30%] gap-3 justify-between w-full"
+                                    style={{
+                                        animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
+                                    }}
+                                >
+                                    <div className="text-white text-sm space-y-3">
+                                        <div className="flex flex-col gap-3">
+                                            <span className="text-[#7E7E7E] text-[12px]">Кол-во стран:</span>
                                             <div className="flex items-center gap-2">
-                                                <span>{row.original.countries.length}</span>
+                                                <span className="text-[12px]">{row.original.countries.length}</span>
                                                 <button
                                                     onClick={(e) => {
                                                         e.stopPropagation();
                                                         setSelectedCountries(row.original.countries);
                                                         toggleCountriesModal();
                                                     }}
-                                                    className="text-[14px] cursor-pointer flex items-center gap-2 bg-[#303030] p-2 rounded-md"
+                                                    className="text-[12px] cursor-pointer flex items-center gap-2 bg-[#303030] p-2 rounded-md"
                                                     aria-label="Посмотреть страны"
                                                 >
                                                     <Eye className="w-4 h-4" />
                                                 </button>
                                             </div>
                                         </div>
-                                        <div className="flex flex-col gap-2">
-                                            <span className="text-[#7E7E7E] font-medium">Researched score:</span>
-                                            <Score totalScore={row.original.fraudscore} data={row.original.fraudData} />
-                                        </div>
-                                        <p>
-                                            <span className="text-[#7E7E7E] font-medium">Демо:</span> <br />
-                                            {row.original.demo || '—'}
-                                        </p>
-                                        <p>
-                                            <span className="text-[#7E7E7E] font-medium">Тех.поддержка:</span> <br />
-                                            {row.original.support || '—'}
-                                        </p>
-                                        {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
-                                            <button
-                                                className="flex items-center bg-[#DEDEDE] cursor-pointer p-2"
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    toggleModal();
-                                                    setOpenedPromocode(row.original.promocodeInfo[1]);
-                                                }}
-                                                aria-label="Открыть промокод"
-                                            >
-                                                <span className="font-normal text-[14px] text-black">
-                                                    {row.original.promocodeInfo[1].buttonName}
-                                                </span>
-                                            </button>
-                                        )}
                                     </div>
-                                </div>
-                                {row.original.children && (
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            row.toggleExpanded();
-                                        }}
-                                        className="p-2 text-white hover:text-gray-300 transition-colors"
-                                        aria-label={row.getIsExpanded() ? 'Свернуть' : 'Развернуть'}
-                                        aria-expanded={row.getIsExpanded()}
-                                    >
-                                        {row.getIsExpanded() ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
-                                    </button>
-                                )}
-                            </div>
-                            {row.getIsExpanded() && row.original.children && (
-                                <div
-                                    className="mt-4 space-y-4 animate-slideDown"
-                                    style={{
-                                        animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
-                                    }}
-                                >
-                                    <div className="flex flex-col justify-between">
-                                        <h4 className="font-medium mb-2 text-[#7E7E7E] text-sm">Оплата</h4>
-                                        <div className="flex flex-wrap gap-3">
+                                    <div className="flex flex-col">
+                                        <span className="text-[#7E7E7E]  text-[12px]">Тех.поддержка:</span>
+                                        <span className="text-[12px]"> {row.original.support || '—'}</span>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <h4 className="text-[12px] mb-1 text-[#7E7E7E]">Оплата</h4>
+                                        <div className="flex flex-wrap gap-1">
                                             {row.original.children.map((child) => (
                                                 <Tooltip key={child.name} position="top" content={child.name}>
-                                                    <div className="flex items-center justify-center w-8 h-8">
+                                                    <div className="flex items-center justify-center w-5 h-5">
                                                         <Image
-                                                            width={24}
-                                                            height={24}
+                                                            width={16}
+                                                            height={16}
                                                             alt={child.name}
                                                             src={child.icon}
                                                             className="object-contain max-w-full max-h-full"

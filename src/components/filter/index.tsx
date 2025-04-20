@@ -42,7 +42,7 @@ export function Filter({ name, filters, onChange, selectedValue = '', showSearch
     return (
         <div ref={filterRef} className="relative inline-block md:max-w-[250px] max-h-[300px] w-full">
             <button
-                className="bg-[#2C2C2C] w-full cursor-pointer flex gap-3 h-[70px] justify-between items-center px-[25px] max-w-full"
+                className="bg-[#2C2C2C] w-full cursor-pointer flex gap-3 h-[40px] md:h-[70px] justify-between items-center px-[25px] max-w-full"
                 onClick={handleClickFilter}
             >
                 {selectedValue === '' ? name : selectedValue} {isOpenFilter ? <ChevronUp /> : <ChevronDown />}

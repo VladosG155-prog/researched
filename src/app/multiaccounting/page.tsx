@@ -3,7 +3,7 @@ import type React from 'react';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useEffect } from 'react';
@@ -271,6 +271,10 @@ export default function Page() {
                         </p>
 
                         <p className="mt-6 font-semibold">Удачного мультиаккаунтинга и больших профитов!</p>
+                        <Link href="/" className="flex items-center gap-2 mt-5 underline">
+                            {' '}
+                            <ArrowLeft /> Вернуться обратно
+                        </Link>
                     </motion.article>
                 </div>
             </div>

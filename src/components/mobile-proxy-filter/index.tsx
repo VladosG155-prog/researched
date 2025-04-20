@@ -24,13 +24,19 @@ export function MobileProxyFilters({ filters, pathname, handleClickFilter }) {
                     <button
                         key={proxy.name}
                         onClick={() => handleClickFilter(proxy.link)}
-                        className={`h-[50px] w-full relative flex-shrink-0 ${
+                        className={`h-[30px] md:h-[50px] w-full relative flex-shrink-0 ${
                             '/' + proxy.link === pathname ? 'bg-[#DEDEDE] text-black' : 'bg-[#2C2C2C] text-white'
                         }`}
                     >
                         {proxy.name}
                         {proxy.link === 'proxy-depin' && (
-                            <Image className="absolute top-0 h-[85px] w-full" alt="grass" width={10} height={10} src="/grasstobutton.png" />
+                            <Image
+                                className="absolute top-0 h-[50px] md:-[85px] w-full"
+                                alt="grass"
+                                width={10}
+                                height={10}
+                                src="/grasstobutton.png"
+                            />
                         )}
                     </button>
                 </SwiperSlide>
