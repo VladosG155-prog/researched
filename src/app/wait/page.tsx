@@ -9,9 +9,11 @@ const BALL_COLOR = '#FFFFFF';
 const PADDLE_COLOR = '#FFFFFF';
 const LETTER_SPACING = 1;
 const WORD_SPACING = 3;
+const FIXED_TIMESTEP_MS = 1000 / 60; // ~16.67ms per frame for 60 FPS
+const GAME_SPEED_MULTIPLIER = 35; // Глобальный множитель скорости игры
 
 // Target date: April 17, 2025, 13:00 Moscow time (UTC+3)
-const TARGET_DATE = new Date('2025-04-22T21:00:00+03:00');
+const TARGET_DATE = new Date('2025-04-22T19:00:00+03:00');
 
 // Power-up types
 enum PowerUpType {
@@ -239,6 +241,8 @@ interface Particle {
     isFirework?: boolean; // Is it an initial firework rocket?
     exploded?: boolean; // Has the firework exploded?
     gravity?: number; // Gravity effect for explosion particles
+    appearProgress?: number; // Добавлено: Прогресс появления (0-1)
+    appearDelay?: number; // Добавлено: Задержка появления (ms)
 }
 
 export function Page() {
@@ -274,6 +278,8 @@ export function Page() {
     const touchPositionRef = useRef(0);
     const [lives, setLives] = useState(3);
     const lastTimeRef = useRef(0);
+    const accumulatorRef = useRef(0); // Accumulator for fixed timestep
+    const firstHitOccurredRef = useRef(false); // Флаг для первого касания мяча
     const speedIncreaseIntervalRef = useRef<NodeJS.Timeout | null>(null);
     const powerUpTimersRef = useRef<{ [key: string]: NodeJS.Timeout | null }>({
         expandPaddle: null,
@@ -440,7 +446,7 @@ export function Page() {
     // Explode a firework particle
     const explodeFirework = (firework: Particle) => {
         if (!canvasRef.current) return;
-        const explosionParticles = 30 + Math.random() * 20; // 30-50 particles per explosion
+        const explosionParticles = 15 + Math.random() * 10; // Уменьшено с 30-50 до 15-25
         const colors = ['#FF9800', '#4CAF50', '#2196F3', '#F44336', '#FFEB3B', '#9C27B0', '#FFFFFF'];
 
         for (let i = 0; i < explosionParticles; i++) {
@@ -540,29 +546,16 @@ export function Page() {
                 speedIncreaseIntervalRef.current = null;
             }
 
-            // Clear existing particles and create initial fireworks burst
+            // Clear existing particles and create initial STATIC fireworks burst
             particlesRef.current = [];
-            createFireworks(isMobile ? 15 : 30); // Larger initial burst
+            // createFireworks(isMobile ? 15 : 30); // Old dynamic burst
+            createStaticFireworksBurst(isMobile ? 50 : 100); // Create static burst (increased count)
 
-            // Set up interval to launch more fireworks during celebration
-            // Store interval ID to clear it later (e.g., in resetGame or cleanup)
-            if (victoryEffectsIntervalRef.current) {
-                clearInterval(victoryEffectsIntervalRef.current);
-            }
-            victoryEffectsIntervalRef.current = setInterval(() => {
-                // Check gameState again in case user restarts quickly
-                // Use a local variable or check against the current state from React
-                const currentGameState = gameStateRef.current; // Assuming we add a gameStateRef
-
-                if (currentGameState === GameState.VICTORY) {
-                    createFireworks(isMobile ? 3 : 6); // Subsequent smaller bursts
-                } else {
+            // Remove the interval for dynamic fireworks
                     if (victoryEffectsIntervalRef.current) {
                         clearInterval(victoryEffectsIntervalRef.current);
                         victoryEffectsIntervalRef.current = null;
                     }
-                }
-            }, 700); // Launch new fireworks every 700ms
 
             return true;
         }
@@ -645,6 +638,369 @@ export function Page() {
         const ctx = canvasElement.getContext('2d');
         if (!ctx) return;
 
+        // --- Drawing Functions (defined inside useEffect to access ctx/canvasElement) ---
+
+        // Helper to draw pixels (main text or timer)
+        const drawPixels = (pixels: Pixel[], defaultColor: string, hitColor?: string) => {
+            // Draw non-hit pixels first
+            ctx.fillStyle = defaultColor;
+            pixels.forEach(pixel => {
+                if (!hitColor || !pixel.hit) {
+                    ctx.fillRect(pixel.x, pixel.y, pixel.size, pixel.size);
+                }
+            });
+
+            // Draw hit pixels if applicable
+            if (hitColor) {
+                ctx.fillStyle = hitColor;
+                pixels.forEach(pixel => {
+                    if (pixel.hit) {
+                        ctx.fillRect(pixel.x, pixel.y, pixel.size, pixel.size);
+                    }
+                });
+            }
+        };
+
+        // Helper to draw the ball
+        const drawBall = (ball: Ball, color: string) => {
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+            ctx.fill();
+        };
+
+        // Helper to draw the paddle
+        const drawPaddle = (paddle: Paddle) => {
+            ctx.fillStyle = PADDLE_COLOR;
+            ctx.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
+        };
+
+        // Helper to draw power-ups
+        const drawPowerUps = (powerUps: PowerUp[]) => {
+            powerUps.forEach((powerUp) => {
+                ctx.fillStyle = POWER_UP_COLORS[powerUp.type];
+                // TODO: Optimize drawing shapes if needed (e.g., pre-render complex ones)
+                switch (powerUp.type) {
+                    // ... (cases for drawing different power-up shapes)
+                    case PowerUpType.EXPAND_PADDLE:
+                        const radius = powerUp.size / 4;
+                        ctx.beginPath();
+                        ctx.moveTo(powerUp.x - powerUp.size + radius, powerUp.y - powerUp.size / 3);
+                        ctx.lineTo(powerUp.x + powerUp.size - radius, powerUp.y - powerUp.size / 3);
+                        ctx.arcTo(
+                            powerUp.x + powerUp.size,
+                            powerUp.y - powerUp.size / 3,
+                            powerUp.x + powerUp.size,
+                            powerUp.y - powerUp.size / 3 + radius,
+                            radius
+                        );
+                        ctx.lineTo(powerUp.x + powerUp.size, powerUp.y + powerUp.size / 3 - radius);
+                        ctx.arcTo(
+                            powerUp.x + powerUp.size,
+                            powerUp.y + powerUp.size / 3,
+                            powerUp.x + powerUp.size - radius,
+                            powerUp.y + powerUp.size / 3,
+                            radius
+                        );
+                        ctx.lineTo(powerUp.x - powerUp.size + radius, powerUp.y + powerUp.size / 3);
+                        ctx.arcTo(
+                            powerUp.x - powerUp.size,
+                            powerUp.y + powerUp.size / 3,
+                            powerUp.x - powerUp.size,
+                            powerUp.y + powerUp.size / 3 - radius,
+                            radius
+                        );
+                        ctx.lineTo(powerUp.x - powerUp.size, powerUp.y - powerUp.size / 3 + radius);
+                        ctx.arcTo(
+                            powerUp.x - powerUp.size,
+                            powerUp.y - powerUp.size / 3,
+                            powerUp.x - powerUp.size + radius,
+                            powerUp.y - powerUp.size / 3,
+                            radius
+                        );
+                        ctx.fill();
+                        ctx.fillStyle = '#FFFFFF';
+                        ctx.fillRect(powerUp.x - powerUp.size / 2, powerUp.y - powerUp.size / 6, powerUp.size, powerUp.size / 3);
+                        break;
+                    case PowerUpType.SLOW_BALL:
+                        ctx.beginPath();
+                        ctx.arc(powerUp.x, powerUp.y, powerUp.size, 0, Math.PI * 2);
+                        ctx.fill();
+                        ctx.strokeStyle = '#FFFFFF';
+                        ctx.lineWidth = powerUp.size / 6;
+                        ctx.beginPath();
+                        ctx.moveTo(powerUp.x, powerUp.y);
+                        ctx.lineTo(powerUp.x, powerUp.y - powerUp.size / 2);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.moveTo(powerUp.x, powerUp.y);
+                        ctx.lineTo(powerUp.x + powerUp.size / 3, powerUp.y);
+                        ctx.stroke();
+                        break;
+                    case PowerUpType.EXTRA_LIFE:
+                        if (heartImageRef.current) {
+                            const heartSize = powerUp.size * 1.5;
+                            ctx.drawImage(
+                                heartImageRef.current,
+                                powerUp.x - heartSize / 2,
+                                powerUp.y - heartSize / 2,
+                                heartSize,
+                                heartSize
+                            );
+                        }
+                        break;
+                    case PowerUpType.ORANGE_BALL:
+                        if (orangeBallImageRef.current) {
+                            const iconSize = powerUp.size * 3.0;
+                            ctx.drawImage(
+                                orangeBallImageRef.current,
+                                powerUp.x - iconSize / 2,
+                                powerUp.y - iconSize / 2,
+                                iconSize,
+                                iconSize
+                            );
+                        }
+                        break;
+                }
+            });
+        };
+
+        // Helper to draw particles
+        const drawParticles = (particles: Particle[]) => {
+            // Draw particles with full alpha
+            ctx.globalAlpha = 1.0; // Set once
+             particles.forEach((particle) => {
+                // Removed ctx.globalAlpha = particle.alpha;
+                // Check if animation properties exist and progress > 0
+                if (particle.appearProgress === undefined || particle.appearProgress <= 0) {
+                    return; // Не рисуем, если анимация не началась или прогресс 0
+                }
+                const easedProgress = 1 - Math.pow(1 - particle.appearProgress, 3); // Ease-out cubic
+                const currentRadius = particle.radius * easedProgress;
+
+                if (currentRadius > 0) {
+                    ctx.fillStyle = particle.color;
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, currentRadius, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            });
+            // ctx.globalAlpha = 1.0; // Reset alpha (already 1.0)
+        };
+
+        // Helper to draw lives
+        const drawLives = (livesCount: number) => {
+             if (heartImageRef.current) {
+                const lifeSize = isMobile
+                    ? Math.min(60 * scaleRef.current, canvasElement.width * 0.08)
+                    : Math.min(45 * scaleRef.current, canvasElement.width * 0.05);
+                const lifeSpacing = isMobile
+                    ? Math.min(30 * scaleRef.current, canvasElement.width * 0.04)
+                    : Math.min(25 * scaleRef.current, canvasElement.width * 0.03);
+                const marginLeft = isMobile
+                    ? Math.min(50 * scaleRef.current, canvasElement.width * 0.06)
+                    : Math.min(40 * scaleRef.current, canvasElement.width * 0.04);
+                const lifeY = isMobile
+                    ? Math.min(70 * scaleRef.current, canvasElement.height * 0.1)
+                    : Math.min(50 * scaleRef.current, canvasElement.height * 0.08);
+
+                for (let i = 0; i < livesCount; i++) {
+                    const lifeX = marginLeft + i * (lifeSize + lifeSpacing);
+                    // No need to set fillStyle etc. for drawImage
+                    ctx.drawImage(heartImageRef.current, lifeX - lifeSize / 2, lifeY - lifeSize / 2, lifeSize, lifeSize);
+                }
+            }
+        };
+
+        // Helper to draw UI elements (messages, buttons)
+        const drawUI = (currentGameState: GameState) => {
+             // --- Draw Victory Message and Button ---
+            if (currentGameState === GameState.VICTORY && victoryAnimationProgressRef.current > 0.5) {
+                 // Calculate fade-in and slide-up based on progress beyond the halfway point
+                 const messageAnimationProgress = Math.max(0, (victoryAnimationProgressRef.current - 0.5) * 2);
+                 const messageOpacity = messageAnimationProgress;
+                 const messageOffsetY = (1 - messageAnimationProgress) * 30 * scaleRef.current;
+
+                 const timerHeight = 5 * timerPositionRef.current.pixelSize; // Approximate height
+                 const messageBaseY = animatedTimerYRef.current + timerHeight + (isMobile ? 40 : 60) * scaleRef.current;
+                 const fontSize = isMobile
+                     ? Math.min(24 * scaleRef.current, canvasElement.width * 0.05)
+                     : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
+                 const buttonFontSize = isMobile
+                     ? Math.min(26 * scaleRef.current, canvasElement.width * 0.06)
+                     : Math.min(28 * scaleRef.current, canvasElement.width * 0.04);
+                 const lineSpacing = fontSize * 1.5;
+
+                 ctx.font = `bold ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
+                 ctx.textAlign = 'center';
+                 ctx.fillStyle = COLOR;
+                 // Восстанавливаем тени для текста победы
+                 ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+                 ctx.shadowBlur = 8;
+                 ctx.shadowOffsetX = 2;
+                 ctx.shadowOffsetY = 2;
+                 ctx.globalAlpha = messageOpacity;
+
+                 const messageLines = [
+                     '',
+                     'Молодец!',
+                     '',
+                     'А теперь заходи в наш телеграм канал.',
+                     '', // Empty line for spacing
+                     'После таймера сможешь получить 500$'
+                 ];
+
+                 let currentY = messageBaseY;
+                 messageLines.forEach((line) => {
+                     ctx.fillText(line, canvasElement.width / 2, currentY + messageOffsetY);
+                     currentY += lineSpacing;
+                 });
+
+                 // Draw Telegram Button
+                 const buttonText = 'TG канал';
+                 const buttonPadding = 20 * scaleRef.current;
+                 const buttonHeight = buttonFontSize + buttonPadding;
+                 ctx.font = `bold ${buttonFontSize}px 'Press Start 2P', Arial, sans-serif`;
+                 const textMetrics = ctx.measureText(buttonText);
+                 const buttonWidth = textMetrics.width + buttonPadding * 2;
+                 const buttonX = canvasElement.width / 2 - buttonWidth / 2;
+                 const buttonY = currentY + 30 * scaleRef.current + messageOffsetY; // Apply offset
+
+                 victoryButtonRectRef.current = { x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight };
+
+                 ctx.fillStyle = '#42aaff'; // Orange color
+                 ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
+
+                 ctx.fillStyle = '#FFFFFF';
+                 ctx.shadowColor = 'rgba(0, 0, 0, 0.5)'; // Slight shadow for text on button
+                 ctx.shadowBlur = 4;
+                 // No need to set offset for button text shadow
+                 ctx.shadowOffsetX = 0;
+                 ctx.shadowOffsetY = 0;
+                 // Тень для текста кнопки оставляем, как и было
+                 ctx.fillText(buttonText, canvasElement.width / 2, buttonY + buttonHeight / 2 + buttonFontSize / 3);
+
+                 // Reset shadow and alpha
+                 ctx.shadowColor = 'transparent';
+                 ctx.shadowBlur = 0;
+                 ctx.globalAlpha = 1.0;
+             }
+            // --- Draw Not Started / Game Over Message ---
+             else if (currentGameState === GameState.NOT_STARTED || currentGameState === GameState.GAME_OVER) {
+                const fontSize = isMobile
+                     ? Math.min(26 * scaleRef.current, canvasElement.width * 0.05)
+                     : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
+                 ctx.font = `bold ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
+                 ctx.textAlign = 'center';
+
+                 // Тени для Game Over / Not Started оставляем, как было (они не удалялись)
+                 ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+                 ctx.shadowBlur = isMobile ? 15 : 10;
+                 ctx.shadowOffsetX = isMobile ? 3 : 2;
+                 ctx.shadowOffsetY = isMobile ? 3 : 2;
+
+                 const timerBottom = timerPositionRef.current.startY + 5 * timerPositionRef.current.pixelSize;
+                 const textY = timerBottom + (isMobile ? 100 : 150) * scaleRef.current;
+
+                 let message = '';
+                 if (currentGameState === GameState.GAME_OVER) {
+                     message = 'Игра окончена! Нажмите чтобы начать заново';
+                 } else { // GameState.NOT_STARTED
+                     message = 'Нажмите или коснитесь, чтобы начать';
+                 }
+
+                 // Optional: Add text background for better visibility on mobile
+                 if (isMobile) {
+                     ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+                     const textMetrics = ctx.measureText(message);
+                     const textWidth = textMetrics.width;
+                     // Estimate height based on font size
+                     const textHeight = fontSize * 1.2; // Approximation
+                     const messageParts = message.split('\n'); // Split if multiline
+                     const numLines = messageParts.length > 1 ? messageParts.length : (message === 'Игра окончена! Нажмите чтобы начать заново' ? 2 : 1);
+
+                     ctx.fillRect(
+                         canvasElement.width / 2 - textWidth / 2 - 10 * scaleRef.current, // Padding based on scale
+                         textY - textHeight * numLines + (numLines > 1 ? 0 : -5 * scaleRef.current), // Adjust Y based on lines
+                         textWidth + 20 * scaleRef.current, // Padding based on scale
+                         textHeight * numLines + (numLines > 1 ? 10 * scaleRef.current : 20 * scaleRef.current) // Padding based on scale
+                     );
+                 }
+
+                 ctx.fillStyle = COLOR;
+                 if (message === 'Игра окончена! Нажмите чтобы начать заново') {
+                     ctx.fillText('Игра окончена!', canvasElement.width / 2, textY);
+                     ctx.fillText('Нажмите чтобы начать заново', canvasElement.width / 2, textY + fontSize * 1.5);
+                 } else {
+                     ctx.fillText(message, canvasElement.width / 2, textY);
+                 }
+
+                 // Сбрасываем тени после отрисовки текста Game Over/Not Started
+                 ctx.shadowColor = 'transparent';
+                 ctx.shadowBlur = 0;
+                 ctx.shadowOffsetX = 0;
+                 ctx.shadowOffsetY = 0;
+             }
+
+             // --- Draw Music Button and Volume Slider (if applicable) ---
+             if (currentGameState !== GameState.VICTORY && showMusicButton && audioRef.current) {
+                  const buttonSize = Math.min(40 * scaleRef.current, canvasElement.width * 0.05);
+                  const buttonX = canvasElement.width - buttonSize - 20 * scaleRef.current;
+                  const buttonY = 20 * scaleRef.current;
+
+                  // Draw Button Background
+                  ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+                  ctx.beginPath();
+                  ctx.arc(buttonX + buttonSize / 2, buttonY + buttonSize / 2, buttonSize / 2, 0, Math.PI * 2);
+                  ctx.fill();
+
+                  // Draw Music Icon (Simplified)
+                  ctx.fillStyle = '#FFFFFF';
+                  const iconSize = buttonSize * 0.5;
+                  const iconX = buttonX + (buttonSize - iconSize) / 2;
+                  const iconY = buttonY + (buttonSize - iconSize) / 2;
+                  if (isMusicPlaying) {
+                    // Draw Pause icon (two rectangles)
+                    ctx.fillRect(iconX + iconSize * 0.2, iconY, iconSize * 0.2, iconSize);
+                    ctx.fillRect(iconX + iconSize * 0.6, iconY, iconSize * 0.2, iconSize);
+                  } else {
+                    // Draw Play icon (triangle)
+                    ctx.beginPath();
+                    ctx.moveTo(iconX + iconSize * 0.2, iconY);
+                    ctx.lineTo(iconX + iconSize * 0.8, iconY + iconSize / 2);
+                    ctx.lineTo(iconX + iconSize * 0.2, iconY + iconSize);
+                    ctx.closePath();
+                    ctx.fill();
+                  }
+
+                  // Draw music status text if there's an error
+                  if (musicError) {
+                      ctx.font = `${Math.min(12 * scaleRef.current, canvasElement.width * 0.015)}px 'Press Start 2P', Arial, sans-serif`;
+                      ctx.fillStyle = '#FF5555';
+                      ctx.textAlign = 'right';
+                      ctx.fillText('Music error', buttonX - 10 * scaleRef.current, buttonY + buttonSize / 2 + 5 * scaleRef.current);
+                  }
+
+                 // Draw volume slider if music is playing
+                 if (isMusicPlaying) {
+                     const sliderWidth = buttonSize * 1.5;
+                     const sliderHeight = 6 * scaleRef.current;
+                     const sliderX = buttonX - sliderWidth - 15 * scaleRef.current; // Space between button and slider
+                     const sliderY = buttonY + buttonSize / 2 - sliderHeight / 2;
+
+                     // Draw slider background
+                     ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                     ctx.fillRect(sliderX, sliderY, sliderWidth, sliderHeight);
+
+                     // Draw slider position (thumb)
+                     ctx.fillStyle = '#FFFFFF';
+                     ctx.fillRect(sliderX, sliderY, sliderWidth * musicVolume, sliderHeight);
+                 }
+             }
+        };
+
+        // --- End Drawing Functions ---
+
         const resizeCanvas = () => {
             canvasElement.width = window.innerWidth;
             canvasElement.height = window.innerHeight;
@@ -665,7 +1021,7 @@ export function Page() {
             const SMALL_PIXEL_SIZE = isMobile
                 ? Math.min(10 * scale, canvasElement.width * 0.015)
                 : Math.min(4 * scale, canvasElement.width * 0.006);
-            const BALL_SPEED = 12 * scale;
+            const BALL_SPEED = 30 * scale; // Возвращено к 30 * scale (будет умножено на GAME_SPEED_MULTIPLIER)
 
             pixelsRef.current = [];
             const mainText = 'RESEARCHED.XYZ';
@@ -791,9 +1147,13 @@ export function Page() {
 
                 // Set initial ball direction
                 ballRef.current.dx = BALL_SPEED * (Math.random() > 0.5 ? 1 : -1);
-                ballRef.current.dy = -BALL_SPEED; // Always start moving upward
+                ballRef.current.dy = BALL_SPEED; // Мяч летит вниз
                 ballRef.current.active = true;
-                ballRef.current.currentSpeed = 1; // Reduced from 1.0 to 0.7
+                ballRef.current.currentSpeed = 1 / 3; // Начальная скорость 1/3
+                firstHitOccurredRef.current = false; // Сбрасываем флаг первого касания
+
+                // Reset lives
+                setLives(3);
 
                 setGameState(GameState.PLAYING);
 
@@ -869,7 +1229,7 @@ export function Page() {
             powerUpsRef.current.push({
                 x,
                 y,
-                dy: 1.5 * scaleRef.current,
+                dy: 6.0 * scaleRef.current, // Увеличено с 1.5 до 6.0 для ускорения падения бонусов
                 size: size * 1.5,
                 type: powerUpType,
                 active: true
@@ -928,134 +1288,73 @@ export function Page() {
             }
         };
 
-        const updateGame = () => {
+        const updateGame = (deltaTimeMs: number) => {
+            if (gameState !== GameState.PLAYING) return;
+
+            const dtSeconds = (deltaTimeMs / 1000) * GAME_SPEED_MULTIPLIER; // Применяем множитель скорости
+
+            // --- Update Ball ---
             const ball = ballRef.current;
-            const paddle = paddleRef.current;
-
-            // Update particles (including fireworks)
-            particlesRef.current = particlesRef.current
-                .map((particle, index) => {
-                    particle.x += particle.dx;
-                    particle.y += particle.dy;
-                    particle.life += 1;
-                    particle.alpha = 1 - particle.life / particle.maxLife;
-
-                    // Apply gravity to explosion particles
-                    if (particle.gravity) {
-                        particle.dy += particle.gravity;
-                    }
-
-                    // Handle firework explosion
-                    if (particle.isFirework && !particle.exploded && particle.life >= particle.maxLife) {
-                        explodeFirework(particle);
-                        particle.exploded = true;
-                        particle.alpha = 0; // Make the original rocket disappear
-                    }
-
-                    // Keep particle if it's still alive
-                    return particle.life < particle.maxLife && particle.alpha > 0 ? particle : null;
-                })
-                .filter((p): p is Particle => p !== null); // Type assertion to filter out nulls
-
-            // Update victory animation
-            if (gameState === GameState.VICTORY) {
-                if (victoryAnimationProgressRef.current < 1) {
-                    victoryAnimationProgressRef.current += 0.02; // Adjust speed as needed
-                    victoryAnimationProgressRef.current = Math.min(victoryAnimationProgressRef.current, 1);
-
-                    // Smooth interpolation (e.g., ease-out)
-                    const easedProgress = 1 - Math.pow(1 - victoryAnimationProgressRef.current, 3);
-                    animatedTimerYRef.current =
-                        initialTimerYRef.current + (targetTimerYRef.current - initialTimerYRef.current) * easedProgress;
-                }
-                // No ball/paddle/power-up updates needed in victory state
-                return; // Skip rest of game logic
-            }
-
             if (ball.active) {
-                // Calculate actual speed based on base speed and current speed factor
-                const actualSpeedX = ball.dx * ball.currentSpeed;
-                const actualSpeedY = ball.dy * ball.currentSpeed;
+                // Adjust speed based on currentSpeed factor
+                const effectiveDx = ball.dx * ball.currentSpeed;
+                const effectiveDy = ball.dy * ball.currentSpeed;
 
-                // Update ball position
-                ball.x += actualSpeedX;
-                ball.y += actualSpeedY;
+                ball.x += effectiveDx * dtSeconds;
+                ball.y += effectiveDy * dtSeconds;
 
                 // Ball collision with walls
                 if (ball.x - ball.radius < 0 || ball.x + ball.radius > canvasElement.width) {
-                    ball.dx = -ball.dx;
+                    ball.dx *= -1;
+                    ball.x = Math.max(ball.radius, Math.min(canvasElement.width - ball.radius, ball.x)); // Prevent sticking
                     playSound('hit');
                 }
-
-                // Ball collision with top
                 if (ball.y - ball.radius < 0) {
-                    ball.dy = -ball.dy;
+                    ball.dy *= -1;
+                    ball.y = ball.radius; // Prevent sticking
                     playSound('hit');
-                }
-
-                // Ball collision with bottom
-                if (ball.y + ball.radius > canvasElement.height) {
-                    // Lose a life
-                    setLives((prev) => {
-                        const newLives = prev - 1;
-
-                        if (newLives <= 0) {
-                            // Game over
-                            ball.active = false;
-                            setGameState(GameState.GAME_OVER);
-                            playSound('gameover');
-
-                            // Clear speed increase interval
-                            if (speedIncreaseIntervalRef.current) {
-                                clearInterval(speedIncreaseIntervalRef.current);
-                                speedIncreaseIntervalRef.current = null;
-                            }
-
-                            // PAUSE music on game over
-                            if (audioRef.current && !audioRef.current.paused) {
-                                audioRef.current.pause();
-                                setIsMusicPlaying(false);
-                                console.log('Music paused on Game Over.');
-                            }
-
-                            return 0;
-                        } else {
-                            // Reset ball
-                            ball.x = canvasElement.width / 2;
-                            ball.y = canvasElement.height / 2;
-                            ball.dx = ball.baseSpeed * (Math.random() > 0.5 ? 1 : -1);
-                            ball.dy = -ball.baseSpeed;
-                            ball.currentSpeed = 1.0; // Reset speed
-
-                            return newLives;
-                        }
-                    });
                 }
 
                 // Ball collision with paddle
+                const paddle = paddleRef.current;
                 if (
-                    ball.y + ball.radius > paddle.y &&
-                    ball.y - ball.radius < paddle.y + paddle.height &&
-                    ball.x + ball.radius > paddle.x &&
-                    ball.x - ball.radius < paddle.x + paddle.width
+                    ball.y + ball.radius >= paddle.y &&
+                    ball.y - ball.radius <= paddle.y + paddle.height && // Check vertical overlap slightly more leniently
+                    ball.x + ball.radius >= paddle.x &&
+                    ball.x - ball.radius <= paddle.x + paddle.width &&
+                    ball.dy > 0 // Ensure ball is moving downwards
                 ) {
-                    // Calculate where the ball hit the paddle (0 to 1)
-                    const hitPosition = (ball.x - paddle.x) / paddle.width;
+                    // Calculate hit position on paddle (-1 to 1)
+                    const hitPos = (ball.x - (paddle.x + paddle.width / 2)) / (paddle.width / 2);
+                    // Angle depends on hit position, max angle 60 degrees (PI/3 radians)
+                    const maxAngle = Math.PI / 3;
+                    const angle = hitPos * maxAngle;
 
-                    // Change angle based on where the ball hit the paddle
-                    const angle = (hitPosition - 0.5) * Math.PI * 0.7;
+                    // Recalculate velocity components based on base speed
+                    // Keep the current speed factor, but recalculate dx/dy based on angle and base speed magnitude
+                    const speedMagnitude = ball.baseSpeed; // Use base speed for consistent reflection speed
+                    ball.dx = speedMagnitude * Math.sin(angle);
+                    ball.dy = -speedMagnitude * Math.cos(angle); // Negative because it bounces up
 
-                    const speed = Math.sqrt(ball.dx * ball.dx + ball.dy * ball.dy);
-                    ball.dx = Math.sin(angle) * speed;
-                    ball.dy = -Math.abs(Math.cos(angle) * speed); // Always bounce up
+                    // Move ball slightly above paddle to prevent potential sticking
+                    ball.y = paddle.y - ball.radius - 1;
 
-                    // Ensure ball is above paddle (prevent sticking)
-                    ball.y = paddle.y - ball.radius;
+                    // Если это первое касание, вернуть нормальную скорость
+                    if (!firstHitOccurredRef.current) {
+                        ball.currentSpeed = 1.0;
+                        firstHitOccurredRef.current = true;
+                    }
 
                     playSound('hit');
+
+                    // Apply current speed factor again after angle calculation
+                    // Note: We might not need to re-apply currentSpeed here if baseSpeed already reflects the desired speed.
+                    // Let's test without re-applying first. If reflections seem slow, uncomment below.
+                    // ball.dx *= ball.currentSpeed;
+                    // ball.dy *= ball.currentSpeed;
                 }
 
-                // Check collision with pixels
+                // Ball collision with pixels
                 pixelsRef.current.forEach((pixel) => {
                     if (
                         !pixel.hit &&
@@ -1067,58 +1366,124 @@ export function Page() {
                         pixel.hit = true;
                         playSound('hit');
 
-                        // Create power-up if this was a special pixel and we haven't reached the limit
-                        if (pixel.specialPowerUp && totalPowerUpsRef.current < 8) {
-                            createPowerUp(pixel.x + pixel.size / 2, pixel.y + pixel.size / 2, pixel.size);
-                        }
+                        // Simple reflection logic (invert appropriate velocity component)
+                        // Determine dominant collision edge (simplified)
+                        const overlapX = Math.min(ball.x + ball.radius, pixel.x + pixel.size) - Math.max(ball.x - ball.radius, pixel.x);
+                        const overlapY = Math.min(ball.y + ball.radius, pixel.y + pixel.size) - Math.max(ball.y - ball.radius, pixel.y);
 
-                        // Determine bounce direction based on collision side
-                        const centerX = pixel.x + pixel.size / 2;
-                        const centerY = pixel.y + pixel.size / 2;
-
-                        if (Math.abs(ball.x - centerX) > Math.abs(ball.y - centerY)) {
-                            ball.dx = -ball.dx;
+                        if (overlapX > overlapY) {
+                            // Vertical collision is dominant
+                            ball.dy *= -1;
+                            // Nudge ball out vertically
+                            ball.y += ball.dy > 0 ? overlapY : -overlapY;
                         } else {
-                            ball.dy = -ball.dy;
+                            // Horizontal collision is dominant
+                            ball.dx *= -1;
+                            // Nudge ball out horizontally
+                            ball.x += ball.dx > 0 ? overlapX : -overlapX;
                         }
 
-                        // Check if all pixels are hit (victory condition)
-                        checkVictory();
+                        // Chance to spawn a power-up (excluding ORANGE_BALL initially)
+                        const powerUpChance = 0.1; // 10% chance
+                        const shouldSpawnPowerUp = Math.random() < powerUpChance && totalPowerUpsRef.current < 3; // Limit max active powerups
+
+                        if (shouldSpawnPowerUp) {
+                            // Exclude ORANGE_BALL and EXTRA_LIFE (unless orange ball collected)
+                            const availableTypes = [PowerUpType.EXPAND_PADDLE, PowerUpType.SLOW_BALL];
+                            if (orangeBallCollectedRef.current) {
+                                // Only add extra life if the orange ball was collected
+                                availableTypes.push(PowerUpType.EXTRA_LIFE);
+                            }
+                            const randomType = availableTypes[Math.floor(Math.random() * availableTypes.length)];
+                            createPowerUp(pixel.x + pixel.size / 2, pixel.y + pixel.size / 2, pixel.size * 0.8);
+                            totalPowerUpsRef.current++; // Increment counter
+                        }
+
+                        // Check for specific pixel hit to spawn the Orange Ball
+                        if (pixel.specialPowerUp && !orangeBallCollectedRef.current) {
+                            console.log('Spawning Orange Ball!');
+                            // Correct call: Pass only x, y, size
+                            createPowerUp(pixel.x + pixel.size / 2, pixel.y + pixel.size / 2, pixel.size);
+                            pixel.specialPowerUp = false; // Spawn only once
+                        }
                     }
                 });
             }
 
-            // Update power-ups
-            powerUpsRef.current.forEach((powerUp, index) => {
+            // --- Update Power-Ups ---
+            const activePowerUps: PowerUp[] = [];
+            powerUpsRef.current.forEach((powerUp) => {
                 if (powerUp.active) {
-                    // Move power-up down
-                    powerUp.y += powerUp.dy;
+                    powerUp.y += powerUp.dy * dtSeconds; // Применяем dtSeconds с множителем
 
-                    // Check if power-up is out of bounds
-                    if (powerUp.y > canvasElement.height) {
-                        powerUp.active = false;
-                    }
-
-                    // Check collision with paddle
+                    // Check for collection by paddle
+                    const paddle = paddleRef.current;
                     if (
-                        powerUp.y + powerUp.size > paddle.y &&
-                        powerUp.y < paddle.y + paddle.height &&
-                        powerUp.x + powerUp.size > paddle.x &&
-                        powerUp.x < paddle.x + paddle.width
+                        powerUp.y + powerUp.size / 2 > paddle.y &&
+                        powerUp.y - powerUp.size / 2 < paddle.y + paddle.height &&
+                        powerUp.x + powerUp.size / 2 > paddle.x &&
+                        powerUp.x - powerUp.size / 2 < paddle.x + paddle.width
                     ) {
-                        // Apply power-up effect
-                        applyPowerUp(powerUp.type);
                         powerUp.active = false;
+                        totalPowerUpsRef.current--; // Decrement counter
+                        playSound('powerup');
+                        applyPowerUp(powerUp.type);
+                    } else if (powerUp.y - powerUp.size / 2 > canvasElement.height) {
+                        // Deactivate if it goes off-screen
+                        powerUp.active = false;
+                        totalPowerUpsRef.current--; // Decrement counter
+                    } else {
+                        activePowerUps.push(powerUp);
                     }
                 }
             });
+            powerUpsRef.current = activePowerUps;
 
-            // Remove inactive power-ups
-            powerUpsRef.current = powerUpsRef.current.filter((p) => p.active);
+            // --- Check Game Over ---
+            if (ball.y - ball.radius > canvasElement.height) {
+                ball.active = false; // Deactivate ball
+                setLives((prevLives) => prevLives - 1);
+
+                // Stop speed increase interval if active
+                if (speedIncreaseIntervalRef.current) {
+                    clearInterval(speedIncreaseIntervalRef.current);
+                    speedIncreaseIntervalRef.current = null;
+                }
+                // Reset power-up effects and timers
+                Object.values(powerUpTimersRef.current).forEach(timer => {
+                    if (timer) clearTimeout(timer);
+                });
+                powerUpTimersRef.current = {};
+                paddleRef.current.width = paddleRef.current.originalWidth; // Reset paddle width
+                ballRef.current.currentSpeed = 1; // Reset ball speed multiplier
+                orangeBallCollectedRef.current = false; // Reset orange ball state
+
+                if (lives <= 1) { // Check if this was the last life
+                    setGameState(GameState.GAME_OVER);
+                    playSound('gameover');
+                    // PAUSE music on game over
+                    if (audioRef.current && !audioRef.current.paused) {
+                        audioRef.current.pause();
+                        // Let event listener handle setIsMusicPlaying(false)
+                        console.log('Music paused on Game Over.');
+                    }
+                } else {
+                    // Reset ball position and state for next life
+                     ballRef.current.x = canvasElement.width / 2;
+                     ballRef.current.y = canvasElement.height / 2; // Новая позиция: центр экрана (как при init)
+                     ballRef.current.dx = (Math.random() > 0.5 ? 1 : -1) * ballRef.current.baseSpeed * 0.5;
+                     ballRef.current.dy = ballRef.current.baseSpeed * 0.866;
+                     ballRef.current.active = true; // Reactivate ball
+                     ballRef.current.currentSpeed = 1 / 3; // Сбросить скорость к 1/3 при потере жизни
+                     firstHitOccurredRef.current = false; // Сбросить флаг первого касания при потере жизни
+                }
+            }
         };
 
         const renderTimer = () => {
-            if (!ctx || !canvasElement || !gameInitializedRef.current) return;
+            // This function now only calculates timer pixel positions
+            // The actual drawing happens in drawGame via drawPixels
+            if (!gameInitializedRef.current) return;
 
             // Clear previous timer pixels
             timerPixelsRef.current = [];
@@ -1174,352 +1539,70 @@ export function Page() {
             ctx.fillStyle = BACKGROUND_COLOR;
             ctx.fillRect(0, 0, canvasElement.width, canvasElement.height);
 
+            // Use gameStateRef.current for consistency within the frame
+            const currentGameState = gameStateRef.current;
+
             // --- State-Specific Drawing ---
-            switch (gameState) {
+            switch (currentGameState) {
                 case GameState.VICTORY:
-                    // Draw timer at animated position
-                    timerPixelsRef.current.forEach((pixel) => {
-                        ctx.fillStyle = COLOR;
-                        // Adjust pixel Y position based on animatedTimerYRef relative to initial startY
+                    // Calculate animated timer position
                         const yOffset = animatedTimerYRef.current - initialTimerYRef.current;
-                        ctx.fillRect(pixel.x, pixel.y + yOffset, pixel.size, pixel.size);
-                    });
+                    // Create a temporary pixel array with updated Y positions for drawing
+                    const animatedTimerPixels = timerPixelsRef.current.map(p => ({ ...p, y: p.y + yOffset }));
+                    drawPixels(animatedTimerPixels, COLOR); // Use helper
 
-                    // Draw victory particles (fireworks)
-                    particlesRef.current.forEach((particle) => {
-                        ctx.globalAlpha = particle.alpha;
-                        ctx.fillStyle = particle.color;
-                        ctx.beginPath();
-                        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-                        ctx.fill();
-                    });
-                    ctx.globalAlpha = 1.0;
-
-                    // Draw Victory Message and Button once animation is somewhat complete
-                    if (victoryAnimationProgressRef.current > 0.5) {
-                        // Calculate fade-in and slide-up based on progress beyond the halfway point
-                        const messageAnimationProgress = Math.max(0, (victoryAnimationProgressRef.current - 0.5) * 2);
-                        const messageOpacity = messageAnimationProgress;
-                        // Start slightly lower and slide up
-                        const messageOffsetY = (1 - messageAnimationProgress) * 30 * scaleRef.current;
-
-                        // Calculate positions based on animated timer
-                        const timerHeight = 5 * timerPositionRef.current.pixelSize; // Approximate height
-                        const messageBaseY = animatedTimerYRef.current + timerHeight + (isMobile ? 40 : 60) * scaleRef.current;
-                        const fontSize = isMobile
-                            ? Math.min(24 * scaleRef.current, canvasElement.width * 0.05)
-                            : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
-                        const buttonFontSize = isMobile
-                            ? Math.min(26 * scaleRef.current, canvasElement.width * 0.06)
-                            : Math.min(28 * scaleRef.current, canvasElement.width * 0.04);
-                        const lineSpacing = fontSize * 1.5;
-
-                        ctx.font = `bold ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
-                        ctx.textAlign = 'center';
-                        ctx.fillStyle = COLOR;
-                        ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
-                        ctx.shadowBlur = 8;
-                        ctx.shadowOffsetX = 2;
-                        ctx.shadowOffsetY = 2;
-
-                        // Apply animation effects
-                        ctx.globalAlpha = messageOpacity;
-
-                        const messageLines = [
-                            '',
-                            'Молодец!',
-                            '',
-                            'А теперь заходи в наш телеграм канал.',
-                            '', // Empty line for spacing
-                            'После таймера сможешь получить 500$'
-                        ];
-
-                        let currentY = messageBaseY;
-                        messageLines.forEach((line) => {
-                            ctx.fillText(line, canvasElement.width / 2, currentY + messageOffsetY);
-                            currentY += lineSpacing;
-                        });
-
-                        // Draw Telegram Button
-                        const buttonText = 'TG канал';
-                        const buttonPadding = 20 * scaleRef.current;
-                        const buttonHeight = buttonFontSize + buttonPadding;
-                        ctx.font = `bold ${buttonFontSize}px 'Press Start 2P', Arial, sans-serif`; // Use pixel font if available later
-                        const textMetrics = ctx.measureText(buttonText);
-                        const buttonWidth = textMetrics.width + buttonPadding * 2;
-                        const buttonX = canvasElement.width / 2 - buttonWidth / 2;
-                        const buttonY = currentY + 30 * scaleRef.current + messageOffsetY; // Apply offset
-
-                        // Store button rect for click detection
-                        victoryButtonRectRef.current = { x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight };
-
-                        // Draw button background (Orange)
-                        ctx.fillStyle = '#42aaff'; // Orange color
-                        // Simple rect for now, pixel style can be added later if needed
-                        ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
-
-                        // Draw button text (White)
-                        ctx.fillStyle = '#FFFFFF';
-                        ctx.shadowColor = 'rgba(0, 0, 0, 0.5)'; // Slight shadow for text on button
-                        ctx.shadowBlur = 4;
-                        ctx.fillText(buttonText, canvasElement.width / 2, buttonY + buttonHeight / 2 + buttonFontSize / 3); // Adjust vertical alignment
-
-                        // Reset shadow
-                        ctx.shadowColor = 'transparent';
-                        ctx.shadowBlur = 0;
-                        // Reset alpha
-                        ctx.globalAlpha = 1.0;
-                    }
-                    // End Victory State Drawing
+                    drawParticles(particlesRef.current); // Use helper
+                    drawUI(currentGameState); // Draw victory message/button
                     break; // Exit switch after drawing victory state
 
                 case GameState.PLAYING:
-                    // Render main text pixels
-                    pixelsRef.current.forEach((pixel) => {
-                        ctx.fillStyle = pixel.hit ? HIT_COLOR : COLOR;
-                        ctx.fillRect(pixel.x, pixel.y, pixel.size, pixel.size);
-                    });
-
-                    // Render timer pixels
-                    timerPixelsRef.current.forEach((pixel) => {
-                        ctx.fillStyle = COLOR;
-                        ctx.fillRect(pixel.x, pixel.y, pixel.size, pixel.size);
-                    });
-
-                    // Draw power-ups
-                    powerUpsRef.current.forEach((powerUp) => {
-                        ctx.fillStyle = POWER_UP_COLORS[powerUp.type];
-                        switch (powerUp.type) {
-                            // ... (cases for drawing different power-up shapes)
-                            case PowerUpType.EXPAND_PADDLE:
-                                const radius = powerUp.size / 4;
-                                ctx.beginPath();
-                                ctx.moveTo(powerUp.x - powerUp.size + radius, powerUp.y - powerUp.size / 3);
-                                ctx.lineTo(powerUp.x + powerUp.size - radius, powerUp.y - powerUp.size / 3);
-                                ctx.arcTo(
-                                    powerUp.x + powerUp.size,
-                                    powerUp.y - powerUp.size / 3,
-                                    powerUp.x + powerUp.size,
-                                    powerUp.y - powerUp.size / 3 + radius,
-                                    radius
-                                );
-                                ctx.lineTo(powerUp.x + powerUp.size, powerUp.y + powerUp.size / 3 - radius);
-                                ctx.arcTo(
-                                    powerUp.x + powerUp.size,
-                                    powerUp.y + powerUp.size / 3,
-                                    powerUp.x + powerUp.size - radius,
-                                    powerUp.y + powerUp.size / 3,
-                                    radius
-                                );
-                                ctx.lineTo(powerUp.x - powerUp.size + radius, powerUp.y + powerUp.size / 3);
-                                ctx.arcTo(
-                                    powerUp.x - powerUp.size,
-                                    powerUp.y + powerUp.size / 3,
-                                    powerUp.x - powerUp.size,
-                                    powerUp.y + powerUp.size / 3 - radius,
-                                    radius
-                                );
-                                ctx.lineTo(powerUp.x - powerUp.size, powerUp.y - powerUp.size / 3 + radius);
-                                ctx.arcTo(
-                                    powerUp.x - powerUp.size,
-                                    powerUp.y - powerUp.size / 3,
-                                    powerUp.x - powerUp.size + radius,
-                                    powerUp.y - powerUp.size / 3,
-                                    radius
-                                );
-                                ctx.fill();
-                                ctx.fillStyle = '#FFFFFF';
-                                ctx.fillRect(powerUp.x - powerUp.size / 2, powerUp.y - powerUp.size / 6, powerUp.size, powerUp.size / 3);
-                                break;
-                            case PowerUpType.SLOW_BALL:
-                                ctx.beginPath();
-                                ctx.arc(powerUp.x, powerUp.y, powerUp.size, 0, Math.PI * 2);
-                                ctx.fill();
-                                ctx.strokeStyle = '#FFFFFF';
-                                ctx.lineWidth = powerUp.size / 6;
-                                ctx.beginPath();
-                                ctx.moveTo(powerUp.x, powerUp.y);
-                                ctx.lineTo(powerUp.x, powerUp.y - powerUp.size / 2);
-                                ctx.stroke();
-                                ctx.beginPath();
-                                ctx.moveTo(powerUp.x, powerUp.y);
-                                ctx.lineTo(powerUp.x + powerUp.size / 3, powerUp.y);
-                                ctx.stroke();
-                                break;
-                            case PowerUpType.EXTRA_LIFE:
-                                if (heartImageRef.current) {
-                                    const heartSize = powerUp.size * 1.5;
-                                    ctx.drawImage(
-                                        heartImageRef.current,
-                                        powerUp.x - heartSize / 2,
-                                        powerUp.y - heartSize / 2,
-                                        heartSize,
-                                        heartSize
-                                    );
-                                }
-                                break;
-                            case PowerUpType.ORANGE_BALL:
-                                if (orangeBallImageRef.current) {
-                                    const iconSize = powerUp.size * 3.0;
-                                    ctx.drawImage(
-                                        orangeBallImageRef.current,
-                                        powerUp.x - iconSize / 2,
-                                        powerUp.y - iconSize / 2,
-                                        iconSize,
-                                        iconSize
-                                    );
-                                }
-                                break;
-                        }
-                    });
-
-                    // Draw ball
-                    ctx.fillStyle = orangeBallCollectedRef.current ? '#FF9800' : BALL_COLOR;
-                    ctx.beginPath();
-                    ctx.arc(ballRef.current.x, ballRef.current.y, ballRef.current.radius, 0, Math.PI * 2);
-                    ctx.fill();
-
-                    // Draw paddle
-                    ctx.fillStyle = PADDLE_COLOR;
-                    ctx.fillRect(paddleRef.current.x, paddleRef.current.y, paddleRef.current.width, paddleRef.current.height);
-
-                    // Draw lives
-                    if (heartImageRef.current) {
-                        const lifeSize = isMobile
-                            ? Math.min(60 * scaleRef.current, canvasElement.width * 0.08)
-                            : Math.min(45 * scaleRef.current, canvasElement.width * 0.05);
-                        const lifeSpacing = isMobile
-                            ? Math.min(30 * scaleRef.current, canvasElement.width * 0.04)
-                            : Math.min(25 * scaleRef.current, canvasElement.width * 0.03);
-                        const marginLeft = isMobile
-                            ? Math.min(50 * scaleRef.current, canvasElement.width * 0.06)
-                            : Math.min(40 * scaleRef.current, canvasElement.width * 0.04);
-                        const lifeY = isMobile
-                            ? Math.min(70 * scaleRef.current, canvasElement.height * 0.1)
-                            : Math.min(50 * scaleRef.current, canvasElement.height * 0.08);
-
-                        for (let i = 0; i < lives; i++) {
-                            const lifeX = marginLeft + i * (lifeSize + lifeSpacing);
-                            ctx.drawImage(heartImageRef.current, lifeX - lifeSize / 2, lifeY - lifeSize / 2, lifeSize, lifeSize);
-                        }
-                    }
+                    drawPixels(pixelsRef.current, COLOR, HIT_COLOR); // Use helper
+                    drawPixels(timerPixelsRef.current, COLOR); // Use helper
+                    drawPowerUps(powerUpsRef.current); // Use helper
+                    drawBall(ballRef.current, orangeBallCollectedRef.current ? '#FF9800' : BALL_COLOR); // Use helper
+                    drawPaddle(paddleRef.current); // Use helper
+                    drawLives(lives); // Use helper
+                    drawUI(currentGameState); // Draw music button/slider
                     break; // End Playing State Drawing
 
                 case GameState.NOT_STARTED:
                 case GameState.GAME_OVER:
-                    // Render main text pixels
-                    pixelsRef.current.forEach((pixel) => {
-                        ctx.fillStyle = pixel.hit ? HIT_COLOR : COLOR;
-                        ctx.fillRect(pixel.x, pixel.y, pixel.size, pixel.size);
-                    });
-
-                    // Render timer pixels
-                    timerPixelsRef.current.forEach((pixel) => {
-                        ctx.fillStyle = COLOR;
-                        ctx.fillRect(pixel.x, pixel.y, pixel.size, pixel.size);
-                    });
-
-                    // Draw game state message
-                    const fontSize = isMobile
-                        ? Math.min(26 * scaleRef.current, canvasElement.width * 0.05)
-                        : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
-                    ctx.font = `bold ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
-                    ctx.textAlign = 'center';
-
-                    // Add stronger shadow
-                    ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-                    ctx.shadowBlur = isMobile ? 15 : 10;
-                    ctx.shadowOffsetX = isMobile ? 3 : 2;
-                    ctx.shadowOffsetY = isMobile ? 3 : 2;
-
-                    const timerBottom = timerPositionRef.current.startY + 5 * timerPositionRef.current.pixelSize;
-                    const textY = timerBottom + (isMobile ? 100 : 150) * scaleRef.current;
-
-                    let message = '';
-                    if (gameState === GameState.GAME_OVER) {
-                        message = 'Игра окончена! Нажмите чтобы начать заново';
-                    } else {
-                        // Must be GameState.NOT_STARTED
-                        message = 'Нажмите или коснитесь, чтобы начать';
-                    }
-
-                    // Optional: Add text background for better visibility on mobile
-                    if (isMobile) {
-                        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-                        const textMetrics = ctx.measureText(message);
-                        const textWidth = textMetrics.width;
-                        const textHeight = 22;
-                        ctx.fillRect(
-                            canvasElement.width / 2 - textWidth / 2 - 20,
-                            textY - textHeight - 10,
-                            textWidth + 40,
-                            textHeight + 20
-                        );
-                    }
-
-                    ctx.fillStyle = COLOR;
-                    if (message === 'Игра окончена! Нажмите чтобы начать заново') {
-                        ctx.fillText('Игра окончена!', canvasElement.width / 2, textY);
-                        ctx.fillText('Нажмите чтобы начать заново', canvasElement.width / 2, textY + 20);
-                    } else {
-                        ctx.fillText(message, canvasElement.width / 2, textY);
-                    }
-
-                    // Reset shadow
-                    ctx.shadowColor = 'transparent';
-                    ctx.shadowBlur = 0;
-                    ctx.shadowOffsetX = 0;
-                    ctx.shadowOffsetY = 0;
+                    drawPixels(pixelsRef.current, COLOR, HIT_COLOR); // Use helper (show hits if any)
+                    drawPixels(timerPixelsRef.current, COLOR); // Use helper
+                    drawUI(currentGameState); // Draw message and music button/slider
                     break; // End Not Started / Game Over State Drawing
-            }
-
-            // --- Draw elements common to non-Victory states ---
-            if (gameState !== GameState.VICTORY) {
-                // Draw music button if audio is available
-                const buttonSize = Math.min(40 * scaleRef.current, canvasElement.width * 0.05);
-                const buttonX = canvasElement.width - buttonSize - 20;
-                const buttonY = 20;
-
-                if (showMusicButton && audioRef.current) {
-                    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-                    ctx.beginPath();
-                    ctx.arc(buttonX, buttonY, buttonSize, 0, Math.PI * 2);
-                    ctx.fill();
-
-                    ctx.fillStyle = '#FFFFFF';
-
-                    // Draw music status text if there's an error
-                    if (musicError) {
-                        ctx.font = `${Math.min(12 * scaleRef.current, canvasElement.width * 0.015)}px 'Press Start 2P', Arial, sans-serif`;
-                        ctx.fillStyle = '#FF5555';
-                        ctx.textAlign = 'right';
-                        ctx.fillText('Music error', buttonX - buttonSize - 10, buttonY + 5);
-                    }
-
-                    // Draw volume slider if music is playing
-                    if (isMusicPlaying) {
-                        // Draw volume slider
-                        const sliderX = buttonX - buttonSize * 3;
-                        const sliderY = buttonY;
-                        const sliderWidth = buttonSize * 2;
-
-                        // Draw slider background
-                        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-                        ctx.fillRect(sliderX, sliderY - 2, sliderWidth, 4);
-
-                        // Draw slider position
-                        ctx.fillStyle = '#FFFFFF';
-                        ctx.fillRect(sliderX, sliderY - 4, sliderWidth * musicVolume, 8);
-                    }
-                }
             }
         };
 
-        const gameLoop = () => {
-            resizeCanvas();
-            initializeGame();
-            updateGame();
+        const gameLoop = (currentTime: number) => {
+            if (!lastTimeRef.current) {
+                lastTimeRef.current = currentTime;
+                requestRef.current = requestAnimationFrame(gameLoop);
+                return;
+            }
+
+            const delta = currentTime - lastTimeRef.current;
+            lastTimeRef.current = currentTime;
+            accumulatorRef.current += delta;
+
+            // Process fixed updates
+            while (accumulatorRef.current >= FIXED_TIMESTEP_MS) {
+                resizeCanvas(); // Resize might affect calculations, run before update
+                initializeGame(); // Ensure game is initialized before update
+                // Update game logic only if playing
+                if (gameStateRef.current === GameState.PLAYING) {
+                    updateGame(FIXED_TIMESTEP_MS); // Pass fixed timestep
+                }
+                // Update victory state logic separately
+                updateVictoryState(FIXED_TIMESTEP_MS);
+
+                accumulatorRef.current -= FIXED_TIMESTEP_MS;
+            }
+
+            // Render the current state
             drawGame();
+
+            // Request the next frame
             requestRef.current = requestAnimationFrame(gameLoop);
         };
 
@@ -1694,9 +1777,13 @@ export function Page() {
             }
         });
 
+        // Start the game loop
+        lastTimeRef.current = 0; // Ensure lastTime is reset before starting
+        accumulatorRef.current = 0; // Reset accumulator
         requestRef.current = requestAnimationFrame(gameLoop);
 
         return () => {
+            // Cleanup listeners
             window.removeEventListener('resize', resizeCanvas);
             canvasElement.removeEventListener('mousemove', handleMouseMove);
             canvasElement.removeEventListener('touchstart', handleTouchStart);
@@ -1905,12 +1992,75 @@ export function Page() {
         gameStateRef.current = gameState;
     }, [gameState]);
 
+    // Moved particle and victory animation update outside updateGame
+    const updateVictoryState = (deltaTimeMs: number) => {
+         if (gameStateRef.current !== GameState.VICTORY) return;
+
+         const dtSeconds = (deltaTimeMs / 1000) * GAME_SPEED_MULTIPLIER; // Применяем множитель скорости
+
+         // --- Update Static Particle Appearance Animation ---
+         const appearDurationSeconds = 0.4; // Длительность анимации появления
+         particlesRef.current.forEach(particle => {
+             if (particle.appearDelay && particle.appearDelay > 0) {
+                 particle.appearDelay -= deltaTimeMs;
+             } else if (particle.appearProgress !== undefined && particle.appearProgress < 1) {
+                 particle.appearProgress += (1 / appearDurationSeconds) * (deltaTimeMs / 1000); // Используем чистое deltaTimeMs/1000, не умноженное на GAME_SPEED_MULTIPLIER
+                 particle.appearProgress = Math.min(particle.appearProgress, 1);
+             }
+         });
+         // --- End Particle Update ---
+
+
+         // Update victory animation for timer (KEEP THIS PART)
+         if (victoryAnimationProgressRef.current < 1) {
+             // Учитываем множитель скорости и здесь, чтобы анимация таймера не отставала
+             victoryAnimationProgressRef.current += 0.5 * dtSeconds;
+             victoryAnimationProgressRef.current = Math.min(victoryAnimationProgressRef.current, 1);
+
+             // Smooth interpolation (e.g., ease-out)
+             const easedProgress = 1 - Math.pow(1 - victoryAnimationProgressRef.current, 3);
+             animatedTimerYRef.current =
+                 initialTimerYRef.current + (targetTimerYRef.current - initialTimerYRef.current) * easedProgress;
+         }
+    };
+
+    // Helper to create a burst of static firework particles
+    const createStaticFireworksBurst = (count: number) => {
+        if (!canvasRef.current) return;
+        const canvas = canvasRef.current;
+        const colors = ['#FF9800', '#4CAF50', '#2196F3', '#F44336', '#FFEB3B', '#9C27B0', '#FFFFFF'];
+        const newParticles: Particle[] = [];
+
+        for (let i = 0; i < count; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height; // Новое значение (весь экран)
+            const radius = Math.random() * 2 + 1 * scaleRef.current;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const delay = Math.random() * 500; // Случайная задержка до 500ms
+
+            newParticles.push({
+                x: x,
+                y: y,
+                dx: 0,
+                dy: 0,
+                radius: radius,
+                color: color,
+                alpha: 1,
+                life: Infinity,
+                maxLife: Infinity,
+                isFirework: false,
+                exploded: true,
+                gravity: undefined,
+                appearProgress: 0, // Начальный прогресс 0
+                appearDelay: delay // Начальная задержка
+            });
+        }
+        particlesRef.current.push(...newParticles);
+    };
+
     return (
         <>
             {/* Use ref, keep loop and autoplay as per user's working version */}
-            <audio ref={audioRef} id="autoplay-music" loop style={{ display: 'none' }} controls={false} autoPlay>
-                <source src="/videoplayback-bg.mp3" type="audio/mpeg" />
-            </audio>
             <canvas
                 ref={canvasRef}
                 className="fixed top-0 left-0 w-full h-full"
@@ -1921,3 +2071,4 @@ export function Page() {
 }
 
 export default Page;
+
