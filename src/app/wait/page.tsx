@@ -552,10 +552,10 @@ export function Page() {
             createStaticFireworksBurst(isMobile ? 50 : 100); // Create static burst (increased count)
 
             // Remove the interval for dynamic fireworks
-            if (victoryEffectsIntervalRef.current) {
-                clearInterval(victoryEffectsIntervalRef.current);
-                victoryEffectsIntervalRef.current = null;
-            }
+                    if (victoryEffectsIntervalRef.current) {
+                        clearInterval(victoryEffectsIntervalRef.current);
+                        victoryEffectsIntervalRef.current = null;
+                    }
 
             return true;
         }
@@ -644,7 +644,7 @@ export function Page() {
         const drawPixels = (pixels: Pixel[], defaultColor: string, hitColor?: string) => {
             // Draw non-hit pixels first
             ctx.fillStyle = defaultColor;
-            pixels.forEach((pixel) => {
+            pixels.forEach(pixel => {
                 if (!hitColor || !pixel.hit) {
                     ctx.fillRect(pixel.x, pixel.y, pixel.size, pixel.size);
                 }
@@ -653,7 +653,7 @@ export function Page() {
             // Draw hit pixels if applicable
             if (hitColor) {
                 ctx.fillStyle = hitColor;
-                pixels.forEach((pixel) => {
+                pixels.forEach(pixel => {
                     if (pixel.hit) {
                         ctx.fillRect(pixel.x, pixel.y, pixel.size, pixel.size);
                     }
@@ -769,7 +769,7 @@ export function Page() {
         const drawParticles = (particles: Particle[]) => {
             // Draw particles with full alpha
             ctx.globalAlpha = 1.0; // Set once
-            particles.forEach((particle) => {
+             particles.forEach((particle) => {
                 // Removed ctx.globalAlpha = particle.alpha;
                 // Check if animation properties exist and progress > 0
                 if (particle.appearProgress === undefined || particle.appearProgress <= 0) {
@@ -790,7 +790,7 @@ export function Page() {
 
         // Helper to draw lives
         const drawLives = (livesCount: number) => {
-            if (heartImageRef.current) {
+             if (heartImageRef.current) {
                 const lifeSize = isMobile
                     ? Math.min(60 * scaleRef.current, canvasElement.width * 0.08)
                     : Math.min(45 * scaleRef.current, canvasElement.width * 0.05);
@@ -814,163 +814,156 @@ export function Page() {
 
         // Helper to draw UI elements (messages, buttons)
         const drawUI = (currentGameState: GameState) => {
-            // --- Draw Victory Message and Button ---
+             // --- Draw Victory Message and Button ---
             if (currentGameState === GameState.VICTORY && victoryAnimationProgressRef.current > 0.5) {
-                // Calculate fade-in and slide-up based on progress beyond the halfway point
-                const messageAnimationProgress = Math.max(0, (victoryAnimationProgressRef.current - 0.5) * 2);
-                const messageOpacity = messageAnimationProgress;
-                const messageOffsetY = (1 - messageAnimationProgress) * 30 * scaleRef.current;
+                 // Calculate fade-in and slide-up based on progress beyond the halfway point
+                 const messageAnimationProgress = Math.max(0, (victoryAnimationProgressRef.current - 0.5) * 2);
+                 const messageOpacity = messageAnimationProgress;
+                 const messageOffsetY = (1 - messageAnimationProgress) * 30 * scaleRef.current;
 
-                const timerHeight = 5 * timerPositionRef.current.pixelSize; // Approximate height
-                const messageBaseY = animatedTimerYRef.current + timerHeight + (isMobile ? 40 : 60) * scaleRef.current;
-                const fontSize = isMobile
-                    ? Math.min(24 * scaleRef.current, canvasElement.width * 0.05)
-                    : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
-                const buttonFontSize = isMobile
-                    ? Math.min(26 * scaleRef.current, canvasElement.width * 0.06)
-                    : Math.min(28 * scaleRef.current, canvasElement.width * 0.04);
-                const lineSpacing = fontSize * 1.5;
+                 const timerHeight = 5 * timerPositionRef.current.pixelSize; // Approximate height
+                 const messageBaseY = animatedTimerYRef.current + timerHeight + (isMobile ? 40 : 60) * scaleRef.current;
+                 const fontSize = isMobile
+                     ? Math.min(24 * scaleRef.current, canvasElement.width * 0.05)
+                     : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
+                 const buttonFontSize = isMobile
+                     ? Math.min(26 * scaleRef.current, canvasElement.width * 0.06)
+                     : Math.min(28 * scaleRef.current, canvasElement.width * 0.04);
+                 const lineSpacing = fontSize * 1.5;
 
-                ctx.font = `bold ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
-                ctx.textAlign = 'center';
-                ctx.fillStyle = COLOR;
-                // Восстанавливаем тени для текста победы
-                ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
-                ctx.shadowBlur = 8;
-                ctx.shadowOffsetX = 2;
-                ctx.shadowOffsetY = 2;
-                ctx.globalAlpha = messageOpacity;
+                 ctx.font = `bold ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
+                 ctx.textAlign = 'center';
+                 ctx.fillStyle = COLOR;
+                 // Восстанавливаем тени для текста победы
+                 ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+                 ctx.shadowBlur = 8;
+                 ctx.shadowOffsetX = 2;
+                 ctx.shadowOffsetY = 2;
+                 ctx.globalAlpha = messageOpacity;
 
-                const messageLines = [
-                    '',
-                    'Молодец!',
-                    '',
-                    'После таймера мы запустим интересное событие.',
-                    '', // Empty line for spacing
-                    'Победитель получит 500 USDT.',
-                    '',
-                    'Зарегайся на него через бота.',
-                    '',
-                     '@researchedxyz_bot'
-                     
-                ];
+                 const messageLines = [
+                     '',
+                     'Молодец!',
+                     '',
+                     'А теперь заходи в наш телеграм канал.',
+                     '', // Empty line for spacing
+                     'После таймера сможешь получить 500$'
+                 ];
 
-                let currentY = messageBaseY;
-                messageLines.forEach((line) => {
-                    ctx.fillText(line, canvasElement.width / 2, currentY + messageOffsetY);
-                    currentY += lineSpacing;
-                });
+                 let currentY = messageBaseY;
+                 messageLines.forEach((line) => {
+                     ctx.fillText(line, canvasElement.width / 2, currentY + messageOffsetY);
+                     currentY += lineSpacing;
+                 });
 
-                // Draw Telegram Button
-                const buttonText = 'TG канал';
-                const buttonPadding = 20 * scaleRef.current;
-                const buttonHeight = buttonFontSize + buttonPadding;
-                ctx.font = `bold ${buttonFontSize}px 'Press Start 2P', Arial, sans-serif`;
-                const textMetrics = ctx.measureText(buttonText);
-                const buttonWidth = textMetrics.width + buttonPadding * 2;
-                const buttonX = canvasElement.width / 2 - buttonWidth / 2;
-                const buttonY = currentY + 30 * scaleRef.current + messageOffsetY; // Apply offset
+                 // Draw Telegram Button
+                 const buttonText = 'TG канал';
+                 const buttonPadding = 20 * scaleRef.current;
+                 const buttonHeight = buttonFontSize + buttonPadding;
+                 ctx.font = `bold ${buttonFontSize}px 'Press Start 2P', Arial, sans-serif`;
+                 const textMetrics = ctx.measureText(buttonText);
+                 const buttonWidth = textMetrics.width + buttonPadding * 2;
+                 const buttonX = canvasElement.width / 2 - buttonWidth / 2;
+                 const buttonY = currentY + 30 * scaleRef.current + messageOffsetY; // Apply offset
 
-                victoryButtonRectRef.current = { x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight };
+                 victoryButtonRectRef.current = { x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight };
 
-                ctx.fillStyle = '#42aaff'; // Orange color
-                ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
+                 ctx.fillStyle = '#42aaff'; // Orange color
+                 ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
 
-                ctx.fillStyle = '#FFFFFF';
-                ctx.shadowColor = 'rgba(0, 0, 0, 0.5)'; // Slight shadow for text on button
-                ctx.shadowBlur = 4;
-                // No need to set offset for button text shadow
-                ctx.shadowOffsetX = 0;
-                ctx.shadowOffsetY = 0;
-                // Тень для текста кнопки оставляем, как и было
-                ctx.fillText(buttonText, canvasElement.width / 2, buttonY + buttonHeight / 2 + buttonFontSize / 3);
+                 ctx.fillStyle = '#FFFFFF';
+                 ctx.shadowColor = 'rgba(0, 0, 0, 0.5)'; // Slight shadow for text on button
+                 ctx.shadowBlur = 4;
+                 // No need to set offset for button text shadow
+                 ctx.shadowOffsetX = 0;
+                 ctx.shadowOffsetY = 0;
+                 // Тень для текста кнопки оставляем, как и было
+                 ctx.fillText(buttonText, canvasElement.width / 2, buttonY + buttonHeight / 2 + buttonFontSize / 3);
 
-                // Reset shadow and alpha
-                ctx.shadowColor = 'transparent';
-                ctx.shadowBlur = 0;
-                ctx.globalAlpha = 1.0;
-            }
+                 // Reset shadow and alpha
+                 ctx.shadowColor = 'transparent';
+                 ctx.shadowBlur = 0;
+                 ctx.globalAlpha = 1.0;
+             }
             // --- Draw Not Started / Game Over Message ---
-            else if (currentGameState === GameState.NOT_STARTED || currentGameState === GameState.GAME_OVER) {
+             else if (currentGameState === GameState.NOT_STARTED || currentGameState === GameState.GAME_OVER) {
                 const fontSize = isMobile
-                    ? Math.min(26 * scaleRef.current, canvasElement.width * 0.05)
-                    : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
-                ctx.font = `bold ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
-                ctx.textAlign = 'center';
+                     ? Math.min(26 * scaleRef.current, canvasElement.width * 0.05)
+                     : Math.min(24 * scaleRef.current, canvasElement.width * 0.03);
+                 ctx.font = `bold ${fontSize}px 'Press Start 2P', Arial, sans-serif`;
+                 ctx.textAlign = 'center';
 
-                // Тени для Game Over / Not Started оставляем, как было (они не удалялись)
-                ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-                ctx.shadowBlur = isMobile ? 15 : 10;
-                ctx.shadowOffsetX = isMobile ? 3 : 2;
-                ctx.shadowOffsetY = isMobile ? 3 : 2;
+                 // Тени для Game Over / Not Started оставляем, как было (они не удалялись)
+                 ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+                 ctx.shadowBlur = isMobile ? 15 : 10;
+                 ctx.shadowOffsetX = isMobile ? 3 : 2;
+                 ctx.shadowOffsetY = isMobile ? 3 : 2;
 
-                const timerBottom = timerPositionRef.current.startY + 5 * timerPositionRef.current.pixelSize;
-                const textY = timerBottom + (isMobile ? 100 : 150) * scaleRef.current;
+                 const timerBottom = timerPositionRef.current.startY + 5 * timerPositionRef.current.pixelSize;
+                 const textY = timerBottom + (isMobile ? 100 : 150) * scaleRef.current;
 
-                let message = '';
-                if (currentGameState === GameState.GAME_OVER) {
-                    message = 'Игра окончена! Нажмите чтобы начать заново';
-                } else {
-                    // GameState.NOT_STARTED
-                    message = 'Нажмите или коснитесь, чтобы начать';
-                }
+                 let message = '';
+                 if (currentGameState === GameState.GAME_OVER) {
+                     message = 'Игра окончена! Нажмите чтобы начать заново';
+                 } else { // GameState.NOT_STARTED
+                     message = 'Нажмите или коснитесь, чтобы начать';
+                 }
 
-                // Optional: Add text background for better visibility on mobile
-                if (isMobile) {
-                    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-                    const textMetrics = ctx.measureText(message);
-                    const textWidth = textMetrics.width;
-                    // Estimate height based on font size
-                    const textHeight = fontSize * 1.2; // Approximation
-                    const messageParts = message.split('\n'); // Split if multiline
-                    const numLines =
-                        messageParts.length > 1 ? messageParts.length : message === 'Игра окончена! Нажмите чтобы начать заново' ? 2 : 1;
+                 // Optional: Add text background for better visibility on mobile
+                 if (isMobile) {
+                     ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+                     const textMetrics = ctx.measureText(message);
+                     const textWidth = textMetrics.width;
+                     // Estimate height based on font size
+                     const textHeight = fontSize * 1.2; // Approximation
+                     const messageParts = message.split('\n'); // Split if multiline
+                     const numLines = messageParts.length > 1 ? messageParts.length : (message === 'Игра окончена! Нажмите чтобы начать заново' ? 2 : 1);
 
-                    ctx.fillRect(
-                        canvasElement.width / 2 - textWidth / 2 - 10 * scaleRef.current, // Padding based on scale
-                        textY - textHeight * numLines + (numLines > 1 ? 0 : -5 * scaleRef.current), // Adjust Y based on lines
-                        textWidth + 20 * scaleRef.current, // Padding based on scale
-                        textHeight * numLines + (numLines > 1 ? 10 * scaleRef.current : 20 * scaleRef.current) // Padding based on scale
-                    );
-                }
+                     ctx.fillRect(
+                         canvasElement.width / 2 - textWidth / 2 - 10 * scaleRef.current, // Padding based on scale
+                         textY - textHeight * numLines + (numLines > 1 ? 0 : -5 * scaleRef.current), // Adjust Y based on lines
+                         textWidth + 20 * scaleRef.current, // Padding based on scale
+                         textHeight * numLines + (numLines > 1 ? 10 * scaleRef.current : 20 * scaleRef.current) // Padding based on scale
+                     );
+                 }
 
-                ctx.fillStyle = COLOR;
-                if (message === 'Игра окончена! Нажмите чтобы начать заново') {
-                    ctx.fillText('Игра окончена!', canvasElement.width / 2, textY);
-                    ctx.fillText('Нажмите чтобы начать заново', canvasElement.width / 2, textY + fontSize * 1.5);
-                } else {
-                    ctx.fillText(message, canvasElement.width / 2, textY);
-                }
+                 ctx.fillStyle = COLOR;
+                 if (message === 'Игра окончена! Нажмите чтобы начать заново') {
+                     ctx.fillText('Игра окончена!', canvasElement.width / 2, textY);
+                     ctx.fillText('Нажмите чтобы начать заново', canvasElement.width / 2, textY + fontSize * 1.5);
+                 } else {
+                     ctx.fillText(message, canvasElement.width / 2, textY);
+                 }
 
-                // Сбрасываем тени после отрисовки текста Game Over/Not Started
-                ctx.shadowColor = 'transparent';
-                ctx.shadowBlur = 0;
-                ctx.shadowOffsetX = 0;
-                ctx.shadowOffsetY = 0;
-            }
+                 // Сбрасываем тени после отрисовки текста Game Over/Not Started
+                 ctx.shadowColor = 'transparent';
+                 ctx.shadowBlur = 0;
+                 ctx.shadowOffsetX = 0;
+                 ctx.shadowOffsetY = 0;
+             }
 
-            // --- Draw Music Button and Volume Slider (if applicable) ---
-            if (currentGameState !== GameState.VICTORY && showMusicButton && audioRef.current) {
-                const buttonSize = Math.min(40 * scaleRef.current, canvasElement.width * 0.05);
-                const buttonX = canvasElement.width - buttonSize - 20 * scaleRef.current;
-                const buttonY = 20 * scaleRef.current;
+             // --- Draw Music Button and Volume Slider (if applicable) ---
+             if (currentGameState !== GameState.VICTORY && showMusicButton && audioRef.current) {
+                  const buttonSize = Math.min(40 * scaleRef.current, canvasElement.width * 0.05);
+                  const buttonX = canvasElement.width - buttonSize - 20 * scaleRef.current;
+                  const buttonY = 20 * scaleRef.current;
 
-                // Draw Button Background
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-                ctx.beginPath();
-                ctx.arc(buttonX + buttonSize / 2, buttonY + buttonSize / 2, buttonSize / 2, 0, Math.PI * 2);
-                ctx.fill();
+                  // Draw Button Background
+                  ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+                  ctx.beginPath();
+                  ctx.arc(buttonX + buttonSize / 2, buttonY + buttonSize / 2, buttonSize / 2, 0, Math.PI * 2);
+                  ctx.fill();
 
-                // Draw Music Icon (Simplified)
-                ctx.fillStyle = '#FFFFFF';
-                const iconSize = buttonSize * 0.5;
-                const iconX = buttonX + (buttonSize - iconSize) / 2;
-                const iconY = buttonY + (buttonSize - iconSize) / 2;
-                if (isMusicPlaying) {
+                  // Draw Music Icon (Simplified)
+                  ctx.fillStyle = '#FFFFFF';
+                  const iconSize = buttonSize * 0.5;
+                  const iconX = buttonX + (buttonSize - iconSize) / 2;
+                  const iconY = buttonY + (buttonSize - iconSize) / 2;
+                  if (isMusicPlaying) {
                     // Draw Pause icon (two rectangles)
                     ctx.fillRect(iconX + iconSize * 0.2, iconY, iconSize * 0.2, iconSize);
                     ctx.fillRect(iconX + iconSize * 0.6, iconY, iconSize * 0.2, iconSize);
-                } else {
+                  } else {
                     // Draw Play icon (triangle)
                     ctx.beginPath();
                     ctx.moveTo(iconX + iconSize * 0.2, iconY);
@@ -978,32 +971,32 @@ export function Page() {
                     ctx.lineTo(iconX + iconSize * 0.2, iconY + iconSize);
                     ctx.closePath();
                     ctx.fill();
-                }
+                  }
 
-                // Draw music status text if there's an error
-                if (musicError) {
-                    ctx.font = `${Math.min(12 * scaleRef.current, canvasElement.width * 0.015)}px 'Press Start 2P', Arial, sans-serif`;
-                    ctx.fillStyle = '#FF5555';
-                    ctx.textAlign = 'right';
-                    ctx.fillText('Music error', buttonX - 10 * scaleRef.current, buttonY + buttonSize / 2 + 5 * scaleRef.current);
-                }
+                  // Draw music status text if there's an error
+                  if (musicError) {
+                      ctx.font = `${Math.min(12 * scaleRef.current, canvasElement.width * 0.015)}px 'Press Start 2P', Arial, sans-serif`;
+                      ctx.fillStyle = '#FF5555';
+                      ctx.textAlign = 'right';
+                      ctx.fillText('Music error', buttonX - 10 * scaleRef.current, buttonY + buttonSize / 2 + 5 * scaleRef.current);
+                  }
 
-                // Draw volume slider if music is playing
-                if (isMusicPlaying) {
-                    const sliderWidth = buttonSize * 1.5;
-                    const sliderHeight = 6 * scaleRef.current;
-                    const sliderX = buttonX - sliderWidth - 15 * scaleRef.current; // Space between button and slider
-                    const sliderY = buttonY + buttonSize / 2 - sliderHeight / 2;
+                 // Draw volume slider if music is playing
+                 if (isMusicPlaying) {
+                     const sliderWidth = buttonSize * 1.5;
+                     const sliderHeight = 6 * scaleRef.current;
+                     const sliderX = buttonX - sliderWidth - 15 * scaleRef.current; // Space between button and slider
+                     const sliderY = buttonY + buttonSize / 2 - sliderHeight / 2;
 
-                    // Draw slider background
-                    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-                    ctx.fillRect(sliderX, sliderY, sliderWidth, sliderHeight);
+                     // Draw slider background
+                     ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                     ctx.fillRect(sliderX, sliderY, sliderWidth, sliderHeight);
 
-                    // Draw slider position (thumb)
-                    ctx.fillStyle = '#FFFFFF';
-                    ctx.fillRect(sliderX, sliderY, sliderWidth * musicVolume, sliderHeight);
-                }
-            }
+                     // Draw slider position (thumb)
+                     ctx.fillStyle = '#FFFFFF';
+                     ctx.fillRect(sliderX, sliderY, sliderWidth * musicVolume, sliderHeight);
+                 }
+             }
         };
 
         // --- End Drawing Functions ---
@@ -1457,7 +1450,7 @@ export function Page() {
                     speedIncreaseIntervalRef.current = null;
                 }
                 // Reset power-up effects and timers
-                Object.values(powerUpTimersRef.current).forEach((timer) => {
+                Object.values(powerUpTimersRef.current).forEach(timer => {
                     if (timer) clearTimeout(timer);
                 });
                 powerUpTimersRef.current = {};
@@ -1465,8 +1458,7 @@ export function Page() {
                 ballRef.current.currentSpeed = 1; // Reset ball speed multiplier
                 orangeBallCollectedRef.current = false; // Reset orange ball state
 
-                if (lives <= 1) {
-                    // Check if this was the last life
+                if (lives <= 1) { // Check if this was the last life
                     setGameState(GameState.GAME_OVER);
                     playSound('gameover');
                     // PAUSE music on game over
@@ -1477,13 +1469,13 @@ export function Page() {
                     }
                 } else {
                     // Reset ball position and state for next life
-                    ballRef.current.x = canvasElement.width / 2;
-                    ballRef.current.y = canvasElement.height / 2; // Новая позиция: центр экрана (как при init)
-                    ballRef.current.dx = (Math.random() > 0.5 ? 1 : -1) * ballRef.current.baseSpeed * 0.5;
-                    ballRef.current.dy = ballRef.current.baseSpeed * 0.866;
-                    ballRef.current.active = true; // Reactivate ball
-                    ballRef.current.currentSpeed = 1 / 3; // Сбросить скорость к 1/3 при потере жизни
-                    firstHitOccurredRef.current = false; // Сбросить флаг первого касания при потере жизни
+                     ballRef.current.x = canvasElement.width / 2;
+                     ballRef.current.y = canvasElement.height / 2; // Новая позиция: центр экрана (как при init)
+                     ballRef.current.dx = (Math.random() > 0.5 ? 1 : -1) * ballRef.current.baseSpeed * 0.5;
+                     ballRef.current.dy = ballRef.current.baseSpeed * 0.866;
+                     ballRef.current.active = true; // Reactivate ball
+                     ballRef.current.currentSpeed = 1 / 3; // Сбросить скорость к 1/3 при потере жизни
+                     firstHitOccurredRef.current = false; // Сбросить флаг первого касания при потере жизни
                 }
             }
         };
@@ -1554,9 +1546,9 @@ export function Page() {
             switch (currentGameState) {
                 case GameState.VICTORY:
                     // Calculate animated timer position
-                    const yOffset = animatedTimerYRef.current - initialTimerYRef.current;
+                        const yOffset = animatedTimerYRef.current - initialTimerYRef.current;
                     // Create a temporary pixel array with updated Y positions for drawing
-                    const animatedTimerPixels = timerPixelsRef.current.map((p) => ({ ...p, y: p.y + yOffset }));
+                    const animatedTimerPixels = timerPixelsRef.current.map(p => ({ ...p, y: p.y + yOffset }));
                     drawPixels(animatedTimerPixels, COLOR); // Use helper
 
                     drawParticles(particlesRef.current); // Use helper
@@ -1678,7 +1670,7 @@ export function Page() {
                 // Check if click is INSIDE the Telegram button
                 if (e.clientX >= x && e.clientX <= x + width && e.clientY >= y && e.clientY <= y + height) {
                     // Clicked the button - proceed with opening link
-                    window.open('t.me/researchedxyz_bot', '_blank');
+                    window.open('https://t.me/researchedxyz', '_blank');
                     // Don't reset the game
                 }
                 // If NOT inside the button, do nothing in Victory state
@@ -2002,32 +1994,34 @@ export function Page() {
 
     // Moved particle and victory animation update outside updateGame
     const updateVictoryState = (deltaTimeMs: number) => {
-        if (gameStateRef.current !== GameState.VICTORY) return;
+         if (gameStateRef.current !== GameState.VICTORY) return;
 
-        const dtSeconds = (deltaTimeMs / 1000) * GAME_SPEED_MULTIPLIER; // Применяем множитель скорости
+         const dtSeconds = (deltaTimeMs / 1000) * GAME_SPEED_MULTIPLIER; // Применяем множитель скорости
 
-        // --- Update Static Particle Appearance Animation ---
-        const appearDurationSeconds = 0.4; // Длительность анимации появления
-        particlesRef.current.forEach((particle) => {
-            if (particle.appearDelay && particle.appearDelay > 0) {
-                particle.appearDelay -= deltaTimeMs;
-            } else if (particle.appearProgress !== undefined && particle.appearProgress < 1) {
-                particle.appearProgress += (1 / appearDurationSeconds) * (deltaTimeMs / 1000); // Используем чистое deltaTimeMs/1000, не умноженное на GAME_SPEED_MULTIPLIER
-                particle.appearProgress = Math.min(particle.appearProgress, 1);
-            }
-        });
-        // --- End Particle Update ---
+         // --- Update Static Particle Appearance Animation ---
+         const appearDurationSeconds = 0.4; // Длительность анимации появления
+         particlesRef.current.forEach(particle => {
+             if (particle.appearDelay && particle.appearDelay > 0) {
+                 particle.appearDelay -= deltaTimeMs;
+             } else if (particle.appearProgress !== undefined && particle.appearProgress < 1) {
+                 particle.appearProgress += (1 / appearDurationSeconds) * (deltaTimeMs / 1000); // Используем чистое deltaTimeMs/1000, не умноженное на GAME_SPEED_MULTIPLIER
+                 particle.appearProgress = Math.min(particle.appearProgress, 1);
+             }
+         });
+         // --- End Particle Update ---
 
-        // Update victory animation for timer (KEEP THIS PART)
-        if (victoryAnimationProgressRef.current < 1) {
-            // Учитываем множитель скорости и здесь, чтобы анимация таймера не отставала
-            victoryAnimationProgressRef.current += 0.5 * dtSeconds;
-            victoryAnimationProgressRef.current = Math.min(victoryAnimationProgressRef.current, 1);
 
-            // Smooth interpolation (e.g., ease-out)
-            const easedProgress = 1 - Math.pow(1 - victoryAnimationProgressRef.current, 3);
-            animatedTimerYRef.current = initialTimerYRef.current + (targetTimerYRef.current - initialTimerYRef.current) * easedProgress;
-        }
+         // Update victory animation for timer (KEEP THIS PART)
+         if (victoryAnimationProgressRef.current < 1) {
+             // Учитываем множитель скорости и здесь, чтобы анимация таймера не отставала
+             victoryAnimationProgressRef.current += 0.5 * dtSeconds;
+             victoryAnimationProgressRef.current = Math.min(victoryAnimationProgressRef.current, 1);
+
+             // Smooth interpolation (e.g., ease-out)
+             const easedProgress = 1 - Math.pow(1 - victoryAnimationProgressRef.current, 3);
+             animatedTimerYRef.current =
+                 initialTimerYRef.current + (targetTimerYRef.current - initialTimerYRef.current) * easedProgress;
+         }
     };
 
     // Helper to create a burst of static firework particles
@@ -2077,3 +2071,4 @@ export function Page() {
 }
 
 export default Page;
+
