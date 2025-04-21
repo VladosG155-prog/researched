@@ -1,4 +1,3 @@
-'use client';
 import { Metadata } from 'next';
 import { Martian_Mono, Press_Start_2P } from 'next/font/google';
 import './globals.css';
@@ -9,6 +8,8 @@ import 'swiper/css';
 
 import ClientRedirect from '@/components/client-redirect';
 import TwinklingStarsGrid from '@/components/starlight-bg';
+
+export const dynamic = 'force-dynamic';
 
 const martianMono = Martian_Mono({
     subsets: ['latin'],

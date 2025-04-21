@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronRight, X } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import parse, { domToReact } from 'html-react-parser';
@@ -35,6 +35,13 @@ const options = {
 const InstructionModal = ({ isOpen, onClose }: InstructionModalProps) => {
     const { setIsShowGuideModal } = useCategoryContext();
     const modalRef = useRef<HTMLDivElement>(null);
+    const [isMounted, setIsMounted] = useState(false);
+
+    // Ensure the component is only rendered in the browser
+    useEffect(() => {
+        setIsMounted(true);
+        return () => setIsMounted(false);
+    }, []);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -61,6 +68,11 @@ const InstructionModal = ({ isOpen, onClose }: InstructionModalProps) => {
             document.body.style.overflow = 'auto';
         };
     }, [isOpen, onClose]);
+
+    // Only render the portal when the component is mounted in the browser
+    if (!isMounted) {
+        return null;
+    }
 
     return createPortal(
         <AnimatePresence>
