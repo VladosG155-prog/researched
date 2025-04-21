@@ -272,11 +272,10 @@ function Page() {
             <div className="flex gap-3 mb-4 items-center flex-wrap w-full">
                 {isMobile ? (
                     <>
-                        <div className="flex w-full gap-[8px]">
-                            {' '}
-                            <div className=" flex-1/2">
-                                {' '}
+                        <div className="w-full grid grid-cols-[2fr_2fr_1fr] gap-[5px]">
+                            <div className="w-full">
                                 <Filter
+                                    className="w-full"
                                     selectedValue={countryFilter}
                                     onChange={setCountryFilter}
                                     name="Страна"
@@ -284,12 +283,12 @@ function Page() {
                                     showSearch={true}
                                 />
                             </div>
-                            <div className="">
-                                <Filter filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
+                            <div className="w-full">
+                                <Filter className="w-full" filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
                             </div>
                             <div className="w-full">
-                                {' '}
                                 <Filter
+                                    className="w-full"
                                     filters={sortColumns}
                                     selectedValue={sortColumn}
                                     onChange={handleSortColumnChange}
@@ -489,7 +488,9 @@ function Page() {
 
                                         <p className="text-[14px]">
                                             <span className="text-[#7E7E7E] text-[12px]">Демо:</span> <br />
-                                            <span className="text-[12px]">{row.original.demo || '—'}</span>
+                                            <span className="text-[12px]" style={{ wordBreak: 'break-word' }}>
+                                                {row.original.demo || '—'}
+                                            </span>
                                         </p>
                                     </div>
                                 </div>

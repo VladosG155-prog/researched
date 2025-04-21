@@ -129,7 +129,7 @@ function Page() {
                 cell: (info) => (
                     <div className="flex items-center gap-3">
                         <span className="text-white">{info.getValue()}</span>
-                        <Image src="/DePIN//grass.webp" alt="grass" width={20} height={20} />
+                        <Image src="/DePIN/grass.webp" alt="grass" width={20} height={20} />
                     </div>
                 ),
                 enableSorting: true,
@@ -183,17 +183,20 @@ function Page() {
     };
 
     const sortColumns = [
-        { name: 'Фарм gradient', value: 'gradient' },
-        { name: 'Фарм grass', value: 'grass' },
-        { name: 'Фарм dawn', value: 'dawn' }
+        { name: 'Фарм gradient (сначала больше)', value: 'gradientDesc', realValue: 'gradient', desc: true },
+        { name: 'Фарм gradient (сначала меньше)', value: 'gradientAsc', realValue: 'gradient', desc: false },
+        { name: 'Фарм grass (сначала больше)', value: 'grassDesc', realValue: 'grass', desc: true },
+        { name: 'Фарм grass (сначала меньше)', value: 'grassAsc', realValue: 'grass', desc: false },
+        { name: 'Фарм dawn (сначала больше)', value: 'dawnDesc', realValue: 'dawn', desc: true },
+        { name: 'Фарм dawn (сначала меньше)', value: 'dawnAsc', realValue: 'dawn', desc: false }
     ];
 
     const handleSortColumnChange = (value) => {
         setSortColumn(value);
 
-        const val = sortColumns.find((sort) => sort.name === value).value;
+        const val = sortColumns.find((sort) => sort.name === value);
         if (val) {
-            setSorting([{ id: val, desc: true }]);
+            setSorting([{ id: val.realValue, desc: val.desc }]);
         } else {
             setSorting([]);
         }
@@ -217,11 +220,10 @@ function Page() {
             <div className="flex gap-3 mb-4 items-center flex-wrap w-full">
                 {isMobile ? (
                     <>
-                        <div className="flex w-full gap-[8px]">
-                            {' '}
-                            <div className="w-1/2">
-                                {' '}
+                        <div className="w-full grid grid-cols-[2fr_2fr_1fr] gap-[5px]">
+                            <div className="w-full">
                                 <Filter
+                                    className="w-full"
                                     selectedValue={countryFilter}
                                     onChange={setCountryFilter}
                                     name="Страна"
@@ -229,20 +231,20 @@ function Page() {
                                     showSearch={true}
                                 />
                             </div>
-                            <div className="w-1/2">
-                                <Filter filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
+                            <div className="w-full">
+                                <Filter className="w-full" filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
                             </div>
-                        </div>
-                        <div className="w-full">
-                            {' '}
-                            <Filter
-                                filters={sortColumns}
-                                selectedValue={sortColumn}
-                                onChange={handleSortColumnChange}
-                                name="Сортировка"
-                                isSorting={true}
-                                showSearch={false}
-                            />
+                            <div className="w-full">
+                                <Filter
+                                    className="w-full"
+                                    filters={sortColumns}
+                                    selectedValue={sortColumn}
+                                    onChange={handleSortColumnChange}
+                                    name="Сортировка"
+                                    isSorting={true}
+                                    showSearch={false}
+                                />
+                            </div>
                         </div>
                     </>
                 ) : (
@@ -405,21 +407,21 @@ function Page() {
                                     <span className="text-[#7E7E7E] font-medium">Фарм grass:</span>
                                     <div className="flex items-center gap-3 mt-1">
                                         <span>{row.original.grass}</span>
-                                        <Image src="/icons/grass.webp" alt="grass" width={20} height={20} />
+                                        <Image src="/DePIN/grass.webp" alt="grass" width={20} height={20} />
                                     </div>
                                 </div>
                                 <div>
                                     <span className="text-[#7E7E7E] font-medium">Фарм gradient:</span>
                                     <div className="flex items-center gap-3 mt-1">
                                         <span>{row.original.gradient}</span>
-                                        <Image src="/icons/gradient.webp" alt="gradient" width={20} height={20} />
+                                        <Image src="/DePIN/gradient.webp" alt="gradient" width={20} height={20} />
                                     </div>
                                 </div>
                                 <div>
                                     <span className="text-[#7E7E7E] font-medium">Фарм dawn:</span>
                                     <div className="flex items-center gap-3 mt-1">
                                         <span>{row.original.dawn}</span>
-                                        <Image src="/icons/dawn.webp" alt="dawn" width={20} height={20} />
+                                        <Image src="/DePIN/dawn.webp" alt="dawn" width={20} height={20} />
                                     </div>
                                 </div>
                                 {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
