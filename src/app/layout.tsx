@@ -31,13 +31,14 @@ export default function RootLayout({
         <html lang="en" className={`${martianMono.variable} ${pressStart.variable}`}>
             <head>
                 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&subset=cyrillic" as="style" />
+                <script defer src="https://metric.researched.xyz/script.js" data-website-id="a9b97fed-3e50-4ffa-bcff-3e1efc93b33f" />
             </head>
             <body className={'bg-[#121212] h-[100vh] sm:p-[15px] md:p-[15px] lg:p-[20px]'}>
                 <TwinklingStarsGrid />
                 <CategoryProvider>
                     <div className="flex flex-col h-[100%]">
                         <Header />
-                        <div className="flex-1 justify-self-center self-center max-w-[1260px] flex justify-center items-center mx-auto w-full mt-[30px]">
+                        <div className="flex-1 justify-self-center self-center max-w-[1260px] flex justify-center items-center mx-auto w-full mt-[20px] md:mt-[30px]">
                             {children}
                         </div>
                         <Footer />

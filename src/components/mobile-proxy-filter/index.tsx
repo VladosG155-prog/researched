@@ -8,9 +8,9 @@ export function MobileProxyFilters({ filters, pathname, handleClickFilter }) {
     return (
         <Swiper
             spaceBetween={8}
-            slidesPerView={2.2} // немного больше двух кнопок
-            slidesPerGroup={2}
-            className="!pb-[20px]" // уменьшил паддинг снизу, чтобы не было пустоты от точек
+            slidesPerView={2.4} // немного больше двух кнопок
+            freeMode={true}
+            className="!pb-3" // уменьшил паддинг снизу, чтобы не было пустоты от точек
         >
             {filters.map((proxy, index) => (
                 <SwiperSlide key={index}>

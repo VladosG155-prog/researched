@@ -17,5 +17,5 @@ export const getTradingBotsInterface = () => {
     });
 
     // Преобразуем итератор entries в массив и мапим его
-    return Array.from(networks.entries())?.map(item => item[1]);
+    return ['TMA', 'Cайт', 'TG бот'];
 };

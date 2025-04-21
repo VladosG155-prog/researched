@@ -259,7 +259,7 @@ function Page() {
             <div className="flex gap-3 mb-4 items-center flex-wrap w-full">
                 {isMobile ? (
                     <>
-                        <div className="w-full flex justify-between gap-[5px]">
+                        <div className="w-full flex justify-between gap-[8px]">
                             <div className="w-[45%]">
                                 <Filter
                                     className="w-full"
@@ -408,10 +408,10 @@ function Page() {
                     {table.getRowModel().rows.map((row) => (
                         <div
                             key={row.id}
-                            className="bg-[#282828] p-2 cursor-pointer hover:bg-[#333333] transition-colors"
+                            className="bg-[#282828] p-4 cursor-pointer hover:bg-[#333333] transition-colors"
                             onClick={() => window.open(row.original.link)}
                         >
-                            <div className="flex justify-between items-start">
+                            <div className="flex justify-between items-start pb-[3px]">
                                 <div className="w-full">
                                     <div className="relative flex items-center gap-3 justify-between">
                                         <div className="flex gap-2">

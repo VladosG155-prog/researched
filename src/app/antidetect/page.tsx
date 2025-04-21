@@ -267,7 +267,7 @@ function Page() {
                 </div>
             )}
             <div className="mt-2">{(payment || sortColumn.length > 0) && <ClearFilters onClear={clearFilters} />}</div>
-            <div className="py-6">
+            <div className="py-2 md:py-6">
                 {/* Desktop View */}
                 <div className="hidden md:block">
                     <table className="w-full border-separate border-spacing-y-2">

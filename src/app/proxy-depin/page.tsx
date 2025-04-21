@@ -220,7 +220,7 @@ function Page() {
             <div className="flex gap-3 mb-4 items-center flex-wrap w-full">
                 {isMobile ? (
                     <>
-                        <div className="w-full flex justify-between gap-[5px]">
+                        <div className="w-full flex justify-between gap-[8px]">
                             <div className="w-[45%]">
                                 <Filter
                                     className="w-full"
@@ -370,7 +370,7 @@ function Page() {
                     {table.getRowModel().rows.map((row) => (
                         <div key={row.id} className="bg-[#282828] p-4 shadow-sm" onClick={() => window.open(row.original.link)}>
                             {/* Header Section */}
-                            <div className="flex items-center justify-between mb-3">
+                            <div className="flex items-center justify-between mb-3 pb-[3px]">
                                 <div className="flex items-center gap-3">
                                     {row.original.icon && (
                                         <Image
@@ -396,29 +396,28 @@ function Page() {
                                     </button>
                                 )}
                             </div>
-
+                            <div>
+                                <span className="text-[#7E7E7E] font-medium">Цена:</span>
+                                <p className="mt-1">{row.original.price}</p>
+                            </div>
                             {/* Details Section */}
-                            <div className="text-white text-sm space-y-3">
+                            <div className="text-white text-sm space-y-3 grid grid-cols-3 mt-3">
                                 <div>
-                                    <span className="text-[#7E7E7E] font-medium">Цена:</span>
-                                    <p className="mt-1">{row.original.price}</p>
-                                </div>
-                                <div>
-                                    <span className="text-[#7E7E7E] font-medium">Фарм grass:</span>
+                                    <span className="text-[#7E7E7E] font-medium">grass:</span>
                                     <div className="flex items-center gap-3 mt-1">
                                         <span>{row.original.grass}</span>
                                         <Image src="/DePIN/grass.webp" alt="grass" width={20} height={20} />
                                     </div>
                                 </div>
                                 <div>
-                                    <span className="text-[#7E7E7E] font-medium">Фарм gradient:</span>
+                                    <span className="text-[#7E7E7E] font-medium">gradient:</span>
                                     <div className="flex items-center gap-3 mt-1">
                                         <span>{row.original.gradient}</span>
                                         <Image src="/DePIN/gradient.webp" alt="gradient" width={20} height={20} />
                                     </div>
                                 </div>
                                 <div>
-                                    <span className="text-[#7E7E7E] font-medium">Фарм dawn:</span>
+                                    <span className="text-[#7E7E7E] font-medium">dawn:</span>
                                     <div className="flex items-center gap-3 mt-1">
                                         <span>{row.original.dawn}</span>
                                         <Image src="/DePIN/dawn.webp" alt="dawn" width={20} height={20} />

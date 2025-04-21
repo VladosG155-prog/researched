@@ -53,7 +53,6 @@ function Page() {
                 children: [
                     { name: 'Реферальная программа', content: data.referral, colSpan: 2 },
                     { name: 'Функционал', content: data.features, colSpan: 2 },
-
                     { name: 'Шанс дропа', content: data.airdropChance || 'Нет информации', colSpan: 1 },
                     { name: 'Интерфейс', content: data.interface, colSpan: 1 }
                 ],
@@ -276,7 +275,7 @@ function Page() {
                 </Modal>
             )}
             {isMobile ? (
-                <div className="flex gap-1 justify-between flex-wrap">
+                <div className="flex gap-[8px] justify-between flex-wrap">
                     <div className="w-[42%]">
                         <Filter onChange={setSelectedFilter} selectedValue={selectedFilter} filters={networks} name="Блокчейн" />
                     </div>
@@ -293,6 +292,12 @@ function Page() {
                                 showSearch={false}
                                 isSorting={true}
                             />
+                        </div>
+                    )}
+
+                    {(selectedFilter || selectedInterface || sortColumn) && (
+                        <div className="-mt-3 mb-4">
+                            <ClearFilters onClear={clearFilters} />{' '}
                         </div>
                     )}
                 </div>
@@ -316,7 +321,7 @@ function Page() {
                 </div>
             )}
 
-            <div className="py-6">
+            <div className="md:py-6">
                 {/* Desktop View */}
                 <div className="hidden md:block">
                     <table className="w-full border-separate border-spacing-y-2">
@@ -455,10 +460,7 @@ function Page() {
                                             </button>
                                         )}
                                     </div>
-                                    <div
-                                        className="grid grid-cols-[25%_30%_30%] justify-between w-full mt-3 items-start"
-                                        style={{ wordBreak: 'break-word' }}
-                                    >
+                                    <div className="grid grid-cols-[27%_30%_36%] justify-between w-full mt-3 items-start">
                                         <div className="flex flex-col gap-1 min-h-[60px] p-1">
                                             <span className="text-[#7E7E7E] text-[12px] font-medium">Комиссия:</span>
                                             <div className="text-[12px] mt-2 text-white">{row.original.fees}</div>
@@ -520,8 +522,7 @@ function Page() {
                                     <div
                                         className="mt-4 space-y-4 animate-slideDown grid grid-cols-[50%_50%] justify-between w-full items-start"
                                         style={{
-                                            animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out',
-                                            wordBreak: 'break-word'
+                                            animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
                                         }}
                                     >
                                         {row.original.children.map((child) => (
