@@ -175,7 +175,6 @@ function Page() {
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     setOpenRestrictions(info.row.original.fullRestrictions);
-                                    console.log(info.row.original.fullRestrictions);
 
                                     setIsOpenRestrictionsModal(true);
                                 }}
@@ -630,7 +629,15 @@ function Page() {
                                             {row.original.restrictions ? (
                                                 <div className="flex flex-col justify-start">
                                                     <span>{row.original.restrictions}</span>
-                                                    <button className="bg-[#121212] p-2 mt-3 cursor-pointer inline-block w-max text-white text-[12px]">
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setOpenRestrictions(info.row.original.fullRestrictions);
+
+                                                            setIsOpenRestrictionsModal(true);
+                                                        }}
+                                                        className="bg-[#121212] p-2 mt-3 cursor-pointer inline-block w-max text-white text-[12px]"
+                                                    >
                                                         Подробнее
                                                     </button>
                                                 </div>
@@ -657,7 +664,7 @@ function Page() {
                                                 <div className="gap-3 text-white text-[12px]">
                                                     {child.name === 'Как заработать' ? (
                                                         <button
-                                                            className="bg-[#121212] flex items-center gap-1 transition max-w-max h-[30px] p-2 cursor-pointer text-[12px]"
+                                                            className="bg-[#121212] flex items-center gap-1 transition max-w-max h-[30px] p-2 cursor-pointer text-[10px]"
                                                             onClick={() => {
                                                                 setIsOpenEarningModal(true);
                                                                 setOpenedEarnings(row.original.earnings);

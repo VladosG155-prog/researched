@@ -225,17 +225,20 @@ function Page() {
     const interfaces = getTradingBotsInterface();
 
     const sortColumns = [
-        { name: 'Комиссия', value: 'fees' },
-        { name: 'Скорость', value: 'speed' },
-        { name: 'Скорость копитрейдинга', value: 'speedCopy' }
+        { name: 'Комиссия (сначала больше)', value: 'feeDesc', realValue: 'fee', desc: true },
+        { name: 'Комиссия (сначала меньше)', value: 'feeAsc', realValue: 'fee', desc: false },
+        { name: 'Скорость (сначала больше)', value: 'speedDesc', realValue: 'speed', desc: true },
+        { name: 'Скорость (сначала меньше)', value: 'speedAsc', realValue: 'speed', desc: false },
+        { name: 'Скорость копитрейдинга (сначала больше)', value: 'speedCopyDesc', realValue: 'speedCopy', desc: true },
+        { name: 'Скорость копитрейдинга (сначала меньше)', value: 'speedCopyAsc', realValue: 'speedCopy', desc: false }
     ];
 
     const handleSortColumnChange = (value) => {
         setSortColumn(value);
 
-        const val = sortColumns.find((sort) => sort.name === value).value;
+        const val = sortColumns.find((sort) => sort.name === value);
         if (val) {
-            setSorting([{ id: val, desc: true }]);
+            setSorting([{ id: val.realValue, desc: val.desc }]);
         } else {
             setSorting([]);
         }
@@ -272,7 +275,7 @@ function Page() {
                 </Modal>
             )}
             {isMobile ? (
-                <div className="flex gap-3 flex-wrap">
+                <div className="grid grid-cols-3 gap-3 flex-wrap">
                     <div className="">
                         <Filter onChange={setSelectedFilter} selectedValue={selectedFilter} filters={networks} name="Блокчейн" />
                     </div>
@@ -451,12 +454,15 @@ function Page() {
                                             </button>
                                         )}
                                     </div>
-                                    <div className="grid grid-cols-[25%_25%_25%_25%] justify-between w-full mt-3 items-start">
-                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                    <div
+                                        className="grid grid-cols-[25%_30%_30%] justify-between w-full mt-3 items-start"
+                                        style={{ wordBreak: 'break-word' }}
+                                    >
+                                        <div className="flex flex-col gap-1 min-h-[60px] p-1">
                                             <span className="text-[#7E7E7E] text-[12px] font-medium">Комиссия:</span>
                                             <div className="text-[12px] mt-2 text-white">{row.original.fees}</div>
                                         </div>
-                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                        <div className="flex flex-col gap-1 min-h-[60px] p-1">
                                             <span className="text-[#7E7E7E] text-[12px] font-medium">Скорость:</span>
                                             <div className="text-[12px] mt-2 text-white">
                                                 {row.original.speed.map((item, index) => (
@@ -473,7 +479,7 @@ function Page() {
                                                 ))}
                                             </div>
                                         </div>
-                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                        <div className="flex flex-col gap-1 min-h-[60px] p-1">
                                             <span className="text-[#7E7E7E] text-[12px] font-medium">Скорость копитрейдинга:</span>
                                             <div className="text-[12px] mt-2 text-white">
                                                 {row.original.speedCopy.map((item, index) => (
@@ -490,7 +496,7 @@ function Page() {
                                                 ))}
                                             </div>
                                         </div>
-                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                        <div className="flex flex-col gap-1 min-h-[60px] p-1">
                                             <span className="text-[#7E7E7E] text-[12px] font-medium">Сети:</span>
                                             <div className="flex mt-1 gap-1 items-center flex-wrap">
                                                 {row.original.chains.map((item, index) => (
@@ -511,9 +517,10 @@ function Page() {
                             {row.getIsExpanded() && row.original.children && (
                                 <>
                                     <div
-                                        className="mt-4 space-y-4 animate-slideDown grid grid-cols-[25%_25%_25%_25%] justify-between w-full items-start"
+                                        className="mt-4 space-y-4 animate-slideDown grid grid-cols-[25%_25%_25%] justify-between w-full items-start"
                                         style={{
-                                            animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
+                                            animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out',
+                                            wordBreak: 'break-word'
                                         }}
                                     >
                                         {row.original.children.map((child) => (
