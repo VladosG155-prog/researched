@@ -665,7 +665,7 @@ export function Page() {
             const SMALL_PIXEL_SIZE = isMobile
                 ? Math.min(10 * scale, canvasElement.width * 0.015)
                 : Math.min(4 * scale, canvasElement.width * 0.006);
-            const BALL_SPEED = 12 * scale;
+            const BALL_SPEED = 6 * scale;
 
             pixelsRef.current = [];
             const mainText = 'RESEARCHED.XYZ';
