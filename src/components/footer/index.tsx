@@ -74,9 +74,9 @@ export const Footer = React.memo(function Categories() {
 
     return (
         <div
-            className={`w-full z-50 left-0 p-[5px] md:p-[0px] fixed bottom-0 transition-opacity duration-300  ${
-                isVisible ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`w-full z-50 left-0 p-[5px] md:p-[0px] fixed bottom-0 transition-opacity duration-300 ${
+                pathname !== '/' && 'bg-[#121212]'
+            } ${isVisible ? 'opacity-100' : 'opacity-0'}`}
             style={{
                 willChange: 'transform',
                 paddingBottom: '15px',

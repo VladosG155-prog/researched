@@ -75,7 +75,7 @@ const TwinklingStarsGrid = () => {
 
         const applyTwinkle = (index: number) => {
             const cell = cells[index] as HTMLElement;
-            cell.className = 'bg-gray-800 opacity-0 twinkle-animation w-[20px] h-[20px]';
+            cell.className = 'bg-[#212121] opacity-0 twinkle-animation w-[20px] h-[20px]';
             cell.style.animationDelay = `${Math.random() * 5}s`;
         };
 
