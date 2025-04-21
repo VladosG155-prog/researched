@@ -227,7 +227,7 @@ export function Welcome({ onMultiaccountingClick }: WelcomeProps) {
 
                     {/* Button */}
                     <motion.button
-                        className="group bg-[#D06E31] text-white font-['Martian_Mono'] font-normal text-[18px]  w-[305px] h-[50px] md:w-[805px] md:h-[86px]  border-none cursor-pointer  transition-transform duration-300"
+                        className="group flex justify-center items-center bg-[#D06E31] text-white font-['Martian_Mono'] font-normal text-[18px]  w-[255px] h-[50px] md:w-[805px] md:h-[86px]  border-none cursor-pointer  transition-transform duration-300"
                         onClick={setIsShowGuideModal}
                     >
                         <div
@@ -238,7 +238,7 @@ export function Welcome({ onMultiaccountingClick }: WelcomeProps) {
                                 Бесплатный гайд по заработку через мультиаккаунтинг
                                 <ChevronRight />
                             </span>
-                            <span onClick={setIsShowGuideModal} className="md:hidden flex text-[14px]">
+                            <span onClick={setIsShowGuideModal} className="md:hidden flex text-[12px]">
                                 Гайд по мультиаккаунтингу
                                 <ChevronRight />
                             </span>
