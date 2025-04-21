@@ -272,8 +272,8 @@ function Page() {
             <div className="flex gap-3 mb-4 items-center flex-wrap w-full">
                 {isMobile ? (
                     <>
-                        <div className="w-full grid grid-cols-[2fr_2fr_1fr] gap-[5px]">
-                            <div className="w-full">
+                        <div className="w-full flex justify-between gap-[5px]">
+                            <div className="w-[45%]">
                                 <Filter
                                     className="w-full"
                                     selectedValue={countryFilter}
@@ -283,13 +283,13 @@ function Page() {
                                     showSearch={true}
                                 />
                             </div>
-                            <div className="w-full">
+                            <div className="w-[45%]">
                                 <Filter className="w-full" filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
                             </div>
-                            <div className="w-full">
+                            <div className="w-[10%]">
                                 <Filter
-                                    className="w-full"
                                     filters={sortColumns}
+                                    className="w-full"
                                     selectedValue={sortColumn}
                                     onChange={handleSortColumnChange}
                                     name="Сортировка"
@@ -422,7 +422,7 @@ function Page() {
                     {table.getRowModel().rows.map((row) => (
                         <div
                             key={row.id}
-                            className="bg-[#282828] p-2 cursor-pointer hover:bg-[#333333] transition-colors"
+                            className="bg-[#282828] p-2 cursor-pointer pb-[12px] hover:bg-[#333333] transition-colors"
                             onClick={() => window.open(row.original.link)}
                         >
                             <div className="flex justify-between items-start">
@@ -522,7 +522,9 @@ function Page() {
                                         </div>
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-[#7E7E7E]  text-[12px]">Тех.поддержка:</span>
+                                        <span className="text-[#7E7E7E]  text-[12px]">
+                                            Тех. <br /> поддержка:
+                                        </span>
                                         <span className="text-[12px]"> {row.original.support || '—'}</span>
                                     </div>
                                     <div className="flex flex-col">

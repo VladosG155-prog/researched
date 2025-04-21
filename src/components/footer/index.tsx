@@ -64,7 +64,10 @@ export const Footer = React.memo(function Categories() {
     }
 
     const handleCategoryClick = (category, href) => {
-        toggleExpanded();
+        if (isExpanded) {
+            toggleExpanded();
+        }
+
         if (category === 'Комиссии CEX') {
             window.open(href);
         } else {

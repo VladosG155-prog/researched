@@ -53,8 +53,9 @@ function Page() {
                 freeProfiles: data.freeProfiles,
                 children: [
                     { name: 'Оплата', content: [...data.payment], colSpan: 1 },
-                    { name: 'Случаи взломов', colSpan: 2, content: data.breachHistory.map((item) => item.description)[0] },
+
                     { name: 'Бесплатные профиля', content: data.freeProfiles, colSpan: 1 },
+                    { name: 'Случаи взломов', colSpan: 2, content: data.breachHistory.map((item) => item.description)[0] },
                     { name: 'Фичи', content: data.browserFeatures, colSpan: 1 }
                 ],
                 payment: data.payment,
@@ -452,7 +453,7 @@ function Page() {
                             </div>
                             {row.getIsExpanded() && row.original.children && (
                                 <div
-                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[30%_40%_30%] justify-between w-full items-start"
+                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[48%_48%] justify-between w-full items-start"
                                     style={{
                                         animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
                                     }}
@@ -473,15 +474,11 @@ function Page() {
                                                 </Tooltip>
                                             ))
                                         ) : (
-                                            <span style={{ wordBreak: 'break-all' }} className="text-white text-[12px] break-after-auto">
-                                                {content}
-                                            </span>
+                                            <span className="text-white text-[12px] break-after-auto">{content}</span>
                                         );
                                         return (
                                             <div key={index} className="flex flex-col justify-between">
-                                                <h4 className="text-[#7E7E7E] text-[12px] mb-2" style={{ wordBreak: 'break-all' }}>
-                                                    {child.name}
-                                                </h4>
+                                                <h4 className="text-[#7E7E7E] text-[12px] mb-2">{child.name}</h4>
                                                 <div className="flex gap-3 flex-wrap">{finalData}</div>
                                             </div>
                                         );

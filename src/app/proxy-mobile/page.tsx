@@ -266,8 +266,8 @@ function Page() {
             <div className="flex gap-3 mb-4 items-center flex-wrap w-full">
                 {isMobile ? (
                     <>
-                        <div className="w-full grid grid-cols-[2fr_2fr_1fr] gap-[5px]">
-                            <div className="w-full">
+                        <div className="w-full flex justify-between gap-[5px]">
+                            <div className="w-[45%]">
                                 <Filter
                                     className="w-full"
                                     selectedValue={countryFilter}
@@ -277,13 +277,13 @@ function Page() {
                                     showSearch={true}
                                 />
                             </div>
-                            <div className="w-full">
+                            <div className="w-[45%]">
                                 <Filter className="w-full" filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
                             </div>
-                            <div className="w-full">
+                            <div className="w-[10%]">
                                 <Filter
-                                    className="w-full"
                                     filters={sortColumns}
+                                    className="w-full"
                                     selectedValue={sortColumn}
                                     onChange={handleSortColumnChange}
                                     name="Сортировка"

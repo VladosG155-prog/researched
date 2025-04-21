@@ -103,10 +103,10 @@ function Page() {
                 restrictions: data.restrictions || '',
                 fullRestrictions: data.fullRestrictions,
                 children: [
-                    { name: 'KYC', content: data.kyc, colSpan: 1 },
                     { name: 'Комиссии', content: data.fees, colSpan: 1 },
                     { name: 'Случаи взломов', content: data.breachHistory, colSpan: 2 },
-                    { name: 'Как заработать', content: data.earnings, colSpan: 2 }
+                    { name: 'Как заработать', content: data.earnings, colSpan: 2 },
+                    { name: 'KYC', content: data.kyc, colSpan: 1 }
                 ],
                 icon: data.icon
             };
@@ -376,7 +376,7 @@ function Page() {
             <BreachModal isOpen={isShowBreachModal} onClose={toggleBreachModal} data={selectedBreachData} />
             <div className="py-6">
                 <div className="flex gap-3 mb-4 items-end flex-wrap">
-                    <div>
+                    <div className="md:w-full w-[48%]">
                         <p className="text-[12px] mb-2">Сравните комиссию на вывод:</p>
                         <Filter
                             selectedValue={chain}
@@ -387,20 +387,28 @@ function Page() {
                             showText={true}
                         />
                     </div>
+
                     {chain && (
-                        <Filter
-                            selectedValue={token}
-                            onChange={handleTokenChange}
-                            name="Сеть"
-                            filters={getCexFilters(chain).map((token) => {
-                                return {
-                                    name: token,
-                                    icon: ''
-                                };
-                            })}
-                        />
+                        <div className=" w-[48%] md:w-full">
+                            <Filter
+                                selectedValue={token}
+                                onChange={handleTokenChange}
+                                name="Сеть"
+                                filters={getCexFilters(chain).map((token) => {
+                                    return {
+                                        name: token,
+                                        icon: ''
+                                    };
+                                })}
+                            />
+                        </div>
                     )}
-                    {chain && <ClearFilters onClear={clearFilters} />}
+
+                    {chain && (
+                        <div className="w-full mt-2 sm:mt-0 sm:w-auto">
+                            <ClearFilters onClear={clearFilters} />
+                        </div>
+                    )}
                 </div>
                 <div className="hidden md:block relative">
                     <table className="w-full border-separate border-spacing-y-2">
@@ -582,7 +590,7 @@ function Page() {
                                             </button>
                                         )}
                                     </div>
-                                    <div className="grid grid-cols-[30%_30%_30%] justify-between w-full mt-3 items-start">
+                                    <div className="grid grid-cols-[48%_48%] justify-between w-full mt-3 items-start">
                                         <div className="flex flex-col gap-1 min-h-[60px]">
                                             <span className="text-[#7E7E7E] text-[12px]">Комиссия:</span>
                                             <div className="text-[12px] mt-2">
@@ -609,43 +617,16 @@ function Page() {
                                             <span className="text-[#7E7E7E] text-[12px]">Субаккаунты:</span>
                                             <span className="text-[12px] mt-2">{row.original.subAccounts}</span>
                                         </div>
-                                        <div className="flex flex-col gap-1 min-h-[60px]">
-                                            <span className="text-[#7E7E7E] text-[12px]">Назначение:</span>
-                                            <span className="text-[12px] mt-2">{row.original.purpose}</span>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                             {row.getIsExpanded() && row.original.children && (
                                 <div
-                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[30%_30%_30%] justify-between w-full items-start"
+                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-2 gap-2 justify-between w-full items-start"
                                     style={{
                                         animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
                                     }}
                                 >
-                                    <div className="">
-                                        <span className="text-[#7E7E7E] text-[12px]">Ограничения:</span>
-                                        <div className="text-[12px] mt-2">
-                                            {row.original.restrictions ? (
-                                                <div className="flex flex-col justify-start">
-                                                    <span>{row.original.restrictions}</span>
-                                                    <button
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            setOpenRestrictions(info.row.original.fullRestrictions);
-
-                                                            setIsOpenRestrictionsModal(true);
-                                                        }}
-                                                        className="bg-[#121212] p-2 mt-3 cursor-pointer inline-block w-max text-white text-[12px]"
-                                                    >
-                                                        Подробнее
-                                                    </button>
-                                                </div>
-                                            ) : (
-                                                <span>—</span>
-                                            )}
-                                        </div>
-                                    </div>
                                     {row.original.children.map((child, index) => {
                                         if (!child.name) return null;
                                         const content = child.content || '';
@@ -681,6 +662,33 @@ function Page() {
                                             </div>
                                         );
                                     })}
+                                    <div className="">
+                                        <span className="text-[#7E7E7E] text-[12px]">Ограничения:</span>
+                                        <div className="text-[12px] mt-2">
+                                            {row.original.restrictions ? (
+                                                <div className="flex flex-col justify-start">
+                                                    <span>{row.original.restrictions}</span>
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setOpenRestrictions(info.row.original.fullRestrictions);
+
+                                                            setIsOpenRestrictionsModal(true);
+                                                        }}
+                                                        className="bg-[#121212] p-2 mt-3 cursor-pointer inline-block w-max text-white text-[12px]"
+                                                    >
+                                                        Подробнее
+                                                    </button>
+                                                </div>
+                                            ) : (
+                                                <span>—</span>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col gap-1 min-h-[60px]">
+                                        <span className="text-[#7E7E7E] text-[12px]">Назначение:</span>
+                                        <span className="text-[12px] mt-2">{row.original.purpose}</span>
+                                    </div>
                                 </div>
                             )}
                         </div>

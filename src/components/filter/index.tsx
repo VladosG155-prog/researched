@@ -38,10 +38,12 @@ export function Filter({ name, filters, onChange, selectedValue = '', showSearch
     return (
         <div ref={filterRef} className={`relative inline-block md:max-w-[250px] w-full ${isSorting && 'max-w-max'}`}>
             <button
-                className="bg-[#2C2C2C] w-full cursor-pointer flex gap-3 h-[40px] md:h-[70px] justify-between items-center px-[5px] md:px-[25px] max-w-full"
+                className="bg-[#2C2C2C] w-full cursor-pointer flex gap-3 h-[40px] md:h-[70px] justify-between items-center px-[5px] md:px-[25px] max-w-full overflow-hidden"
                 onClick={handleClickFilter}
             >
-                {isSorting && isMobile ? <ArrowDownUp /> : selectedValue === '' ? name : selectedValue}{' '}
+                <span className="truncate max-w-full block text-[12px] md:text-[16px]">
+                    {isSorting && isMobile ? <ArrowDownUp /> : selectedValue === '' ? name : selectedValue}
+                </span>
                 {!isSorting ? isOpenFilter ? <ChevronUp /> : <ChevronDown /> : null}
             </button>
 

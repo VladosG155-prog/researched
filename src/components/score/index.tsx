@@ -84,7 +84,10 @@ export default function Score({ totalScore, data }: { totalScore: number; data: 
                 ref={buttonRef}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => isMobile && setIsOpen(!isOpen)}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    isMobile && setIsOpen(!isOpen);
+                }}
                 className="w-[60px] md:w-[96px] text-white bg-[#D06E31] flex h-[40px] justify-center items-center cursor-pointer"
             >
                 <span className="text-[14px] md:text-[16px]">{totalScore}</span>
@@ -130,7 +133,13 @@ export default function Score({ totalScore, data }: { totalScore: number; data: 
                         </a>
 
                         {isMobile && (
-                            <button className="w-full py-2 bg-[#282828] text-white" onClick={() => setIsOpen(false)}>
+                            <button
+                                className="w-full py-2 bg-[#282828] text-white"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsOpen(false);
+                                }}
+                            >
                                 Закрыть
                             </button>
                         )}

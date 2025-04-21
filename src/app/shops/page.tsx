@@ -209,7 +209,7 @@ function Page() {
                 title="Товары"
             />
             {isMobile ? (
-                <div className="flex flex-wrap gap-2 justify-between">
+                <div className="flex gap-2 justify-between">
                     <div className="w-[48%]">
                         <Filter
                             name="Категория"

@@ -31,8 +31,8 @@ function CategoriesLayout({ children, title, description }: CategoryLayoutProps)
             <motion.div animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className="w-full">
                 <div className="w-full max-w-[1260px] mx-auto pb-16">
                     <div className="mb-8 flex flex-col md:flex-row md:justify-between md:items-start">
-                        <h1 className="font-['Martian_Mono'] font-normal text-[24px] md:text-[32px] sm:text-[44px] mb-2">{title}</h1>
-                        <p className="font-['Martian_Mono'] font-normal text-[14px] md:text-[16px] leading-[160%] text-neutral-400 max-w-md min-w-[50%]">
+                        <h1 className="font-['Martian_Mono'] font-normal text-[22px] md:text-[32px] sm:text-[44px] mb-2">{title}</h1>
+                        <p className="font-['Martian_Mono'] font-normal text-[12px] md:text-[16px] leading-[120%] md:leading-[160%] text-neutral-400 max-w-md min-w-[50%]">
                             {description}
                         </p>
                     </div>

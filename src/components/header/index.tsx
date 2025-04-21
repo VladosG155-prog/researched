@@ -90,7 +90,7 @@ export function Header({}: HeaderProps = {}) {
     };
 
     return (
-        <header className="w-full max-w-[1260px] mx-auto flex items-center z-[60] justify-between h-[70px] px-4">
+        <header className="w-full max-w-[1260px] mx-auto flex items-center z-[60] justify-between h-[70px] px-4 pl-[0px]">
             <InstructionModal isOpen={isModalOpen && !isShowGuideModal} onClose={toggleModal} />
             <div className="flex items-center h-full">
                 {isHomePage ? (

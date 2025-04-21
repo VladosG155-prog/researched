@@ -52,9 +52,10 @@ function Page() {
                 chains: data.networks,
                 children: [
                     { name: 'Реферальная программа', content: data.referral, colSpan: 2 },
-                    { name: 'Интерфейс', content: data.interface, colSpan: 1 },
+                    { name: 'Функционал', content: data.features, colSpan: 2 },
+
                     { name: 'Шанс дропа', content: data.airdropChance || 'Нет информации', colSpan: 1 },
-                    { name: 'Функционал', content: data.features, colSpan: 2 }
+                    { name: 'Интерфейс', content: data.interface, colSpan: 1 }
                 ],
                 icon: data.icon,
                 link: data.link,
@@ -275,15 +276,15 @@ function Page() {
                 </Modal>
             )}
             {isMobile ? (
-                <div className="grid grid-cols-3 gap-3 flex-wrap">
-                    <div className="">
+                <div className="flex gap-1 justify-between flex-wrap">
+                    <div className="w-[42%]">
                         <Filter onChange={setSelectedFilter} selectedValue={selectedFilter} filters={networks} name="Блокчейн" />
                     </div>
-                    <div className="">
+                    <div className="w-[42%]">
                         <Filter onChange={setSelectedInterface} selectedValue={selectedInterface} filters={interfaces} name="Интерфейс" />
                     </div>
                     {isMobile && (
-                        <div className="mb-5 w-full">
+                        <div className="mb-5 w-[10%]">
                             <Filter
                                 filters={sortColumns}
                                 selectedValue={sortColumn}
@@ -415,7 +416,7 @@ function Page() {
                     {table.getRowModel().rows.map((row) => (
                         <div
                             key={row.id}
-                            className="bg-[#282828] p-4 cursor-pointer hover:bg-[#333333] transition-colors rounded-md"
+                            className="bg-[#282828] p-4 cursor-pointer hover:bg-[#333333] transition-colors"
                             onClick={() => window.open(row.original.link)}
                         >
                             <div className="flex justify-between items-start">
@@ -517,7 +518,7 @@ function Page() {
                             {row.getIsExpanded() && row.original.children && (
                                 <>
                                     <div
-                                        className="mt-4 space-y-4 animate-slideDown grid grid-cols-[25%_25%_25%] justify-between w-full items-start"
+                                        className="mt-4 space-y-4 animate-slideDown grid grid-cols-[50%_50%] justify-between w-full items-start"
                                         style={{
                                             animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out',
                                             wordBreak: 'break-word'

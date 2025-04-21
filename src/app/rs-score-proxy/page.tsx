@@ -22,9 +22,9 @@ export default function Page() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '100%' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="min-h-screen text-white p-4 sm:p-6 md:p-8 relative pb-[200px]"
+            className="min-h-screen text-white p-0 sm:p-6 md:p-8 relative pb-[200px]"
         >
-            <div className="max-w-4xl  mx-auto bg-neutral-900 pb-[150px] rounded-lg shadow-lg p-6 sm:p-8 md:p-10 relative z-10 backdrop-blur-sm">
+            <div className="max-w-4xl  mx-auto bg-neutral-900 pb-[150px] rounded-lg shadow-lg p-0 sm:p-8 md:p-10 relative z-10 backdrop-blur-sm">
                 <div className="bg-neutral-900 rounded-lg p-4 pb-[150px] sm:p-6 md:p-8 shadow-inner">
                     <motion.div
                         initial={{ y: -20, opacity: 0 }}
