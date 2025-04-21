@@ -845,9 +845,11 @@ export function Page() {
                     '',
                     'Молодец!',
                     '',
-                    'А теперь заходи в наш телеграм канал.',
+                    'После таймера жди интересное событие.',
                     '', // Empty line for spacing
-                    'После таймера сможешь получить 500$'
+                    'Победитель получит 500 USDT.',
+                    '', // Empty line for spacing
+                    'Зарегайся на него через бота.'
                 ];
 
                 let currentY = messageBaseY;
@@ -857,7 +859,7 @@ export function Page() {
                 });
 
                 // Draw Telegram Button
-                const buttonText = 'TG канал';
+                const buttonText = 'TG бот';
                 const buttonPadding = 20 * scaleRef.current;
                 const buttonHeight = buttonFontSize + buttonPadding;
                 ctx.font = `bold ${buttonFontSize}px 'Press Start 2P', Arial, sans-serif`;
@@ -1409,6 +1411,7 @@ export function Page() {
                             pixel.specialPowerUp = false; // Spawn only once
                         }
                     }
+                    checkVictory();
                 });
             }
 
@@ -1673,7 +1676,7 @@ export function Page() {
                 // Check if click is INSIDE the Telegram button
                 if (e.clientX >= x && e.clientX <= x + width && e.clientY >= y && e.clientY <= y + height) {
                     // Clicked the button - proceed with opening link
-                    window.open('https://t.me/researchedxyz', '_blank');
+                    window.open('https://t.me/researchedxyz_bot', '_blank');
                     // Don't reset the game
                 }
                 // If NOT inside the button, do nothing in Victory state
