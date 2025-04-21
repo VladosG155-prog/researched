@@ -21,7 +21,7 @@ import { usePathname, useRouter } from 'next/navigation';
 // Define categories
 const mainCategories = [
     { name: 'Прокси', icon: Wifi, href: '/proxy-static', displayName: 'Прокси' },
-    { name: 'Антики', icon: Shield, href: '/antiki' },
+    { name: 'Антидетект браузеры', icon: Shield, href: '/antidetect' },
     { name: 'DePIN прокси', icon: Network, href: '/proxy-depin', image: '/grasstobutton.png' },
     { name: 'Комиссии CEX', icon: DollarSign, href: 'https://t.me/researchedxyz' },
     { name: 'Кошельки', icon: Wallet, href: '/wallets' }

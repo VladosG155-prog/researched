@@ -9,7 +9,7 @@ import {
     useReactTable
 } from '@tanstack/react-table';
 import depinData from '../../../data/data-depin.json';
-import CategoriesLayout from '../_categories/layout';
+import CategoriesLayout from '../categories/layout';
 import { ChevronDown, ChevronUp, FilterIcon, SortAsc, SortDesc } from 'lucide-react';
 import { Fragment, useMemo, useState } from 'react';
 import Image from 'next/image';
@@ -240,6 +240,7 @@ function Page() {
                                 selectedValue={sortColumn}
                                 onChange={handleSortColumnChange}
                                 name="Сортировка"
+                                isSorting={true}
                                 showSearch={false}
                             />
                         </div>

@@ -1,12 +1,13 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Score({ totalScore, data }: { totalScore: number; data: { [key: string]: any } }) {
     const [isOpen, setIsOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [dropdownPosition, setDropdownPosition] = useState<'top' | 'bottom'>('bottom');
-
+    const pathname = usePathname();
     const dropdownRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLDivElement>(null);
     const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -75,6 +76,8 @@ export default function Score({ totalScore, data }: { totalScore: number; data: 
             value: info.score
         }));
 
+    const link = pathname.includes('proxy') ? '/rs-score-proxy' : '/rs-score-antidetect';
+
     return (
         <div className="relative inline-block">
             <div
@@ -92,8 +95,8 @@ export default function Score({ totalScore, data }: { totalScore: number; data: 
                 <div
                     className={`${
                         isMobile
-                            ? 'fixed top-[50%] -translate-y-1/2 left-[50%] -translate-x-1/2 flex items-center justify-center z-90 w-[300px]'
-                            : `absolute left-0 z-90 ${dropdownPosition === 'top' ? 'bottom-[48px]' : 'top-[48px]'}`
+                            ? 'fixed top-[50%] -translate-y-1/2 left-[50%] -translate-x-1/2 flex items-center justify-center z-120 w-[300px]'
+                            : `absolute left-0 z-120 ${dropdownPosition === 'top' ? 'bottom-[48px]' : 'top-[48px]'}`
                     }`}
                 >
                     <div
@@ -117,7 +120,7 @@ export default function Score({ totalScore, data }: { totalScore: number; data: 
                         </ul>
 
                         <a
-                            href="https://example.com/researched-score"
+                            href={link}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-[#949292] hover:text-white transition-colors bg-[#282828] p-5 w-full block"

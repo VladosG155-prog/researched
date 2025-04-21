@@ -109,14 +109,13 @@ function Page() {
                                 <span className="text-white">{row.original.id}</span>
                             </div>
                             {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
-                                <button className="ml-10 flex items-center  bg-[#DEDEDE] mt-3 cursor-pointer p-[3px]">
+                                <button className="ml-10 flex items-center bg-[#DEDEDE] mt-3 cursor-pointer p-[3px]">
                                     <span
-                                        className="font-normal text-[12px] text-black "
+                                        className="font-normal text-[12px] text-black"
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             toggleModal();
-
-                                            setOpenedPromocode(row.original.promocodeInfo[1]);
+                                            setOpenedPromocode({ ...row.original.promocodeInfo[1], link: row.original.link });
                                         }}
                                     >
                                         {row.original?.promocodeInfo[1] && row.original.promocodeInfo[1].buttonName}
@@ -224,20 +223,23 @@ function Page() {
     };
 
     const sortColumns = [
-        { name: 'Цена', value: 'price' },
-        { name: 'Researched score', value: 'fraudscore' }
+        { name: 'Цена (сначала дорогая)', value: 'priceDesc', realValue: 'price', desc: true },
+        { name: 'Цена (сначала дешевая)', value: 'priceAsc', realValue: 'price', desc: false },
+        { name: 'Researched score (сначала больше)', value: 'fraudscoreDesc', realValue: 'fraudscore', desc: true },
+        { name: 'Researched score (сначала меньше)', value: 'fraudscoreAsc', realValue: 'fraudscore', desc: false }
     ];
 
     const handleSortColumnChange = (value) => {
         setSortColumn(value);
 
-        const val = sortColumns.find((sort) => sort.name === value).value;
+        const val = sortColumns.find((sort) => sort.name === value);
         if (val) {
-            setSorting([{ id: val, desc: true }]);
+            setSorting([{ id: val.realValue, desc: val.desc }]);
         } else {
             setSorting([]);
         }
     };
+
     const countries = useMemo(() => getProxyCountries(), []);
 
     const clearFilters = () => {
@@ -266,7 +268,7 @@ function Page() {
                     <>
                         <div className="flex w-full gap-[8px]">
                             {' '}
-                            <div className="w-1/2">
+                            <div className=" flex-1/2">
                                 {' '}
                                 <Filter
                                     selectedValue={countryFilter}
@@ -276,20 +278,20 @@ function Page() {
                                     showSearch={true}
                                 />
                             </div>
-                            <div className="w-1/2">
+                            <div className="">
                                 <Filter filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
                             </div>
-                        </div>
-                        <div className="w-full">
-                            {' '}
-                            <Filter
-                                filters={sortColumns}
-                                selectedValue={sortColumn}
-                                onChange={handleSortColumnChange}
-                                name="Сортировка"
-                                isSorting={true}
-                                showSearch={false}
-                            />
+                            <div className="w-full">
+                                {' '}
+                                <Filter
+                                    filters={sortColumns}
+                                    selectedValue={sortColumn}
+                                    onChange={handleSortColumnChange}
+                                    name="Сортировка"
+                                    isSorting={true}
+                                    showSearch={false}
+                                />
+                            </div>
                         </div>
                     </>
                 ) : (
@@ -471,7 +473,7 @@ function Page() {
                                             <span className="text-[12px]">{row.original.demo || '—'}</span>
                                         </p>
 
-                                        <div className="flex justify-end">
+                                        {/*  <div className="flex justify-end">
                                             {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
                                                 <button
                                                     className="bg-[#DEDEDE] cursor-pointer p-2 h-[50px] max-w-[50px]"
@@ -485,7 +487,7 @@ function Page() {
                                                     <Gift className="text-black" />
                                                 </button>
                                             )}
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

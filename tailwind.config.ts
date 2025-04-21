@@ -1,5 +1,4 @@
-import type { Config } from "tailwindcss"
-
+/** @type {import('tailwindcss').Config} */
 const config = {
   darkMode: ["class"],
   content: [
@@ -10,10 +9,17 @@ const config = {
     "*.{js,ts,jsx,tsx,mdx}",
   ],
   prefix: "",
-
+  safelist: [
+    "bg-gray-800",
+    "opacity-0",
+    "animate-twinkle",
+    "w-[20px]",
+    "h-[20px]",
+    "bg-black",
+  ],
   theme: {
     screens: {
-      xs: '320px'
+      xs: '320px',
     },
     container: {
       center: true,
@@ -24,7 +30,7 @@ const config = {
         sans: ["Inter", "system-ui", "sans-serif"],
       },
       screens: {
-        xs: '320px'
+        xs: '320px',
       },
       colors: {
         border: "hsl(var(--border))",
@@ -75,16 +81,20 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        twinkle: {
+          "0%": { opacity: "0" },
+          "50%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        twinkle: "twinkle 5s infinite",
       },
     },
   },
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+};
 
-export default config
-
+export default config;

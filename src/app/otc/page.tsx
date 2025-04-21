@@ -1,7 +1,7 @@
 'use client';
 import { createColumnHelper, ExpandedState, flexRender, getCoreRowModel, getExpandedRowModel, useReactTable } from '@tanstack/react-table';
 import otcData from '../../../data/otc.json';
-import CategoriesLayout from '../_categories/layout';
+import CategoriesLayout from '../categories/layout';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
@@ -216,58 +216,64 @@ function Page() {
                             onClick={() => handleRowClick(row.original.link)}
                         >
                             <div className="flex justify-between items-start">
-                                <div className="space-y-3">
-                                    <div className="flex items-center gap-3">
-                                        {row.original.icon && (
-                                            <Image
-                                                width={20}
-                                                height={20}
-                                                src={row.original.icon}
-                                                alt={row.original.id}
-                                                className="object-contain rounded-[3px]"
-                                            />
+                                <div className="w-full">
+                                    <div className="relative flex items-center gap-3 justify-between">
+                                        <div className="flex gap-2 items-center">
+                                            {row.original.icon && (
+                                                <Image
+                                                    width={20}
+                                                    height={20}
+                                                    src={row.original.icon}
+                                                    alt={row.original.id}
+                                                    className="object-contain rounded-[3px]"
+                                                />
+                                            )}
+                                            <span className="text-white text-base">{row.original.id}</span>
+                                        </div>
+                                        {row.original.children && (
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    row.toggleExpanded();
+                                                }}
+                                                className="p-2 text-white hover:text-gray-300 transition-colors"
+                                                aria-label={row.getIsExpanded() ? 'Свернуть' : 'Развернуть'}
+                                                aria-expanded={row.getIsExpanded()}
+                                            >
+                                                {row.getIsExpanded() ? (
+                                                    <ChevronUp className="w-6 h-6" />
+                                                ) : (
+                                                    <ChevronDown className="w-6 h-6" />
+                                                )}
+                                            </button>
                                         )}
-                                        <span className="text-white font-medium text-base">{row.original.id}</span>
                                     </div>
-                                    <div className="text-white text-sm space-y-3">
-                                        <p>
-                                            <span className="text-[#7E7E7E] font-medium">Основатель:</span> <br />
-                                            {parse(row.original.faunder, options)}
-                                        </p>
-                                        <p>
-                                            <span className="text-[#7E7E7E] font-medium">Комиссия:</span> <br />
-                                            {parse(row.original.fee, options)}
-                                        </p>
-                                        <p>
-                                            <span className="text-[#7E7E7E] font-medium">Время ответа:</span> <br />
-                                            {parse(row.original.answerTime, options)}
-                                        </p>
+                                    <div className="grid grid-cols-[33%_33%_33%] justify-between w-full mt-3 items-start">
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px] font-medium">Основатель:</span>
+                                            <div className="text-[12px] mt-2 text-white">{parse(row.original.faunder, options)}</div>
+                                        </div>
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px] font-medium">Комиссия:</span>
+                                            <div className="text-[12px] mt-2 text-white">{parse(row.original.fee, options)}</div>
+                                        </div>
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px] font-medium">Время ответа:</span>
+                                            <div className="text-[12px] mt-2 text-white">{parse(row.original.answerTime, options)}</div>
+                                        </div>
                                     </div>
                                 </div>
-                                {row.original.children && (
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            row.toggleExpanded();
-                                        }}
-                                        className="p-2 text-white hover:text-gray-300 transition-colors"
-                                        aria-label={row.getIsExpanded() ? 'Свернуть' : 'Развернуть'}
-                                        aria-expanded={row.getIsExpanded()}
-                                    >
-                                        {row.getIsExpanded() ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
-                                    </button>
-                                )}
                             </div>
                             {row.getIsExpanded() && row.original.children && (
                                 <div
-                                    className="mt-4 space-y-4 animate-slideDown"
+                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[50%_50%] justify-between w-full items-start"
                                     style={{
                                         animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
                                     }}
                                 >
                                     {row.original.children.map((child, index) => (
                                         <div key={index} className="flex flex-col justify-between">
-                                            <h4 className="font-medium mb-2 text-[#7E7E7E] text-sm">{child.name}</h4>
+                                            <h4 className="text-[#7E7E7E] text-[12px] mb-2">{child.name}</h4>
                                             {Array.isArray(child.content) ? (
                                                 <div className="flex gap-3 flex-wrap">
                                                     {child.content.map((item) => (
@@ -283,7 +289,7 @@ function Page() {
                                                     ))}
                                                 </div>
                                             ) : (
-                                                <div className="text-white text-sm">{parse(child.content, options)}</div>
+                                                <div className="text-white text-[12px]">{parse(child.content, options)}</div>
                                             )}
                                         </div>
                                     ))}

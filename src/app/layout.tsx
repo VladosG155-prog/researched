@@ -8,6 +8,7 @@ import { Footer } from '@/components/footer';
 import 'swiper/css';
 
 import ClientRedirect from '@/components/client-redirect';
+import TwinklingStarsGrid from '@/components/starlight-bg';
 
 const martianMono = Martian_Mono({
     subsets: ['latin'],
@@ -31,17 +32,16 @@ export default function RootLayout({
                 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&subset=cyrillic" as="style" />
             </head>
             <body className={'bg-[#121212] h-[100vh] sm:p-[15px] md:p-[15px] lg:p-[20px]'}>
-                <ClientRedirect>
-                    <CategoryProvider>
-                        <div className="flex flex-col h-[100%]">
-                            {/*  <Header /> */}
-                            <div className="flex-1 justify-self-center self-center max-w-[1260px] flex justify-center items-center mx-auto w-full mt-[30px]">
-                                {children}
-                            </div>
-                            {/* <Footer /> */}
+                <TwinklingStarsGrid />
+                <CategoryProvider>
+                    <div className="flex flex-col h-[100%]">
+                        <Header />
+                        <div className="flex-1 justify-self-center self-center max-w-[1260px] flex justify-center items-center mx-auto w-full mt-[30px]">
+                            {children}
                         </div>
-                    </CategoryProvider>
-                </ClientRedirect>
+                        <Footer />
+                    </div>
+                </CategoryProvider>
             </body>
         </html>
     );

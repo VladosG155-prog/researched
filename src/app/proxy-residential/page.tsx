@@ -8,7 +8,7 @@ import {
     getSortedRowModel,
     useReactTable
 } from '@tanstack/react-table';
-import proxyData from '../../../data/mobileproxy.json';
+import proxyData from '../../../data/resedentialproxy.json';
 import proxyScoreData from '../../../data/RS_Score_Proxy.json';
 import CategoriesLayout from '../categories/layout';
 import { ChevronDown, ChevronUp, Eye, FilterIcon, Gift, SortAsc, SortDesc } from 'lucide-react';
@@ -27,7 +27,8 @@ import { CountryPopup } from '@/components/contry-popup/country-popup';
 import { getUniquePayments } from '@/utils/get-payments';
 import useIsMobile from '@/hooks/useIsMobile';
 import { MobileProxyFilters } from '@/components/mobile-proxy-filter';
-
+const dataStatic = Object?.entries(proxyData.Data.proxy.residentialProxy.tools) || {};
+const residentialProxiex = getResidentialProxy();
 const PROXY_FILTERS = [
     { name: 'Статические', link: 'proxy-static' },
     { name: 'Резидентские', link: 'proxy-residential' },
@@ -40,12 +41,10 @@ function Page() {
     const [isOpenModal, setIsOpenModal] = useState(false);
     const [openedPromocode, setOpenedPromocode] = useState({});
     const [countryFilter, setCountryFilter] = useState('');
-    const [sorting, setSorting] = useState([]);
     const [selectedCountries, setSelectedCountries] = useState([]);
     const [isOpenCountriesModal, setIsOpenCoutriesModal] = useState(false);
+    const [sorting, setSorting] = useState([]);
     const [payment, setPayment] = useState('');
-    const mobileProxies = getResidentialProxy();
-    const dataStatic = Object?.entries(proxyData.Data.proxy.mobileProxy.tools) || [];
     const [sortColumn, setSortColumn] = useState('');
     const isMobile = useIsMobile();
     const router = useRouter();
@@ -56,15 +55,15 @@ function Page() {
                 id: name,
                 price: newData.price,
                 support: newData.support || '',
-                promocodeInfo: mobileProxies?.find((item) => item[0] === name),
-                fraudscore: proxyScoreData.mobileProxy.find((item) => item.name === name)?.overall || '-',
-                fraudData: proxyScoreData.mobileProxy.find((item) => item.name === name) || {},
-                children: [...newData.payment] || [],
+                promocodeInfo: residentialProxiex?.find((item) => item[0] === name),
+                fraudscore: proxyScoreData.residential.find((item) => item.name === name)?.overall || '-',
+                fraudData: proxyScoreData.residential.find((item) => item.name === name) || {},
                 payments: newData.payment,
+                children: [...newData.payment] || [],
                 countries: newData?.countries,
                 icon: newData.icon,
-                link: newData.link,
-                demo: newData?.demo
+                demo: newData?.demo,
+                link: newData.link
             };
         });
 
@@ -106,17 +105,16 @@ function Page() {
                                         unoptimized={true}
                                     />
                                 )}
-                                <span className="text-white">{row.original.id}</span>
+                                <span className="text-white flex-grow">{row.original.id}</span>
                             </div>
                             {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
-                                <button className="ml-10 flex items-center  bg-[#DEDEDE] mt-3 cursor-pointer p-[3px]">
+                                <button className="ml-10 flex items-center bg-[#DEDEDE] mt-3 cursor-pointer p-[3px]">
                                     <span
-                                        className="font-normal text-[12px] text-black "
+                                        className="font-normal text-[12px] text-black"
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             toggleModal();
-
-                                            setOpenedPromocode(row.original.promocodeInfo[1]);
+                                            setOpenedPromocode({ ...row.original.promocodeInfo[1], link: row.original.link });
                                         }}
                                     >
                                         {row.original?.promocodeInfo[1] && row.original.promocodeInfo[1].buttonName}
@@ -129,7 +127,7 @@ function Page() {
             }),
             columnHelper.accessor('price', {
                 header: 'Цена',
-                size: 400,
+                size: 300,
                 cell: (info) => <span className="text-white">{info.getValue()}</span>,
                 enableSorting: true,
                 sortDescFirst: true
@@ -174,9 +172,8 @@ function Page() {
             }),
             columnHelper.accessor('support', {
                 header: 'Тех.поддержка',
-                cell: (info) => <span className="text-white">{info.getValue()}</span>,
-                enableSorting: false,
-                sortDescFirst: true
+
+                cell: (info) => <span className="text-white">{info.getValue()}</span>
             }),
             columnHelper.display({
                 id: 'expand',
@@ -215,8 +212,7 @@ function Page() {
         getRowCanExpand: (row) => !!row.original.children,
         getCoreRowModel: getCoreRowModel(),
         getExpandedRowModel: getExpandedRowModel(),
-        getSortedRowModel: getSortedRowModel(),
-        enableColumnResizing: false
+        getSortedRowModel: getSortedRowModel()
     });
 
     const handleClickFilter = (link: string) => {
@@ -224,16 +220,18 @@ function Page() {
     };
 
     const sortColumns = [
-        { name: 'Цена', value: 'price' },
-        { name: 'Researched score', value: 'fraudscore' }
+        { name: 'Цена (сначала дорогая)', value: 'priceDesc', realValue: 'price', desc: true },
+        { name: 'Цена (сначала дешевая)', value: 'priceAsc', realValue: 'price', desc: false },
+        { name: 'Researched score (сначала больше)', value: 'fraudscoreDesc', realValue: 'fraudscore', desc: true },
+        { name: 'Researched score (сначала меньше)', value: 'fraudscoreAsc', realValue: 'fraudscore', desc: false }
     ];
 
     const handleSortColumnChange = (value) => {
         setSortColumn(value);
 
-        const val = sortColumns.find((sort) => sort.name === value).value;
+        const val = sortColumns.find((sort) => sort.name === value);
         if (val) {
-            setSorting([{ id: val, desc: true }]);
+            setSorting([{ id: val.realValue, desc: val.desc }]);
         } else {
             setSorting([]);
         }
@@ -246,17 +244,14 @@ function Page() {
         setSorting([]);
         setSortColumn('');
     };
-
     const toggleCountriesModal = () => {
         setIsOpenCoutriesModal((prev) => !prev);
     };
-
-    const payments = getUniquePayments(proxyData.Data.proxy.mobileProxy.tools);
-
+    const payments = getUniquePayments(proxyData.Data.proxy.residentialProxy.tools);
     return (
         <CategoriesLayout
-            title={proxyData.Data.proxy.mobileProxy.info.title || ''}
-            description={proxyData.Data.proxy.mobileProxy.info.description || ''}
+            title={proxyData.Data.proxy.residentialProxy.info.title || ''}
+            description={proxyData.Data.proxy.residentialProxy.info.description || ''}
         >
             <CountryPopup isOpen={isOpenCountriesModal} onClose={toggleCountriesModal} countries={selectedCountries} />
             <PromoPopup isOpen={isOpenModal} onClose={toggleModal} info={openedPromocode} />
@@ -266,7 +261,7 @@ function Page() {
                     <>
                         <div className="flex w-full gap-[8px]">
                             {' '}
-                            <div className="w-1/2">
+                            <div className=" flex-1/2">
                                 {' '}
                                 <Filter
                                     selectedValue={countryFilter}
@@ -276,20 +271,20 @@ function Page() {
                                     showSearch={true}
                                 />
                             </div>
-                            <div className="w-1/2">
+                            <div className="">
                                 <Filter filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
                             </div>
-                        </div>
-                        <div className="w-full">
-                            {' '}
-                            <Filter
-                                filters={sortColumns}
-                                selectedValue={sortColumn}
-                                onChange={handleSortColumnChange}
-                                name="Сортировка"
-                                isSorting={true}
-                                showSearch={false}
-                            />
+                            <div className="w-full">
+                                {' '}
+                                <Filter
+                                    filters={sortColumns}
+                                    selectedValue={sortColumn}
+                                    onChange={handleSortColumnChange}
+                                    name="Сортировка"
+                                    isSorting={true}
+                                    showSearch={false}
+                                />
+                            </div>
                         </div>
                     </>
                 ) : (
@@ -331,7 +326,6 @@ function Page() {
                     ))}
                 </div>
             )}
-
             <div className="py-4">
                 {/* Desktop View */}
                 <div className="hidden md:block">
@@ -377,14 +371,14 @@ function Page() {
                                         className="hover:bg-[#333333] bg-[#282828] -md"
                                     >
                                         {row.getVisibleCells().map((cell) => (
-                                            <td key={cell.id} className="p-3 first: cursor-pointer last:-r-md">
+                                            <td key={cell.id} className="p-3 cursor-pointer first: last:-r-md">
                                                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                             </td>
                                         ))}
                                     </tr>
                                     {row.getIsExpanded() && row.original.children && (
                                         <tr className="bg-[#303030] relative -top-[11px] ">
-                                            <td colSpan={columns.length} className="p-3 -b-md">
+                                            <td colSpan={columns.length} className="p-3  -b-md">
                                                 <h4 className="font-medium mb-2 text-white text-sm">Оплата</h4>
                                                 <div className="flex flex-wrap gap-2">
                                                     {row.original.children.map((child) => (
@@ -471,7 +465,7 @@ function Page() {
                                             <span className="text-[12px]">{row.original.demo || '—'}</span>
                                         </p>
 
-                                        <div className="flex justify-end">
+                                        {/*  <div className="flex justify-end">
                                             {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
                                                 <button
                                                     className="bg-[#DEDEDE] cursor-pointer p-2 h-[50px] max-w-[50px]"
@@ -485,7 +479,7 @@ function Page() {
                                                     <Gift className="text-black" />
                                                 </button>
                                             )}
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

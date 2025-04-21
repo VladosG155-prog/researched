@@ -9,7 +9,7 @@ import {
     useReactTable
 } from '@tanstack/react-table';
 import cexData from '../../../data/cex.json';
-import CategoriesLayout from '../_categories/layout';
+import CategoriesLayout from '../categories/layout';
 import { ChevronDown, ChevronUp, ExternalLink, Eye, FilterIcon, Phone, SortAsc, SortDesc } from 'lucide-react';
 import { Fragment, useMemo, useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -37,7 +37,7 @@ const options = {
                     className="bg-[#121212] flex items-center gap-1 transition max-w-[150px] h-[30px] p-5 mt-4"
                 >
                     <ExternalLink className="w-6 h-6" />
-                    <span className="text-[14px]">{domToReact(domNode.children)}</span>
+                    <span className="text-[10px] md:text-[14px]">{domToReact(domNode.children)}</span>
                 </a>
             );
         }
@@ -82,13 +82,17 @@ function Page() {
     const [isOpenOtherTokenModal, setIsOpenOtherTokenModal] = useState(false);
     const [withdrawalFees, setWithdrawalFees] = useState<WithdrawalFees>({});
     const [isOpenEarningModal, setIsOpenEarningModal] = useState(false);
+    const [openRestrictions, setOpenRestrictions] = useState('');
+    const [isOpenRestrictionsModal, setIsOpenRestrictionsModal] = useState(false);
     const [openedEarning, setOpenedEarnings] = useState('');
     const [chain, setChain] = useState('');
     const [token, setToken] = useState('');
     const router = useRouter();
+
     const mappedData = useMemo(() => {
         return dataNew.map((elem) => {
             const [key, data] = elem;
+
             return {
                 id: key,
                 commision: data.commission,
@@ -97,6 +101,7 @@ function Page() {
                 link: data.link,
                 earnings: data.earnings,
                 restrictions: data.restrictions || '',
+                fullRestrictions: data.fullRestrictions,
                 children: [
                     { name: 'KYC', content: data.kyc, colSpan: 1 },
                     { name: 'Комиссии', content: data.fees, colSpan: 1 },
@@ -161,12 +166,23 @@ function Page() {
             columnHelper.accessor('restrictions', {
                 header: 'Ограничения',
                 size: 200,
-                enableSorting: true,
+                enableSorting: false,
                 cell: (info) =>
                     info.row.original.restrictions ? (
                         <div className="cursor-pointer flex-col flex">
                             <span className="text-white">{info.getValue()}</span>
-                            <button className="bg-[#121212] p-2 mt-3 cursor-pointer text-[14px] max-w-max">Подробнее</button>
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setOpenRestrictions(info.row.original.fullRestrictions);
+                                    console.log(info.row.original.fullRestrictions);
+
+                                    setIsOpenRestrictionsModal(true);
+                                }}
+                                className="bg-[#121212] p-2 mt-3 cursor-pointer text-[14px] max-w-max"
+                            >
+                                Подробнее
+                            </button>
                         </div>
                     ) : (
                         <span></span>
@@ -175,14 +191,14 @@ function Page() {
             columnHelper.accessor('commision', {
                 header: 'Комиссия',
                 size: 200,
-                enableSorting: true,
+                enableSorting: false,
                 cell: renderCommissionCell
             }),
             columnHelper.accessor('subAccounts', {
                 header: 'Субаккаунты',
                 size: 250,
                 cell: (info) => <span className="text-white cursor-pointer">{info.getValue()}</span>,
-                enableSorting: true,
+                enableSorting: false,
                 sortDescFirst: true
             }),
             columnHelper.accessor('purpose', {
@@ -340,6 +356,9 @@ function Page() {
 
     return (
         <CategoriesLayout title={cexData.Data.cex.info.title} description={cexData.Data.cex.info.description}>
+            <Modal title="Ограничения" isOpen={isOpenRestrictionsModal} onClose={() => setIsOpenRestrictionsModal((prev) => !prev)}>
+                <p>{openRestrictions}</p>
+            </Modal>
             <Modal title="Способы заработка" isOpen={isOpenEarningModal} onClose={() => setIsOpenEarningModal(false)}>
                 {parse(openedEarning, options2)}
             </Modal>
@@ -439,8 +458,8 @@ function Page() {
                                                 const data = content.includes('Подробнее') ? parse(child.content, options) : child.content;
                                                 const finalData = Array.isArray(content)
                                                     ? data.map((item) => (
-                                                          <div key={item.title}>
-                                                              <p>{item.date}</p>
+                                                          <div key={item.title} className="p-1 mb-1">
+                                                              <p className="text-[#7E7E7E]">{item.date}:</p>
                                                               <p>{item.title}</p>
                                                           </div>
                                                       ))
@@ -530,79 +549,96 @@ function Page() {
                 {/* Mobile View */}
                 <div className="md:hidden space-y-4">
                     {visibleRows.map((row) => (
-                        <div key={row.id} className="bg-[#282828] p-4">
+                        <div key={row.id} className="bg-[#282828] p-4 cursor-pointer hover:bg-[#333333] transition-colors">
                             <div className="flex justify-between items-start">
-                                <div className="space-y-3">
-                                    <div className="flex items-center gap-3">
-                                        {row.original.icon && (
-                                            <Image
-                                                width={25}
-                                                height={25}
-                                                src={row.original.icon}
-                                                alt={row.original.id}
-                                                className="object-contain"
-                                            />
+                                <div className="w-full">
+                                    <div className="relative flex items-center gap-3 justify-between">
+                                        <div className="flex gap-2 items-center">
+                                            {row.original.icon && (
+                                                <Image
+                                                    width={20}
+                                                    height={20}
+                                                    src={row.original.icon}
+                                                    alt={row.original.id}
+                                                    className="object-contain rounded-[3px]"
+                                                />
+                                            )}
+                                            <span className="text-white text-base">{row.original.id}</span>
+                                        </div>
+                                        {row.original.children && (
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    row.toggleExpanded();
+                                                }}
+                                                className="p-2 text-white hover:text-gray-300 transition-colors"
+                                                aria-label={row.getIsExpanded() ? 'Свернуть' : 'Развернуть'}
+                                                aria-expanded={row.getIsExpanded()}
+                                            >
+                                                {row.getIsExpanded() ? (
+                                                    <ChevronUp className="w-6 h-6" />
+                                                ) : (
+                                                    <ChevronDown className="w-6 h-6" />
+                                                )}
+                                            </button>
                                         )}
-                                        <span className="text-white font-medium">{row.original.id}</span>
                                     </div>
-                                    <div className="text-white text-sm space-y-2">
-                                        <p>
-                                            <span className="text-[#7E7E7E]">Комиссия:</span> <br />
-                                            {(() => {
-                                                const exchangeName = row.original.id;
-                                                const feeData = withdrawalFees[exchangeName];
+                                    <div className="grid grid-cols-[30%_30%_30%] justify-between w-full mt-3 items-start">
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px]">Комиссия:</span>
+                                            <div className="text-[12px] mt-2">
+                                                {(() => {
+                                                    const exchangeName = row.original.id;
+                                                    const feeData = withdrawalFees[exchangeName];
 
-                                                if (!feeData) {
-                                                    return row.original.commision;
-                                                }
+                                                    if (!feeData) {
+                                                        return row.original.commision;
+                                                    }
 
-                                                return (
-                                                    <>
-                                                        <div>
-                                                            {feeData.tokenAmount} {chain}
-                                                        </div>
-                                                        <div className="text-[#7E7E7E]">${feeData.usdAmount.toFixed(2)}</div>
-                                                    </>
-                                                );
-                                            })()}
-                                        </p>
-                                        <p>
-                                            <span className="text-[#7E7E7E]">Субаккаунты:</span> <br />
-                                            {row.original.subAccounts}
-                                        </p>
-                                        <p>
-                                            <span className="text-[#7E7E7E]">Назначение:</span> <br />
-                                            {row.original.purpose}
-                                        </p>
-                                        <p>
-                                            <span className="text-[#7E7E7E]">Ограничения:</span> <br />
+                                                    return (
+                                                        <>
+                                                            <div>
+                                                                {feeData.tokenAmount} {chain}
+                                                            </div>
+                                                            <div className="text-[#7E7E7E]">${feeData.usdAmount.toFixed(2)}</div>
+                                                        </>
+                                                    );
+                                                })()}
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px]">Субаккаунты:</span>
+                                            <span className="text-[12px] mt-2">{row.original.subAccounts}</span>
+                                        </div>
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px]">Назначение:</span>
+                                            <span className="text-[12px] mt-2">{row.original.purpose}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {row.getIsExpanded() && row.original.children && (
+                                <div
+                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[30%_30%_30%] justify-between w-full items-start"
+                                    style={{
+                                        animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
+                                    }}
+                                >
+                                    <div className="">
+                                        <span className="text-[#7E7E7E] text-[12px]">Ограничения:</span>
+                                        <div className="text-[12px] mt-2">
                                             {row.original.restrictions ? (
                                                 <div className="flex flex-col justify-start">
                                                     <span>{row.original.restrictions}</span>
-                                                    <button className="bg-[#121212] p-2 mt-3 cursor-pointer inline-block w-max">
+                                                    <button className="bg-[#121212] p-2 mt-3 cursor-pointer inline-block w-max text-white text-[12px]">
                                                         Подробнее
                                                     </button>
                                                 </div>
                                             ) : (
                                                 <span>—</span>
                                             )}
-                                        </p>
+                                        </div>
                                     </div>
-                                </div>
-                                {row.original.children && (
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            row.toggleExpanded();
-                                        }}
-                                        className="p-1 text-white"
-                                    >
-                                        {row.getIsExpanded() ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-                                    </button>
-                                )}
-                            </div>
-                            {row.getIsExpanded() && row.original.children && (
-                                <div className="mt-3 space-y-4">
                                     {row.original.children.map((child, index) => {
                                         if (!child.name) return null;
                                         const content = child.content || '';
@@ -610,24 +646,24 @@ function Page() {
                                         const finalData = Array.isArray(content)
                                             ? data.map((item) => (
                                                   <div key={item.title}>
-                                                      <p>{item.date}</p>
+                                                      <p className="text-[#7E7E7E]">{item.date}:</p>
                                                       <p>{item.title}</p>
                                                   </div>
                                               ))
                                             : data;
                                         return (
                                             <div key={index} className="flex flex-col justify-between">
-                                                <h4 className="font-medium mb-2 text-[#7E7E7E]">{child.name}</h4>
-                                                <div className="gap-3 text-white text-sm">
+                                                <h4 className="text-[#7E7E7E] text-[12px] mb-2">{child.name}</h4>
+                                                <div className="gap-3 text-white text-[12px]">
                                                     {child.name === 'Как заработать' ? (
                                                         <button
-                                                            className="bg-[#121212] flex items-center gap-1 transition max-w-max h-[30px] p-2 mt-4 cursor-pointer text-[14px]"
+                                                            className="bg-[#121212] flex items-center gap-1 transition max-w-max h-[30px] p-2 cursor-pointer text-[12px]"
                                                             onClick={() => {
                                                                 setIsOpenEarningModal(true);
                                                                 setOpenedEarnings(row.original.earnings);
                                                             }}
                                                         >
-                                                            Cпособы заработка
+                                                            Способы заработка
                                                         </button>
                                                     ) : Array.isArray(child.content) ? (
                                                         finalData
@@ -640,15 +676,6 @@ function Page() {
                                     })}
                                 </div>
                             )}
-                            <button
-                                className="mt-3 flex items-center justify-center bg-[#DEDEDE] w-[90px] h-[20px]"
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    toggleModal();
-                                }}
-                            >
-                                <span className="text-black text-[10px] ml-2">Промокод</span>
-                            </button>
                         </div>
                     ))}
                     {blurredRows.length > 0 && (
@@ -656,52 +683,58 @@ function Page() {
                             {blurredRows.map((row) => (
                                 <div key={row.id} className="bg-[#282828] p-4 blur-sm">
                                     <div className="flex justify-between items-start">
-                                        <div className="space-y-3">
-                                            <div className="flex items-center gap-3">
-                                                {row.original.icon && (
-                                                    <Image
-                                                        width={25}
-                                                        height={25}
-                                                        src={row.original.icon}
-                                                        alt={row.original.id}
-                                                        className="object-contain"
-                                                    />
-                                                )}
-                                                <span className="text-white font-medium">{row.original.id}</span>
+                                        <div className="w-full">
+                                            <div className="relative flex items-center gap-3 justify-between">
+                                                <div className="flex gap-2 items-center">
+                                                    {row.original.icon && (
+                                                        <Image
+                                                            width={20}
+                                                            height={20}
+                                                            src={row.original.icon}
+                                                            alt={row.original.id}
+                                                            className="object-contain rounded-[3px]"
+                                                        />
+                                                    )}
+                                                    <span className="text-white text-base">{row.original.id}</span>
+                                                </div>
                                             </div>
-                                            <div className="text-white text-sm space-y-2">
-                                                <p>
-                                                    <span className="text-[#7E7E7E]">Комиссия:</span> <br />
-                                                    {(() => {
-                                                        const exchangeName = row.original.id;
-                                                        const feeData = withdrawalFees[exchangeName];
+                                            <div className="grid grid-cols-[30%_30%_30%] justify-between w-full mt-3 items-start">
+                                                <div className="flex flex-col gap-1 min-h-[60px]">
+                                                    <span className="text-[#7E7E7E] text-[12px]">Комиссия:</span>
+                                                    <div className="text-[12px] mt-2">
+                                                        {(() => {
+                                                            const exchangeName = row.original.id;
+                                                            const feeData = withdrawalFees[exchangeName];
 
-                                                        if (!feeData) {
-                                                            return row.original.commision;
-                                                        }
+                                                            if (!feeData) {
+                                                                return row.original.commision;
+                                                            }
 
-                                                        return (
-                                                            <>
-                                                                <div>
-                                                                    {feeData.tokenAmount} {chain}
-                                                                </div>
-                                                                <div className="text-[#7E7E7E]">${feeData.usdAmount.toFixed(2)}</div>
-                                                            </>
-                                                        );
-                                                    })()}
-                                                </p>
-                                                <p>
-                                                    <span className="text-[#7E7E7E]">Субаккаунты:</span> <br />
-                                                    {row.original.subAccounts}
-                                                </p>
-                                                <p>
-                                                    <span className="text-[#7E7E7E]">Назначение:</span> <br />
-                                                    {row.original.purpose}
-                                                </p>
-                                                <p>
-                                                    <span className="text-[#7E7E7E]">Ограничения:</span> <br />
+                                                            return (
+                                                                <>
+                                                                    <div>
+                                                                        {feeData.tokenAmount} {chain}
+                                                                    </div>
+                                                                    <div className="text-[#7E7E7E]">${feeData.usdAmount.toFixed(2)}</div>
+                                                                </>
+                                                            );
+                                                        })()}
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-col gap-1 min-h-[60px]">
+                                                    <span className="text-[#7E7E7E] text-[12px]">Субаккаунты:</span>
+                                                    <span className="text-[12px] mt-2">{row.original.subAccounts}</span>
+                                                </div>
+                                                <div className="flex flex-col gap-1 min-h-[60px]">
+                                                    <span className="text-[#7E7E7E] text-[12px]">Назначение:</span>
+                                                    <span className="text-[12px] mt-2">{row.original.purpose}</span>
+                                                </div>
+                                            </div>
+                                            <div className="mt-3">
+                                                <span className="text-[#7E7E7E] text-[12px]">Ограничения:</span>
+                                                <div className="text-[12px] mt-2">
                                                     {row.original.restrictions ? row.original.restrictions : '—'}
-                                                </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -711,7 +744,7 @@ function Page() {
                                 <Link
                                     href="https://t.me/your_telegram_bot"
                                     target="_blank"
-                                    className="text-white bg-[#0088cc] px-4 py-2 -md hover:bg-[#0077b3]"
+                                    className="text-white bg-[#0088cc] px-4 py-2 rounded-md hover:bg-[#0077b3]"
                                 >
                                     Увидеть больше? Переходите в нашего ТГ бота
                                 </Link>

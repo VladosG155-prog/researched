@@ -9,8 +9,8 @@ import {
     useReactTable
 } from '@tanstack/react-table';
 import botsData from '../../../data/tradebots.json';
-import CategoriesLayout from '../_categories/layout';
-import { ChevronDown, ChevronUp, FilterIcon, SortAsc, SortDesc } from 'lucide-react';
+import CategoriesLayout from '../categories/layout';
+import { ChevronDown, ChevronUp, FilterIcon, Info, SortAsc, SortDesc } from 'lucide-react';
 import { Fragment, useMemo, useState } from 'react';
 import Image from 'next/image';
 import PromoPopup from '@/components/promo-popup';
@@ -22,6 +22,7 @@ import { ClearFilters } from '@/components/clear-filters';
 import { TopPlace } from '@/components/top-place';
 import Modal from '@/components/modal';
 import useIsMobile from '@/hooks/useIsMobile';
+import Tooltip from '@/components/tooltip';
 
 const dataNew = Object.entries(botsData.Data.tradingBots.tools);
 const bullXLink = {
@@ -270,22 +271,47 @@ function Page() {
                     </div>
                 </Modal>
             )}
-            <div className="flex gap-3 flex-wrap">
-                <Filter onChange={setSelectedFilter} selectedValue={selectedFilter} filters={networks} name="Блокчейн" />
-                <Filter onChange={setSelectedInterface} selectedValue={selectedInterface} filters={interfaces} name="Интерфейс" />
-                {isMobile && (
-                    <div className="mb-5 w-full">
-                        <Filter
-                            filters={sortColumns}
-                            selectedValue={sortColumn}
-                            onChange={handleSortColumnChange}
-                            name="Сортировка"
-                            showSearch={false}
-                        />
+            {isMobile ? (
+                <div className="flex gap-3 flex-wrap">
+                    <div className="">
+                        <Filter onChange={setSelectedFilter} selectedValue={selectedFilter} filters={networks} name="Блокчейн" />
                     </div>
-                )}
-                {(selectedFilter || selectedInterface || sortColumn) && <ClearFilters onClear={clearFilters} />}
-            </div>
+                    <div className="">
+                        <Filter onChange={setSelectedInterface} selectedValue={selectedInterface} filters={interfaces} name="Интерфейс" />
+                    </div>
+                    {isMobile && (
+                        <div className="mb-5 w-full">
+                            <Filter
+                                filters={sortColumns}
+                                selectedValue={sortColumn}
+                                onChange={handleSortColumnChange}
+                                name="Сортировка"
+                                showSearch={false}
+                                isSorting={true}
+                            />
+                        </div>
+                    )}
+                </div>
+            ) : (
+                <div className="flex gap-3 flex-wrap">
+                    <Filter onChange={setSelectedFilter} selectedValue={selectedFilter} filters={networks} name="Блокчейн" />
+                    <Filter onChange={setSelectedInterface} selectedValue={selectedInterface} filters={interfaces} name="Интерфейс" />
+                    {isMobile && (
+                        <div className="mb-5 w-full">
+                            <Filter
+                                filters={sortColumns}
+                                selectedValue={sortColumn}
+                                onChange={handleSortColumnChange}
+                                name="Сортировка"
+                                showSearch={false}
+                                isSorting={true}
+                            />
+                        </div>
+                    )}
+                    {(selectedFilter || selectedInterface || sortColumn) && <ClearFilters onClear={clearFilters} />}
+                </div>
+            )}
+
             <div className="py-6">
                 {/* Desktop View */}
                 <div className="hidden md:block">
@@ -320,6 +346,11 @@ function Page() {
                                                             }[header.column.getIsSorted() || false]
                                                         }
                                                     </span>
+                                                )}
+                                                {header.id === 'speedCopy' && (
+                                                    <Tooltip content="В блоках">
+                                                        <Info />
+                                                    </Tooltip>
                                                 )}
                                             </div>
                                         </th>
@@ -379,110 +410,135 @@ function Page() {
                 {/* Mobile View */}
                 <div className="md:hidden space-y-4">
                     {table.getRowModel().rows.map((row) => (
-                        <div key={row.id} className="bg-[#282828] p-4 rounded-md">
-                            <div className="flex justify-between items-start cursor-pointer" onClick={() => window.open(row.original.link)}>
-                                <div className="space-y-2 w-full">
-                                    <div className="flex items-center gap-3">
-                                        {row.index <= 2 && !sorting.length && !selectedFilter && !selectedInterface && (
-                                            <TopPlace place={row.index + 1} />
+                        <div
+                            key={row.id}
+                            className="bg-[#282828] p-4 cursor-pointer hover:bg-[#333333] transition-colors rounded-md"
+                            onClick={() => window.open(row.original.link)}
+                        >
+                            <div className="flex justify-between items-start">
+                                <div className="w-full">
+                                    <div className="relative flex items-center gap-3 justify-between">
+                                        <div className="flex gap-2 items-center">
+                                            {row.index <= 2 && !sorting.length && !selectedFilter && !selectedInterface && (
+                                                <TopPlace place={row.index + 1} />
+                                            )}
+                                            {row.original.icon && (
+                                                <Image
+                                                    width={20}
+                                                    height={20}
+                                                    src={row.original.icon}
+                                                    alt={row.original.id}
+                                                    className="object-contain rounded-[3px]"
+                                                />
+                                            )}
+                                            <span className="text-white text-base">{row.original.id}</span>
+                                        </div>
+                                        {row.original.children && (
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    row.toggleExpanded();
+                                                }}
+                                                className="p-2 text-white hover:text-gray-300 transition-colors"
+                                                aria-label={row.getIsExpanded() ? 'Свернуть' : 'Развернуть'}
+                                                aria-expanded={row.getIsExpanded()}
+                                            >
+                                                {row.getIsExpanded() ? (
+                                                    <ChevronUp className="w-6 h-6" />
+                                                ) : (
+                                                    <ChevronDown className="w-6 h-6" />
+                                                )}
+                                            </button>
                                         )}
-                                        {row.original.icon && (
-                                            <Image
-                                                width={25}
-                                                height={25}
-                                                src={row.original.icon}
-                                                alt={row.original.id}
-                                                className="object-contain rounded-[3px]"
-                                            />
-                                        )}
-                                        <span className="text-white font-medium">{row.original.id}</span>
                                     </div>
-                                    <div className="text-white text-sm space-y-1">
-                                        <p>
-                                            <span className="font-medium text-[#7E7E7E]">Комиссия:</span> <br />
-                                            {row.original.fees}
-                                        </p>
-                                        <p>
-                                            <span className="font-medium text-[#7E7E7E]">Скорость:</span> <br />
-                                            {row.original.speed.map((item, index) => (
-                                                <div key={index} className="flex items-center gap-2">
-                                                    <span>{item.value}</span>
-                                                    <Image
-                                                        width={15}
-                                                        height={15}
-                                                        src={item?.network?.icon}
-                                                        alt={item?.network?.name}
-                                                        className="object-contain"
-                                                    />
-                                                </div>
-                                            ))}
-                                        </p>
-                                        <p>
-                                            <span className="font-medium text-[#7E7E7E]">Скорость копитрейдинга:</span> <br />
-                                            {row.original.speedCopy.map((item, index) => (
-                                                <div key={index} className="flex items-center gap-2">
-                                                    <span>{item.blocks}</span>
-                                                    <Image
-                                                        width={15}
-                                                        height={15}
-                                                        src={item?.network?.icon}
-                                                        alt={item?.network?.name}
-                                                        className="object-contain"
-                                                    />
-                                                </div>
-                                            ))}
-                                        </p>
-                                        <p>
-                                            <span className="font-medium text-[#7E7E7E]">Сети:</span>
-                                            <div className="flex mt-1 gap-2 items-center flex-wrap">
+                                    <div className="grid grid-cols-[25%_25%_25%_25%] justify-between w-full mt-3 items-start">
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px] font-medium">Комиссия:</span>
+                                            <div className="text-[12px] mt-2 text-white">{row.original.fees}</div>
+                                        </div>
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px] font-medium">Скорость:</span>
+                                            <div className="text-[12px] mt-2 text-white">
+                                                {row.original.speed.map((item, index) => (
+                                                    <div key={index} className="flex items-center gap-1">
+                                                        <span>{item.value}</span>
+                                                        <Image
+                                                            width={12}
+                                                            height={12}
+                                                            src={item?.network?.icon}
+                                                            alt={item?.network?.name}
+                                                            className="object-contain"
+                                                        />
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px] font-medium">Скорость копитрейдинга:</span>
+                                            <div className="text-[12px] mt-2 text-white">
+                                                {row.original.speedCopy.map((item, index) => (
+                                                    <div key={index} className="flex items-center gap-1">
+                                                        <span>{item.blocks}</span>
+                                                        <Image
+                                                            width={12}
+                                                            height={12}
+                                                            src={item?.network?.icon}
+                                                            alt={item?.network?.name}
+                                                            className="object-contain"
+                                                        />
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px] font-medium">Сети:</span>
+                                            <div className="flex mt-1 gap-1 items-center flex-wrap">
                                                 {row.original.chains.map((item, index) => (
                                                     <Image
                                                         key={`${item.name} ${index}`}
-                                                        width={20}
-                                                        height={20}
+                                                        width={15}
+                                                        height={15}
                                                         alt={item.name}
                                                         src={item.icon}
                                                         className="object-contain"
                                                     />
                                                 ))}
                                             </div>
-                                        </p>
+                                        </div>
                                     </div>
                                 </div>
-                                {row.original.children && (
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            row.toggleExpanded();
-                                        }}
-                                        className="p-1 text-white"
-                                    >
-                                        {row.getIsExpanded() ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-                                    </button>
-                                )}
                             </div>
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    if (row.original.id === 'Bullx') {
-                                        setIsOpenBullX(true);
-                                        return;
-                                    }
-                                    window.open(row.original.link);
-                                }}
-                                className="mt-4 text-start bg-[#121212] inline-block max-w-max p-4 cursor-pointer rounded-md text-white"
-                            >
-                                Вступить
-                            </button>
                             {row.getIsExpanded() && row.original.children && (
-                                <div className="mt-3 text-white text-sm space-y-2">
-                                    {row.original.children.map((child) => (
-                                        <div key={child.name}>
-                                            <span className="font-medium text-[#7E7E7E]">{child.name}</span> <br />
-                                            <div className="mt-1">{child.content}</div>
-                                        </div>
-                                    ))}
-                                </div>
+                                <>
+                                    <div
+                                        className="mt-4 space-y-4 animate-slideDown grid grid-cols-[25%_25%_25%_25%] justify-between w-full items-start"
+                                        style={{
+                                            animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
+                                        }}
+                                    >
+                                        {row.original.children.map((child) => (
+                                            <div key={child.name} className="flex flex-col justify-between">
+                                                <h4 className="text-[#7E7E7E] text-[12px] mb-2">{child.name}</h4>
+                                                <div className="text-white text-[12px]">{child.content}</div>
+                                                {child.name === 'Реферальная программа' && (
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            if (row.original.id === 'BullX NEO') {
+                                                                setIsOpenBullX(true);
+                                                                return;
+                                                            }
+                                                            window.open(row.original.link);
+                                                        }}
+                                                        className="mt-3 text-start bg-[#121212] inline-block max-w-max p-2 cursor-pointer rounded-md text-white text-[12px]"
+                                                    >
+                                                        Вступить
+                                                    </button>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </>
                             )}
                         </div>
                     ))}

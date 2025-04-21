@@ -10,7 +10,7 @@ import {
 } from '@tanstack/react-table';
 import antikiData from '../../../data/antiki.json';
 import rsScoreData from '../../../data/RS_Score_Antidetect.json';
-import CategoriesLayout from '../_categories/layout';
+import CategoriesLayout from '../categories/layout';
 import { ChevronDown, ChevronUp, FilterIcon, Gift, Info, Smartphone, SortAsc, SortDesc } from 'lucide-react';
 import { Fragment, useMemo, useState } from 'react';
 import Image from 'next/image';
@@ -201,16 +201,18 @@ function Page() {
     const paymentsFilters = getUniquePayments(antikiData.Data.antiki.tools);
 
     const sortColumns = [
-        { name: 'Цена', value: 'price' },
-        { name: 'Цена за профиль', value: 'pricePerProfile' }
+        { name: 'Цена (сначала дорогая)', value: 'priceDesc', realValue: 'price', desc: true },
+        { name: 'Цена (сначала дешевая)', value: 'priceAsc', realValue: 'price', desc: false },
+        { name: 'Цена за профиль (сначала дорогая)', value: 'pricePerProfileDesc', realValue: 'price', desc: true },
+        { name: 'Цена за профиль (сначала дешевая)', value: 'pricePerProfileAsc', realValue: 'price', desc: false }
     ];
 
     const handleSortColumnChange = (value) => {
         setSortColumn(value);
 
-        const val = sortColumns.find((sort) => sort.name === value).value;
+        const val = sortColumns.find((sort) => sort.name === value);
         if (val) {
-            setSorting([{ id: val, desc: true }]);
+            setSorting([{ id: val.realValue, desc: val.desc }]);
         } else {
             setSorting([]);
         }
@@ -246,14 +248,17 @@ function Page() {
             }
 
             {isOpenModal && <PromoPopup isOpen={isOpenModal} onClose={toggleModal} info={infoPromocode} />}
-            <Filter filters={paymentsFilters} selectedValue={payment} onChange={setPayment} name="Оплата" />
+            {!isMobile && <Filter filters={paymentsFilters} selectedValue={payment} onChange={setPayment} name="Оплата" />}
+
             {isMobile && (
-                <div className="mt-2">
+                <div className="mt-2 flex items-center gap-2">
+                    <Filter filters={paymentsFilters} selectedValue={payment} onChange={setPayment} name="Оплата" />
                     <Filter
                         filters={sortColumns}
                         selectedValue={sortColumn}
                         onChange={handleSortColumnChange}
                         name="Сортировка"
+                        isSorting={true}
                         showSearch={false}
                     />
                 </div>
@@ -419,9 +424,9 @@ function Page() {
                                             </button>
                                         )}
                                     </div>
-                                    <div className="grid grid-cols-[30%_20%_24%_24%] justify-between w-full mt-3 items-baseline">
+                                    <div className="grid grid-cols-[30%_20%_24%] justify-between w-full mt-3 items-start">
                                         <div className="flex flex-col gap-1 min-h-[60px]">
-                                            <span className="text-[#7E7E7E] text-[12px]">Researched score:</span>
+                                            <span className="text-[#7E7E7E] text-[12px]">RS score:</span>
                                             <div className="mt-2">
                                                 {row.original.id === 'GeeLark' || row.original.id === 'MoreLogin' ? (
                                                     <Tooltip content="На облачные телефоны researched score не распространяется">
@@ -440,27 +445,12 @@ function Page() {
                                             <span className="text-[#7E7E7E] text-[12px]">Цена:</span>
                                             <span className="text-[12px] mt-2">{row.original.price}</span>
                                         </div>
-                                        <div className="flex justify-end min-h-[60px] items-start">
-                                            {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
-                                                <button
-                                                    className="bg-[#DEDEDE] cursor-pointer p-2 h-[50px] max-w-[50px]"
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        toggleModal();
-                                                        setInfoPromocode(row.original.promocodeInfo[1]);
-                                                    }}
-                                                    aria-label="Открыть промокод"
-                                                >
-                                                    <Gift className="text-black" />
-                                                </button>
-                                            )}
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                             {row.getIsExpanded() && row.original.children && (
                                 <div
-                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[30%_30%_30%] justify-between w-full"
+                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[30%_30%_30%] justify-between w-full items-start"
                                     style={{
                                         animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
                                     }}
