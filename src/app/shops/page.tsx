@@ -222,16 +222,16 @@ function Page() {
                         />
                     </div>
                     <div className="w-[48%]">
-                        {activeCategory && (
-                            <Filter
-                                name="Товар"
-                                filters={categoriesItems}
-                                selectedValue={activeCategoryItem}
-                                onChange={setActiveCategoryItem}
-                            />
-                        )}
+                        <Filter filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
                     </div>
-                    <Filter filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
+                    {activeCategory && (
+                        <Filter
+                            name="Товар"
+                            filters={categoriesItems}
+                            selectedValue={activeCategoryItem}
+                            onChange={setActiveCategoryItem}
+                        />
+                    )}
                 </div>
             ) : null}
             {!isMobile && (

@@ -82,7 +82,7 @@ const InstructionModal = ({ isOpen, onClose }: InstructionModalProps) => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
-                    className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+                    className="fixed inset-0 z-90 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 pb-[20px]"
                 >
                     <motion.div
                         ref={modalRef}
@@ -90,7 +90,7 @@ const InstructionModal = ({ isOpen, onClose }: InstructionModalProps) => {
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.95, opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="bg-[#1e1e1e] text-white rounded-2xl shadow-lg max-w-3xl w-full max-h-[80vh] overflow-hidden border border-neutral-800"
+                        className="bg-[#1e1e1e] text-white shadow-lg max-w-3xl w-full max-h-[85vh] overflow-hidden border border-neutral-800"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="flex justify-between items-center px-6 py-4 border-b border-neutral-700">
@@ -120,10 +120,10 @@ const InstructionModal = ({ isOpen, onClose }: InstructionModalProps) => {
                                 options
                             )}
                         </div>
-                        <div className="px-6 py-4 border-t border-neutral-800">
+                        <div className="px-6 py-4 border-t border-neutral-800 pb-[20px]">
                             <button
                                 onClick={setIsShowGuideModal}
-                                className="flex items-center justify-center bg-[#D06E31] hover:bg-[#bb5f29] transition-all text-white font-mono text-sm h-10 px-4 rounded-md"
+                                className="flex items-center justify-center bg-[#D06E31] hover:bg-[#bb5f29] transition-all text-white font-mono text-sm h-10 px-4 "
                             >
                                 <span className="flex items-center gap-2">
                                     Жми сюда

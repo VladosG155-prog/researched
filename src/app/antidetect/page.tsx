@@ -53,9 +53,9 @@ function Page() {
                 freeProfiles: data.freeProfiles,
                 children: [
                     { name: 'Оплата', content: [...data.payment], colSpan: 1 },
-                    { name: 'Фичи', content: data.browserFeatures, colSpan: 1 },
+                    { name: 'Случаи взломов', colSpan: 2, content: data.breachHistory.map((item) => item.description)[0] },
                     { name: 'Бесплатные профиля', content: data.freeProfiles, colSpan: 1 },
-                    { name: 'Случаи взломов', colSpan: 2, content: data.breachHistory.map((item) => item.description)[0] }
+                    { name: 'Фичи', content: data.browserFeatures, colSpan: 1 }
                 ],
                 payment: data.payment,
                 promocodeInfo: antiikiCodes?.find((item) => item[0] === key),
@@ -204,7 +204,9 @@ function Page() {
         { name: 'Цена (сначала дорогая)', value: 'priceDesc', realValue: 'price', desc: true },
         { name: 'Цена (сначала дешевая)', value: 'priceAsc', realValue: 'price', desc: false },
         { name: 'Цена за профиль (сначала дорогая)', value: 'pricePerProfileDesc', realValue: 'price', desc: true },
-        { name: 'Цена за профиль (сначала дешевая)', value: 'pricePerProfileAsc', realValue: 'price', desc: false }
+        { name: 'Цена за профиль (сначала дешевая)', value: 'pricePerProfileAsc', realValue: 'price', desc: false },
+        { name: 'Researched score (сначала больше)', value: 'fraudscoreDesc', realValue: 'fraudscore', desc: true },
+        { name: 'Researched score (сначала меньше)', value: 'fraudscoreAsc', realValue: 'fraudscore', desc: false }
     ];
 
     const handleSortColumnChange = (value) => {
@@ -385,7 +387,7 @@ function Page() {
                                 }
                             }}
                         >
-                            <div className="flex justify-between items-start">
+                            <div className="flex justify-between items-start pb-[3px]">
                                 <div className="w-full">
                                     <div className="relative flex items-center gap-3 justify-between">
                                         <div className="flex gap-2 items-center">
@@ -424,7 +426,7 @@ function Page() {
                                             </button>
                                         )}
                                     </div>
-                                    <div className="grid grid-cols-[30%_20%_24%] justify-between w-full mt-3 items-start">
+                                    <div className="grid grid-cols-[30%_30%_24%] justify-between w-full mt-3 items-start">
                                         <div className="flex flex-col gap-1 min-h-[60px]">
                                             <span className="text-[#7E7E7E] text-[12px]">RS score:</span>
                                             <div className="mt-2">
@@ -450,7 +452,7 @@ function Page() {
                             </div>
                             {row.getIsExpanded() && row.original.children && (
                                 <div
-                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[30%_30%_30%] justify-between w-full items-start"
+                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[30%_40%_30%] justify-between w-full items-start"
                                     style={{
                                         animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
                                     }}
@@ -471,11 +473,15 @@ function Page() {
                                                 </Tooltip>
                                             ))
                                         ) : (
-                                            <span className="text-white text-[12px]">{content}</span>
+                                            <span style={{ wordBreak: 'break-all' }} className="text-white text-[12px] break-after-auto">
+                                                {content}
+                                            </span>
                                         );
                                         return (
                                             <div key={index} className="flex flex-col justify-between">
-                                                <h4 className="text-[#7E7E7E] text-[12px] mb-2">{child.name}</h4>
+                                                <h4 className="text-[#7E7E7E] text-[12px] mb-2" style={{ wordBreak: 'break-all' }}>
+                                                    {child.name}
+                                                </h4>
                                                 <div className="flex gap-3 flex-wrap">{finalData}</div>
                                             </div>
                                         );

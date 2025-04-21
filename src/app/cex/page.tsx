@@ -740,11 +740,11 @@ function Page() {
                                     </div>
                                 </div>
                             ))}
-                            <div className="text-center py-4">
+                            <div className="py-2 absolute top-1/2 left-1/2 -translate-x-1/2 w-full text-center bg-[#0088cc]">
                                 <Link
                                     href="https://t.me/your_telegram_bot"
                                     target="_blank"
-                                    className="text-white bg-[#0088cc] px-4 py-2 rounded-md hover:bg-[#0077b3]"
+                                    className="text-white  px-4 py-2 text-center  hover:bg-[#0077b3]"
                                 >
                                     Увидеть больше? Переходите в нашего ТГ бота
                                 </Link>

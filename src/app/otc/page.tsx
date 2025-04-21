@@ -248,7 +248,7 @@ function Page() {
                                             </button>
                                         )}
                                     </div>
-                                    <div className="grid grid-cols-[33%_33%_33%] justify-between w-full mt-3 items-start">
+                                    <div className="grid grid-cols-[100%] justify-between w-full mt-3 items-start">
                                         <div className="flex flex-col gap-1 min-h-[60px]">
                                             <span className="text-[#7E7E7E] text-[12px] font-medium">Основатель:</span>
                                             <div className="text-[12px] mt-2 text-white">{parse(row.original.faunder, options)}</div>
@@ -266,7 +266,7 @@ function Page() {
                             </div>
                             {row.getIsExpanded() && row.original.children && (
                                 <div
-                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[50%_50%] justify-between w-full items-start"
+                                    className="mt-4 space-y-4 animate-slideDown grid grid-cols-[100%] justify-between w-full items-start"
                                     style={{
                                         animation: row.getIsExpanded() ? 'slideDown 0.3s ease-in-out' : 'slideUp 0.3s ease-in-out'
                                     }}

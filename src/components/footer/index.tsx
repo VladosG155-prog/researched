@@ -21,7 +21,7 @@ import { usePathname, useRouter } from 'next/navigation';
 // Define categories
 const mainCategories = [
     { name: 'Прокси', icon: Wifi, href: '/proxy-static', displayName: 'Прокси' },
-    { name: 'Антидетект браузеры', icon: Shield, href: '/antidetect' },
+    { name: 'Анти-детекты', icon: Shield, href: '/antidetect' },
     { name: 'DePIN прокси', icon: Network, href: '/proxy-depin', image: '/grasstobutton.png' },
     { name: 'Комиссии CEX', icon: DollarSign, href: 'https://t.me/researchedxyz' },
     { name: 'Кошельки', icon: Wallet, href: '/wallets' }
@@ -64,7 +64,7 @@ export const Footer = React.memo(function Categories() {
     }
 
     const handleCategoryClick = (category, href) => {
-        console.log('href', href);
+        toggleExpanded();
         if (category === 'Комиссии CEX') {
             window.open(href);
         } else {
@@ -74,7 +74,7 @@ export const Footer = React.memo(function Categories() {
 
     return (
         <div
-            className={`w-full z-50 left-0 p-[5px] md:p-[0px] fixed bottom-0 transition-opacity duration-300 bg-[#121212] ${
+            className={`w-full z-50 left-0 p-[5px] md:p-[0px] fixed bottom-0 transition-opacity duration-300  ${
                 isVisible ? 'opacity-100' : 'opacity-0'
             }`}
             style={{
