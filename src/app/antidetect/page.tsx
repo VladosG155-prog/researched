@@ -48,6 +48,7 @@ function Page() {
                 pricePerProfile: data.pricePerProfile,
                 price: data.price,
                 support: data.support,
+                priceSortIndex: data.priceSortIndex,
                 fraudscore: rsScoreData.find((item) => item.name === key)?.overall || '-',
                 fraudData: rsScoreData.find((item) => item.name === key) || {},
                 freeProfiles: data.freeProfiles,
@@ -136,14 +137,14 @@ function Page() {
                 enableSorting: true,
                 sortDescFirst: true,
                 cell: (info) => <span className="text-white">{info.getValue()}</span>,
-                sortingFn: (rowA, rowB, columnId) => {
+                sortingFn: (rowA, rowB) => {
                     const parsePrice = (val: any) => {
                         const cleaned = String(val).replace(/[^\d.-]/g, '');
                         return parseFloat(cleaned);
                     };
 
-                    const a = parsePrice(rowA.getValue(columnId));
-                    const b = parsePrice(rowB.getValue(columnId));
+                    const a = parsePrice(rowA.original.priceSortIndex);
+                    const b = parsePrice(rowB.original.priceSortIndex);
 
                     if (isNaN(a) && isNaN(b)) return 0;
                     if (isNaN(a)) return -1;
@@ -158,14 +159,16 @@ function Page() {
                 enableSorting: true,
                 sortDescFirst: true,
                 cell: (info) => <span className="text-white">{info.getValue()}</span>,
-                sortingFn: (rowA, rowB, columnId) => {
+                sortingFn: (rowA, rowB) => {
+                    console.log('@a', rowA);
+                    console.log('@b', rowB);
                     const parsePrice = (val: any) => {
                         const cleaned = String(val).replace(/[^\d.-]/g, '');
                         return parseFloat(cleaned);
                     };
 
-                    const a = parsePrice(rowA.getValue(columnId));
-                    const b = parsePrice(rowB.getValue(columnId));
+                    const a = parsePrice(rowA.original.priceSortIndex);
+                    const b = parsePrice(rowB.original.priceSortIndex);
 
                     if (isNaN(a) && isNaN(b)) return 0;
                     if (isNaN(a)) return -1;
@@ -197,8 +200,8 @@ function Page() {
                         return parseFloat(cleaned);
                     };
 
-                    const a = parsePrice(rowA.getValue(columnId));
-                    const b = parsePrice(rowB.getValue(columnId));
+                    const a = parsePrice(rowA.getValue(rowA.original.priceSortIndex));
+                    const b = parsePrice(rowB.getValue(rowB.original.priceSortIndex));
 
                     if (isNaN(a) && isNaN(b)) return 0;
                     if (isNaN(a)) return -1;
@@ -478,7 +481,7 @@ function Page() {
                                             </button>
                                         )}
                                     </div>
-                                    <div className="grid grid-cols-[30%_30%_24%] justify-between w-full mt-3 items-start">
+                                    <div className="grid grid-cols-[30%_30%_30%] justify-between w-full mt-3 items-start">
                                         <div className="flex flex-col gap-1 min-h-[60px]">
                                             <span className="text-[#7E7E7E] text-[12px]">RS score:</span>
                                             <div className="mt-2">
@@ -534,6 +537,26 @@ function Page() {
                                             </div>
                                         );
                                     })}
+                                </div>
+                            )}
+                            {row.getIsExpanded() && row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (
+                                <div className="flex items-center gap-[20px] mt-3">
+                                    <span className="text-[14px]">
+                                        {' '}
+                                        {row.original?.promocodeInfo[1] && row.original.promocodeInfo[1].buttonName}
+                                    </span>
+                                    <button className="flex items-center bg-[#DEDEDE] cursor-pointer p-[6px]">
+                                        <span
+                                            className="font-normal text-[12px] text-black"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                toggleModal();
+                                                setInfoPromocode({ ...row.original.promocodeInfo[1], link: row.original.link });
+                                            }}
+                                        >
+                                            ПОКАЗАТЬ
+                                        </span>
+                                    </button>
                                 </div>
                             )}
                         </div>

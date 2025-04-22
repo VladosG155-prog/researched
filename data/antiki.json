@@ -9,6 +9,7 @@
         "AdsPower": {
           "price": "9$ = 10 шт",
           "pricePerProfile": "0.9$",
+          "priceSortIndex": 4,
           "freeProfiles": "5",
           "automation": "Да",
           "browserFeatures": "Библиотека готовых RPA. Удобный синхронизатор. Быстрое ядро браузера. Очень популярен среди криптанов",
@@ -78,6 +79,7 @@
         "Dolphin Anty": {
           "price": "10$ = 10 шт",
           "pricePerProfile": "1$",
+          "priceSortIndex": 8,
           "freeProfiles": "10",
           "automation": "Да",
           "browserFeatures": "Много удобств в работе с рекламными платформами и имеет большую популярность среди криптанов",
@@ -115,10 +117,6 @@
               "icon": "/payments_logos/Alipay.webp"
             },
             {
-              "name": "Picpay",
-              "icon": "/payments_logos/Picpay.webp"
-            },
-            {
               "name": "DOGE",
               "icon": "/payments_logos/dogecoin-doge-logo.webp"
             },
@@ -143,6 +141,7 @@
         "Kameleo": {
           "price": "59$ = 20 облачных, ∞ локальных",
           "pricePerProfile": "2.95$ за 1 облачный профиль,но учитывайте, что в тарифе ∞ локальных.",
+          "priceSortIndex": 13,
           "freeProfiles": "0",
           "automation": "Да",
           "browserFeatures": "Безлимитные локальные профили. Уникальные браузеры Chroma и Junglefox способны обходить Cloudflare капчу, а анти-бот Brotector помогает криптану настроить автоматизацию максимально эффективно\nТакже есть мобильная версия для быстрого доступа",
@@ -186,6 +185,7 @@
         "GeeLark": {
           "price": "10 шт = 9$, 0.007$/мин, максимум $1/день (143 мин). Оплата сверх отдельно.",
           "pricePerProfile": "?",
+          "priceSortIndex": null,
           "freeProfiles": "60 минут на месяц",
           "automation": "Да",
           "browserFeatures": "Антидетект-телефоны от AdsPower с синхронизатором и прокси",
@@ -241,6 +241,7 @@
         "Indigo": {
           "price": "99€ = 100 шт",
           "pricePerProfile": "0.99€",
+          "priceSortIndex": 7,
           "freeProfiles": "100 на неделю",
           "automation": "Да",
           "browserFeatures": "Два движка — Mimic (Chromium) и Stealthfox (Firefox) для гибкой работы. Удобная работа с куками через CookieRobot.",
@@ -292,6 +293,7 @@
         "BitBrowser": {
           "price": "10$ = 50 шт",
           "pricePerProfile": "0.2$",
+          "priceSortIndex": 2,
           "freeProfiles": "10",
           "automation": "Да",
           "browserFeatures": "Удобная настройка скриптов, функция эмулирования телефона, дешевый для небольшой команды",
@@ -329,6 +331,7 @@
         "Linken Sphere": {
           "price": "30$ = 30 шт",
           "pricePerProfile": "1$",
+          "priceSortIndex": 9,
           "freeProfiles": "5",
           "automation": "Нет",
           "browserFeatures": "Продвинутая защита отпечатков. Хорошее шифрование локальных данных. Продвинутый куки робот с возможностью имитации перехода через поиск. Мобильная веб-эмуляция. Три режима работы антидетекта\n\nОдин из первых антидетектов на рынке. Работают уже 8 лет.",
@@ -364,6 +367,7 @@
         "Incogniton": {
           "price": "20$ = 10 шт",
           "pricePerProfile": "2$",
+          "priceSortIndex": 11,
           "freeProfiles": "10, но через 2 мес. - 3",
           "automation": "Да",
           "browserFeatures": "Возможность хранить данные локально только на своем устройстве. Возможность покупать прокси прямо в приложение браузера.",
@@ -407,6 +411,7 @@
         "GoLogin": {
           "price": "49$ = 100 шт",
           "pricePerProfile": "0.49$",
+          "priceSortIndex": 3,
           "freeProfiles": "3",
           "automation": "Да",
           "browserFeatures": "Создание профиля и прокси в 1 клик, встроенные прокси, которые стабильно работают, 2GB прокси включено в тариф",
@@ -442,6 +447,7 @@
         "Multilogin": {
           "price": "29€  = 10 шт",
           "pricePerProfile": "2.9€",
+          "priceSortIndex": 12,
           "freeProfiles": "0",
           "automation": "Да",
           "browserFeatures": "Уникальные браузеры Mimic и Stealthfox. AI для идеальной симуляции отпечатков и автоматизации. Безлимит по кол-ву участников команды",
@@ -481,6 +487,7 @@
         "Octo Browser": {
           "price": "30$ = 10 шт",
           "pricePerProfile": "3$",
+          "priceSortIndex": 14,
           "freeProfiles": "Промокод",
           "automation": "Да",
           "browserFeatures": "Быстрые апдейты до последней версии ядра. Особое отношение к безопасности - взломоустойчивая архитектура своих сервисов. Пароли на профиль позволяют закрыть ваши данные сквозным шифрованием. Двухфакторная аутентификация защищает ваши аккаунты даже при потере пароля.",
@@ -528,6 +535,7 @@
         "Undetectable": {
           "price": "49$ = 50 облачных, ∞ локальных",
           "pricePerProfile": "0.98$ за 1 облачный профиль, но учитывайте, что в тарифе ∞ локальных.",
+          "priceSortIndex": 6,
           "freeProfiles": "5",
           "automation": "Да",
           "browserFeatures": "Автоматический фарм файлов cookie для прогрева профилей, функция «Paste Like Human», которая имитирует поведение человека при вставке текста,",
@@ -575,45 +583,7 @@
         "MoreLogin": {
           "price": "9$ = 10 шт",
           "pricePerProfile": "0.9$",
-          "freeProfiles": "2 + промокод",
-          "automation": "Да",
-          "browserFeatures": "Прошли аудит безопасности от SlowMist, киллерфича - не эмулятор, а полноценный облачный мобильный телефон на базе ARM чипа, ОС Android, умеет обнаруживать смену IP на странице в реальном времени.",
-          "payment": [
-            {
-              "name": "Visa",
-              "icon": "/payments_logos/VISAcard.webp"
-            },
-            {
-              "name": "Mastercard",
-              "icon": "/payments_logos/MasterCardcard.webp"
-            },
-            {
-              "name": "Mir",
-              "icon": "/payments_logos/MIRcard.webp"
-            },
-            {
-              "name": "BTC",
-              "icon": "/payments_logos/Bitcoin.svg.webp"
-            },
-            {
-              "name": "USDT",
-              "icon": "/payments_logos/tether-usdt-logo.webp"
-            },
-            {
-              "name": "Paypal",
-              "icon": "/payments_logos/Paypal.webp"
-            }
-          ],
-          "support": "1 мин.",
-          "referral": "researchedxyz",
-          "opinion": "-",
-          "breachHistory": [],
-          "link": "https://www.morelogin.com/register/?from=researchedxyz",
-          "icon": "/Anty/www.morelogin.com.webp"
-        },
-        "MoreLogin (обычный антик)": {
-          "price": "9$ = 10 шт",
-          "pricePerProfile": "0.9$",
+          "priceSortIndex": 5,
           "freeProfiles": "2 + промокод",
           "automation": "Да",
           "browserFeatures": "Прошли аудит безопасности от SlowMist, киллерфича - не эмулятор, а полноценный облачный мобильный телефон на базе ARM чипа, ОС Android, умеет обнаруживать смену IP на странице в реальном времени.",
@@ -653,6 +623,7 @@
         "AntBrowser": {
           "price": "12$ = 10 шт",
           "pricePerProfile": "1.2$",
+          "priceSortIndex": 10,
           "freeProfiles": "2 + промокод",
           "automation": "Да",
           "browserFeatures": "Особое отношение к командной работе - журнал действий команды. По их словам: \"единственный в мире антидетект-браузер с функцией восстановления данных по контрольным точкам\"",
@@ -704,6 +675,7 @@
         "swSamara": {
           "price": "40$ на год = ∞ шт, 0 облачных",
           "pricePerProfile": "0.33$. Цена из-за бесконечности стремится к нулю, но для примера мы взяли 10 профилей.",
+          "priceSortIndex": 1,
           "freeProfiles": "0",
           "automation": "Нет",
           "browserFeatures": "Максимально дешевый",

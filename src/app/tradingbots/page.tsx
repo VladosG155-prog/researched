@@ -236,6 +236,11 @@ function Page() {
     const handleSortColumnChange = (value) => {
         setSortColumn(value);
 
+        if (value.includes('Скорость') && !selectedFilter) {
+            setIsShowSpeedModal(true);
+            return;
+        }
+
         const val = sortColumns.find((sort) => sort.name === value);
         if (val) {
             setSorting([{ id: val.realValue, desc: val.desc }]);
@@ -248,6 +253,7 @@ function Page() {
         setSelectedFilter('');
         setSelectedInterface('');
         setSortColumn('');
+        setSorting([]);
     };
 
     return (
