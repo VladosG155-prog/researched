@@ -315,6 +315,8 @@ export function Page() {
         return window.matchMedia('(max-width: 768px)').matches;
     }
 
+    window.location.href = '/';
+
     // Preload heart and orange ball images, initialize AudioContext for effects
     useEffect(() => {
         // Load images...
