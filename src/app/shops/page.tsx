@@ -209,8 +209,8 @@ function Page() {
                 title="Товары"
             />
             {isMobile ? (
-                <div className="flex gap-2 justify-between">
-                    <div className="w-[30%]">
+                <div className="flex gap-2 justify-between flex-wrap">
+                    <div className="w-[48%]">
                         <Filter
                             name="Категория"
                             filters={categories}
@@ -221,10 +221,10 @@ function Page() {
                             }}
                         />
                     </div>
-                    <div className="w-[30%]">
+                    <div className="w-[48%]">
                         <Filter filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
                     </div>
-                    <div className="w-[30%]">
+                    <div className="w-[100%]">
                         {' '}
                         <Filter
                             name="Товар"
