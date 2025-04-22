@@ -306,7 +306,7 @@ function Page() {
     const fetchWithdrawalFee = async (network: string, coin: string) => {
         try {
             console.log('Fetching data for:', { network, coin });
-            const response = await fetch(`http://213.176.74.94:8000/withdrawal_fee?network=${network}&coin=${coin}`);
+            const response = await fetch(`/withdrawal_fee?network=${network}&coin=${coin}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
