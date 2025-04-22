@@ -22,6 +22,7 @@ import { getProxyCountries } from '@/utils/get-proxy-countries-data';
 import { getUniquePayments } from '@/utils/get-payments';
 import { MobileProxyFilters } from '@/components/mobile-proxy-filter';
 import useIsMobile from '@/hooks/useIsMobile';
+import { getStaticProxyPromocodes } from '@/utils/get-promocodes';
 
 const dataStatic = Object?.entries(depinData.Data.proxy.tools) || {};
 export const dynamic = 'force-dynamic';
@@ -31,7 +32,7 @@ const PROXY_FILTERS = [
     { name: 'Мобильные', link: 'proxy-mobile' },
     { name: 'Для DePIN', link: 'proxy-depin' }
 ];
-
+const staticProxies = getStaticProxyPromocodes();
 function Page() {
     const [expanded, setExpanded] = useState<ExpandedState>({});
     const [isOpenModal, setIsOpenModal] = useState(false);
@@ -53,6 +54,7 @@ function Page() {
                 fraudscore: newData.fraudscore || '',
                 grass: newData.realGrass24hrPoints,
                 gradient: newData.realGradient24hrPoints,
+                promocodeInfo: staticProxies?.find((item) => item[0] === name),
                 payments: newData.payment,
                 countries: newData?.countries,
                 icon: newData.icon,
