@@ -23,11 +23,11 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "http://localhost:8000/:path*",
+        destination: "http://213.176.74.94:8000/:path*",
       },
       {
         source: "/withdrawal_fee",
-        destination: "http://localhost:8000/withdrawal_fee",
+        destination: "http://213.176.74.94:8000/withdrawal_fee",
       }
     ];
   },
