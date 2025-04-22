@@ -24,6 +24,7 @@ import BreachModal from '@/components/breach-modal';
 import { TopPlace } from '@/components/top-place';
 import othersTokens from '../../../data/other_coins.json';
 import Modal from '@/components/modal';
+import useIsMobile from '@/hooks/useIsMobile';
 
 const dataNew = Object.entries(cexData.Data.cex.tools);
 const options = {
@@ -35,6 +36,7 @@ const options = {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#121212] flex items-center gap-1 transition max-w-[150px] h-[30px] p-5 mt-4"
+                    onClick={(e) => e.stopPropagation()}
                 >
                     <ExternalLink className="w-6 h-6" />
                     <span className="text-[10px] md:text-[14px]">{domToReact(domNode.children)}</span>
@@ -89,6 +91,8 @@ function Page() {
     const [token, setToken] = useState('');
     const router = useRouter();
 
+    const isMobile = useIsMobile();
+
     const mappedData = useMemo(() => {
         return dataNew.map((elem) => {
             const [key, data] = elem;
@@ -102,16 +106,23 @@ function Page() {
                 earnings: data.earnings,
                 restrictions: data.restrictions || '',
                 fullRestrictions: data.fullRestrictions,
-                children: [
-                    { name: 'Комиссии', content: data.fees, colSpan: 1 },
-                    { name: 'Случаи взломов', content: data.breachHistory, colSpan: 2 },
-                    { name: 'Как заработать', content: data.earnings, colSpan: 2 },
-                    { name: 'KYC', content: data.kyc, colSpan: 1 }
-                ],
+                children: isMobile
+                    ? [
+                          { name: 'Комиссии', content: data.fees, colSpan: 1 },
+                          { name: 'Случаи взломов', content: data.breachHistory, colSpan: 2 },
+                          { name: 'Как заработать', content: data.earnings, colSpan: 2 },
+                          { name: 'KYC', content: data.kyc, colSpan: 1 }
+                      ]
+                    : [
+                          { name: 'KYC', content: data.kyc, colSpan: 1 },
+                          { name: 'Комиссии', content: data.fees, colSpan: 1 },
+                          { name: 'Случаи взломов', content: data.breachHistory, colSpan: 2 },
+                          { name: 'Как заработать', content: data.earnings, colSpan: 2 }
+                      ],
                 icon: data.icon
             };
         });
-    }, [dataNew]);
+    }, [dataNew, isMobile]);
 
     const columnHelper = createColumnHelper();
 
@@ -196,7 +207,17 @@ function Page() {
             columnHelper.accessor('subAccounts', {
                 header: 'Субаккаунты',
                 size: 250,
-                cell: (info) => <span className="text-white cursor-pointer">{info.getValue()}</span>,
+                cell: ({ row }) => {
+                    console.log(row.original);
+
+                    return (
+                        <span className="text-white cursor-pointer">
+                            {typeof row.original.subAccounts === 'string'
+                                ? parse(row.original.subAccounts, options2)
+                                : row.original.subAccounts}
+                        </span>
+                    );
+                },
                 enableSorting: false,
                 sortDescFirst: true
             }),
@@ -538,13 +559,20 @@ function Page() {
                                     ))}
                                     <tr>
                                         <td colSpan={5} className="text-center py-4">
-                                            <Link
-                                                href="https://t.me/your_telegram_bot"
+                                            <span
                                                 target="_blank"
-                                                className="text-white bg-[#0088cc] px-4 py-2 -md hover:bg-[#0077b3] absolute left-[50%] top-[65%] -translate-x-1/2"
+                                                className="text-white  px-4 py-2 -md hover:bg-[#0077b3] absolute left-[50%] top-[65%] -translate-x-1/2"
                                             >
                                                 Увидеть больше? Переходите в нашего ТГ бота
-                                            </Link>
+                                                <br />
+                                                <Link
+                                                    href="https://t.me/researchedxyz_bot"
+                                                    target="_blank"
+                                                    className="text-white  px-4 py-2 -md hover:bg-[#0077b3] absolute left-[50%] top-[65%] -translate-x-1/2 underline"
+                                                >
+                                                    ТГ бот
+                                                </Link>
+                                            </span>
                                         </td>
                                     </tr>
                                 </>
@@ -556,7 +584,11 @@ function Page() {
                 {/* Mobile View */}
                 <div className="md:hidden space-y-4">
                     {visibleRows.map((row) => (
-                        <div key={row.id} className="bg-[#282828] p-4 cursor-pointer hover:bg-[#333333] transition-colors">
+                        <div
+                            onClick={() => window.open(row.original.link, '_blank')}
+                            key={row.id}
+                            className="bg-[#282828] p-4 cursor-pointer hover:bg-[#333333] transition-colors"
+                        >
                             <div className="flex justify-between items-start">
                                 <div className="w-full">
                                     <div className="relative flex items-center gap-3 justify-between">
@@ -646,7 +678,8 @@ function Page() {
                                                     {child.name === 'Как заработать' ? (
                                                         <button
                                                             className="bg-[#121212] flex items-center gap-1 transition max-w-max h-[30px] p-2 cursor-pointer text-[10px]"
-                                                            onClick={() => {
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
                                                                 setIsOpenEarningModal(true);
                                                                 setOpenedEarnings(row.original.earnings);
                                                             }}
@@ -671,7 +704,7 @@ function Page() {
                                                     <button
                                                         onClick={(e) => {
                                                             e.stopPropagation();
-                                                            setOpenRestrictions(info.row.original.fullRestrictions);
+                                                            setOpenRestrictions(row.original.fullRestrictions);
 
                                                             setIsOpenRestrictionsModal(true);
                                                         }}
@@ -738,7 +771,11 @@ function Page() {
                                                 </div>
                                                 <div className="flex flex-col gap-1 min-h-[60px]">
                                                     <span className="text-[#7E7E7E] text-[12px]">Субаккаунты:</span>
-                                                    <span className="text-[12px] mt-2">{row.original.subAccounts}</span>
+                                                    <span className="text-[12px] mt-2">
+                                                        {typeof row.original.subAccounts === 'string'
+                                                            ? parse(row.original.subAccounts, options2)
+                                                            : row.original.subAccounts}
+                                                    </span>
                                                 </div>
                                                 <div className="flex flex-col gap-1 min-h-[60px]">
                                                     <span className="text-[#7E7E7E] text-[12px]">Назначение:</span>
@@ -755,13 +792,16 @@ function Page() {
                                     </div>
                                 </div>
                             ))}
-                            <div className="py-2 absolute top-1/2 left-1/2 -translate-x-1/2 w-full text-center bg-[#0088cc]">
-                                <Link
-                                    href="https://t.me/your_telegram_bot"
-                                    target="_blank"
-                                    className="text-white  px-4 py-2 text-center  hover:bg-[#0077b3]"
-                                >
+                            <div className="py-2 absolute top-1/2 left-1/2 -translate-x-1/2 w-full text-center flex flex-col">
+                                <Link href="https://t.me/researchedxyz_bot" target="_blank" className="text-white  px-4 py-2 text-center  ">
                                     Увидеть больше? Переходите в нашего ТГ бота
+                                </Link>
+                                <Link
+                                    href="https://t.me/researchedxyz_bot"
+                                    target="_blank"
+                                    className="text-white  px-4 py-2 text-center underline"
+                                >
+                                    ТГ бот
                                 </Link>
                             </div>
                         </>

@@ -246,7 +246,14 @@ function Page() {
                             setActiveCategory(val);
                         }}
                     />
-                    <Filter name="Товар" filters={categoriesItems} selectedValue={activeCategoryItem} onChange={setActiveCategoryItem} />
+                    {activeCategory && (
+                        <Filter
+                            name="Товар"
+                            filters={categoriesItems}
+                            selectedValue={activeCategoryItem}
+                            onChange={setActiveCategoryItem}
+                        />
+                    )}
                     <Filter filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
                 </div>
             )}
@@ -279,7 +286,7 @@ function Page() {
                                             <td
                                                 key={cell.id}
                                                 onClick={() => {
-                                                    router.push(row.original.link);
+                                                    window.open(row.original.link, '_blank');
                                                 }}
                                                 className="p-3 cursor-pointer first: last:-r-md"
                                             >

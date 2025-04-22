@@ -283,7 +283,7 @@ function Page() {
                         <Filter onChange={setSelectedInterface} selectedValue={selectedInterface} filters={interfaces} name="Интерфейс" />
                     </div>
                     {isMobile && (
-                        <div className="mb-5 w-[10%]">
+                        <div className="mb-5 w-[9%]">
                             <Filter
                                 filters={sortColumns}
                                 selectedValue={sortColumn}
@@ -422,7 +422,7 @@ function Page() {
                         <div
                             key={row.id}
                             className="bg-[#282828] p-4 cursor-pointer hover:bg-[#333333] transition-colors"
-                            onClick={() => window.open(row.original.link)}
+                            onClick={() => window.open(row.original.link, '_blank')}
                         >
                             <div className="flex justify-between items-start">
                                 <div className="w-full">

@@ -393,7 +393,13 @@ function Page() {
                             {table.getRowModel().rows.map((row) => (
                                 <Fragment key={row.id}>
                                     <tr
-                                        onClick={() => {
+                                        onClick={(e) => {
+                                            if (row.original.id === 'YouProxy' || row.original.id === 'BeeProxies') {
+                                                e.stopPropagation();
+                                                toggleModal();
+                                                setOpenedPromocode(row.original.promocodeInfo[1]);
+                                                return;
+                                            }
                                             window.open(row.original.link);
                                         }}
                                         className="hover:bg-[#333333] bg-[#282828] -md"
@@ -438,7 +444,15 @@ function Page() {
                         <div
                             key={row.id}
                             className="bg-[#282828] p-4 cursor-pointer  hover:bg-[#333333] transition-colors"
-                            onClick={() => window.open(row.original.link)}
+                            onClick={(e) => {
+                                if (row.original.id === 'YouProxy' || row.original.id === 'BeeProxies') {
+                                    e.stopPropagation();
+                                    toggleModal();
+                                    setOpenedPromocode(row.original.promocodeInfo[1]);
+                                    return;
+                                }
+                                window.open(row.original.link);
+                            }}
                         >
                             <div className="flex justify-between items-start pb-[3px]">
                                 <div className="w-full">

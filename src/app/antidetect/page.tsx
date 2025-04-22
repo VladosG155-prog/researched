@@ -51,13 +51,19 @@ function Page() {
                 fraudscore: rsScoreData.find((item) => item.name === key)?.overall || '-',
                 fraudData: rsScoreData.find((item) => item.name === key) || {},
                 freeProfiles: data.freeProfiles,
-                children: [
-                    { name: 'Оплата', content: [...data.payment], colSpan: 1 },
-
-                    { name: 'Бесплатные профиля', content: data.freeProfiles, colSpan: 1 },
-                    { name: 'Случаи взломов', colSpan: 2, content: data.breachHistory.map((item) => item.description)[0] },
-                    { name: 'Фичи', content: data.browserFeatures, colSpan: 1 }
-                ],
+                children: isMobile
+                    ? [
+                          { name: 'Оплата', content: [...data.payment], colSpan: 1 },
+                          { name: 'Бесплатные профиля', content: data.freeProfiles, colSpan: 1 },
+                          { name: 'Случаи взломов', colSpan: 2, content: data.breachHistory.map((item) => item.description)[0] },
+                          { name: 'Фичи', content: data.browserFeatures, colSpan: 1 }
+                      ]
+                    : [
+                          { name: 'Оплата', content: [...data.payment], colSpan: 1 },
+                          { name: 'Фичи', content: data.browserFeatures, colSpan: 1 },
+                          { name: 'Случаи взломов', colSpan: 2, content: data.breachHistory.map((item) => item.description)[0] },
+                          { name: 'Бесплатные профиля', content: data.freeProfiles, colSpan: 1 }
+                      ],
                 payment: data.payment,
                 promocodeInfo: antiikiCodes?.find((item) => item[0] === key),
                 icon: data.icon,
@@ -69,7 +75,7 @@ function Page() {
             data = data.filter((elem) => elem.payment.some((pay) => pay.name === payment));
         }
         return data;
-    }, [dataNew, payment]);
+    }, [dataNew, payment, isMobile]);
 
     const columnHelper = createColumnHelper<any>();
 
@@ -486,12 +492,12 @@ function Page() {
                                             </div>
                                         </div>
                                         <div className="flex flex-col gap-1 min-h-[60px]">
-                                            <span className="text-[#7E7E7E] text-[12px]">Цена за профиль:</span>
-                                            <span className="text-[12px] mt-2">{row.original.pricePerProfile}</span>
-                                        </div>
-                                        <div className="flex flex-col gap-1 min-h-[60px]">
                                             <span className="text-[#7E7E7E] text-[12px]">Цена:</span>
                                             <span className="text-[12px] mt-2">{row.original.price}</span>
+                                        </div>
+                                        <div className="flex flex-col gap-1 min-h-[60px]">
+                                            <span className="text-[#7E7E7E] text-[12px]">Цена за профиль:</span>
+                                            <span className="text-[12px] mt-2">{row.original.pricePerProfile}</span>
                                         </div>
                                     </div>
                                 </div>

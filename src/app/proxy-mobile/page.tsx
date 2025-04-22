@@ -387,7 +387,13 @@ function Page() {
                             {table.getRowModel().rows.map((row) => (
                                 <Fragment key={row.id}>
                                     <tr
-                                        onClick={() => {
+                                        onClick={(e) => {
+                                            if (row.original.id === 'YouProxy' || row.original.id === 'BeeProxies') {
+                                                e.stopPropagation();
+                                                toggleModal();
+                                                setOpenedPromocode(row.original.promocodeInfo[1]);
+                                                return;
+                                            }
                                             window.open(row.original.link);
                                         }}
                                         className="hover:bg-[#333333] bg-[#282828] -md"
@@ -432,7 +438,15 @@ function Page() {
                         <div
                             key={row.id}
                             className="bg-[#282828] p-4 cursor-pointer hover:bg-[#333333] transition-colors"
-                            onClick={() => window.open(row.original.link)}
+                            onClick={(e) => {
+                                if (row.original.id === 'YouProxy' || row.original.id === 'BeeProxies') {
+                                    e.stopPropagation();
+                                    toggleModal();
+                                    setOpenedPromocode(row.original.promocodeInfo[1]);
+                                    return;
+                                }
+                                window.open(row.original.link);
+                            }}
                         >
                             <div className="flex justify-between items-start pb-[3px]">
                                 <div className="w-full">
@@ -471,14 +485,14 @@ function Page() {
                                             </button>
                                         )}
                                     </div>
-                                    <div className="grid grid-cols-[30%_20%_24%_24%] justify-between w-full">
+                                    <div className="grid grid-cols-[30%_30%_30%] justify-between w-full">
                                         <div className="flex flex-col gap-2">
                                             <span className="text-[#7E7E7E] text-[12px]">RS score:</span>
                                             <Score totalScore={row.original.fraudscore} data={row.original.fraudData} />
                                         </div>
 
                                         <p className="text-[14px]">
-                                            <span className="text-[#7E7E7E] text-[12px]">Цена:</span> <br />
+                                            <span className="text-[#7E7E7E] text-[12px]">Цена за день:</span> <br />
                                             <span className="text-[12px]">{row.original.price}</span>
                                         </p>
 

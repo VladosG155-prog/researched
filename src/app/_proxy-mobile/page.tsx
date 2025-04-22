@@ -462,7 +462,7 @@ function Page() {
                                         </div>
 
                                         <p className="text-[14px]">
-                                            <span className="text-[#7E7E7E] text-[12px]">Цена:</span> <br />
+                                            <span className="text-[#7E7E7E] text-[12px]">Цена за день:</span> <br />
                                             <span className="text-[12px]">{row.original.price}</span>
                                         </p>
 
