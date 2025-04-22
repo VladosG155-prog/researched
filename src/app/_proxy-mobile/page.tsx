@@ -10,7 +10,7 @@ import {
 } from '@tanstack/react-table';
 import proxyData from '../../../data/mobileproxy.json';
 import proxyScoreData from '../../../data/RS_Score_Proxy.json';
-import CategoriesLayout from '../_categories/layout';
+import CategoriesLayout from '../categories/layout';
 import { ChevronDown, ChevronUp, Eye, FilterIcon, Gift, SortAsc, SortDesc } from 'lucide-react';
 import { Fragment, useMemo, useState } from 'react';
 import Image from 'next/image';
@@ -287,6 +287,7 @@ function Page() {
                                 selectedValue={sortColumn}
                                 onChange={handleSortColumnChange}
                                 name="Сортировка"
+                                isSorting={true}
                                 showSearch={false}
                             />
                         </div>
@@ -461,7 +462,7 @@ function Page() {
                                         </div>
 
                                         <p className="text-[14px]">
-                                            <span className="text-[#7E7E7E] text-[12px]">Цена:</span> <br />
+                                            <span className="text-[#7E7E7E] text-[12px]">Цена за день:</span> <br />
                                             <span className="text-[12px]">{row.original.price}</span>
                                         </p>
 

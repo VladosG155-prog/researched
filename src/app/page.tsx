@@ -1,314 +1,43 @@
-'use client';
+//'use client'; // Убрали директиву
 
-import { useEffect, useRef, useState } from 'react';
+import React from 'react'; // Оставили React
+import type { Metadata } from 'next';
+import { Welcome } from '@/components/welcome-client'; // Импортируем новый компонент
 
-const COLOR = '#FFFFFF';
-const HIT_COLOR = '#333333';
-const BACKGROUND_COLOR = '#000000';
-const BALL_COLOR = '#FFFFFF';
-const PADDLE_COLOR = '#FFFFFF';
-const LETTER_SPACING = 1;
-const WORD_SPACING = 3;
-
-// Target date: April 17, 2025, 13:00 Moscow time (UTC+3)
-const TARGET_DATE = new Date('2025-04-22T21:00:00+03:00');
-
-// Power-up types
-enum PowerUpType {
-    EXPAND_PADDLE = 0,
-    SLOW_BALL = 1,
-    EXTRA_LIFE = 2,
-    ORANGE_BALL = 3 // New power-up type
-}
-
-// Power-up colors
-const POWER_UP_COLORS = {
-    [PowerUpType.EXPAND_PADDLE]: '#4CAF50', // Green
-    [PowerUpType.SLOW_BALL]: '#2196F3', // Blue
-    [PowerUpType.EXTRA_LIFE]: '#4CAF50', // Changed to green to match heart icon
-    [PowerUpType.ORANGE_BALL]: '#FF9800' // Orange for the new power-up
-};
-
-// Game states
-enum GameState {
-    NOT_STARTED = 0,
-    PLAYING = 1,
-    GAME_OVER = 2,
-    VICTORY = 3
-}
-
-const PIXEL_MAP = {
-    R: [
-        [1, 1, 1, 1],
-        [1, 0, 0, 1],
-        [1, 1, 1, 1],
-        [1, 0, 1, 0],
-        [1, 0, 0, 1]
-    ],
-    E: [
-        [1, 1, 1, 1],
-        [1, 0, 0, 0],
-        [1, 1, 1, 1],
-        [1, 0, 0, 0],
-        [1, 1, 1, 1]
-    ],
-    S: [
-        [1, 1, 1, 1],
-        [1, 0, 0, 0],
-        [1, 1, 1, 1],
-        [0, 0, 0, 1],
-        [1, 1, 1, 1]
-    ],
-    A: [
-        [0, 1, 1, 0],
-        [1, 0, 0, 1],
-        [1, 1, 1, 1],
-        [1, 0, 0, 1],
-        [1, 0, 0, 1]
-    ],
-    C: [
-        [1, 1, 1, 1],
-        [1, 0, 0, 0],
-        [1, 0, 0, 0],
-        [1, 0, 0, 0],
-        [1, 1, 1, 1]
-    ],
-    H: [
-        [1, 0, 0, 1],
-        [1, 0, 0, 1],
-        [1, 1, 1, 1],
-        [1, 0, 0, 1],
-        [1, 0, 0, 1]
-    ],
-    D: [
-        [1, 1, 1, 0],
-        [1, 0, 0, 1],
-        [1, 0, 0, 1],
-        [1, 0, 0, 1],
-        [1, 1, 1, 0]
-    ],
-    '.': [[0], [0], [0], [0], [1]],
-    X: [
-        [1, 0, 0, 1],
-        [0, 1, 1, 0],
-        [0, 1, 1, 0],
-        [0, 1, 1, 0],
-        [1, 0, 0, 1]
-    ],
-    Y: [
-        [1, 0, 0, 0, 1],
-        [0, 1, 0, 1, 0],
-        [0, 0, 1, 0, 0],
-        [0, 0, 1, 0, 0],
-        [0, 0, 1, 0, 0]
-    ],
-    Z: [
-        [1, 1, 1, 1],
-        [0, 0, 0, 1],
-        [0, 0, 1, 0],
-        [0, 1, 0, 0],
-        [1, 1, 1, 1]
-    ],
-    '0': [
-        [0, 1, 1, 0],
-        [1, 0, 0, 1],
-        [1, 0, 0, 1],
-        [1, 0, 0, 1],
-        [0, 1, 1, 0]
-    ],
-    '1': [
-        [0, 1, 0],
-        [1, 1, 0],
-        [0, 1, 0],
-        [0, 1, 0],
-        [1, 1, 1]
-    ],
-    '2': [
-        [1, 1, 1, 0],
-        [0, 0, 0, 1],
-        [0, 1, 1, 0],
-        [1, 0, 0, 0],
-        [1, 1, 1, 1]
-    ],
-    '3': [
-        [1, 1, 1, 0],
-        [0, 0, 0, 1],
-        [0, 1, 1, 0],
-        [0, 0, 0, 1],
-        [1, 1, 1, 0]
-    ],
-    '4': [
-        [1, 0, 0, 1],
-        [1, 0, 0, 1],
-        [1, 1, 1, 1],
-        [0, 0, 0, 1],
-        [0, 0, 0, 1]
-    ],
-    '5': [
-        [1, 1, 1, 1],
-        [1, 0, 0, 0],
-        [1, 1, 1, 0],
-        [0, 0, 0, 1],
-        [1, 1, 1, 0]
-    ],
-    '6': [
-        [0, 1, 1, 0],
-        [1, 0, 0, 0],
-        [1, 1, 1, 0],
-        [1, 0, 0, 1],
-        [0, 1, 1, 0]
-    ],
-    '7': [
-        [1, 1, 1, 1],
-        [0, 0, 0, 1],
-        [0, 0, 1, 0],
-        [0, 1, 0, 0],
-        [0, 1, 0, 0]
-    ],
-    '8': [
-        [0, 1, 1, 0],
-        [1, 0, 0, 1],
-        [0, 1, 1, 0],
-        [1, 0, 0, 1],
-        [0, 1, 1, 0]
-    ],
-    '9': [
-        [0, 1, 1, 0],
-        [1, 0, 0, 1],
-        [0, 1, 1, 1],
-        [0, 0, 0, 1],
-        [0, 1, 1, 0]
-    ],
-    ':': [[0], [1], [0], [1], [0]],
-    ' ': [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0]
-    ]
-};
-
-interface Pixel {
-    x: number;
-    y: number;
-    size: number;
-    hit: boolean;
-    specialPowerUp?: boolean; // Flag for pixels that will drop power-ups
-}
-
-interface Ball {
-    x: number;
-    y: number;
-    dx: number;
-    dy: number;
-    radius: number;
-    active: boolean;
-    baseSpeed: number; // Base speed to calculate from
-    currentSpeed: number; // Current speed factor
-}
-
-interface Paddle {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    originalWidth: number; // Store original width for power-ups
-}
-
-interface PowerUp {
-    x: number;
-    y: number;
-    dy: number;
-    size: number;
-    type: PowerUpType;
-    active: boolean;
-}
-
-// Particle for victory celebration
-interface Particle {
-    x: number;
-    y: number;
-    dx: number;
-    dy: number;
-    radius: number;
-    color: string;
-    alpha: number;
-    life: number;
-    maxLife: number;
-    isFirework?: boolean; // Is it an initial firework rocket?
-    exploded?: boolean; // Has the firework exploded?
-    gravity?: number; // Gravity effect for explosion particles
-}
-
-export function Page() {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-    const pixelsRef = useRef<Pixel[]>([]);
-    const timerPixelsRef = useRef<Pixel[]>([]);
-    const ballRef = useRef<Ball>({
-        x: 0,
-        y: 0,
-        dx: 0,
-        dy: 0,
-        radius: 0,
-        active: false,
-        baseSpeed: 0,
-        currentSpeed: 0.7
-    });
-    const paddleRef = useRef<Paddle>({
-        x: 0,
-        y: 0,
-        width: 0,
-        height: 0,
-        originalWidth: 0
-    });
-    const powerUpsRef = useRef<PowerUp[]>([]);
-    const scaleRef = useRef(1);
-    const countdownTimeRef = useRef('00:00:00');
-    const requestRef = useRef<number | null>(null); // Fixed linter error: initialized with null
-    const timerPositionRef = useRef({ startX: 0, startY: 0, pixelSize: 0 });
-    const gameInitializedRef = useRef(false);
-    const canvasSizeRef = useRef({ width: 0, height: 0 });
-    const [gameState, setGameState] = useState<GameState>(GameState.NOT_STARTED);
-    const [isMobile, setIsMobile] = useState(isMobileCheck());
-    const touchPositionRef = useRef(0);
-    const [lives, setLives] = useState(3);
-    const lastTimeRef = useRef(0);
-    const speedIncreaseIntervalRef = useRef<NodeJS.Timeout | null>(null);
-    const powerUpTimersRef = useRef<{ [key: string]: NodeJS.Timeout | null }>({
-        expandPaddle: null,
-        slowBall: null
-    });
-    const totalPowerUpsRef = useRef(0); // Counter for total power-ups spawned
-    const heartImageRef = useRef<HTMLImageElement | null>(null);
-    const orangeBallCollectedRef = useRef(false);
-    const orangeBallImageRef = useRef<HTMLImageElement | null>(null);
-    const lastPowerUpTimeRef = useRef(0);
-    const particlesRef = useRef<Particle[]>([]);
-    const victoryTimeRef = useRef(0);
-    const audioContextRef = useRef<AudioContext | null>(null);
-    const audioRef = useRef<HTMLAudioElement | null>(null);
-    const [isMusicPlaying, setIsMusicPlaying] = useState(false);
-    const [isMusicLoaded, setIsMusicLoaded] = useState(false);
-    const [musicError, setMusicError] = useState<string | null>(null);
-    const [showMusicButton, setShowMusicButton] = useState(true);
-    const [musicVolume, setMusicVolume] = useState(0.5);
-    const victoryAnimationProgressRef = useRef(0);
-    const initialTimerYRef = useRef(0);
-    const targetTimerYRef = useRef(0);
-    const animatedTimerYRef = useRef(0);
-    const victoryButtonRectRef = useRef({ x: 0, y: 0, width: 0, height: 0 });
-    const victoryEffectsIntervalRef = useRef<NodeJS.Timeout | null>(null);
-    // Ref to hold the current game state for access in intervals/timeouts
-    const gameStateRef = useRef(gameState);
-
-    function isMobileCheck() {
-        if (typeof window === 'undefined') {
-            return false;
-        }
-        return window.matchMedia('(max-width: 768px)').matches;
+// Экспортируем метаданные
+export const metadata = {
+    title: 'Купить расходники для мультиаккаунтинга и крипты дёшево | researched.xyz',
+    description:
+        'researched.xyz — агрегатор сервисов для мультиаккаунтинга. Антидетекты, прокси, боты, кошельки, CEX, OTC и т.д. Всё купили, проверили и отсортировали.',
+    openGraph: {
+        title: 'Купить расходники для мультиаккаунтинга и крипты дёшево | researched.xyz',
+        description: 'researched.xyz — агрегатор сервисов для мультиаккаунтинга...',
+        url: 'https://researched.xyz/',
+        siteName: 'researched.xyz',
+        images: [
+            {
+                url: '/og/og-preview.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'OG image for /'
+            }
+        ],
+        locale: 'ru_RU',
+        type: 'website'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Купить расходники для мультиаккаунтинга и крипты дёшево | researched.xyz',
+        description: 'researched.xyz — агрегатор сервисов для мультиаккаунтинга...',
+        images: ['/og/og-preview.jpg'],
+        creator: '@researchedxyz'
+    },
+    alternates: {
+        canonical: 'https://researched.xyz/'
     }
+};
 
+<<<<<<< HEAD
     // Preload heart and orange ball images, initialize AudioContext for effects
     useEffect(() => {
         // Load images...
@@ -1923,6 +1652,13 @@ export function Page() {
             />
         </>
     );
+=======
+// Основной компонент страницы (серверный)
+export default function HomePage() {
+    // Возвращаем клиентский компонент
+    // Проп onMultiaccountingClick больше не нужен
+    return <Welcome />;
+>>>>>>> dev
 }
 
-export default Page;
+// Удалили весь код компонента Welcome, который был перенесен

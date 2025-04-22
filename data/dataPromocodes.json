@@ -13,8 +13,8 @@
                     "promoCode": "researchedxyz"
                 },
                 "Indigo": {
-                    "popupText": "По промокоду 50% возвращается кешбеком на баланс",
-                    "buttonName": "Промокод: кешбек +50%",
+                    "popupText": "По промокоду 50% возвращается кешбэком на баланс",
+                    "buttonName": "Промокод: кешбэк +50%",
                     "promoCode": "researched"
                 },
                 "BitBrowser": {
@@ -114,7 +114,7 @@
                 "Proxy-Solutions": {
                     "popupText": "Скидка -5% на все виды прокси",
                     "buttonName": "Промокод -5%",
-                    "promoCode": "researchedxyz"
+                    "promoCode": "researched"
                 },
                 "Proxy.Market": {
                     "popupText": "Скидка -5% на все виды прокси",
@@ -151,9 +151,9 @@
                     "promoCode": "researchedxyz"
                 },
                 "NodeMaven": {
-                    "popupText": "RESEARCHEDXYZ - +2 GB трафика при покупке любого пакета, кроме триала\nRESEARCHEDXYZ50 - cкидка -50% при покупке любого пакета, кроме триала\nRESEARCHEDXYZ80 - +80% дополнительного трафика при покупке любого пакета",
+                    "popupText": "Cкидка -50% при покупке любого пакета, кроме триала",
                     "buttonName": "Промокод -50%",
-                    "promoCode": "RESEARCHEDXYZ"
+                    "promoCode": "RESEARCHEDXYZ50"
                 },
                 "SX": {
                     "popupText": "3 GB бесплатного трафика на тест. Оплата не требуется",
@@ -218,7 +218,7 @@
                 "922Proxy": {
                     "popupText": "Скидка -10% на все виды прокси",
                     "buttonName": "Промокод -10%",
-                    "promoCode": "researchedxyz"
+                    "promoCode": "researchedxyz02"
                 }
             }
         },
@@ -252,7 +252,7 @@
                 "Proxy-Solutions": {
                     "popupText": "Скидка -5% на все виды прокси",
                     "buttonName": "Промокод -5%",
-                    "promoCode": "researchedxyz"
+                    "promoCode": "researched"
                 },
                 "Proxyma": {
                     "popupText": "Скидка -15% на все виды прокси",

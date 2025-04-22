@@ -108,42 +108,42 @@
             {
               "name": "SOL",
               "fullName": "Solana",
-              "icon": "https://cryptologos.cc/logos/solana-sol-logo.png"
+              "icon": "TradingBotsChain/solana-sol-logo.webp"
             },
             {
               "name": "ETH",
               "fullName": "Ethereum",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eth-diamond-purple.7929ed26%20(1)-sOml9OJtfm3gpj9Rm1EnXK8FxgfhWZ.png"
+              "icon": "TradingBotsChain/ethereum-eth-logo.webp"
             },
             {
               "name": "POL",
               "fullName": "Polygon",
-              "icon": "https://cryptologos.cc/logos/polygon-matic-logo.png"
+              "icon": "TradingBotsChain/polygon-matic-logo.webp"
             },
             {
               "name": "BASE",
               "fullName": "Base",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/27716%20(1)-Y0CHmM63zKIXYYmrBJzsAVcJIB4gtD.png"
+              "icon": "TradingBotsChain/base.webp"
             },
             {
               "name": "ARB",
               "fullName": "Arbitrum",
-              "icon": "https://cryptologos.cc/logos/arbitrum-arb-logo.png"
+              "icon": "TradingBotsChain/arbitrum-arb-logo.webp"
             },
             {
               "name": "OP",
               "fullName": "Optimism",
-              "icon": "https://cryptologos.cc/logos/optimism-ethereum-op-logo.png"
+              "icon": "TradingBotsChain/optimism-ethereum-op-logo.webp"
             },
             {
               "name": "ECLIPSE",
               "fullName": "Eclipse",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FBQWKnR4_400x400.jpg-tDk3AcdrN6YSH2xQtuOwVfyeXxsuyl.jpeg"
+              "icon": "TradingBotsChain/eclipse.webp"
             },
             {
               "name": "SONIC SVM",
               "fullName": "Sonic SVM",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sonic_devnet_27500-xjQdM7GSDzIA7D29bSnZVuGAtRtHAs.png"
+              "icon": "TradingBotsChain/sonic-svm.webp"
             }
           ],
           "platforms": ["extension", "mobile"],
@@ -166,7 +166,7 @@
             {
               "name": "EVM",
               "fullName": "Ethereum",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eth-diamond-purple.7929ed26%20(1)-sOml9OJtfm3gpj9Rm1EnXK8FxgfhWZ.png"
+              "icon": "TradingBotsChain/ethereum-eth-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile"],
@@ -216,7 +216,7 @@
             {
               "name": "EVM",
               "fullName": "Ethereum",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eth-diamond-purple.7929ed26%20(1)-sOml9OJtfm3gpj9Rm1EnXK8FxgfhWZ.png"
+              "icon": "TradingBotsChain/ethereum-eth-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile", "desktop"],
@@ -266,27 +266,27 @@
             {
               "name": "EVM",
               "fullName": "Ethereum",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eth-diamond-purple.7929ed26%20(1)-sOml9OJtfm3gpj9Rm1EnXK8FxgfhWZ.png"
+              "icon": "TradingBotsChain/ethereum-eth-logo.webp"
             },
             {
               "name": "BTC",
               "fullName": "Bitcoin",
-              "icon": "https://cryptologos.cc/logos/bitcoin-btc-logo.png"
+              "icon": "TradingBotsChain/bitcoin-btc-logo.webp"
             },
             {
               "name": "SOL",
               "fullName": "Solana",
-              "icon": "https://cryptologos.cc/logos/solana-sol-logo.png"
+              "icon": "TradingBotsChain/solana-sol-logo.webp"
             },
             {
               "name": "TRX",
               "fullName": "Tron",
-              "icon": "https://cryptologos.cc/logos/tron-trx-logo.png"
+              "icon": "TradingBotsChain/tron-trx-logo.webp"
             },
             {
               "name": "DOT",
               "fullName": "Polkadot",
-              "icon": "https://cryptologos.cc/logos/polkadot-new-dot-logo.png"
+              "icon": "TradingBotsChain/polkadot-new-dot-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile"],
@@ -393,32 +393,32 @@
             {
               "name": "SOL",
               "fullName": "Solana",
-              "icon": "https://cryptologos.cc/logos/solana-sol-logo.png"
+              "icon": "TradingBotsChain/solana-sol-logo.webp"
             },
             {
               "name": "ETH",
               "fullName": "Ethereum",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eth-diamond-purple.7929ed26%20(1)-sOml9OJtfm3gpj9Rm1EnXK8FxgfhWZ.png"
+              "icon": "TradingBotsChain/ethereum-eth-logo.webp"
             },
             {
               "name": "POL",
               "fullName": "Polygon",
-              "icon": "https://cryptologos.cc/logos/polygon-matic-logo.png"
+              "icon": "TradingBotsChain/polygon-matic-logo.webp"
             },
             {
               "name": "BASE",
               "fullName": "Base",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/27716%20(1)-Y0CHmM63zKIXYYmrBJzsAVcJIB4gtD.png"
+              "icon": "TradingBotsChain/base.webp"
             },
             {
               "name": "SUI",
               "fullName": "Sui",
-              "icon": "https://cryptologos.cc/logos/sui-sui-logo.png"
+              "icon": "TradingBotsChain/sui-sui-logo.webp"
             },
             {
               "name": "BTC",
               "fullName": "Bitcoin",
-              "icon": "https://cryptologos.cc/logos/bitcoin-btc-logo.png"
+              "icon": "TradingBotsChain/bitcoin-btc-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile"]
@@ -432,7 +432,7 @@
             {
               "name": "SOL",
               "fullName": "Solana",
-              "icon": "https://cryptologos.cc/logos/solana-sol-logo.png"
+              "icon": "TradingBotsChain/solana-sol-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile"]
@@ -445,7 +445,7 @@
             {
               "name": "Cosmos",
               "fullName": "Cosmos",
-              "icon": "https://cryptologos.cc/logos/cosmos-atom-logo.png"
+              "icon": "TradingBotsChain/cosmos-atom-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile", "desktop"]
@@ -458,7 +458,7 @@
             {
               "name": "APT",
               "fullName": "Aptos",
-              "icon": "https://cryptologos.cc/logos/aptos-apt-logo.png"
+              "icon": "TradingBotsChain/aptos-apt-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile"]
@@ -471,12 +471,12 @@
             {
               "name": "DOT",
               "fullName": "Polkadot",
-              "icon": "https://cryptologos.cc/logos/polkadot-new-dot-logo.png"
+              "icon": "TradingBotsChain/polkadot-new-dot-logo.webp"
             },
             {
               "name": "KSM",
               "fullName": "Kusama",
-              "icon": "https://cryptologos.cc/logos/kusama-ksm-logo.png"
+              "icon": "TradingBotsChain/kusama-ksm-logo.webp"
             }
           ],
           "platforms": ["extension"]
@@ -489,7 +489,7 @@
             {
               "name": "STARK",
               "fullName": "StarkNet",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/starknet-token-strk-logo-no49IkBQJNOgmqxE0Ja5eln292OG1A.png"
+              "icon": "TradingBotsChain/starknet-token-strk-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile"]
@@ -502,7 +502,7 @@
             {
               "name": "STARK",
               "fullName": "StarkNet",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/starknet-token-strk-logo-no49IkBQJNOgmqxE0Ja5eln292OG1A.png"
+              "icon": "TradingBotsChain/starknet-token-strk-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile"]
@@ -515,7 +515,7 @@
             {
               "name": "TRX",
               "fullName": "Tron",
-              "icon": "https://cryptologos.cc/logos/tron-trx-logo.png"
+              "icon": "TradingBotsChain/tron-trx-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile"]
@@ -528,7 +528,7 @@
             {
               "name": "TON",
               "fullName": "TON",
-              "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ton-DIKmVpJx8aXpomQDG5KHTe3LgXjgld.png"
+              "icon": "TradingBotsChain/toncoin-ton-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile", "desktop"]
@@ -541,7 +541,7 @@
             {
               "name": "SUI",
               "fullName": "Sui",
-              "icon": "https://cryptologos.cc/logos/sui-sui-logo.png"
+              "icon": "TradingBotsChain/sui-sui-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile"]
@@ -554,7 +554,7 @@
             {
               "name": "BTC",
               "fullName": "Bitcoin",
-              "icon": "https://cryptologos.cc/logos/bitcoin-btc-logo.png"
+              "icon": "TradingBotsChain/bitcoin-btc-logo.webp"
             }
           ],
           "platforms": ["extension", "mobile"]

@@ -1,7 +1,9 @@
 'use client';
-import { ChevronRight } from 'lucide-react';
-import { useEffect } from 'react';
+
+import { ChevronRight, X } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import parse, { domToReact } from 'html-react-parser';
 import { useCategoryContext } from '@/providers/category-provider';
 
@@ -23,7 +25,7 @@ const options = {
                         e.stopPropagation();
                     }}
                 >
-                    <span className="text-[14px] text-white">{domToReact(domNode.children)}</span>
+                    <span className="text-sm text-white">{domToReact(domNode.children)}</span>
                 </a>
             );
         }
@@ -32,37 +34,74 @@ const options = {
 
 const InstructionModal = ({ isOpen, onClose }: InstructionModalProps) => {
     const { setIsShowGuideModal } = useCategoryContext();
+    const modalRef = useRef<HTMLDivElement>(null);
+    const [isMounted, setIsMounted] = useState(false);
+
+    // Ensure the component is only rendered in the browser
+    useEffect(() => {
+        setIsMounted(true);
+        return () => setIsMounted(false);
+    }, []);
 
     useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+                onClose();
+            }
+        };
+
+        const handleEscKey = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                onClose();
+            }
+        };
+
         if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+            document.addEventListener('keydown', handleEscKey);
             document.body.style.overflow = 'hidden';
         }
-        return () => {
-            document.body.style.overflow = 'scroll';
-        };
-    }, [isOpen]);
 
-    if (!isOpen) return null;
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('keydown', handleEscKey);
+            document.body.style.overflow = 'auto';
+        };
+    }, [isOpen, onClose]);
+
+    // Only render the portal when the component is mounted in the browser
+    if (!isMounted) {
+        return null;
+    }
 
     return createPortal(
-        <div className="">
-            <div
-                className="fixed inset-0 bg-black bg-opacity-70 opacity-40 flex justify-center items-center z-51 p-4 right-[0px] left-[0px] top-[0px] bottom-[0px]"
-                onClick={onClose}
-            ></div>
-            <div
-                className="bg-[#444242] p-6 fixed left-1/2 top-1/2 z-60 -translate-1/2 max-w-[80%] md:max-w-[700px] max-h-[600px] overflow-y-scroll w-full"
-                onClick={(e) => e.stopPropagation()}
-            >
-                <div className="flex justify-between mb-[40px]">
-                    <h3 className="text-xl font-semibold text-white">Зачем мы тебе?</h3>
-                    <button className="text-gray-400 hover:text-[#282828] bg-[#DEDEDE] cursor-pointer w-[110px] h-[50px]" onClick={onClose}>
-                        Закрыть
-                    </button>
-                </div>
-                <div className="text-[#9D9D9D] whitespace-pre-line space-y-4 leading-relaxed text-[15px]">
-                    {parse(
-                        `Привет, друг!
+        <AnimatePresence>
+            {isOpen && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="fixed inset-0 z-90 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 pb-[20px]"
+                >
+                    <motion.div
+                        ref={modalRef}
+                        initial={{ scale: 0.95, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.95, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="bg-[#1e1e1e] text-white shadow-lg max-w-3xl w-full max-h-[85vh] overflow-hidden border border-neutral-800"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="flex justify-between items-center px-6 py-4 border-b border-neutral-700">
+                            <h3 className="text-lg font-semibold">Зачем мы тебе?</h3>
+                            <button onClick={onClose} className="text-neutral-400 hover:text-white transition-colors" aria-label="Закрыть">
+                                <X size={20} />
+                            </button>
+                        </div>
+                        <div className="px-6 py-4 overflow-y-auto max-h-[60vh] text-sm leading-relaxed text-neutral-300 space-y-4 whitespace-pre-line custom-scrollbar">
+                            {parse(
+                                `Привет, друг!
 
 Каким-то образом ты попал на этот сайт, его пилим мы, два друга-криптана, которые уже 7 лет в рынке — <a href="https://t.me/cryppi">криптапиражок</a> и <a href="https://t.me/mioncrypto">Mion</a>. И нам, если честно, надоело искать нормальные сервисы и расходники — где-то плохое качество, где-то очень дорого, а где-то поддержка плохо отвечает. Поэтому мы решили создать <a href="https://researched.xyz">researched.xyz</a>
 
@@ -78,20 +117,24 @@ const InstructionModal = ({ isOpen, onClose }: InstructionModalProps) => {
 И самое главное — всех их мы протестировали по куче различных метрик. Например, мы получили доступ к 60+ различным прокси и проверили их в реальных событиях, или, например, мы измерили скорость 43 трейдинг ботов. Короче, много чего у нас есть.
 
 А если ты не понимаешь, как тебе всё это поможет в заработке, то прочитай наш бесплатный гайд по мультиаккаунтингу по кнопке ниже.`,
-                        options
-                    )}
-                </div>
-                <button
-                    onClick={setIsShowGuideModal}
-                    className="flex items-center justify-center bg-[#D06E31] text-white font-['Martian_Mono'] font-normal text-[14px] h-[30px] px-4 border-none cursor-pointer transition-transform duration-300 mt-6"
-                >
-                    <span className="flex items-center gap-2">
-                        Жми сюда
-                        <ChevronRight size={16} />
-                    </span>
-                </button>
-            </div>
-        </div>,
+                                options
+                            )}
+                        </div>
+                        <div className="px-6 py-4 border-t border-neutral-800 pb-[20px]">
+                            <button
+                                onClick={setIsShowGuideModal}
+                                className="flex items-center justify-center bg-[#D06E31] hover:bg-[#bb5f29] transition-all text-white font-mono text-sm h-10 px-4 "
+                            >
+                                <span className="flex items-center gap-2">
+                                    Жми сюда
+                                    <ChevronRight size={16} />
+                                </span>
+                            </button>
+                        </div>
+                    </motion.div>
+                </motion.div>
+            )}
+        </AnimatePresence>,
         document.body
     );
 };
