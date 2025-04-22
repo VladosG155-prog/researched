@@ -29,6 +29,7 @@ export default function RootLayout({
         <html lang="en" className={`${martianMono.variable} ${pressStart.variable}`}>
             <head>
                 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&subset=cyrillic" as="style" />
+                <link rel="icon" href="/favicon.ico" sizes="any" />
             </head>
             <body className={'bg-[#121212] h-[100vh] sm:p-[15px] md:p-[15px] lg:p-[20px]'}>
                 <ClientRedirect>
