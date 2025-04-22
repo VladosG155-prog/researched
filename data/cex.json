@@ -58,24 +58,36 @@
             }
           ]
         },
-        "Bitget": {
-          "commission": "4$",
-          "restrictions": "Крым, Донецк, Луганск",
-          "fullRestrictions": "Жителям Крыма, Донецка, Луганска недоступны пулы управления капиталом",
-          "subaccounts": 500,
-          "p2pLiquidity": "Т-банк: ниже среднего. Монобанк: хорошо",
-          "purpose": "15–30$ новым пользователям, стабильный +3–5% с Launchpool",
-          "earnings": "1) <a class='underline' href=\"https://www.bitget.com/ru/events/launchpool\" target=\"_blank\">LaunchPool</a><br>+2–4% (новые аккаунты), +0.5–1% (старые).<br><br>2) <a class='underline' href=\"https://www.bitget.com/ru/events/poolx\" target=\"_blank\">PoolX</a><br>+1.2–2% (старые), +2–3.5% (новые). Пример: <a class='underline' href=\"https://t.me/Yung_HoDler/2231\" target=\"_blank\">DOGS</a> +65$ за неделю.<br><br>3) <a class='underline' href=\"https://www.bitget.com/ru/events/launchpad\" target=\"_blank\">LaunchPad</a><br>Пример: <a class='underline' href=\"https://www.bitget.com/ru/events/launchpad/details/8830\" target=\"_blank\">BWB</a> +28$ прибыли.<br><br>4) <a class='underline' href=\"https://www.bitget.com/ru/events/launchx\" target=\"_blank\">LaunchX</a><br>Обычно +0.6–1%. <a class='underline' href=\"https://t.me/sevacryptostart/285\" target=\"_blank\">Fuel</a> +2.71% за 3 дня.<br><br>5) <a class='underline' href=\"https://www.bitget.com/ru/events/activities/236c560fa00552e8ab65b79ead38f395\" target=\"_blank\">New User Rewards</a><br>+15–30$ без затрат.",
+        "OKX": {
+          "commission": "4.73$",
+          "restrictions": "РФ",
+          "fullRestrictions": "Недоступна P2P торговля Нет RUB и вывода в фиате",
+          "subaccounts": 220,
+          "p2pLiquidity": "Т-банк: отсутствует. Монобанк: хорошо",
+          "purpose": "Удобный раскид/сбор токнов, дешёвые заёмы, до 50$ с промо-акций каждый месяц",
+          "earnings": "1) <a class='underline' href=\"https://www.okx.com/ru/jumpstart#from=home\" target=\"_blank\">Jumpstart</a><br>+1–7% прибыли. NOT, Zeta, GPT давали +200–800$ профита (<a class='underline' href=\"https://t.me/procent_crypto/5643\" target=\"_blank\">пример</a>).<br><br>2) <a class='underline' href=\"https://www.okx.com/ru/campaign-center/campaigns\" target=\"_blank\">Trade & earn</a><br>Прибыль 4–300x. <a class='underline' href=\"https://t.me/tradeparty1337/4998\" target=\"_blank\">Notcoin</a> +120$.<br><br>3) <a class='underline' href=\"https://www.okx.com/ru/campaigns/paradise-treasures\" target=\"_blank\">Ticket to Paradise</a><br>+40–45$ при затратах 2–3$.<br><br>4) OKX Wallet <a class='underline' href=\"https://www.okx.com/ru/web3/cryptopedia\" target=\"_blank\">Cryptoverse</a><br>+1–5$; <a class='underline' href=\"https://www.okx.com/ru/web3/cryptopedia/event/solv-protocol\" target=\"_blank\">Solv Protocol</a> +20$ при затратах ~3$.",
           "kyc": "нужен KYC",
-          "fees": "Спот, мейкер - 0.1%, тейкер - 0.1%, Бессрочные фьючерсы, мейкер - 0.02%, тейкер - 0.06%. <a class='underline' href=\"https://www.bitget.com/ru/fee\" target=\"_blank\">Подробнее</a>",
-          "link": "https://partner.bitget.com/bg/researched",
-          "icon": "/CEX/bitget.webp",
+          "fees": "Спот, мейкер - 0.08%, тейкер - 0.1%, Бессрочные фьючерсы, мейкер - 0.02%, тейкер - 0.05%. <a class='underline' href=\"https://www.okx.com/ru/fees\" target=\"_blank\">Подробнее</a>",
+          "link": "https://www.okx.com/join/RESEARCHED",
+          "icon": "/CEX/www.okx.com.webp",
           "breachHistory": [
             {
-              "date": "26 Декабря 2022",
-              "title": "Уязвимость Bitget wallet",
-              "description": "Хакеры смогли модифицировать APK файл Bitget wallet и в один момент <a class='underline' href=\"https://x.com/Hk0954859Kim/status/1607199871613947905\" target=\"_blank\">вывели</a> более $8M с кошельков пользователей.",
-              "consequences": "Bitget возместил потери из фонда безопасности. <a class='underline' href=\"https://ambcrypto.com/avalanches-dex-loses-12-million-in-hack-are-avax-holders-next-to-be-snowbound/\" target=\"_blank\">Подробнее</a>"
+              "date": "Август 2017",
+              "title": "Взлом и кража более $3 млн в Bitcoin",
+              "description": "В 2017 году, когда биржа ещё называлась OKEx, произошёл взлом на сумму $3 млн в BTC.",
+              "consequences": "Компания компенсировала потери и усилила безопасность."
+            },
+            {
+              "date": "16 Октября 2020",
+              "title": "Заморозка вывода",
+              "description": "Один из держателей приватных ключей (фаундер OKEx) был арестован, и выводы остановили на 5 недель.",
+              "consequences": "Доверие было подорвано, но активы пользователей не пострадали. <a class='underline' href=\"https://bravenewcoin.com/insights/okex-withdrawal-suspension\" target=\"_blank\">Подробнее</a>"
+            },
+            {
+              "date": "13 Июня 2024",
+              "title": "Сразу 2 дипфейка",
+              "description": "$2M и $11.6M были украдены в результате фишинговой атаки на пользователей биржи. Что интересно лоумышленники обходили меры безопасности OKX при помощи дипфейка, он создавался на основе полученных изображений из Google фото.",
+              "consequences": "OKX возместила убытки и улучшила систему KYC. <a class='underline' href=\"https://aimojo.io/ru/crypto-heist-okx-deepfake-ai/?utm_source=chatgpt.com\" target=\"_blank\">Подробнее</a>"
             }
           ]
         },
@@ -118,39 +130,29 @@
             }
           ]
         },
-        "OKX": {
-          "commission": "4.73$",
-          "restrictions": "РФ",
-          "fullRestrictions": "Недоступна P2P торговля Нет RUB и вывода в фиате",
-          "subaccounts": 220,
-          "p2pLiquidity": "Т-банк: отсутствует. Монобанк: хорошо",
-          "purpose": "Удобный раскид/сбор токнов, дешёвые заёмы, до 50$ с промо-акций каждый месяц",
-          "earnings": "1) <a class='underline' href=\"https://www.okx.com/ru/jumpstart#from=home\" target=\"_blank\">Jumpstart</a><br>+1–7% прибыли. NOT, Zeta, GPT давали +200–800$ профита (<a class='underline' href=\"https://t.me/procent_crypto/5643\" target=\"_blank\">пример</a>).<br><br>2) <a class='underline' href=\"https://www.okx.com/ru/campaign-center/campaigns\" target=\"_blank\">Trade & earn</a><br>Прибыль 4–300x. <a class='underline' href=\"https://t.me/tradeparty1337/4998\" target=\"_blank\">Notcoin</a> +120$.<br><br>3) <a class='underline' href=\"https://www.okx.com/ru/campaigns/paradise-treasures\" target=\"_blank\">Ticket to Paradise</a><br>+40–45$ при затратах 2–3$.<br><br>4) OKX Wallet <a class='underline' href=\"https://www.okx.com/ru/web3/cryptopedia\" target=\"_blank\">Cryptoverse</a><br>+1–5$; <a class='underline' href=\"https://www.okx.com/ru/web3/cryptopedia/event/solv-protocol\" target=\"_blank\">Solv Protocol</a> +20$ при затратах ~3$.",
+        "Bitget": {
+          "commission": "4$",
+          "restrictions": "Крым, Донецк, Луганск",
+          "fullRestrictions": "Жителям Крыма, Донецка, Луганска недоступны пулы управления капиталом",
+          "subaccounts": 500,
+          "p2pLiquidity": "Т-банк: ниже среднего. Монобанк: хорошо",
+          "purpose": "15–30$ новым пользователям, стабильный +3–5% с Launchpool",
+          "earnings": "1) <a class='underline' href=\"https://www.bitget.com/ru/events/launchpool\" target=\"_blank\">LaunchPool</a><br>+2–4% (новые аккаунты), +0.5–1% (старые).<br><br>2) <a class='underline' href=\"https://www.bitget.com/ru/events/poolx\" target=\"_blank\">PoolX</a><br>+1.2–2% (старые), +2–3.5% (новые). Пример: <a class='underline' href=\"https://t.me/Yung_HoDler/2231\" target=\"_blank\">DOGS</a> +65$ за неделю.<br><br>3) <a class='underline' href=\"https://www.bitget.com/ru/events/launchpad\" target=\"_blank\">LaunchPad</a><br>Пример: <a class='underline' href=\"https://www.bitget.com/ru/events/launchpad/details/8830\" target=\"_blank\">BWB</a> +28$ прибыли.<br><br>4) <a class='underline' href=\"https://www.bitget.com/ru/events/launchx\" target=\"_blank\">LaunchX</a><br>Обычно +0.6–1%. <a class='underline' href=\"https://t.me/sevacryptostart/285\" target=\"_blank\">Fuel</a> +2.71% за 3 дня.<br><br>5) <a class='underline' href=\"https://www.bitget.com/ru/events/activities/236c560fa00552e8ab65b79ead38f395\" target=\"_blank\">New User Rewards</a><br>+15–30$ без затрат.",
           "kyc": "нужен KYC",
-          "fees": "Спот, мейкер - 0.08%, тейкер - 0.1%, Бессрочные фьючерсы, мейкер - 0.02%, тейкер - 0.05%. <a class='underline' href=\"https://www.okx.com/ru/fees\" target=\"_blank\">Подробнее</a>",
-          "link": "https://www.okx.com/join/RESEARCHED",
-          "icon": "/CEX/www.okx.com.webp",
+          "fees": "Спот, мейкер - 0.1%, тейкер - 0.1%, Бессрочные фьючерсы, мейкер - 0.02%, тейкер - 0.06%. <a class='underline' href=\"https://www.bitget.com/ru/fee\" target=\"_blank\">Подробнее</a>",
+          "link": "https://partner.bitget.com/bg/researched",
+          "icon": "/CEX/bitget.webp",
           "breachHistory": [
             {
-              "date": "Август 2017",
-              "title": "Взлом и кража более $3 млн в Bitcoin",
-              "description": "В 2017 году, когда биржа ещё называлась OKEx, произошёл взлом на сумму $3 млн в BTC.",
-              "consequences": "Компания компенсировала потери и усилила безопасность."
-            },
-            {
-              "date": "16 Октября 2020",
-              "title": "Заморозка вывода",
-              "description": "Один из держателей приватных ключей (фаундер OKEx) был арестован, и выводы остановили на 5 недель.",
-              "consequences": "Доверие было подорвано, но активы пользователей не пострадали. <a class='underline' href=\"https://bravenewcoin.com/insights/okex-withdrawal-suspension\" target=\"_blank\">Подробнее</a>"
-            },
-            {
-              "date": "13 Июня 2024",
-              "title": "Сразу 2 дипфейка",
-              "description": "$2M и $11.6M были украдены в результате фишинговой атаки на пользователей биржи. Что интересно лоумышленники обходили меры безопасности OKX при помощи дипфейка, он создавался на основе полученных изображений из Google фото.",
-              "consequences": "OKX возместила убытки и улучшила систему KYC. <a class='underline' href=\"https://aimojo.io/ru/crypto-heist-okx-deepfake-ai/?utm_source=chatgpt.com\" target=\"_blank\">Подробнее</a>"
+              "date": "26 Декабря 2022",
+              "title": "Уязвимость Bitget wallet",
+              "description": "Хакеры смогли модифицировать APK файл Bitget wallet и в один момент <a class='underline' href=\"https://x.com/Hk0954859Kim/status/1607199871613947905\" target=\"_blank\">вывели</a> более $8M с кошельков пользователей.",
+              "consequences": "Bitget возместил потери из фонда безопасности. <a class='underline' href=\"https://ambcrypto.com/avalanches-dex-loses-12-million-in-hack-are-avax-holders-next-to-be-snowbound/\" target=\"_blank\">Подробнее</a>"
             }
           ]
         },
+
+
         "KuCoin": {
           "commission": "5.5$",
           "restrictions": "РБ",
