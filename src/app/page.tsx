@@ -207,7 +207,12 @@ export function Welcome({ onMultiaccountingClick }: WelcomeProps) {
                     animate={{ opacity: 1, y: 0 }}
                 >
                     {/* Title */}
-                    <motion.div initial={{ scale: 0.8 }} animate={{ scale: 1 }} transition={{ delay: 0.2 }} className="text-center mb-10">
+                    <motion.div
+                        initial={{ scale: 0.8 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-center mb-3 md:mb-10"
+                    >
                         <h1 className="welcome-title  text-[24px] md:text-[48px]" onClick={handleLogoClick}>
                             Лучшие
                             <span className={`${categories[currentCategoryIndex].color} inline-flex ml-2.5 text-[24px] md:text-[48px]`}>
@@ -227,7 +232,7 @@ export function Welcome({ onMultiaccountingClick }: WelcomeProps) {
 
                     {/* Button */}
                     <motion.button
-                        className="group flex justify-center items-center bg-[#D06E31] text-white font-['Martian_Mono'] font-normal text-[18px]  w-[255px] h-[50px] md:w-[805px] md:h-[86px]  border-none cursor-pointer  transition-transform duration-300"
+                        className="group flex justify-center items-center bg-[#D06E31] text-white font-['Martian_Mono'] font-normal text-[18px]  w-[255px] h-[30px] md:w-[805px] md:h-[86px]  border-none cursor-pointer  transition-transform duration-300"
                         onClick={setIsShowGuideModal}
                     >
                         <div
@@ -238,7 +243,7 @@ export function Welcome({ onMultiaccountingClick }: WelcomeProps) {
                                 Бесплатный гайд по заработку через мультиаккаунтинг
                                 <ChevronRight />
                             </span>
-                            <span onClick={setIsShowGuideModal} className="md:hidden flex text-[12px]">
+                            <span onClick={setIsShowGuideModal} className="md:hidden items-center flex text-[12px]">
                                 Гайд по мультиаккаунтингу
                                 <ChevronRight />
                             </span>

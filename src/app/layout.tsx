@@ -22,6 +22,13 @@ const pressStart = Press_Start_2P({
     weight: '400',
     variable: '--font-martian-pressStart'
 });
+
+export const metadata: Metadata = {
+    title: 'researched.xyz | Лучшие сервисы для мультиаккаунтинга и крипты',
+    description:
+        'researched.xyz — агрегатор сервисов для мультиаккаунтинга. Антидетекты, прокси, боты, кошельки, CEX, OTC и т.д. Всё купили, проверили и отсортировали.'
+};
+
 export default function RootLayout({
     children
 }: Readonly<{
@@ -31,6 +38,7 @@ export default function RootLayout({
         <html lang="en" className={`${martianMono.variable} ${pressStart.variable}`}>
             <head>
                 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&subset=cyrillic" as="style" />
+                <link rel="icon" href="/favicon.ico" sizes="any" />
                 <script defer src="https://metric.researched.xyz/script.js" data-website-id="a9b97fed-3e50-4ffa-bcff-3e1efc93b33f" />
             </head>
             <body className={'bg-[#121212] h-[100vh] sm:p-[15px] md:p-[15px] lg:p-[20px]'}>

@@ -210,7 +210,7 @@ function Page() {
             />
             {isMobile ? (
                 <div className="flex gap-2 justify-between">
-                    <div className="w-[48%]">
+                    <div className="w-[30%]">
                         <Filter
                             name="Категория"
                             filters={categories}
@@ -221,17 +221,18 @@ function Page() {
                             }}
                         />
                     </div>
-                    <div className="w-[48%]">
+                    <div className="w-[30%]">
                         <Filter filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
                     </div>
-                    {activeCategory && (
+                    <div className="w-[30%]">
+                        {' '}
                         <Filter
                             name="Товар"
-                            filters={categoriesItems}
+                            filters={categoriesItems || []}
                             selectedValue={activeCategoryItem}
                             onChange={setActiveCategoryItem}
                         />
-                    )}
+                    </div>
                 </div>
             ) : null}
             {!isMobile && (
@@ -245,20 +246,13 @@ function Page() {
                             setActiveCategory(val);
                         }}
                     />
-                    {activeCategory && (
-                        <Filter
-                            name="Товар"
-                            filters={categoriesItems}
-                            selectedValue={activeCategoryItem}
-                            onChange={setActiveCategoryItem}
-                        />
-                    )}
+                    <Filter name="Товар" filters={categoriesItems} selectedValue={activeCategoryItem} onChange={setActiveCategoryItem} />
                     <Filter filters={payments} selectedValue={payment} onChange={setPayment} name="Оплата" />
                 </div>
             )}
             <div className="mt-2">{(activeCategory || payment) && <ClearFilters onClear={clearAll} />}</div>
             <PromoPopup isOpen={isOpenModal} onClose={toggleModal} info={openedPromocode} />
-            <div className="py-6">
+            <div className="md:py-6 py-2">
                 {/* Desktop View */}
                 <div className="hidden md:block">
                     <table className="w-full border-separate border-spacing-y-2">

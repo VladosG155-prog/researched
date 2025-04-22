@@ -325,7 +325,7 @@ function Page() {
                     ))}
                 </div>
             )}
-            <div className="py-4">
+            <div className="md:py-4">
                 {/* Desktop View */}
                 <div className="hidden md:block">
                     <table className="w-full border-separate border-spacing-y-2 ">

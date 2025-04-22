@@ -137,7 +137,22 @@ function Page() {
                 size: 300,
                 cell: (info) => <span className="text-white">{info.getValue()}</span>,
                 enableSorting: true,
-                sortDescFirst: true
+                sortDescFirst: true,
+                sortingFn: (rowA, rowB, columnId) => {
+                    const parsePrice = (val: any) => {
+                        const cleaned = String(val).replace(/[^\d.-]/g, '');
+                        return parseFloat(cleaned);
+                    };
+
+                    const a = parsePrice(rowA.getValue(columnId));
+                    const b = parsePrice(rowB.getValue(columnId));
+
+                    if (isNaN(a) && isNaN(b)) return 0;
+                    if (isNaN(a)) return -1;
+                    if (isNaN(b)) return 1;
+
+                    return a - b;
+                }
             }),
             columnHelper.accessor('countries', {
                 header: 'Кол-во стран',
