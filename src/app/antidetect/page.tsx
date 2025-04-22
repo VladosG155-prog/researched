@@ -193,22 +193,7 @@ function Page() {
                     </div>
                 ),
                 enableSorting: true,
-                sortDescFirst: true,
-                sortingFn: (rowA, rowB, columnId) => {
-                    const parsePrice = (val: any) => {
-                        const cleaned = String(val).replace(/[^\d.-]/g, '');
-                        return parseFloat(cleaned);
-                    };
-
-                    const a = parsePrice(rowA.getValue(rowA.original.priceSortIndex));
-                    const b = parsePrice(rowB.getValue(rowB.original.priceSortIndex));
-
-                    if (isNaN(a) && isNaN(b)) return 0;
-                    if (isNaN(a)) return -1;
-                    if (isNaN(b)) return 1;
-
-                    return a - b;
-                }
+                sortDescFirst: true
             }),
             columnHelper.display({
                 id: 'expand',

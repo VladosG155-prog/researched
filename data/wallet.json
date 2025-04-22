@@ -535,7 +535,7 @@
         },
         "Sui Wallet": {
           "description": "Официальный кошелек для сети Sui. Обеспечивает безопасное хранение и управление токенами SUI, а также взаимодействие с dApps в экосистеме Sui.",
-          "icon": "https://cryptologos.cc/logos/sui-sui-logo.png",
+          "icon": "TradingBotsChain/sui-sui-logo.webp",
           "url": "https://suiwallet.com/",
           "networks": [
             {

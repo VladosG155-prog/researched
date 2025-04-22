@@ -306,7 +306,7 @@ function Page() {
     const fetchWithdrawalFee = async (network: string, coin: string) => {
         try {
             console.log('Fetching data for:', { network, coin });
-            const response = await fetch(`http://localhost:8000/withdrawal_fee?network=${network}&coin=${coin}`);
+            const response = await fetch(`http://213.176.74.94:8000/withdrawal_fee?network=${network}&coin=${coin}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -647,7 +647,11 @@ function Page() {
                                         </div>
                                         <div className="flex flex-col gap-1 min-h-[60px]">
                                             <span className="text-[#7E7E7E] text-[12px]">Субаккаунты:</span>
-                                            <span className="text-[12px] mt-2">{row.original.subAccounts}</span>
+                                            <span className="text-white cursor-pointer text-[12px]">
+                                                {typeof row.original.subAccounts === 'string'
+                                                    ? parse(row.original.subAccounts, options2)
+                                                    : row.original.subAccounts}
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
