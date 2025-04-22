@@ -144,7 +144,7 @@ function Page() {
                 cell: (info) => (
                     <div className="flex items-center gap-3">
                         <span className="text-white">{info.getValue()}</span>
-                        <Image src="/DePIN/grass.webp" alt="grass" width={20} height={20} />
+                        <Image src="/DePIN/grass.webp" alt="" width={20} height={20} />
                     </div>
                 ),
                 enableSorting: true,
@@ -156,7 +156,7 @@ function Page() {
                 cell: (info) => (
                     <div className="flex items-center gap-3 ">
                         <span className="text-white">{info.getValue()}</span>
-                        <Image src="/DePIN/gradient.webp" alt="grass" width={20} height={20} />
+                        <Image src="/DePIN/gradient.webp" alt="" width={20} height={20} />
                     </div>
                 ),
                 enableSorting: true,
@@ -167,7 +167,7 @@ function Page() {
                 cell: (info) => (
                     <div className="flex items-center gap-3">
                         <span className="text-white">{info.getValue()}</span>
-                        <Image src="/DePIN/dawn.webp" alt="grass" width={20} height={20} />
+                        <Image src="/DePIN/dawn.webp" alt="" width={20} height={20} />
                     </div>
                 ),
                 enableSorting: true,
@@ -439,21 +439,21 @@ function Page() {
                                     <span className="text-[#7E7E7E] font-medium">grass:</span>
                                     <div className="flex items-center gap-3 mt-1">
                                         <span>{row.original.grass}</span>
-                                        <Image src="/DePIN/grass.webp" alt="grass" width={20} height={20} />
+                                        <Image src="/DePIN/grass.webp" alt="" width={20} height={20} />
                                     </div>
                                 </div>
                                 <div>
                                     <span className="text-[#7E7E7E] font-medium">gradient:</span>
                                     <div className="flex items-center gap-3 mt-1">
                                         <span>{row.original.gradient}</span>
-                                        <Image src="/DePIN/gradient.webp" alt="gradient" width={20} height={20} />
+                                        <Image src="/DePIN/gradient.webp" alt="" width={20} height={20} />
                                     </div>
                                 </div>
                                 <div>
                                     <span className="text-[#7E7E7E] font-medium">dawn:</span>
                                     <div className="flex items-center gap-3 mt-1">
                                         <span>{row.original.dawn}</span>
-                                        <Image src="/DePIN/dawn.webp" alt="dawn" width={20} height={20} />
+                                        <Image src="/DePIN/dawn.webp" alt="" width={20} height={20} />
                                     </div>
                                 </div>
                                 {row.original?.promocodeInfo && row.original?.promocodeInfo[1] && (

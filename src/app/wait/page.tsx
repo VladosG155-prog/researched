@@ -1587,7 +1587,7 @@ export function Page() {
                 // Check if click is INSIDE the Telegram button
                 if (e.clientX >= x && e.clientX <= x + width && e.clientY >= y && e.clientY <= y + height) {
                     // Clicked the button - proceed with opening link
-                    window.open('https://t.me/researchedxyz', '_blank');
+                    window.open('https://t.me/researchedxyz_bot', '_blank');
                     // Don't reset the game
                 }
                 // If NOT inside the button, do nothing in Victory state

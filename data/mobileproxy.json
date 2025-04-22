@@ -4,7 +4,7 @@
       "mobileProxy": {
         "info": {
           "title": "Мобильные прокси",
-          "description": "IP-адреса, выдаваемые мобильными операторами. Отличаются высокой ротацией и подходят для задач, требующих максимальной анонимности."
+          "description": "Выдаются операторами и работают через мобильную сеть. IP часто меняется автоматически. Подходят для множества действий с одного потока."
         },
         "tools": {
           "Proxy-Seller": {
@@ -128,7 +128,7 @@
             "icon": "/Mobile/proxy-seller.io.webp"
           },
           "Proxys.io": {
-            "price": "3.4$",
+            "price": "3.40$",
             "countries": [
               {
                 "name": "Россия",
@@ -396,7 +396,7 @@
             "icon": "/Mobile/proxywhite.com.webp"
           },
           "MobileProxy": {
-            "price": "5.3$",
+            "price": "5.30$",
             "countries": [
               {
                 "name": "Абхазия",
@@ -608,7 +608,7 @@
             "icon": "/Mobile/mobileproxies.webp"
           },
           "YouProxy": {
-            "price": "22.5$ (неделя)",
+            "price": "22.50$ (неделя)",
             "countries": [
               {
                 "name": "США",
@@ -696,7 +696,7 @@
             ],
             "proxyScore": "Да",
             "demo": "Нет",
-            "link": "по промокоду - RESEARCHEDXYZ",
+            "link": "https://youproxy.io/",
             "icon": "/Mobile/youproxy.io.webp"
           },
           "Proxy-Sale": {
@@ -988,7 +988,7 @@
             "icon": "/Mobile/proxy-solutions.net.webp"
           },
           "Proxy.Market": {
-            "price": "3.6$",
+            "price": "3.60$",
             "countries": [
               {
                 "name": "Россия",
@@ -1316,7 +1316,7 @@
             "icon": "/Mobile/thesocialproxy.com.webp"
           },
           "Frigate-Proxy": {
-            "price": "3.8$ (5 дней)",
+            "price": "3.80$ (5 дней)",
             "countries": [
               {
                 "name": "Россия",

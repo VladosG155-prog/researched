@@ -124,7 +124,7 @@ export function Header({}: HeaderProps = {}) {
                     Зачем мы тебе?
                 </button>
                 <a
-                    href="https://t.me/researchedxyz"
+                    href="https://t.me/researchedxyz_bot"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="h-[70px] px-6 flex items-center justify-center bg-[#2C2C2C] hover:bg-[#3C3C3C] transition-colors text-white text-[18px]"
@@ -151,7 +151,7 @@ export function Header({}: HeaderProps = {}) {
                     ?
                 </button>
                 <a
-                    href="https://t.me/researchedxyz"
+                    href="https://t.me/researchedxyz_bot"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="h-[40px] w-[40px] flex items-center justify-center bg-[#2C2C2C] hover:bg-[#3C3C3C] transition-colors"

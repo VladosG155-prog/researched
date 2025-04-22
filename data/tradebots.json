@@ -17,7 +17,6 @@
               },
               "value": "<1 сек"
             }
-
           ],
           "networks": [
             {
@@ -234,6 +233,10 @@
             {
               "name": "BLAST",
               "icon": "/TradingBotsChain/blast.webp"
+            },
+            {
+              "name": "BNB",
+              "icon": "/TradingBotsChain/bnb-bnb-logo.webp"
             }
           ],
           "copytrading": "Да",
@@ -771,6 +774,10 @@
               "icon": "/TradingBotsChain/ethereum-eth-logo.webp"
             },
             {
+              "name": "BSC",
+              "icon": "/TradingBotsChain/bnb-bnb-logo.webp"
+            },
+            {
               "name": "TRON",
               "icon": "/TradingBotsChain/tron-trx-logo.webp"
             },
@@ -781,6 +788,14 @@
             {
               "name": "AVAX",
               "icon": "/TradingBotsChain/avalanche-avax-logo.webp"
+            },
+            {
+              "name": "SONIC",
+              "icon": "/TradingBotsChain/sonic.webp"
+            },
+            {
+              "name": "TON",
+              "icon": "/TradingBotsChain/toncoin-ton-logo.webp"
             }
           ],
           "copytrading": "Да",
@@ -847,6 +862,18 @@
             {
               "name": "BASE",
               "icon": "/TradingBotsChain/base.webp"
+            },
+            {
+              "name": "SONIC",
+              "icon": "/TradingBotsChain/sonic.webp"
+            },
+            {
+              "name": "BNB",
+              "icon": "/TradingBotsChain/bnb-bnb-logo.webp"
+            },
+            {
+              "name": "Unichain",
+              "icon": "/TradingBotsChain/Unichain.webp"
             }
           ],
           "copytrading": "Да",
@@ -1094,6 +1121,54 @@
             {
               "name": "ETH",
               "icon": "/TradingBotsChain/ethereum-eth-logo.webp"
+            },
+            {
+              "name": "BSC",
+              "icon": "/TradingBotsChain/bnb-bnb-logo.webp"
+            },
+            {
+              "name": "CRONOS",
+              "icon": "/TradingBotsChain/cronos.webp"
+            },
+            {
+              "name": "DEGEN",
+              "icon": "/TradingBotsChain/degen-base-degen-logo.webp"
+            },
+            {
+              "name": "SONIC",
+              "icon": "/TradingBotsChain/sonic.webp"
+            },
+            {
+              "name": "LINEA",
+              "icon": "/TradingBotsChain/linea.webp"
+            },
+            {
+              "name": "MANTA",
+              "icon": "/TradingBotsChain/manta.webp"
+            },
+            {
+              "name": "METIS",
+              "icon": "/TradingBotsChain/metis.webp"
+            },
+            {
+              "name": "Optimism",
+              "icon": "/TradingBotsChain/optimism-ethereum-op-logo.webp"
+            },
+            {
+              "name": "Pulsechain",
+              "icon": "/TradingBotsChain/pulsechain.webp"
+            },
+            {
+              "name": "SONIC",
+              "icon": "/TradingBotsChain/sonic.webp"
+            },
+            {
+              "name": "BITROCK",
+              "icon": "/TradingBotsChain/bitrock.webp"
+            },
+            {
+              "name": "zksync",
+              "icon": "/TradingBotsChain/zkSync.webp"
             }
           ],
           "copytrading": "Нет",
@@ -1157,6 +1232,10 @@
             {
               "name": "TRON",
               "icon": "/TradingBotsChain/tron-trx-logo.webp"
+            },
+            {
+              "name": "BNB",
+              "icon": "/TradingBotsChain/bnb-bnb-logo.webp"
             }
           ],
           "copytrading": "Нет",
@@ -1361,6 +1440,10 @@
             {
               "name": "TRON",
               "icon": "/TradingBotsChain/tron-trx-logo.webp"
+            },
+            {
+              "name": "BNB",
+              "icon": "/TradingBotsChain/bnb-bnb-logo.webp"
             }
           ],
           "copytrading": "Да",
@@ -1427,6 +1510,10 @@
             {
               "name": "TRON",
               "icon": "/TradingBotsChain/tron-trx-logo.webp"
+            },
+            {
+              "name": "BNB",
+              "icon": "/TradingBotsChain/bnb-bnb-logo.webp"
             }
           ],
           "copytrading": "Нет",
@@ -1456,6 +1543,10 @@
             {
               "name": "SUI",
               "icon": "/TradingBotsChain/sui-sui-logo.webp"
+            },
+            {
+              "name": "BNB",
+              "icon": "/TradingBotsChain/bnb-bnb-logo.webp"
             }
           ],
           "copytrading": "Нет",

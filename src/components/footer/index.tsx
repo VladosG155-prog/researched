@@ -23,7 +23,7 @@ const mainCategories = [
     { name: 'Прокси', icon: Wifi, href: '/proxy-static', displayName: 'Прокси' },
     { name: 'Анти-детекты', icon: Shield, href: '/antidetect' },
     { name: 'DePIN прокси', icon: Network, href: '/proxy-depin', image: '/grasstobutton.png' },
-    { name: 'Комиссии CEX', icon: DollarSign, href: 'https://t.me/researchedxyz' },
+    { name: 'Комиссии CEX', icon: DollarSign, href: 'https://t.me/researchedxyz_bot' },
     { name: 'Кошельки', icon: Wallet, href: '/wallets' }
 ];
 

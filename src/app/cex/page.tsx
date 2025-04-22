@@ -387,7 +387,7 @@ function Page() {
                 <button
                     className="bg-[#121212] inline-block max-w-max p-4 cursor-pointer mt-2"
                     onClick={() => {
-                        window.open('https://t.me/researchedxyz');
+                        window.open('https://t.me/researchedxyz_bot');
                     }}
                 >
                     Перейти

@@ -65,11 +65,12 @@ function Page() {
         });
 
         if (selectedFilter) {
-            data = data.filter((elem) => elem.chains.some((chain) => chain.name === selectedFilter));
+            data = data.filter((elem) => elem.chains.some((chain) => chain.name === selectedFilter.trim()));
         }
+        console.log(data);
 
         if (selectedInterface) {
-            data = data.filter((elem) => elem.interface.includes(selectedInterface));
+            data = data.filter((elem) => elem.interface.some((interfaces) => interfaces === selectedInterface.trim()));
         }
 
         return data;

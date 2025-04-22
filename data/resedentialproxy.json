@@ -4,7 +4,7 @@
       "residentialProxy": {
         "info": {
           "title": "Резидентские прокси",
-          "description": "Мобильные и домашние IP-адреса, идеально подходящие для парсинга, маркетинга и мультиаккаунтинга. Используются в связке с эмуляторами или мобильными устройствами."
+          "description": "Выходят в сеть через устройства обычных людей. Максимально естественные IP. Можно сгенерировать тысячи адресов, оплата по трафику."
         },
         "tools": {
           "Proxy-Seller": {
@@ -164,7 +164,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Тайвань",
@@ -675,7 +675,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Кувейт",
@@ -1546,7 +1546,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Кувейт",
@@ -2292,7 +2292,7 @@
                 "icon": "/country_logos/кения.webp"
               },
               {
-                "name": "Корея",
+                "name": "Южная Корея",
                 "icon": "/country_logos/южная_корея.webp"
               },
               {
@@ -2884,7 +2884,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Болгария",
@@ -3666,7 +3666,7 @@
                 "icon": "/country_logos/кувейт.webp"
               },
               {
-                "name": "Корея",
+                "name": "Южная Корея",
                 "icon": "/country_logos/южная_корея.webp"
               },
               {
@@ -3998,7 +3998,7 @@
             "icon": "/Residential/proxy store.webp"
           },
           "Proxyma": {
-            "price": "5.00$",
+            "price": "5$",
             "countries": [
               {
                 "name": "США",
@@ -4066,7 +4066,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Испания",
@@ -4432,7 +4432,7 @@
                 "icon": "/country_logos/казахстан.webp"
               },
               {
-                "name": "Корея",
+                "name": "Южная Корея",
                 "icon": "/country_logos/южная_корея.webp"
               },
               {
@@ -4892,7 +4892,7 @@
               },
               {
                 "name": "Crypto (только через тикет)",
-                "icon": "/payments_logos/cryptobot.webp"
+                "icon": "/payments_logos/tether-usdt-logo.webp"
               },
               {
                 "name": "Mastercard",
@@ -4900,7 +4900,7 @@
               }
             ],
             "demo": "Нет",
-            "link": "https://soax.com/researched?afmc=nc",
+            "link": "https://soax.com/proxies?afmc=ng",
             "icon": "/Residential/SOAX.webp"
           },
           "Proxy.Market": {
@@ -5504,7 +5504,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Южный Судан",
@@ -5547,7 +5547,7 @@
             "icon": "/Residential/proxy.market.webp"
           },
           "IPRoyal": {
-            "price": "7.00$",
+            "price": "7$",
             "countries": [
               {
                 "name": "Алжир",
@@ -5887,7 +5887,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Шри-Ланка",
@@ -6318,7 +6318,7 @@
             "icon": "/Residential/iproyal.webp"
           },
           "Travchis Proxies": {
-            "price": "6.00$",
+            "price": "6$",
             "countries": [
               {
                 "name": "Афганистан",
@@ -6762,7 +6762,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Косово",
@@ -7109,7 +7109,7 @@
             "icon": "/Residential/travchisproxies.com.webp"
           },
           "Proxywing": {
-            "price": "2.50$ \n6$",
+            "price": "6$",
             "countries": [
               {
                 "name": "Афганистан",
@@ -7553,7 +7553,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Косово",
@@ -8223,7 +8223,7 @@
                 "icon": "/country_logos/кения.webp"
               },
               {
-                "name": "Корея",
+                "name": "Южная Корея",
                 "icon": "/country_logos/южная_корея.webp"
               },
               {
@@ -9042,7 +9042,7 @@
                 "icon": "/country_logos/сент-китс_и_невис.webp"
               },
               {
-                "name": "Корея",
+                "name": "Южная Корея",
                 "icon": "/country_logos/южная_корея.webp"
               },
               {
@@ -9278,8 +9278,8 @@
                 "icon": "/country_logos/пуэрто-рико.webp"
               },
               {
-                "name": "Корея, Народно-Демократическая Республика",
-                "icon": "/country_logos/корея,_народно-демократическая_республика.webp"
+                "name": "Южная Корея",
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Португалия",
@@ -9466,8 +9466,8 @@
                 "icon": "/country_logos/тувалу.webp"
               },
               {
-                "name": "Тайвань, провинция Китая",
-                "icon": "/country_logos/тайвань,_провинция_китая.webp"
+                "name": "Тайвань",
+                "icon": "/country_logos/тайвань.webp"
               },
               {
                 "name": "Танзания",
@@ -9480,10 +9480,6 @@
               {
                 "name": "Украина",
                 "icon": "/country_logos/украина.webp"
-              },
-              {
-                "name": "Внешние малые острова США",
-                "icon": "/country_logos/внешние_малые_острова_сша.webp"
               },
               {
                 "name": "Уругвай",
@@ -9578,7 +9574,7 @@
               }
             ],
             "demo": "Нет",
-            "link": "По промику - RESEARCHEDXYZ",
+            "link": "t.me/buybee_bot",
             "icon": "/Residential/beeproxies.webp"
           },
           "OkeyProxy": {
@@ -9942,7 +9938,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Шри-Ланка",
@@ -10437,7 +10433,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Гонконг",
@@ -10473,7 +10469,7 @@
               },
               {
                 "name": "Северная Корея",
-                "icon": "/country_logos/северная_южная_корея.webp"
+                "icon": "/country_logos/северная_корея.webp"
               },
               {
                 "name": "Бангладеш",
@@ -11502,7 +11498,7 @@
             "icon": "/Residential/Mango Proxy.webp"
           },
           "Froxy": {
-            "price": "8.00$",
+            "price": "8$",
             "countries": [
               {
                 "name": "Австралия",
@@ -11778,7 +11774,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Япония",
@@ -12449,7 +12445,7 @@
               },
               {
                 "name": "Северная Корея",
-                "icon": "/country_logos/северная_южная_корея.webp"
+                "icon": "/country_logos/северная_корея.webp"
               },
               {
                 "name": "Науру",
@@ -12557,7 +12553,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Саудовская Аравия",
@@ -12752,14 +12748,6 @@
                 "icon": "/country_logos/уганда.webp"
               },
               {
-                "name": "Виргинские острова США",
-                "icon": "/country_logos/виргинские_острова_сша.webp"
-              },
-              {
-                "name": "Отдаленные острова США",
-                "icon": "/country_logos/отдаленные_острова_сша.webp"
-              },
-              {
                 "name": "Вьетнам",
                 "icon": "/country_logos/вьетнам.webp"
               },
@@ -12840,7 +12828,7 @@
             "icon": "/Residential/Asocks.webp"
           },
           "922Proxy": {
-            "price": "3.3$",
+            "price": "3.30$",
             "countries": [
               {
                 "name": "Алжир",
@@ -13152,7 +13140,7 @@
               },
               {
                 "name": "Северная Корея",
-                "icon": "/country_logos/северная_южная_корея.webp"
+                "icon": "/country_logos/северная_корея.webp"
               },
               {
                 "name": "Оман",
@@ -13184,7 +13172,7 @@
               },
               {
                 "name": "Южная Корея",
-                "icon": "/country_logos/южная_южная_корея.webp"
+                "icon": "/country_logos/южная_корея.webp"
               },
               {
                 "name": "Шри-Ланка",

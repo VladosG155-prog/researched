@@ -56,14 +56,14 @@ function Page() {
                     ? [
                           { name: 'Оплата', content: [...data.payment], colSpan: 1 },
                           { name: 'Бесплатные профиля', content: data.freeProfiles, colSpan: 1 },
-                          { name: 'Случаи взломов', colSpan: 2, content: data.breachHistory.map((item) => item.description)[0] },
-                          { name: 'Фичи', content: data.browserFeatures, colSpan: 1 }
+                          { name: 'Случаи взломов', colSpan: 1, content: data.breachHistory.map((item) => item.description)[0] },
+                          { name: 'Фичи', content: data.browserFeatures, colSpan: 2 }
                       ]
                     : [
                           { name: 'Оплата', content: [...data.payment], colSpan: 1 },
                           { name: 'Фичи', content: data.browserFeatures, colSpan: 1 },
-                          { name: 'Случаи взломов', colSpan: 2, content: data.breachHistory.map((item) => item.description)[0] },
-                          { name: 'Бесплатные профиля', content: data.freeProfiles, colSpan: 1 }
+                          { name: 'Случаи взломов', colSpan: 1, content: data.breachHistory.map((item) => item.description)[0] },
+                          { name: 'Бесплатные профиля', content: data.freeProfiles, colSpan: 2 }
                       ],
                 payment: data.payment,
                 promocodeInfo: antiikiCodes?.find((item) => item[0] === key),
