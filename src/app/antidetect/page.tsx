@@ -129,14 +129,44 @@ function Page() {
                 size: 200,
                 enableSorting: true,
                 sortDescFirst: true,
-                cell: (info) => <span className="text-white">{info.getValue()}</span>
+                cell: (info) => <span className="text-white">{info.getValue()}</span>,
+                sortingFn: (rowA, rowB, columnId) => {
+                    const parsePrice = (val: any) => {
+                        const cleaned = String(val).replace(/[^\d.-]/g, '');
+                        return parseFloat(cleaned);
+                    };
+
+                    const a = parsePrice(rowA.getValue(columnId));
+                    const b = parsePrice(rowB.getValue(columnId));
+
+                    if (isNaN(a) && isNaN(b)) return 0;
+                    if (isNaN(a)) return -1;
+                    if (isNaN(b)) return 1;
+
+                    return a - b;
+                }
             }),
             columnHelper.accessor('price', {
                 header: 'Цена',
                 size: 200,
                 enableSorting: true,
                 sortDescFirst: true,
-                cell: (info) => <span className="text-white">{info.getValue()}</span>
+                cell: (info) => <span className="text-white">{info.getValue()}</span>,
+                sortingFn: (rowA, rowB, columnId) => {
+                    const parsePrice = (val: any) => {
+                        const cleaned = String(val).replace(/[^\d.-]/g, '');
+                        return parseFloat(cleaned);
+                    };
+
+                    const a = parsePrice(rowA.getValue(columnId));
+                    const b = parsePrice(rowB.getValue(columnId));
+
+                    if (isNaN(a) && isNaN(b)) return 0;
+                    if (isNaN(a)) return -1;
+                    if (isNaN(b)) return 1;
+
+                    return a - b;
+                }
             }),
 
             columnHelper.accessor('fraudscore', {
@@ -154,7 +184,22 @@ function Page() {
                     </div>
                 ),
                 enableSorting: true,
-                sortDescFirst: true
+                sortDescFirst: true,
+                sortingFn: (rowA, rowB, columnId) => {
+                    const parsePrice = (val: any) => {
+                        const cleaned = String(val).replace(/[^\d.-]/g, '');
+                        return parseFloat(cleaned);
+                    };
+
+                    const a = parsePrice(rowA.getValue(columnId));
+                    const b = parsePrice(rowB.getValue(columnId));
+
+                    if (isNaN(a) && isNaN(b)) return 0;
+                    if (isNaN(a)) return -1;
+                    if (isNaN(b)) return 1;
+
+                    return a - b;
+                }
             }),
             columnHelper.display({
                 id: 'expand',
